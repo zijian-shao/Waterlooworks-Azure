@@ -1,0 +1,64 @@
+/* apply btns */
+.postingsTable > tbody > tr > td:first-child, .postingsTable > thead > tr > th:first-child {
+    width: 10%
+}
+
+/* app stat */
+.postingsTable > tbody > tr > td:nth-child(2), .postingsTable > thead > tr > th:nth-child(2) {
+    width: 5%
+}
+
+/* id */
+.postingsTable > tbody > tr > td:nth-child(3), .postingsTable > thead > tr > th:nth-child(3) {
+    width: 5%
+}
+
+/* job title */
+.postingsTable > tbody > tr > td:nth-child(4), .postingsTable > thead > tr > th:nth-child(4) {
+    width: 30%
+}
+
+/* organization */
+.postingsTable > tbody > tr > td:nth-child(5), .postingsTable > thead > tr > th:nth-child(5) {
+    width: 18%
+}
+
+/* division */
+.postingsTable > tbody > tr > td:nth-child(6), .postingsTable > thead > tr > th:nth-child(6) {
+    width: 14%
+}
+
+/* openings */
+.postingsTable > tbody > tr > td:nth-child(7), .postingsTable > thead > tr > th:nth-child(7) {
+    width: 5%
+}
+
+/* int stat */
+.postingsTable > tbody > tr > td:nth-child(8), .postingsTable > thead > tr > th:nth-child(8) {
+    width: 10%
+}
+
+/* city */
+.postingsTable > tbody > tr > td:nth-child(9), .postingsTable > thead > tr > th:nth-child(9) {
+    width: 8%
+}
+
+/* level */
+.postingsTable > tbody > tr > td:nth-child(10), .postingsTable > thead > tr > th:nth-child(10) {
+    width: 10%
+}
+
+/* apps */
+.postingsTable > tbody > tr > td:nth-child(11), .postingsTable > thead > tr > th:nth-child(11) {
+    width: 4%
+}
+
+/* deadline */
+.postingsTable > tbody > tr > td:nth-child(12), .postingsTable > thead > tr > th:nth-child(12) {
+    width: 8%
+}
+
+/* del btn */
+.postingsTable > tbody > tr > td:last-child, .postingsTable > thead > tr > th:last-child {
+    width: 4%
+}

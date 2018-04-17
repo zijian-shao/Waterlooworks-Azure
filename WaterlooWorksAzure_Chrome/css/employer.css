@@ -1,0 +1,24 @@
+/* Employer */
+
+#adminNav {
+    box-shadow: none;
+}
+
+.nbs--fixed-nav .nav-tabs > li > a {
+    color: #999 !important;
+}
+
+.nav-tabs > li:first-child a {
+    border: none !important;
+}
+
+@media (min-width: 980px) {
+    .nbs--fixed-nav {
+        left: 20px;
+    }
+
+    .dropdown-menu {
+        border: none;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+}
