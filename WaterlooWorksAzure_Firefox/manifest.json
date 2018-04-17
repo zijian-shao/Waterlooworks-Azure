@@ -1,0 +1,73 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_appName__",
+  "version": "1.2.0",
+  "default_locale": "en",
+  "description": "__MSG_appDesc__",
+  "icons": {
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon/icon16.png",
+      "24": "icon/icon24.png",
+      "32": "icon/icon32.png"
+    },
+    "default_title": "WaterlooWorks Azure",
+    "default_popup": "html/popup.html"
+  },
+  "author": "Zijian Shao",
+  "background": {
+    "scripts": [
+      "js/configs.js",
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://waterlooworks.uwaterloo.ca/*"
+      ],
+      "js": [
+        "js/configs.js",
+        "js/themes.js",
+        "js/init.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://waterlooworks.uwaterloo.ca/*"
+      ],
+      "js": [
+        "js/init_idle.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "options_ui": {
+    "page": "html/options.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "*://waterlooworks.uwaterloo.ca/*"
+  ],
+  "short_name": "WWAzure",
+  "web_accessible_resources": [
+    "js/*",
+    "css/*",
+    "icon/*",
+    "img/*",
+    "theme/*"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "wwazure@zijianshao.com",
+      "strict_min_version": "42.0"
+    }
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "about": {
+    "message": "關於"
+  },
+  "actionButtons": {
+    "message": "操作按鈕"
+  },
+  "addBackToTopButtonOnEachPage": {
+    "message": "添加“返回頂部”按鈕到所有頁面"
+  },
+  "addBackToTopButtonOnEachPage_tip": {
+    "message": "啟用該選項後，網站所有頁面右下角均將添加“返回頂部”按鈕，可一鍵返回網頁頂部。"
+  },
+  "addButtonsToAdjustDetailPageFontSize": {
+    "message": "添加調整職位詳情頁字號的按鈕"
+  },
+  "addButtonsToAdjustDetailPageFontSize_tip": {
+    "message": "在職位詳情頁頂部添加兩個按鈕用以增大/減小頁面字號。"
+  },
+  "addExportShortlistButton": {
+    "message": "添加“導出收藏列表”按鈕"
+  },
+  "addExportShortlistButton_tip": {
+    "message": "在收藏列表頁面頂端添加一個按鈕，點擊即可一鍵將列表導出到 Excel。"
+  },
+  "addFloatingInfoToTheRightSideOfThePage": {
+    "message": "頁面右側添加浮動信息面板"
+  },
+  "addFloatingInfoToTheRightSideOfThePage_tip": {
+    "message": "在職位詳情頁右側添加浮動面板，展示職位名稱、公司及其他相關信息。"
+  },
+  "appDeadline": {
+    "message": "截止日期"
+  },
+  "appDesc": {
+    "message": "Azure 是第一款全方位增強 WaterlooWorks 使用體驗的擴展插件。"
+  },
+  "appName": {
+    "message": "WaterlooWorks Azure"
+  },
+  "appStatus": {
+    "message": "申請狀態"
+  },
+  "applications": {
+    "message": "申請人數"
+  },
+  "betterMsgColumn": {
+    "message": "優化列排序及顯示"
+  },
+  "betterMsgColumn_tip": {
+    "message": "啟用該選項後，將調整默認列排序，並根據當前所在位置自動隱藏不必要的列。"
+  },
+  "brightAzureTheme": {
+    "message": "純白天藍色主題"
+  },
+  "chooseColumnsToBeDisplayed": {
+    "message": "自定義需要顯示的項目"
+  },
+  "chromeWebStore": {
+    "message": "Firefox 商店"
+  },
+  "city": {
+    "message": "城市"
+  },
+  "classicCarbonTheme": {
+    "message": "經典炭黑色主題"
+  },
+  "copyright": {
+    "message": "Created by Zijian Shao"
+  },
+  "darkTurquoiseTheme": {
+    "message": "黑暗綠寶石主題"
+  },
+  "disclaimers": {
+    "message": "免責聲明"
+  },
+  "disclaimers_intro": {
+    "message": "<p>- 此擴展並非由WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>- 由於使用此擴展所造成的一切後果由用戶自行承擔</p> "
+  },
+  "displayHideShowNewTabButton": {
+    "message": "啟用“隱藏/顯示NEW標籤”按鈕"
+  },
+  "displayHideShowNewTabButton_tip": {
+    "message": "啟用該選項後，在表格上方會顯示額外的按鈕，點擊即可隱藏/顯示職位名稱前的“NEW”標籤。"
+  },
+  "displayHideShowShortlistedButton": {
+    "message": "啟用“隱藏/顯示已收藏職位”按鈕"
+  },
+  "displayHideShowShortlistedButton_tip": {
+    "message": "啟用該選項後，在表格上方會顯示額外的按鈕，點擊即可隱藏/顯示表格中已收藏職位。"
+  },
+  "division": {
+    "message": "部門"
+  },
+  "elegantVioletTheme": {
+    "message": "優雅紫羅蘭主題"
+  },
+  "enableAzure": {
+    "message": "啟用擴展"
+  },
+  "enableContextMenu": {
+    "message": "啟用右鍵菜單"
+  },
+  "enableContextMenu_tip": {
+    "message": "啟用該選項後，在職位列表中單擊行中的任意位置均可彈出右鍵菜單，選擇各種可用的快捷操作。在使用大型顯示器時，可顯著提高工作效率。"
+  },
+  "enableJobIntroPreview": {
+    "message": "啟用職位信息預覽"
+  },
+  "enableJobIntroPreview_tip": {
+    "message": "啟用該選項後，點擊行中的任意位置，即可在當前頁面預覽工作詳情，無需跳轉。"
+  },
+  "enableMyMessagesListOptimization": {
+    "message": "啟用“我的短消息”列表優化"
+  },
+  "enableMyMessagesListOptimization_tip": {
+    "message": "該選項為該系列總開關，可以同時開啟或關閉所有我的短消息優化項目。啟用該選項後，將會優化列表的列寬度，並增加高亮顯示未讀消息的功能。同時，點擊行的任意位置，均可打開該消息。"
+  },
+  "enablePaginationFloating": {
+    "message": "啟用懸浮頁碼"
+  },
+  "enablePaginationFloating_tip": {
+    "message": "啟用該選項後，若當前表格存在翻頁按鈕，則會自動將頁碼固定在頁面底部，方便翻頁。"
+  },
+  "enablePostingListOptimization": {
+    "message": "啟用職位列表優化"
+  },
+  "enablePostingListOptimization_tip": {
+    "message": "該選項為職位列表系列總開關，可以同時開啟或關閉所有職位列表優化項目。"
+  },
+  "enablePostingModal": {
+    "message": "啟用“職位彈框預覽”功能"
+  },
+  "enablePostingModal_tip": {
+    "message": "<p>啟用該選項後，將可以在當前窗口內的彈框中預覽職位信息。以下三種方式均可以打開預覽：</p><p><b>1.</ b> 點擊職位名稱右側的小地球圖標</p><p><b>2.</b> 單擊右鍵並在菜單中選擇“Preview In Modal”</p><p><b> 3.</b> 雙擊行內任意位置</p>"
+  },
+  "enableWaterlooWorksAzure": {
+    "message": "啟用 WaterlooWorks Azure"
+  },
+  "enableWaterlooWorksAzure_tip": {
+    "message": "該選項為總開關，可以同時開啟或關閉此擴展的所有選項。在瀏覽器右上角浮動窗口內的開關與此同步。"
+  },
+  "extension": {
+    "message": "擴展設置"
+  },
+  "extensionOptions": {
+    "message": "擴展選項"
+  },
+  "extensionTips": {
+    "message": "幫助中心"
+  },
+  "fixMsgTableHeader": {
+    "message": "置頂表格表頭"
+  },
+  "fixMsgTableHeader_tip": {
+    "message": "啟用該選項後，若表格表頭不在窗口可見範圍內，則會自動將表頭固定在頁面頂端，方便瀏覽。"
+  },
+  "fixTableHeaderAtTop": {
+    "message": "置頂表格表頭"
+  },
+  "fixTableHeaderAtTop_tip": {
+    "message": "啟用該選項後，若表格表頭不在窗口可見範圍內，則會自動將表頭固定在頁面頂端，方便瀏覽。"
+  },
+  "floatControlButtonsOnPostingDetailPage": {
+    "message": "職位詳情頁面浮動控制按鈕"
+  },
+  "floatControlButtonsOnPostingDetailPage_tip": {
+    "message": "啟用該選項後，瀏覽職位詳情時，各種控制按鈕（申請、收藏、不感興趣、打印、返回搜索頁等）將會浮動在頁面底部，方便操作。"
+  },
+  "freshCitrusTheme": {
+    "message": "清新柑橘色主題"
+  },
+  "globalOptimizations": {
+    "message": "全局優化"
+  },
+  "goToOptions": {
+    "message": "擴展選項"
+  },
+  "goToTips": {
+    "message": "幫助中心"
+  },
+  "homepage": {
+    "message": "網站引導頁"
+  },
+  "internalStatus": {
+    "message": "內部狀態"
+  },
+  "jobPostings": {
+    "message": "職位列表"
+  },
+  "jobPostings_title": {
+    "message": "職位列表頁"
+  },
+  "jobTitle": {
+    "message": "職位名稱"
+  },
+  "level": {
+    "message": "級別"
+  },
+  "lightThemeDarkTheme": {
+    "message": "白色主題 / 黑色主題"
+  },
+  "lightThemeDarkTheme_tip": {
+    "message": "啟用該選項，即可使用白色&天藍色主題。禁用該選項，即可使用黑色&綠寶石色主題。"
+  },
+  "location": {
+    "message": "位置"
+  },
+  "moreOptions": {
+    "message": "打開擴展選項"
+  },
+  "myMessages": {
+    "message": "我的短消息"
+  },
+  "needRefreshToApply": {
+    "message": "設置已保存，請刷新相關頁面以應用更改"
+  },
+  "notInterestedButton": {
+    "message": "不感興趣按鈕"
+  },
+  "notes": {
+    "message": "相關說明"
+  },
+  "notes_intro": {
+    "message": "<p>- 建議不要與其他WaterlooWorks 插件同時啟用</p><p>- WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>- 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
+  },
+  "officialWebsite": {
+    "message": "官方網站"
+  },
+  "oneClickEmptyShortlist": {
+    "message": "一鍵清空收藏列表"
+  },
+  "oneClickEmptyShortlist_tip": {
+    "message": "啟用該選項後，在收藏列表上方會顯示額外的按鈕，點擊即可一鍵清空所有已收藏職位。（由於WaterlooWorks 的安全策略限制，只能每0.8秒移除一項收藏） "
+  },
+  "openMessagesInNewTab": {
+    "message": "在新標籤頁中打開短消息"
+  },
+  "openMessagesInNewTab_tip": {
+    "message": "啟用該選項後，將會在新標籤頁中打開選中的短消息。"
+  },
+  "openPostingsInNewTab": {
+    "message": "啟用新標籤查看功能"
+  },
+  "openPostingsInNewTab_tip": {
+    "message": "<p>啟用該選項後，將在職位名稱後方、右鍵菜單內添加相應的“新標籤頁中打開”鏈接。同時，該選項將對職位名稱的操作進行擴展：</p><p><b>1.</b> <b>左鍵</b>點擊職位名稱將照常在當前標籤頁打開職位詳情；</p><p><b>2.</b> <b>中鍵</b>點擊職位名稱，將在新的背景標籤頁中打開職位詳情；</p><p><b>3.</b> 按住<b>Ctrl/Cmd</b> 並<b>左鍵</b>點擊職位名稱，將在新的活躍標籤頁中打開職位詳情。</p>"
+  },
+  "openWaterlooWorks": {
+    "message": "打開 WaterlooWorks"
+  },
+  "openings": {
+    "message": "開放數量"
+  },
+  "optionsSaved": {
+    "message": "設置已保存"
+  },
+  "organization": {
+    "message": "組織"
+  },
+  "other": {
+    "message": "其他選項"
+  },
+  "positionType": {
+    "message": "職位類型"
+  },
+  "postingDetailFeatures": {
+    "message": "詳情頁功能"
+  },
+  "postingDetail_title": {
+    "message": "職位詳情頁"
+  },
+  "postingID": {
+    "message": "職位ID"
+  },
+  "postingListDisplay": {
+    "message": "列表頁顯示"
+  },
+  "postingListFeatures": {
+    "message": "列表頁功能"
+  },
+  "postingModalControl": {
+    "message": "職位預覽功能"
+  },
+  "postingModalDisplay": {
+    "message": "預覽顯示項目"
+  },
+  "postingModalDisplay_tip": {
+    "message": "<p>▷ 在下方選擇預覽彈框中將要顯示的項目</p><p>▷ 使用右側箭頭進行排序</p><p>▷ 點擊頁面底部的按鈕重置該列表</p>"
+  },
+  "postingModal_title": {
+    "message": "職位預覽"
+  },
+  "redirectToWelcomePageWhenNotLoggedIn": {
+    "message": "未登錄時自動跳轉至引導頁"
+  },
+  "redirectToWelcomePageWhenNotLoggedIn_tip": {
+    "message": "若用戶登錄過期或退出登錄，則會直接從提示頁面跳轉至引導頁面，無需手動點擊按鈕跳轉。"
+  },
+  "resetConfirmMessage": {
+    "message": "你確定要將其恢復為默認嗎？"
+  },
+  "resetToDefault": {
+    "message": "恢復默認"
+  },
+  "reverseTitleOrder": {
+    "message": "倒序顯示網頁標題"
+  },
+  "reverseTitleOrder_tip": {
+    "message": "啟用該選項後，將使網頁標題倒序顯示，使其更加符合邏輯。"
+  },
+  "selectFont": {
+    "message": "字體選擇"
+  },
+  "selectTheme": {
+    "message": "主題選擇"
+  },
+  "showGlassdoorCompanyRanking": {
+    "message": "展示 Glassdoor 平台上的公司評分"
+  },
+  "showGlassdoorCompanyRanking_tip": {
+    "message": "如果信息可用，此擴展會使用 AJAX 技術從 Glassdoor 平台獲取公司評分的相關內容。"
+  },
+  "showGlassdoorQuickSearchLink": {
+    "message": "顯示 Glassdoor 快捷搜索鏈接"
+  },
+  "showGlassdoorQuickSearchLink_tip": {
+    "message": "啟用該選項後，將在右鍵菜單、職位預覽頁面添加查看 Glassdoor 網站上關於該公司相關評價的鏈接。"
+  },
+  "showMsgCategory": {
+    "message": "顯示短消息分類及子分類"
+  },
+  "showMsgCategory_tip": {
+    "message": "關閉該選項後，將不在短消息列表展示消息所屬分類及子分類。"
+  },
+  "useDefaultStyleAndCombine": {
+    "message": "使用默認樣式 <small>（合併職位名稱、組織、部門）</small>"
+  },
+  "useKeyboardArrowKeysToSwitchPages": {
+    "message": "使用鍵盤方向鍵翻頁"
+  },
+  "useKeyboardArrowKeysToSwitchPages_tip": {
+    "message": "啟用該選項後，按下鍵盤左/右方向鍵即可切換上一篇/下一篇職位預覽。"
+  },
+  "useNewAzureHomepage": {
+    "message": "使用全新的 Azure 網站引導頁"
+  },
+  "useNewAzureHomepage_tip": {
+    "message": "啟用該選項後，網站引導頁將會替換為全新設計的Azure引導頁。網站維護通知等內容也會在新頁面顯示，不必擔心錯過重要通知。"
+  },
+  "version": {
+    "message": "版本"
+  },
+  "waterlooWorks": {
+    "message": "WaterlooWorks"
+  },
+  "waterlooWorksAzure": {
+    "message": "WaterlooWorks Azure"
+  },
+  "waterlooWorksAzureOptions": {
+    "message": "WaterlooWorks Azure 選項"
+  },
+  "waterlooWorksAzureTips": {
+    "message": "WaterlooWorks Azure 幫助"
+  },
+  "welcome": {
+    "message": "歡迎使用"
+  },
+  "welcomeIntro": {
+    "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p>如果你覺得此擴展還不錯，<a href=\"https://addons.mozilla.org/firefox/addon/waterlooworks-azure/\" target=\"_blank\">請在 Firefox 商店給個五星好評吧</a>，親~</p>"
+  }
+}

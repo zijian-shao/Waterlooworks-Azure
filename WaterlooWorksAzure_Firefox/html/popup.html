@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title i18n-text="waterlooWorksAzureOptions"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/popup.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="azure-icon"></div>
+    <h1 class="title" i18n-text="waterlooWorksAzure"></h1>
+    <h4 class="subtitle" i18n-text="extensionOptions"></h4>
+    <div class="azure-option-container">
+        <div class="azure-option-group">
+            <p class="azure-option-label" i18n-text="enableAzure"></p>
+            <div class="azure-option-slide">
+                <input type="checkbox" id="enable-azure">
+                <label for="enable-azure"></label>
+            </div>
+        </div>
+        <hr class="azure-option-hr">
+        <div class="azure-option-group">
+            <p class="azure-option-link" i18n-text="moreOptions" id="more-options"></p>
+        </div>
+        <hr class="azure-option-hr">
+        <div class="azure-option-group">
+            <p class="azure-option-link" i18n-text="openWaterlooWorks" id="open-waterlooworks"></p>
+        </div>
+    </div>
+</div>
+
+<div class="azure-toast azure-toast-hidden" id="azure-toast" i18n-text="needRefreshToApply"></div>
+
+<script type="text/javascript" src="/js/plugins/jquery.js"></script>
+<script type="text/javascript" src="/js/plugins/localization.js"></script>
+<script type="text/javascript" src="/js/configs.js"></script>
+<script type="text/javascript" src="/js/popup.js"></script>
+
+</body>
+</html>

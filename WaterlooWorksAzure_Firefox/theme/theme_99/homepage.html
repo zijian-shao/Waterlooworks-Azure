@@ -1,0 +1,186 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli:200,400,800">
+<style>
+    a:focus, button:focus, input:focus, textarea:focus, select:focus, .btn:focus {
+        outline: none !important;
+    }
+
+    label.gridDropdownButton.is--focused {
+        outline: none !important;
+    }
+
+    body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
+        font-family: 'Muli', "Microsoft YaHei", sans-serif !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        text-align: center;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+    }
+
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .container {
+        position: absolute;
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: -260px auto 0;
+        padding: 10px;
+        background: #000;
+    }
+
+    .logo {
+        width: 100%;
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 148.8px;
+        height: auto;
+    }
+
+    .title {
+        width: 100%;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .title img {
+        width: 80%;
+        max-width: 420.8px;
+        height: auto;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: #FCD450;
+        font-weight: normal;
+        margin: 40px auto 0;
+        line-height: 1.2em;
+    }
+
+    .subtitle span {
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    .btns {
+        width: 100%;
+        heigth: auto;
+        margin: 45px auto 0;
+        text-align: center;
+    }
+
+    .btns > a {
+        display: inline-block;
+        width: 40%;
+        height: auto;
+        margin: 0 2px;
+        padding: 20px 0;
+        background: none;
+        font-size: 14px;
+        text-decoration: none !important;
+        color: #FCD450 !important;
+        border-radius: 4px;
+        border: 1px solid #FCD450;
+        font-weight: normal;
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+    }
+
+    .btns > a:hover {
+        background: #FCD450;
+        color: #000 !important;
+    }
+
+    .btns > a > i {
+        font-size: 16px;
+        margin-right: 0.5em;
+    }
+
+    .copyright {
+        color: #999;
+        font-size: 14px;
+        margin: 45px auto 40px;
+        padding: 0;
+    }
+
+    @media (max-width: 767px) {
+
+        .container {
+            position: relative;
+            max-width: none;
+            height: auto;
+            top: 0;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .logo img {
+            width: 40%;
+        }
+
+        .subtitle {
+            font-size: 18px;
+        }
+
+        .btns > a {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+</style>
+<div class="container">
+    <div class="logo">
+        <img src="site/images/uwlogo.png" alt="University of Waterloo">
+        <h1 class="hidden">University of Waterloo</h1>
+    </div>
+    <div class="title">
+        <img src="site/images/waterlooworkslogo.png" alt="WaterlooWorks">
+        <h2 class="hidden">WaterlooWorks</h2>
+    </div>
+
+    <div class="subtitle">
+        <h3 class="subtitle">
+            <span>Hire Waterloo</span>
+            Students and Alumni
+        </h3>
+    </div>
+
+    <div class="btns">
+        <a href="https://cas.uwaterloo.ca/cas/login?service=https://waterlooworks.uwaterloo.ca/waterloo.htm"
+           class="btn-student"><i class="icon-user"></i>Students/Alumni</a>
+        <a href="/employer/overview.htm" class="btn-employer"><i class="icon-comments"></i>Employers</a>
+    </div>
+    <p class="copyright">&copy; University of Waterloo. All Rights Reserved.</p>
+</div>
