@@ -715,6 +715,7 @@ table.table-header-fixed {
 
 .azure-company-ranking-empty a {
     padding-left: 0;
+    /*opacity: 1;*/
 }
 
 /* float posting info */
@@ -769,4 +770,17 @@ li.azure-font-size-control a {
         overflow-x: auto;
         overflow-y: hidden;
     }
+}
+
+.azure-posting-keyword-panel .tip {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -ms-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+
+.azure-posting-keyword-panel:hover .tip {
+    opacity: 1;
 }
