@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WaterlooWorks Azure Background</title>
+</head>
+<body>
+<script type="text/javascript" src="../js/plugins/jquery.js"></script>
+<script type="text/javascript" src="../js/configs.js"></script>
+<script type="text/javascript">
+
+    function contentEventHandler(event) {
+
+        if (event.name == 'getOptions') {
+
+            var obj = {};
+            var configs = getOptionListDefault();
+            for (var k in configs) {
+                obj[k] = safari.extension.settings[k];
+                if (typeof obj[k] === 'undefined') {
+                    obj[k] = configs[k];
+                }
+            }
+
+            event.target.page.dispatchMessage('options', obj);
+
+        } else if (event.name == 'saveOptions') {
+
+            var obj = event.message;
+            for (var k in obj) {
+                safari.extension.settings[k] = obj[k];
+            }
+
+        }
+    }
+
+    safari.application.addEventListener("message", contentEventHandler, false);
+
+</script>
+</body>
+</html>

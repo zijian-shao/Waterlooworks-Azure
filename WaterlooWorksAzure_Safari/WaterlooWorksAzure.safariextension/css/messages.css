@@ -1,0 +1,117 @@
+/* =============== Message =============== */
+
+/* loading */
+#dashboard_userCommonMyMessages_processing {
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 0px;
+    text-transform: uppercase;
+}
+
+#dashboard_userCommonMyMessages_processing img {
+    margin: 20px auto;
+}
+
+/* scrollbar */
+#dashboard_userCommonMyMessages_gridBox {
+    overflow: hidden !important;
+}
+
+/* table */
+
+.myMessageTable {
+    border: 1px solid #eaeaea;
+    table-layout: fixed;
+}
+
+.myMessageTable tr td, .myMessageTable tr th {
+    margin: 0;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    border-left: none;
+    border-right: none;
+}
+
+.myMessageTable thead th {
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 5px;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    background: none;
+    border: none;
+    vertical-align: middle;
+}
+
+.myMessageTable thead th a:hover {
+    text-decoration: underline;
+}
+
+#dashboard_userCommonMyMessages_gridBox {
+    max-height: none;
+}
+
+#dashboard_userCommonMyMessages_topScrollBox {
+    display: none;
+}
+
+.myMessageTable > tbody > tr {
+    cursor: pointer;
+}
+
+.myMessageTable td .badge.badge-info {
+    text-transform: uppercase;
+}
+
+.myMessageTable > tbody > tr > td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.myMessageTable .azure-msg-normal-icon {
+    color: #ccc;
+}
+
+.myMessageTable .azure-msg-important-icon {
+    color: red;
+}
+
+.myMessageTable .azure-msg-viewed-icon {
+    color: #ccc;
+}
+
+.myMessageTable .azure-msg-not-viewed-icon {
+    color: orange;
+}
+
+.myMessageTable .azure-msg-is-new {
+    font-weight: bold;
+}
+
+#dashboard_userCommonMyMessages_overlay {
+    opacity: 0.5 !important;
+    background: #fff !important;
+}
+
+@media (max-width: 979px) {
+    #dashboard_userCommonMyMessages_gridBox {
+        overflow-x: auto !important;
+    }
+
+    .myMessageTable  td {
+        max-width: 200px !important;
+    }
+
+    .myMessageTable {
+        table-layout: auto;
+    }
+
+    #dashboard_userCommonMyMessages_topScrollBox {
+        display: block;
+    }
+
+}

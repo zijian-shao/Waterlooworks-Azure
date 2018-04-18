@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title i18n-text="waterlooWorksAzureOptions"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/options.css">
+</head>
+<body>
+<div class="container">
+    <div class="wrapper">
+
+        <!-- Header Start -->
+        <div class="header">
+            <h1 i18n-text="waterlooWorksAzure"></h1>
+            <h3 i18n-text="extensionOptions"></h3>
+        </div>
+        <!-- Header End -->
+
+        <!-- Tab Start -->
+        <div class="nav">
+            <ul>
+                <li data-option-tab-index="0" data-option-tab-name="global" id="nav-tab-0" class="nav-tab active"
+                    i18n-text="globalOptimizations"></li>
+                <li data-option-tab-index="1" data-option-tab-name="posting-list" id="nav-tab-1" class="nav-tab"
+                    i18n-text="jobPostings_title"></li>
+                <li data-option-tab-index="5" data-option-tab-name="posting-modal" id="nav-tab-5" class="nav-tab"
+                    i18n-text="postingModal_title">
+                    <div class="new-tag">NEW</div>
+                </li>
+                <li data-option-tab-index="4" data-option-tab-name="posting-detail" id="nav-tab-4" class="nav-tab"
+                    i18n-text="postingDetail_title"></li>
+                <li data-option-tab-index="2" data-option-tab-name="my-messages" id="nav-tab-2" class="nav-tab"
+                    i18n-text="myMessages"></li>
+                <li data-option-tab-index="3" data-option-tab-name="about" id="nav-tab-3" class="nav-tab"
+                    i18n-text="about"></li>
+            </ul>
+        </div>
+        <!-- Tab End -->
+
+        <!-- General Start -->
+        <div class="content-container" id="opt-tab-0">
+            <div class="content">
+
+                <!-- Enable Azure -->
+                <div class="category-title">
+                    <h5 i18n-text="enableAzure"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide checkbox-slide-important">
+                        <input type="checkbox" id="opt-global-0-0" data-option-name="GLB_Enabled"
+                               data-option-type="switch">
+                        <label for="opt-global-0-0"></label>
+                    </div>
+                    <label for="opt-global-0-0" class="checkbox-label" i18n-text="enableWaterlooWorksAzure"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="enableWaterlooWorksAzure_tip"></p>
+                    </div>
+                </div>
+
+                <!-- Welcome Page -->
+                <div class="category-title">
+                    <h5 i18n-text="homepage"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-global-1-0" data-option-name="GLB_ReplaceLoginPage"
+                               data-option-type="switch">
+                        <label for="opt-global-1-0"></label>
+                    </div>
+                    <label for="opt-global-1-0" class="checkbox-label" i18n-text="useNewAzureHomepage"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="useNewAzureHomepage_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-global-1-1" data-option-name="GLB_AutoRedirectToLogin"
+                               data-option-type="switch">
+                        <label for="opt-global-1-1"></label>
+                    </div>
+                    <label for="opt-global-1-1" class="checkbox-label"
+                           i18n-text="redirectToWelcomePageWhenNotLoggedIn"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="redirectToWelcomePageWhenNotLoggedIn_tip"></p>
+                    </div>
+                </div>
+
+                <!-- Select Theme -->
+                <div class="category-title">
+                    <h5 i18n-text="selectTheme"></h5>
+                </div>
+                <div class="option-group radio-group">
+                    <p>
+                        <input type="radio" id="opt-global-2-0" name="GLB_ThemeID" value="0"
+                               data-option-name="GLB_ThemeID" data-option-type="enum">
+                        <label for="opt-global-2-0" i18n-text="brightAzureTheme"></label>
+                    </p>
+                    <p>
+                        <input type="radio" id="opt-global-2-1" name="GLB_ThemeID" value="1"
+                               data-option-name="GLB_ThemeID" data-option-type="enum">
+                        <label for="opt-global-2-1" i18n-text="darkTurquoiseTheme"></label>
+                    </p>
+                    <p>
+                        <input type="radio" id="opt-global-2-2" name="GLB_ThemeID" value="2"
+                               data-option-name="GLB_ThemeID" data-option-type="enum">
+                        <label for="opt-global-2-2" i18n-text="freshCitrusTheme"></label>
+                    </p>
+                    <p>
+                        <input type="radio" id="opt-global-2-3" name="GLB_ThemeID" value="3"
+                               data-option-name="GLB_ThemeID" data-option-type="enum">
+                        <label for="opt-global-2-3" i18n-text="elegantVioletTheme"></label>
+                    </p>
+                    <p>
+                        <input type="radio" id="opt-global-2-99" name="GLB_ThemeID" value="99"
+                               data-option-name="GLB_ThemeID" data-option-type="enum">
+                        <label for="opt-global-2-99" i18n-text="classicCarbonTheme"></label>
+                    </p>
+                </div>
+
+                <!-- Select Font -->
+                <div class="category-title">
+                    <h5 i18n-text="selectFont"></h5>
+                </div>
+                <div class="option-group radio-group radio-group-inline">
+                    <table class="table table-noborder">
+                        <tr>
+                            <td>
+                                <input type="radio" id="opt-global-4-0" name="GLB_FontName" value="Muli"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-0">Muli</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="opt-global-4-4" name="GLB_FontName" value="Lato"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-4">Lato</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="opt-global-4-5" name="GLB_FontName" value="Vollkorn"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-5">Vollkorn</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="opt-global-4-6" name="GLB_FontName" value="Ubuntu"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-6">Ubuntu</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" id="opt-global-4-7" name="GLB_FontName" value="Raleway"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-7">Raleway</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="opt-global-4-1" name="GLB_FontName" value="Helvetica Neue"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-1">Helvetica</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="opt-global-4-2" name="GLB_FontName" value="Roboto"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-2">Roboto</label>
+                            </td>
+                            <td>
+                                <input type="radio" id="opt-global-4-3" name="GLB_FontName" value="Arial"
+                                       data-option-name="GLB_FontName" data-option-type="enum">
+                                <label for="opt-global-4-3">Arial</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Other -->
+                <div class="category-title">
+                    <h5 i18n-text="other"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-global-3-0" data-option-name="GLB_BackToTopButton"
+                               data-option-type="switch">
+                        <label for="opt-global-3-0"></label>
+                    </div>
+                    <label for="opt-global-3-0" class="checkbox-label" i18n-text="addBackToTopButtonOnEachPage"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="addBackToTopButtonOnEachPage_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-global-3-1" data-option-name="GLB_ReverseTitleOrder"
+                               data-option-type="switch">
+                        <label for="opt-global-3-1"></label>
+                    </div>
+                    <label for="opt-global-3-1" class="checkbox-label" i18n-text="reverseTitleOrder"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="reverseTitleOrder_tip"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- General End -->
+
+        <!-- Posting List Start -->
+        <div class="content-container hidden" id="opt-tab-1">
+            <div class="content">
+
+                <!-- Posting List Control -->
+                <div class="category-title">
+                    <h5 i18n-text="postingListFeatures"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide checkbox-slide-important">
+                        <input type="checkbox" id="opt-job-0-0" data-option-name="JOB_Enabled"
+                               data-option-type="switch">
+                        <label for="opt-job-0-0"></label>
+                    </div>
+                    <label for="opt-job-0-0" class="checkbox-label" i18n-text="enablePostingListOptimization"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="enablePostingListOptimization_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-1" data-option-name="JOB_ContextMenu"
+                               data-option-type="switch">
+                        <label for="opt-job-0-1"></label>
+                    </div>
+                    <label for="opt-job-0-1" class="checkbox-label" i18n-text="enableContextMenu"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="enableContextMenu_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-2" data-option-name="JOB_OpenInNewTab"
+                               data-option-type="switch">
+                        <label for="opt-job-0-2"></label>
+                    </div>
+                    <label for="opt-job-0-2" class="checkbox-label" i18n-text="openPostingsInNewTab"></label>
+                    <a class="option-tip-toggle option-tip-toggle-fixed">?</a>
+                    <div class="option-tip">
+                        <div i18n-html="openPostingsInNewTab_tip"></div>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-3" data-option-name="JOB_FloatPagination"
+                               data-option-type="switch">
+                        <label for="opt-job-0-3"></label>
+                    </div>
+                    <label for="opt-job-0-3" class="checkbox-label" i18n-text="enablePaginationFloating"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="enablePaginationFloating_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-4" data-option-name="JOB_FixTableHeader"
+                               data-option-type="switch">
+                        <label for="opt-job-0-4"></label>
+                    </div>
+                    <label for="opt-job-0-4" class="checkbox-label" i18n-text="fixTableHeaderAtTop"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="fixTableHeaderAtTop_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-5" data-option-name="JOB_EmptyShortlistButton"
+                               data-option-type="switch">
+                        <label for="opt-job-0-5"></label>
+                    </div>
+                    <label for="opt-job-0-5" class="checkbox-label" i18n-text="oneClickEmptyShortlist"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="oneClickEmptyShortlist_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-6" data-option-name="JOB_NewTagSwitch"
+                               data-option-type="switch">
+                        <label for="opt-job-0-6"></label>
+                    </div>
+                    <label for="opt-job-0-6" class="checkbox-label" i18n-text="displayHideShowNewTabButton"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="displayHideShowNewTabButton_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-7" data-option-name="JOB_ShortlistedSwitch"
+                               data-option-type="switch">
+                        <label for="opt-job-0-7"></label>
+                    </div>
+                    <label for="opt-job-0-7" class="checkbox-label"
+                           i18n-text="displayHideShowShortlistedButton"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="displayHideShowShortlistedButton_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-8" data-option-name="JOB_ShortlistExport"
+                               data-option-type="switch">
+                        <label for="opt-job-0-8"></label>
+                    </div>
+                    <label for="opt-job-0-8" class="checkbox-label" i18n-text="addExportShortlistButton"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="addExportShortlistButton_tip"></p>
+                    </div>
+                </div>
+
+                <!-- Posting List Display -->
+                <div class="category-title">
+                    <h5 i18n-text="postingListDisplay"></h5>
+                </div>
+                <div class="option-group radio-group">
+                    <p>
+                        <input type="radio" id="opt-job-2-0" name="JOB_ColumnDisplayType" value="0"
+                               data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
+                        <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine"></label>
+                    </p>
+                    <p>
+                        <input type="radio" id="opt-job-2-1" name="JOB_ColumnDisplayType" value="1"
+                               data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
+                        <label for="opt-job-2-1" i18n-text="chooseColumnsToBeDisplayed"></label>
+                    </p>
+                </div>
+                <div class="option-group checkbox-group indent-40" id="columnsList">
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-0" name="action-buttons"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-0"></label>
+                        </div>
+                        <label for="opt-job-3-0" class="checkbox-label" i18n-text="actionButtons">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-1" name="app-status"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-1"></label>
+                        </div>
+                        <label for="opt-job-3-1" class="checkbox-label" i18n-text="appStatus">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-2" name="id" data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-2"></label>
+                        </div>
+                        <label for="opt-job-3-2" class="checkbox-label" i18n-text="postingID">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square disabled">
+                            <input type="checkbox" id="opt-job-3-3" name="job-title"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item" checked="checked" disabled="disabled">
+                            <label for="opt-job-3-3"></label>
+                        </div>
+                        <label for="opt-job-3-3" class="checkbox-label" i18n-text="jobTitle">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-4" name="organization"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-4"></label>
+                        </div>
+                        <label for="opt-job-3-4" class="checkbox-label" i18n-text="organization">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-5" name="division"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-5"></label>
+                        </div>
+                        <label for="opt-job-3-5" class="checkbox-label" i18n-text="division">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-6" name="openings"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-6"></label>
+                        </div>
+                        <label for="opt-job-3-6" class="checkbox-label" i18n-text="openings">
+                            <small>(Co-op)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-7" name="position-type"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-7"></label>
+                        </div>
+                        <label for="opt-job-3-7" class="checkbox-label" i18n-text="positionType">
+                            <small>(Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-8" name="internal-status"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-8"></label>
+                        </div>
+                        <label for="opt-job-3-8" class="checkbox-label" i18n-text="internalStatus">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-9" name="city" data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-9"></label>
+                        </div>
+                        <label for="opt-job-3-9" class="checkbox-label" i18n-text="city">
+                            <small>(Co-op)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-10" name="location"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-10"></label>
+                        </div>
+                        <label for="opt-job-3-10" class="checkbox-label" i18n-text="location">
+                            <small>(Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-11" name="level" data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-11"></label>
+                        </div>
+                        <label for="opt-job-3-11" class="checkbox-label" i18n-text="level">
+                            <small>(Co-op)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-12" name="applications"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-12"></label>
+                        </div>
+                        <label for="opt-job-3-12" class="checkbox-label" i18n-text="applications">
+                            <small>(Co-op)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-13" name="app-deadline"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-13"></label>
+                        </div>
+                        <label for="opt-job-3-13" class="checkbox-label" i18n-text="appDeadline">
+                            <small>(Co-op, Grad, Alumni)</small>
+                        </label>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-square">
+                            <input type="checkbox" id="opt-job-3-14" name="not-interested"
+                                   data-option-name="JOB_ColumnSelected"
+                                   data-option-type="item">
+                            <label for="opt-job-3-14"></label>
+                        </div>
+                        <label for="opt-job-3-14" class="checkbox-label" i18n-text="notInterestedButton">
+                            <small>(Co-op, Grad)</small>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Posting List End -->
+
+        <!-- Posting Preview Start -->
+        <div class="content-container hidden" id="opt-tab-5">
+            <div class="content">
+
+                <!-- Posting Preview Control -->
+                <div class="category-title">
+                    <h5 i18n-text="postingModalControl"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide checkbox-slide-important">
+                        <input type="checkbox" id="opt-job-4-0" data-option-name="JOB_PopupModal"
+                               data-option-type="switch">
+                        <label for="opt-job-4-0"></label>
+                    </div>
+                    <label for="opt-job-4-0" class="checkbox-label" i18n-text="enablePostingModal"></label>
+                    <a class="option-tip-toggle option-tip-toggle-fixed">?</a>
+                    <div class="option-tip">
+                        <div i18n-html="enablePostingModal_tip"></div>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-4-1" data-option-name="JOB_PopupModalArrowKey"
+                               data-option-type="switch">
+                        <label for="opt-job-4-1"></label>
+                    </div>
+                    <label for="opt-job-4-1" class="checkbox-label" i18n-text="useKeyboardArrowKeysToSwitchPages"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="useKeyboardArrowKeysToSwitchPages_tip"></p>
+                    </div>
+                </div>
+
+                <!-- Posting Preview Display -->
+                <div class="category-title">
+                    <h5 i18n-text="postingModalDisplay"></h5>
+                </div>
+                <div class="option-tip" i18n-html="postingModalDisplay_tip"></div>
+                <div class="option-group checkbox-group" id="popupModalList"></div>
+                <a href="javascript:void(0);" class="btn btn-default" id="restore-popup-modal-rows"
+                   i18n-text="resetToDefault"></a>
+                <p class="hidden" id="restore-popup-modal-rows-confirm-text" i18n-text="resetConfirmMessage"></p>
+
+            </div>
+        </div>
+        <!-- Posting Preview End -->
+
+        <!-- Posting Detail Start -->
+        <div class="content-container hidden" id="opt-tab-4">
+            <div class="content">
+
+                <!-- Posting Detail Control -->
+                <div class="category-title">
+                    <h5 i18n-text="postingDetailFeatures"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-1-0" data-option-name="JOB_FloatDetailPageButton"
+                               data-option-type="switch">
+                        <label for="opt-job-1-0"></label>
+                    </div>
+                    <label for="opt-job-1-0" class="checkbox-label"
+                           i18n-text="floatControlButtonsOnPostingDetailPage"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="floatControlButtonsOnPostingDetailPage_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-1-1" data-option-name="JOB_FloatDetailPageInfo"
+                               data-option-type="switch">
+                        <label for="opt-job-1-1"></label>
+                    </div>
+                    <label for="opt-job-1-1" class="checkbox-label"
+                           i18n-text="addFloatingInfoToTheRightSideOfThePage"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="addFloatingInfoToTheRightSideOfThePage_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-1-2" data-option-name="JOB_DetailPageFontSize"
+                               data-option-type="switch">
+                        <label for="opt-job-1-2"></label>
+                    </div>
+                    <label for="opt-job-1-2" class="checkbox-label"
+                           i18n-text="addButtonsToAdjustDetailPageFontSize"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="addButtonsToAdjustDetailPageFontSize_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-1-3" data-option-name="JOB_GlassdoorRanking"
+                               data-option-type="switch">
+                        <label for="opt-job-1-3"></label>
+                    </div>
+                    <label for="opt-job-1-3" class="checkbox-label" i18n-text="showGlassdoorCompanyRanking"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="showGlassdoorCompanyRanking_tip"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Posting Detail End -->
+
+        <!-- My Messages Start -->
+        <div class="content-container hidden" id="opt-tab-2">
+            <div class="content">
+
+                <!-- My Messages -->
+                <div class="category-title">
+                    <h5 i18n-text="myMessagesFeatures"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide checkbox-slide-important">
+                        <input type="checkbox" id="opt-msg-0-0" data-option-name="MSG_Enabled"
+                               data-option-type="switch">
+                        <label for="opt-msg-0-0"></label>
+                    </div>
+                    <label for="opt-msg-0-0" class="checkbox-label"
+                           i18n-text="enableMyMessagesListOptimization"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="enableMyMessagesListOptimization_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-msg-0-1" data-option-name="MSG_OpenInNewTab"
+                               data-option-type="switch">
+                        <label for="opt-msg-0-1"></label>
+                    </div>
+                    <label for="opt-msg-0-1" class="checkbox-label" i18n-text="openMessagesInNewTab"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="openMessagesInNewTab_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-msg-0-2" data-option-name="MSG_FixTableHeader"
+                               data-option-type="switch">
+                        <label for="opt-msg-0-2"></label>
+                    </div>
+                    <label for="opt-msg-0-2" class="checkbox-label" i18n-text="fixMsgTableHeader"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="fixMsgTableHeader_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-msg-0-3" data-option-name="MSG_BetterColumn"
+                               data-option-type="switch">
+                        <label for="opt-msg-0-3"></label>
+                    </div>
+                    <label for="opt-msg-0-3" class="checkbox-label" i18n-text="betterMsgColumn"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="betterMsgColumn_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-msg-0-4" data-option-name="MSG_ShowCategory"
+                               data-option-type="switch">
+                        <label for="opt-msg-0-4"></label>
+                    </div>
+                    <label for="opt-msg-0-4" class="checkbox-label" i18n-text="showMsgCategory"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="showMsgCategory_tip"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- My Messages End -->
+
+        <!-- About Start -->
+        <div class="content-container hidden" id="opt-tab-3">
+            <div class="content">
+
+                <!-- About -->
+                <h2 i18n-text="waterlooWorksAzure"></h2>
+                <p i18n-text="version"> <span id="azure-version"></span></p>
+                <p i18n-text="copyright"></p>
+                <div>
+                    <a class="btn btn-primary" href="https://www.zijianshao.com/wwazure/" target="_blank" i18n-text="officialWebsite"></a>
+                    <a class="btn btn-default hidden" href="https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm" target="_blank" i18n-text="chromeWebStore"></a>
+                    <a class="btn btn-default" href="https://waterlooworks.uwaterloo.ca/" target="_blank" i18n-text="waterlooWorks"></a>
+                </div>
+
+                <!-- Welcome -->
+                <div class="category-title">
+                    <h5 i18n-text="welcome"></h5>
+                </div>
+                <div i18n-html="welcomeIntro"></div>
+
+                <!-- Notes -->
+                <div class="category-title">
+                    <h5 i18n-text="notes"></h5>
+                </div>
+                <div i18n-html="notes_intro"></div>
+
+                <!-- Disclaimers -->
+                <div class="category-title">
+                    <h5 i18n-text="disclaimers"></h5>
+                </div>
+                <div i18n-html="disclaimers_intro"></div>
+
+            </div>
+
+        </div>
+        <!-- About End -->
+
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="copyright" i18n-text="copyright"></div>
+<!-- Footer End -->
+
+<!-- Toast Start -->
+<div class="azure-toast azure-toast-hidden" id="azure-toast" i18n-text="optionsSaved"></div>
+<!-- Toast End -->
+
+<script type="text/javascript" src="../js/plugins/jquery.js"></script>
+<script type="text/javascript" src="../js/plugins/localization.js"></script>
+<script type="text/javascript" src="../js/configs.js"></script>
+<script type="text/javascript" src="../js/themes.js"></script>
+<script type="text/javascript" src="../js/options.js"></script>
+
+</body>
+</html>

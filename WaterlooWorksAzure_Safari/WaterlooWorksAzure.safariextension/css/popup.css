@@ -1,0 +1,271 @@
+/* vietnamese */
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v11/tg9tUAlnncaBSUvJ5NYofRTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v11/uw51sWa2VJFEFkdnqqMZ1RTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v11/zscZFkjVRGyfQ_Pw-5exXPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* vietnamese */
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Muli ExtraBold'), local('Muli-ExtraBold'), url(https://fonts.gstatic.com/s/muli/v11/sXVMsGb1R-rKHNHC_Llzn1KPGs1ZzpMvnHX-7fPOuAc.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Muli ExtraBold'), local('Muli-ExtraBold'), url(https://fonts.gstatic.com/s/muli/v11/wJCYmI6KNzp9TOXfoH1-qlKPGs1ZzpMvnHX-7fPOuAc.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Muli ExtraBold'), local('Muli-ExtraBold'), url(https://fonts.gstatic.com/s/muli/v11/x7nsHGw3Bs4oEwGEBXiu6QLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
+    font-family: 'Muli', sans-serif !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    width: 200px;
+    overflow: hidden;
+}
+
+div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.azure-icon {
+    width: 64px;
+    height: 64px;
+    margin: 15px auto 0;
+    background: url('../icon-128.png') no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+.title {
+    margin: 10px auto 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+}
+
+.subtitle {
+    margin: 5px auto 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+.azure-option-container {
+    margin: 15px 0 0;
+    padding: 0;
+    background: #eee;
+}
+
+.azure-option-group {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.azure-option-hr {
+    height: 1px;
+    border: none;
+    border-top: 1px dashed #ccc;
+    background: none;
+    margin: 0;
+}
+
+.azure-option-group p.azure-option-label {
+    float: left;
+    margin: 14px auto 11px 20px;
+    font-size: 12px;
+    color: #333;
+}
+
+.azure-option-group p.azure-option-link {
+    display: block;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    font-size: 12px;
+    color: #333;
+    padding-left: 20px;
+    line-height: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.azure-option-group p.azure-option-link:hover,
+.azure-option-group p.azure-option-link:active,
+.azure-option-group p.azure-option-link:visited {
+    background: #ddd;
+    color: #000;
+}
+
+.azure-option-slide {
+    float: right;
+    width: 50px;
+    height: 24px;
+    margin: 10px 20px 0;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+.azure-option-slide:after {
+    content: "";
+    float: right;
+    position: absolute;
+    background: #ccc;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    -webkit-border-radius: 0 50px 50px 0;
+    -moz-border-radius: 0 50px 50px 0;
+    border-radius: 0 50px 50px 0;
+}
+
+.azure-option-slide:before {
+    content: "";
+    float: right;
+    position: absolute;
+    background: #5bb75b;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    -webkit-border-radius: 50px 0 0 50px;
+    -moz-border-radius: 50px 0 0 50px;
+    border-radius: 50px 0 0 50px;
+}
+
+.azure-option-slide label {
+    display: block;
+    width: 35px;
+    height: 22px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(220, 220, 220, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(220, 220, 220, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(220, 220, 220, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);
+    border-radius: 50px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.azure-option-slide input[type=checkbox] {
+    visibility: hidden;
+}
+
+.azure-option-slide input[type=checkbox]:checked + label {
+    left: 13px;
+}
+
+.copyright {
+    margin-top: 30px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.azure-toast {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(91, 183, 91, 0.9);
+    -webkit-box-shadow: 0 0 10px rgba(91, 183, 91, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(91, 183, 91, 0.5);
+    box-shadow: 0 0 10px rgba(91, 183, 91, 0.5);
+    z-index: 100;
+
+    -webkit-transition: top 0.2s linear;
+    -moz-transition: top 0.2s linear;
+    -ms-transition: top 0.2s linear;
+    -o-transition: top 0.2s linear;
+    transition: top 0.2s linear;
+}
+
+.azure-toast-hidden {
+    top: -70px;
+}

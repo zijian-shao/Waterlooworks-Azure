@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Zijian Shao</string>
+	<key>Builder Version</key>
+	<string>13605.1.33.1.2</string>
+	<key>CFBundleDisplayName</key>
+	<string>WWAzure - Optimization extension for WaterlooWorks</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.zijianshao.waterlooworksazure</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.2</string>
+	<key>CFBundleVersion</key>
+	<string>1.1.2</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Database Quota</key>
+		<integer>5242880</integer>
+		<key>Global Page</key>
+		<string>html/background.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>html/popup.html</string>
+				<key>Height</key>
+				<integer>277</integer>
+				<key>Identifier</key>
+				<string>WWA_popup</string>
+				<key>Width</key>
+				<integer>200</integer>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>WaterlooWorks Azure</string>
+				<key>Image</key>
+				<string>icon/toolbar.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>WWA_toolbar</string>
+				<key>Popover</key>
+				<string>WWA_popup</string>
+				<key>Tool Tip</key>
+				<string>WaterlooWorks</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>js/init_idle.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string>js/plugins/jquery.js</string>
+				<string>js/configs.js</string>
+				<string>js/themes.js</string>
+				<string>js/init.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Azure is the best extension to enhance your experience with WaterlooWorks.</string>
+	<key>DeveloperIdentifier</key>
+	<string>999RL74SQ7</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Allowed Domains</key>
+			<array>
+				<string>waterlooworks.uwaterloo.ca</string>
+			</array>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>Some</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://www.zijianshao.com/wwazure/updates/?request=safariplist</string>
+	<key>Website</key>
+	<string>https://www.zijianshao.com/wwazure/</string>
+</dict>
+</plist>

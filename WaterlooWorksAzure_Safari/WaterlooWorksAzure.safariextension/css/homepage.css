@@ -1,0 +1,28 @@
+table {
+    margin: auto;
+    width: auto;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+table * {
+    font-size: 14px;
+}
+
+table .close-notice {
+    float: right;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+table .close-notice:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+table .close-notice i {
+    font-size: 20px;
+}
