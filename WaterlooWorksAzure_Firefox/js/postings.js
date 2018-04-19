@@ -20,6 +20,31 @@ function rankStarHTML(score) {
     return html;
 }
 
+function addKeyWordReminder(tagArr) {
+
+    if (!tagArr.length) return;
+
+    // remove duplicated tags
+    var uniqueTags = [];
+    // jquery $.inArray broken in Firefox
+    for (var i = 0, len = tagArr.length; i < len; i++) {
+        if ((i == tagArr.indexOf(tagArr[i])) || (tagArr.indexOf(tagArr[i]) == tagArr.lastIndexOf(tagArr[i])))
+            uniqueTags.push(tagArr[i]);
+    }
+
+    var panelBody = $('<div class="panel-body"></div>')
+    $.each(uniqueTags, function (i, v) {
+        panelBody.append($('<span class="label label-warning">' + v + '</span>'));
+    });
+
+    var panel = $('<div class="panel panel-default azure-posting-keyword-panel"></div>');
+    panel.append($('<div class="panel-heading"><small class="tip pull-right">Configure it in Extension Options</small><strong>HIGHLIGHTED KEYWORDS</strong></div>'));
+    panel.append(panelBody);
+
+    var columnSpan = $('.orbisTabContainer .tabbable .tab-content .row-fluid .span4');
+    columnSpan.find('.panel:last-child').after(panel);
+}
+
 function addPostingFloatInfo() {
 
     function testPostingFloatInfo() {
@@ -49,7 +74,7 @@ function addPostingFloatInfo() {
     var panel = $('<div class="panel panel-default azure-posting-info-panel"></div>');
     panel.append($('<div class="panel-heading"><strong>POSTING INFO</strong></div>'));
     panel.append($('<div class="panel-body">' + title.html() + '</div>'));
-    columnSpan.find('.panel:last-child').before(panel);
+    columnSpan.find('.panel:first-child').before(panel);
 
     // column
     var columnSpanFloat = columnSpan.clone();
@@ -120,6 +145,8 @@ function showCompanyRank(data) {
         }
 
     } else {
+
+        // result does not exist
         rank = $('<span class="azure-company-ranking azure-company-ranking-empty"><a href="https://www.glassdoor.com" target="_blank"><i class="icon-share-alt"></i> Visit Glassdoor</a></span>');
     }
 
@@ -671,7 +698,7 @@ function postingListAjax(table, placeholder) {
         if (options.JOB_OpenInNewTab) {
 
             // firefox only
-            jobTitleLink.removeAttr('onclick').off('click').attr('href',location.href + '#' + encodeURI(currentTab));
+            jobTitleLink.removeAttr('onclick').off('click').attr('href', location.href + '#' + encodeURI(currentTab));
 
             jobTitleLink.on('click', function (e) {
                 e.preventDefault();
@@ -957,6 +984,35 @@ function postingDetail() {
             actions.children('div').append(backBtn);
 
             $('body').append(actions);
+        }
+    }
+
+    // Hightlight Keywords
+    if (options.JOB_DetailPageHighlight) {
+        var hlKws = options.JOB_DetailPageHighlightKeywords;
+        if (Array.isArray(hlKws) && hlKws.length) {
+            var regStr = '';
+            hlKws.forEach(function (val) {
+                regStr += '(\\b' + val + '\\b)|';
+            });
+            regStr = regStr.slice(0, -1);
+            regStr = '(' + regStr + ')';
+            var hlRegex = new RegExp(regStr, 'ig');
+            var matchedArr = [];
+
+            $('#postingDiv').find('td').each(function () {
+
+                var matched = $(this).html().match(hlRegex);
+                if (matched) {
+                    $(this).html(
+                        $(this).html().replace(hlRegex, '<span class="azure-keyword-highlight">$1</span>')
+                    );
+                    matchedArr.push(matched[0]);
+                }
+
+            });
+
+            addKeyWordReminder(matchedArr);
         }
     }
 

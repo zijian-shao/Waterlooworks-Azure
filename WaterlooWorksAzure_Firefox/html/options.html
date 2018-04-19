@@ -17,6 +17,33 @@
         <div class="header">
             <h1 i18n-text="waterlooWorksAzure"></h1>
             <h3 i18n-text="extensionOptions"></h3>
+
+            <!-- Share Box -->
+            <div class="share-box">
+                <div class="share-tag">Share</div>
+                <!-- Facebook Share -->
+                <a data-open-in="popup" data-width="560"
+                   data-href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dchrome&display=popup&ref=plugin&src=share_button"
+                   target="_blank" class="share-link share-link-facebook"></a>
+
+                <!-- Twitter Share -->
+                <a data-open-in="popup" data-width="500"
+                   data-href="https://twitter.com/intent/tweet?hashtags=UWaterloo&original_referer=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2F&ref_src=twsrc%5Etfw&text=WaterlooWorks%20Azure%20-%20The%20best%20browser%20extension%20to%20enhance%20experience%20with%20WaterlooWorks&tw_p=tweetbutton&url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dchrome"
+                   target="_blank" class="share-link share-link-twitter"></a>
+
+                <!-- Reddit Share -->
+                <a data-open-in="newtab"
+                   data-href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dchrome&title=WaterlooWorks+Azure+-+The+best+browser+extension+to+enhance+experience+with+WaterlooWorks"
+                   target="_blank" class="share-link share-link-reddit"></a>
+
+                <!-- Google Plus Share -->
+                <a data-open-in="popup" data-width="380"
+                   data-href="https://plus.google.com/share?url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dchrome"
+                   target="_blank" class="share-link share-link-googleplus"></a>
+
+                <!-- Copy Link -->
+                <a data-open-in="copy" class="share-link share-link-copy"></a>
+            </div>
         </div>
         <!-- Header End -->
 
@@ -539,7 +566,8 @@
                                data-option-type="switch">
                         <label for="opt-job-4-1"></label>
                     </div>
-                    <label for="opt-job-4-1" class="checkbox-label" i18n-text="useKeyboardArrowKeysToSwitchPages"></label>
+                    <label for="opt-job-4-1" class="checkbox-label"
+                           i18n-text="useKeyboardArrowKeysToSwitchPages"></label>
                     <a class="option-tip-toggle">?</a>
                     <div class="option-tip hidden">
                         <p i18n-text="useKeyboardArrowKeysToSwitchPages_tip"></p>
@@ -620,6 +648,38 @@
                     </div>
                 </div>
 
+                <!-- Keywords Highlight -->
+                <div class="category-title">
+                    <h5 i18n-text="keywordsHighlight"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-5-0" data-option-name="JOB_DetailPageHighlight"
+                               data-option-type="switch">
+                        <label for="opt-job-5-0"></label>
+                    </div>
+                    <label for="opt-job-5-0" class="checkbox-label"
+                           i18n-text="enableKeywordsHighlight"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="enableKeywordsHighlight_tip"></p>
+                    </div>
+                </div>
+                <hr>
+                <p i18n-text="keywordsToBeHighlighted"></p>
+                <table class="table table-nopadding input-group-highlight width-100">
+                    <tr>
+                        <td>
+                            <input type="text" minlength="1" maxlength="30" size="30"
+                                   class="input-box block width-100" id="add-highlight-keyword-input">
+                        </td>
+                        <td>
+                            <a class="btn btn-primary block" id="add-highlight-keyword-btn" i18n-text="add"></a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="option-group item-tag-group" id="highlightKeywordList"></div>
+                <div class="option-tip" i18n-html="keywordsToBeHighlighted_tip"></div>
             </div>
         </div>
         <!-- Posting Detail End -->
@@ -704,12 +764,16 @@
 
                 <!-- About -->
                 <h2 i18n-text="waterlooWorksAzure"></h2>
-                <p i18n-text="version"> <span id="azure-version"></span></p>
+                <p i18n-text="version"><span id="azure-version"></span></p>
                 <p i18n-text="copyright"></p>
                 <div>
-                    <a class="btn btn-primary" href="https://www.zijianshao.com/wwazure/" target="_blank" i18n-text="officialWebsite"></a>
-                    <a class="btn btn-default" href="https://addons.mozilla.org/firefox/addon/waterlooworks-azure/" target="_blank" i18n-text="chromeWebStore"></a>
-                    <a class="btn btn-default" href="https://waterlooworks.uwaterloo.ca/" target="_blank" i18n-text="waterlooWorks"></a>
+                    <a class="btn btn-primary" href="https://www.zijianshao.com/wwazure/" target="_blank"
+                       i18n-text="officialWebsite"></a>
+                    <a class="btn btn-success" href="https://www.paypal.me/zjshao" target="_blank"
+                       i18n-text="contribute"></a>
+                    <a class="btn btn-default"
+                       href="https://addons.mozilla.org/firefox/addon/waterlooworks-azure/"
+                       target="_blank" i18n-text="chromeWebStore"></a>
                 </div>
 
                 <!-- Welcome -->

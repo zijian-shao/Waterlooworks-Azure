@@ -5,6 +5,9 @@
   "actionButtons": {
     "message": "操作按鈕"
   },
+  "add": {
+    "message": "添加"
+  },
   "addBackToTopButtonOnEachPage": {
     "message": "添加“返回頂部”按鈕到所有頁面"
   },
@@ -65,6 +68,9 @@
   "classicCarbonTheme": {
     "message": "經典炭黑色主題"
   },
+  "contribute": {
+    "message": "捐助作者"
+  },
   "copyright": {
     "message": "Created by Zijian Shao"
   },
@@ -75,7 +81,7 @@
     "message": "免責聲明"
   },
   "disclaimers_intro": {
-    "message": "<p>- 此擴展並非由WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>- 由於使用此擴展所造成的一切後果由用戶自行承擔</p> "
+    "message": "<p>▷ 此擴展並非由WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>▷ 由於使用此擴展所造成的一切後果由用戶自行承擔</p> "
   },
   "displayHideShowNewTabButton": {
     "message": "啟用“隱藏/顯示NEW標籤”按鈕"
@@ -109,6 +115,12 @@
   },
   "enableJobIntroPreview_tip": {
     "message": "啟用該選項後，點擊行中的任意位置，即可在當前頁面預覽工作詳情，無需跳轉。"
+  },
+  "enableKeywordsHighlight": {
+    "message": "啟用關鍵詞高亮功能"
+  },
+  "enableKeywordsHighlight_tip": {
+    "message": "啟用該選項後，位於職位詳情頁面內的自定義關鍵詞將會被高亮顯示，以避免錯過關鍵內容。"
   },
   "enableMyMessagesListOptimization": {
     "message": "啟用“我的短消息”列表優化"
@@ -194,6 +206,15 @@
   "jobTitle": {
     "message": "職位名稱"
   },
+  "keywordsHighlight": {
+    "message": "關鍵詞高亮"
+  },
+  "keywordsToBeHighlighted": {
+    "message": "▷ 添加/刪除高亮關鍵詞"
+  },
+  "keywordsToBeHighlighted_tip": {
+    "message": "<p>▷ 上方的關鍵詞將會在只為詳情頁面內進行高亮顯示</p><p>▷ 使用輸入框添加或點擊X號移除關鍵詞</p>< p>▷ 關鍵詞不區分大小寫，且不建議包含符號</p><p>▷ 處於性能考慮，請將關鍵詞的數量控制在10個以下</p>"
+  },
   "level": {
     "message": "級別"
   },
@@ -212,6 +233,9 @@
   "myMessages": {
     "message": "我的短消息"
   },
+  "myMessagesFeatures": {
+    "message": "我的短消息功能"
+  },
   "needRefreshToApply": {
     "message": "設置已保存，請刷新相關頁面以應用更改"
   },
@@ -222,7 +246,7 @@
     "message": "相關說明"
   },
   "notes_intro": {
-    "message": "<p>- 建議不要與其他WaterlooWorks 插件同時啟用</p><p>- WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>- 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
+    "message": "<p>▷ 建議不要與其他WaterlooWorks 插件同時啟用</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
   },
   "officialWebsite": {
     "message": "官方網站"
@@ -318,7 +342,7 @@
     "message": "展示 Glassdoor 平台上的公司評分"
   },
   "showGlassdoorCompanyRanking_tip": {
-    "message": "如果信息可用，此擴展會使用 AJAX 技術從 Glassdoor 平台獲取公司評分的相關內容。"
+    "message": "擴展會使用 Ajax 技術從 Glassdoor 平台獲取公司評分的相關內容。由於 Glassdoor 暫停了公開 API 的申請，所以無法直接從其服務器獲取。作為替代方案，此擴展會從作者服務器請求相關信息，請求的內容僅包含公司名稱。服務器會搜索 Glassdoor 並返回所請求的信息。若不需要該功能，請將其關閉。"
   },
   "showGlassdoorQuickSearchLink": {
     "message": "顯示 Glassdoor 快捷搜索鏈接"
@@ -348,7 +372,7 @@
     "message": "啟用該選項後，網站引導頁將會替換為全新設計的Azure引導頁。網站維護通知等內容也會在新頁面顯示，不必擔心錯過重要通知。"
   },
   "version": {
-    "message": "版本"
+    "message": "版本 V"
   },
   "waterlooWorks": {
     "message": "WaterlooWorks"

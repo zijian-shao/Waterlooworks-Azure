@@ -8,6 +8,7 @@ function getOptionVersion() {
 function getOptionListDefault() {
 
     var obj = {
+        'EXT_Version': '0.0.0',
         'OPT_Version': 0,
         'JOB_Enabled': true,
         'JOB_ContextMenu': true,
@@ -25,6 +26,8 @@ function getOptionListDefault() {
         'JOB_FloatDetailPageButton': true,
         'JOB_FloatDetailPageInfo': true,
         'JOB_DetailPageFontSize': true,
+        'JOB_DetailPageHighlight': true,
+        'JOB_DetailPageHighlightKeywords': ['G2', 'driver\'s license'],
         'JOB_PopupModal': true,
         'JOB_PopupModalArrowKey': true,
         'JOB_PopupModalRows': {

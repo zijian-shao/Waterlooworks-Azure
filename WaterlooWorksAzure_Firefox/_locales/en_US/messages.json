@@ -5,6 +5,9 @@
   "actionButtons": {
     "message": "Action Buttons"
   },
+  "add": {
+    "message": "Add"
+  },
   "addBackToTopButtonOnEachPage": {
     "message": "Add \"Back to top\" button on each page"
   },
@@ -65,6 +68,9 @@
   "classicCarbonTheme": {
     "message": "Classic Carbon"
   },
+  "contribute": {
+    "message": "Donate"
+  },
   "copyright": {
     "message": "Created by Zijian Shao"
   },
@@ -109,6 +115,12 @@
   },
   "enableJobIntroPreview_tip": {
     "message": "Click anywhere on a row to preview job in pop-up in current tab without reloading page."
+  },
+  "enableKeywordsHighlight": {
+    "message": "Enable keywords highlight"
+  },
+  "enableKeywordsHighlight_tip": {
+    "message": "This feature highlights specific keywords when you are on the posting details page. You can turn on / off it using the switch here."
   },
   "enableMyMessagesListOptimization": {
     "message": "Enable \"My Messages\" list optimization"
@@ -193,6 +205,15 @@
   },
   "jobTitle": {
     "message": "Job Title"
+  },
+  "keywordsHighlight": {
+    "message": "Keywords Highlight"
+  },
+  "keywordsToBeHighlighted": {
+    "message": "▷ Keywords to be highlighted"
+  },
+  "keywordsToBeHighlighted_tip": {
+    "message": "<p>▷ The above keywords will be highlighted on posting details page.</p><p>▷ Use the input box to add a keyword and click the remove icon next to a keyword to remove it.</p><p>▷ Keywords are case insensitive. Symbols are not recommended.</p><p>▷ For performance considerations, please keep the total number of keywords below 10.</p>"
   },
   "level": {
     "message": "Level"
@@ -321,7 +342,7 @@
     "message": "Show Glassdoor company ranking"
   },
   "showGlassdoorCompanyRanking_tip": {
-    "message": "If available, the extension uses AJAX to request company ranking information from Glassdoor."
+    "message": "The extension uses Ajax to request company ranking information from Glassdoor. Since Glassdoor closed the public API sign up, so it's not possible to request directly from their server. As an alternative approach, this extension requests information from the author's server. Company name is the only data being sent. The server will try to search Glassdoor and send data back to the client. If you don't want this function, please turn the switch off."
   },
   "showGlassdoorQuickSearchLink": {
     "message": "Show Glassdoor quick search link"
@@ -351,7 +372,7 @@
     "message": "Replace the default dark welccome page with the new designed azure version. Important messages such as scheduled maintenance will also be added to the new page."
   },
   "version": {
-    "message": "Version"
+    "message": "Version "
   },
   "waterlooWorks": {
     "message": "WaterlooWorks"

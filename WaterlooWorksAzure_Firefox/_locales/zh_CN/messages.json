@@ -5,6 +5,9 @@
   "actionButtons": {
     "message": "操作按钮"
   },
+  "add": {
+    "message": "添加"
+  },
   "addBackToTopButtonOnEachPage": {
     "message": "添加“返回顶部”按钮到所有页面"
   },
@@ -65,6 +68,9 @@
   "classicCarbonTheme": {
     "message": "经典炭黑色主题"
   },
+  "contribute": {
+    "message": "捐助作者"
+  },
   "copyright": {
     "message": "Created by Zijian Shao"
   },
@@ -109,6 +115,12 @@
   },
   "enableJobIntroPreview_tip": {
     "message": "启用该选项后，点击行中的任意位置，即可在当前页面预览工作详情，无需跳转。"
+  },
+  "enableKeywordsHighlight": {
+    "message": "启用关键词高亮功能"
+  },
+  "enableKeywordsHighlight_tip": {
+    "message": "启用该选项后，位于职位详情页面内的自定义关键词将会被高亮显示，以避免错过关键内容。"
   },
   "enableMyMessagesListOptimization": {
     "message": "启用“我的短消息”列表优化"
@@ -194,6 +206,15 @@
   "jobTitle": {
     "message": "职位名称"
   },
+  "keywordsHighlight": {
+    "message": "关键词高亮"
+  },
+  "keywordsToBeHighlighted": {
+    "message": "▷ 添加/删除高亮关键词"
+  },
+  "keywordsToBeHighlighted_tip": {
+    "message": "<p>▷ 上方的关键词将会在只为详情页面内进行高亮显示</p><p>▷ 使用输入框添加或点击X号移除关键词</p><p>▷ 关键词不区分大小写，且不建议包含符号</p><p>▷ 处于性能考虑，请将关键词的数量控制在10个以下</p>"
+  },
   "level": {
     "message": "级别"
   },
@@ -211,6 +232,9 @@
   },
   "myMessages": {
     "message": "我的短消息"
+  },
+  "myMessagesFeatures": {
+    "message": "我的短消息功能"
   },
   "needRefreshToApply": {
     "message": "设置已保存，请刷新相关页面以应用更改"
@@ -318,7 +342,7 @@
     "message": "展示 Glassdoor 平台上的公司评分"
   },
   "showGlassdoorCompanyRanking_tip": {
-    "message": "如果信息可用，此扩展会使用 AJAX 技术从 Glassdoor 平台获取公司评分的相关内容。"
+    "message": "此扩展会使用 Ajax 技术从 Glassdoor 平台获取公司评分的相关内容。由于 Glassdoor 暂停了公开 API 的申请，所以无法直接从其服务器获取。作为替代方案，此扩展会从作者服务器请求相关信息，请求的内容仅包含公司名称。服务器会搜索 Glassdoor 并返回所请求的信息。若不需要该功能，请将其关闭。"
   },
   "showGlassdoorQuickSearchLink": {
     "message": "显示 Glassdoor 快捷搜索链接"
@@ -348,7 +372,7 @@
     "message": "启用该选项后，网站引导页将会替换为全新设计的Azure引导页。网站维护通知等内容也会在新页面显示，不必担心错过重要通知。"
   },
   "version": {
-    "message": "版本"
+    "message": "版本 V"
   },
   "waterlooWorks": {
     "message": "WaterlooWorks"

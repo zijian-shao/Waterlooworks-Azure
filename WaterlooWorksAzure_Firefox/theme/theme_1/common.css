@@ -958,6 +958,14 @@ img {
     background: #323841 !important;
 }
 
+/*posting details*/
+.azure-keyword-highlight {
+    border: 1px solid #0c8e94;
+    background : #0c8e94;
+    font-weight:bold;
+    padding: 0 2px;
+}
+
 /* popup modal */
 .modal {
     overflow: hidden;
