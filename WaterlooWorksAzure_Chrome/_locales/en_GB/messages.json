@@ -81,7 +81,7 @@
     "message": "Disclaimers"
   },
   "disclaimers_intro": {
-    "message": "<p>▷ This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo.</p><p>▷ Use this extension at your own responsibility</p>"
+    "message": "<p>▷ This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo</p><p>▷ Use this extension at your own responsibility</p>"
   },
   "displayHideShowNewTabButton": {
     "message": "Display \"Hide/Show NEW tag\" button"
@@ -390,6 +390,6 @@
     "message": "Welcome"
   },
   "welcomeIntro": {
-    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly recruitment platform. It offers multiple refreshing themes and adds a variety of new helpful features to the original website.</p><p>If you like this extension, please <a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">rate and leave a comment</a> in Chrome Web Store.</p>"
+    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform. It offers multiple new themes and adds a variety of new helpful features to the original website.</p><p>If you like this extension, please <a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">rate and leave a comment</a> in Chrome Web Store.</p>"
   }
 }

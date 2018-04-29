@@ -369,7 +369,7 @@ function initOptions() {
         restoreOptions();
 
         // version #
-        $('#azure-version').text(chrome.app.getDetails().version);
+        $('#azure-version').text(chrome.runtime.getManifest().version);
 
         // clipboard input
         var clipBoardInput = $('<div class="width-0"><input type="text" id="clipboard-input"></div>');
