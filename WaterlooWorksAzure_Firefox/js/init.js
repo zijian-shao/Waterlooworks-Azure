@@ -57,7 +57,7 @@ function initAzure() {
         // add cover
         addCover(themeConfigs.overlayColor);
 
-        // test if not logged in
+        // if not logged in
         testRedirect();
     }
 

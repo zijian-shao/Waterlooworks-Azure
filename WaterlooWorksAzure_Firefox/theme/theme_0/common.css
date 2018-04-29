@@ -17,9 +17,9 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 }
 
 .orbisTabContainer .tab-content, .box {
-    -webkit-box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;
-    -moz-box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;
-    box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;
+    /*-webkit-box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;*/
+    /*-moz-box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;*/
+    /*box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;*/
 }
 
 /* Header */

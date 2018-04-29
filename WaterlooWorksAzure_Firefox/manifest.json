@@ -52,6 +52,7 @@
   },
   "permissions": [
     "activeTab",
+    "contextMenus",
     "storage",
     "unlimitedStorage",
     "*://waterlooworks.uwaterloo.ca/*"
