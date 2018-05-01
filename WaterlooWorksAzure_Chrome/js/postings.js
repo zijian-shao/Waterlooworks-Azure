@@ -72,7 +72,7 @@ function addPostingFloatInfo() {
     var panel = $('<div class="panel panel-default azure-posting-info-panel"></div>');
     panel.append($('<div class="panel-heading"><strong>POSTING INFO</strong></div>'));
     panel.append($('<div class="panel-body">' + title.html() + '</div>'));
-    columnSpan.find('.panel:first-child').before(panel);
+    columnSpan.find('.panel:first-child').first().before(panel);
 
     // column
     var columnSpanFloat = columnSpan.clone();
