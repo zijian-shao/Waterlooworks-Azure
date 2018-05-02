@@ -338,6 +338,9 @@
   "selectTheme": {
     "message": "Select Theme"
   },
+  "share": {
+    "message": "Share"
+  },
   "showGlassdoorCompanyRanking": {
     "message": "Show Glassdoor company ranking"
   },

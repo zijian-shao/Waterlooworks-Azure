@@ -338,6 +338,9 @@
   "selectTheme": {
     "message": "主题选择"
   },
+  "share": {
+    "message": "分享"
+  },
   "showGlassdoorCompanyRanking": {
     "message": "展示 Glassdoor 平台上的公司评分"
   },
