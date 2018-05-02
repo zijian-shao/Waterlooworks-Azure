@@ -20,7 +20,7 @@
 
             <!-- Share Box -->
             <div class="share-box">
-                <div class="share-tag">Share</div>
+                <div class="share-tag" i18n-text="share"></div>
                 <!-- Facebook Share -->
                 <a data-open-in="popup" data-width="560"
                    data-href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dchrome&display=popup&ref=plugin&src=share_button"
@@ -123,33 +123,7 @@
                 <div class="category-title">
                     <h5 i18n-text="selectTheme"></h5>
                 </div>
-                <div class="option-group radio-group">
-                    <p>
-                        <input type="radio" id="opt-global-2-0" name="GLB_ThemeID" value="0"
-                               data-option-name="GLB_ThemeID" data-option-type="enum">
-                        <label for="opt-global-2-0" i18n-text="brightAzureTheme"></label>
-                    </p>
-                    <p>
-                        <input type="radio" id="opt-global-2-1" name="GLB_ThemeID" value="1"
-                               data-option-name="GLB_ThemeID" data-option-type="enum">
-                        <label for="opt-global-2-1" i18n-text="darkTurquoiseTheme"></label>
-                    </p>
-                    <p>
-                        <input type="radio" id="opt-global-2-2" name="GLB_ThemeID" value="2"
-                               data-option-name="GLB_ThemeID" data-option-type="enum">
-                        <label for="opt-global-2-2" i18n-text="freshCitrusTheme"></label>
-                    </p>
-                    <p>
-                        <input type="radio" id="opt-global-2-3" name="GLB_ThemeID" value="3"
-                               data-option-name="GLB_ThemeID" data-option-type="enum">
-                        <label for="opt-global-2-3" i18n-text="elegantVioletTheme"></label>
-                    </p>
-                    <p>
-                        <input type="radio" id="opt-global-2-99" name="GLB_ThemeID" value="99"
-                               data-option-name="GLB_ThemeID" data-option-type="enum">
-                        <label for="opt-global-2-99" i18n-text="classicCarbonTheme"></label>
-                    </p>
-                </div>
+                <div class="option-group radio-group" id="theme-list"></div>
 
                 <!-- Select Font -->
                 <div class="category-title">

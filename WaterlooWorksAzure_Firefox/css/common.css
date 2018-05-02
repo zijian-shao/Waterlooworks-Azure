@@ -589,8 +589,12 @@ table.table-header-fixed {
     border: none;
 }
 
+.nav-tabs.nav-stacked > li:first-child a {
+    margin-left: 0 !important;
+}
+
 @media (min-width: 980px) {
-    .nav-tabs > li:first-child a {
+    .nav-tabs.nav-stacked > li:first-child a {
         border-left: none !important;
     }
 

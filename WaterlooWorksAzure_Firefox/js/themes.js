@@ -3,6 +3,7 @@ function getThemeConfigs(id) {
     var configs = {
         "theme_0": {
             "id": 0,
+            "hidden": false,
             "name": "Bright Azure",
             "author": "Zijian Shao",
             "brightness": "light",
@@ -13,6 +14,7 @@ function getThemeConfigs(id) {
         },
         "theme_1": {
             "id": 1,
+            "hidden": false,
             "name": "Dark Turquoise",
             "author": "Zijian Shao",
             "brightness": "dark",
@@ -23,6 +25,7 @@ function getThemeConfigs(id) {
         },
         "theme_2": {
             "id": 2,
+            "hidden": false,
             "name": "Fresh Citrus",
             "author": "Zijian Shao",
             "brightness": "light",
@@ -33,6 +36,7 @@ function getThemeConfigs(id) {
         },
         "theme_3": {
             "id": 3,
+            "hidden": false,
             "name": "Elegant Violet",
             "author": "Zijian Shao",
             "brightness": "light",
@@ -43,6 +47,7 @@ function getThemeConfigs(id) {
         },
         "theme_4": {
             "id": 4,
+            "hidden": true,
             "name": "Daylight Aurora",
             "author": "Zijian Shao",
             "brightness": "light",
@@ -53,6 +58,7 @@ function getThemeConfigs(id) {
         },
         "theme_5": {
             "id": 5,
+            "hidden": true,
             "name": "Midnight Aurora",
             "author": "Zijian Shao",
             "brightness": "dark",
@@ -63,7 +69,8 @@ function getThemeConfigs(id) {
         },
         "theme_99": {
             "id": 99,
-            "name": "Original Black",
+            "hidden": false,
+            "name": "Classic Carbon",
             "author": "Zijian Shao",
             "brightness": "dark",
             "overlayColor": "#f1f1f1",
