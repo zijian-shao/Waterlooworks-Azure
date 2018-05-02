@@ -132,13 +132,6 @@ function initOptions() {
             else
                 $('#columnsList').hide();
 
-
-            // theme preview color
-            var themeConfigs = getThemeConfigs();
-            $('input[name="GLB_ThemeID"]').each(function (i, e) {
-                $(e).parent('p').before($('<div class="color-scheme"><span style="background:' + themeConfigs['theme_' + $(e).attr('value')].previewColor + '"></span></div>'));
-            });
-
             bindEvents();
         });
 
@@ -364,7 +357,26 @@ function initOptions() {
 
     }
 
+    function loadThemes() {
+        var themes = getThemeConfigs();
+        var list = $('#theme-list');
+        var index = 0;
+        $.each(themes, function (i, val) {
+
+            if (val['hidden'] == false) {
+
+                $('<div class="color-scheme"><span style="background:' + val['previewColor'] + '"></span></div>').appendTo(list);
+                $('<p><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '">' + val['name'] + '</label></p>').appendTo(list);
+
+            }
+
+            index++;
+        });
+    }
+
     $(window).load(function () {
+
+        loadThemes();
 
         restoreOptions();
 

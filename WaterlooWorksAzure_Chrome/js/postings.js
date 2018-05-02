@@ -858,7 +858,9 @@ function postingListAjax(table, placeholder) {
     });
 
     // resize top scroll bar (waterlooworks origianl function)
-    sizeTopScroll();
+    setTimeout(function () {
+        sizeTopScroll();
+    }, 100);
 }
 
 function postingList() {

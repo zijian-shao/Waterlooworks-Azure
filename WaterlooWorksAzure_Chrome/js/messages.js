@@ -5,6 +5,9 @@ function messageListAjax() {
     if (!table.length || table.hasClass('myMessageTable'))
         return;
 
+    if (!$('#dashboard_userCommonMyMessages .gridPager').first().text().match(/Total Results/gi))
+        return;
+
     table.addClass('myMessageTable');
 
     // replace thead td (avoid css selector err)
@@ -58,6 +61,11 @@ function messageListAjax() {
             $(tr).find('td:nth-child(2)').after($(tr).find('td:nth-child(6)'));
         }
     });
+
+    // resize top scroll bar (waterlooworks origianl function)
+    setTimeout(function () {
+        sizeTopScroll();
+    }, 100);
 
 }
 
@@ -163,9 +171,7 @@ function messageList() {
     if (!options.MSG_Enabled)
         return;
 
-    $(document).load(function () {
-        messageListAjax();
-    });
+    messageListAjax();
     $(document).ajaxComplete(function (event, xhr, settings) {
         messageListAjax();
     });
