@@ -206,6 +206,12 @@
   "jobTitle": {
     "message": "職位名稱"
   },
+  "keepMeLoggedIn": {
+    "message": "保持登錄狀態"
+  },
+  "keepMeLoggedIn_tip": {
+    "message": "每 1700 秒自動調用 keepMeLoggedInClicked 函數，防止 WaterlooWorks 自動退出登陸。"
+  },
   "keywordsHighlight": {
     "message": "關鍵詞高亮"
   },

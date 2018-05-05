@@ -131,6 +131,7 @@ function getOptionListDefault() {
         'GLB_ReverseTitleOrder': true,
         'GLB_ThemeID': 0,
         'GLB_FontName': 'Muli',
+        'GLB_KeepLoggedIn': true,
         'GLB_Enabled': true
     };
 
