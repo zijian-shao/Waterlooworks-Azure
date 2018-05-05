@@ -206,6 +206,12 @@
   "jobTitle": {
     "message": "Job Title"
   },
+  "keepMeLoggedIn": {
+    "message": "Keep me logged in"
+  },
+  "keepMeLoggedIn_tip": {
+    "message": "Prevent WaterlooWorks from logging you out by automatically calling the keepMeLoggedInClicked function every 1700 seconds."
+  },
   "keywordsHighlight": {
     "message": "Keywords Highlight"
   },

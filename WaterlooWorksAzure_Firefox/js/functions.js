@@ -394,14 +394,23 @@ function startAzure() {
     }
 
     // employer page
-    // else if (currURL.match(/\/employer\//)) {
-    //     injectCSS(baseURL + 'theme/theme_0/common.css', 'head');
-    //     injectCSS(baseURL + 'css/employer.css', 'head');
-    // }
+    else if (currURL.match(/\/employer\//)) {
+        injectCSS(baseURL + 'theme/theme_0/common.css', 'head');
+        injectCSS(baseURL + 'css/employer.css', 'head');
+    }
 
     // back to top button
     if (options.GLB_BackToTopButton) {
         addBackToTopButton();
+    }
+
+    // keep logged in
+    if (options.GLB_KeepLoggedIn) {
+        if (typeof keepMeLoggedInClicked == 'function') {
+            setInterval(function () {
+                keepMeLoggedInClicked();
+            }, 1700 * 1000);
+        }
     }
 
     // remove cover

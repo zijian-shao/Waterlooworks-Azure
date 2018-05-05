@@ -2,6 +2,7 @@
 
 #adminNav {
     box-shadow: none;
+    display: block;
 }
 
 .nbs--fixed-nav .nav-tabs > li > a {
@@ -10,6 +11,18 @@
 
 .nav-tabs > li:first-child a {
     border: none !important;
+}
+
+.nav-collapse.in.collapse .nbs--fixed-nav {
+    background: #fff;
+}
+
+.nav-collapse .nav {
+    background: #fff;
+}
+
+.nav-collapse.in.collapse .nbs--fixed-nav .dropdown-menu li a {
+    color: #000 !important;
 }
 
 @media (min-width: 980px) {
