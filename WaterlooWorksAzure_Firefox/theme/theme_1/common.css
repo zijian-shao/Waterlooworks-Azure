@@ -94,7 +94,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         box-sizing: border-box;
     }
 
-    .sidebar-nav > .nav-list > li:nth-last-child(1), .sidebar-nav > .nav-list > li:nth-last-child(2), .sidebar-nav > .nav-list > li:nth-last-child(3) {
+    .azure-nav-right {
         float: right;
     }
 
@@ -582,6 +582,17 @@ hr {
     color: #fff !important;
 }
 
+.btn-inverse {
+    color: #fff;
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+.btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active {
+    background-color: #000;
+    border-color: #000
+}
+
 .btn-group.open .btn-primary.dropdown-toggle {
     background-color: #09b1b9;
     border-color: #09b1b9;
@@ -961,8 +972,8 @@ img {
 /*posting details*/
 .azure-keyword-highlight {
     border: 1px solid #0c8e94;
-    background : #0c8e94;
-    font-weight:bold;
+    background: #0c8e94;
+    font-weight: bold;
     padding: 0 2px;
 }
 

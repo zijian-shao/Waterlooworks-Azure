@@ -236,6 +236,26 @@ input.btn-info {
     background: linear-gradient(to right, #5dcbea 0%, #31a7ca 100%) !important;
 }
 
+.btn.btn-inverse {
+    color: #ffffff !important;
+}
+
+.btn-inverse:before {
+    color: #fff !important;
+    background-color: #000;
+    background-image: -moz-linear-gradient(left, #000 0%, #333 50%, #000 100%);
+    background-image: -webkit-linear-gradient(left, #000 0%, #333 50%, #000 100%);
+    background-image: linear-gradient(to right, #000 0%, #333 50%, #000 100%);
+}
+
+input.btn-inverse {
+    color: #fff !important;
+    background: #333;
+    background: -moz-linear-gradient(left, #333 0%, #000 100%) !important;
+    background: -webkit-linear-gradient(left, #333 0%, #000 100%) !important;
+    background: linear-gradient(to right, #333 0%, #000 100%) !important;
+}
+
 /*panel*/
 .panel {
     border-radius: 10px;
@@ -361,10 +381,10 @@ input.btn-info {
 @media (max-width: 979px) {
     .sidebar-nav .nav-list > .active > a, .sidebar-nav .nav-list > .active > a:hover {
         color: #fff !important;
-        background: #ffb82e!important;
-        background: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%)!important;
-        background: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%)!important;
-        background: linear-gradient(to right, #f8b023 0%, #f49524 100%)!important;
+        background: #ffb82e !important;
+        background: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%) !important;
+        background: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%) !important;
+        background: linear-gradient(to right, #f8b023 0%, #f49524 100%) !important;
     }
 
     .sidebar-nav ul[class^="childMenu"].nav-list > .active > a,
@@ -398,7 +418,7 @@ input.btn-info {
         margin-bottom: 30px;
         font-weight: normal;
         color: #fff;
-        overflow: hidden;
+        /*overflow: hidden;*/
         text-overflow: ellipsis;
         white-space: nowrap;
     }
@@ -496,6 +516,10 @@ input.btn-info {
     overflow: hidden;
 }
 
+.sidebar-nav > ul > li > a > i {
+    margin-right: 5px !important;
+}
+
 /*sidebar*/
 @media (min-width: 980px) {
     .span2.bs--hide__column {
@@ -551,33 +575,12 @@ input.btn-info {
         background: rgba(255, 255, 255, 0.05);
     }
 
-    .sidebar-nav > ul > li > a:before {
-        font-family: FontAwesome;
+    .sidebar-nav > ul > li > a > i {
         font-size: 24px;
         position: relative;
-        display: block;
-        margin: 10px auto 5px;
-        /*color: #606978;*/
-    }
-
-    .sidebar-nav > ul > li:nth-child(1) > a:before {
-        content: '\F0E4';
-    }
-
-    .sidebar-nav > ul > li:nth-child(2) > a:before {
-        content: '\F02D';
-    }
-
-    .sidebar-nav > ul > li:nth-child(3) > a:before {
-        content: '\F0B1';
-    }
-
-    .sidebar-nav > ul > li:nth-last-child(3) > a:before {
-        content: '\F05A';
-    }
-
-    .sidebar-nav > ul > li:nth-last-child(2) > a:before {
-        content: '\F08B';
+        display: block !important;
+        margin: 10px auto 5px !important;
+        width: 100% !important;
     }
 
     .sidebar-nav ul > li.active > div {

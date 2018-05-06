@@ -48,6 +48,22 @@
     margin-right: 10px !important;
 }
 
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
 /* Outline */
 
 a:focus, button:focus, input:focus, textarea:focus, select:focus, .btn:focus {
