@@ -12,7 +12,7 @@ body {
     background: #f6f6f6;
 }
 
-a, a:hover, a:active, a:focus, a:visited {
+a, a:hover, a:active, a:focus, a:visited, ins {
     color: #45B6F7;
 }
 
@@ -160,6 +160,17 @@ a, a:hover, a:active, a:focus, a:visited {
     border-color: #54bddc
 }
 
+.btn-inverse {
+    color: #fff;
+    background-color: #333;
+    border: 1px solid #333;
+}
+
+.btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active {
+    background-color: #000;
+    border-color: #000
+}
+
 /* Sidebar */
 @media (min-width: 980px) {
     .span2.bs--hide__column:before {
@@ -187,7 +198,7 @@ a, a:hover, a:active, a:focus, a:visited {
         box-sizing: border-box;
     }
 
-    .sidebar-nav > .nav-list > li:nth-last-child(1), .sidebar-nav > .nav-list > li:nth-last-child(2), .sidebar-nav > .nav-list > li:nth-last-child(3) {
+    .azure-nav-right {
         float: right;
     }
 

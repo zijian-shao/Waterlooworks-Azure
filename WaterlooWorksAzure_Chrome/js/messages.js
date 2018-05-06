@@ -1,11 +1,44 @@
+var prioIdx, ackIdx, fromIdx, toIdx, subIdx, recIdx, viewIdx, cateIdx, subCateIdx, respIdx;
+var msgCssInjected = false;
+
 function messageListAjax() {
+
+    function _calculateColIndex() {
+        var thead = table.find('thead');
+        thead.find('tr th').each(function (i, e) {
+            if (typeof $(e).attr('data-original-text') === typeof undefined) {
+                $(e).attr('data-original-text', $(e).text().trim());
+            }
+            var thText = $(e).attr('data-original-text');
+            if (thText.match(/Priority/))
+                prioIdx = i;
+            else if (thText.match(/Acknowledgement Required/))
+                ackIdx = i;
+            else if (thText.match(/From/))
+                fromIdx = i;
+            else if (thText.match(/To/))
+                toIdx = i;
+            else if (thText.match(/Subject/))
+                subIdx = i;
+            else if (thText.match(/Date Received/))
+                recIdx = i;
+            else if (thText.match(/Viewed/))
+                viewIdx = i;
+            else if (thText.match(/Category/) && !thText.match(/Sub Category/))
+                cateIdx = i;
+            else if (thText.match(/Sub Category/))
+                subCateIdx = i;
+            else if (thText.match(/Date Responded/))
+                respIdx = i;
+        });
+    }
 
     var table = $('#dashboard_userCommonMyMessagesTableID');
 
-    if (!table.length || table.hasClass('myMessageTable'))
+    if (!table.length)
         return;
 
-    if (!$('#dashboard_userCommonMyMessages .gridPager').first().text().match(/Total Results/gi))
+    if ($('#dashboard_userCommonMyMessagesTableHead').text().trim() == '')
         return;
 
     table.addClass('myMessageTable');
@@ -14,16 +47,20 @@ function messageListAjax() {
     table.find('thead tr td').after($('<th></th>')).remove();
 
     // change thead name
-    var thead = table.find('thead');
-    thead.find('th:nth-child(2) a').html('<i class="icon-star"></i>');
-    thead.find('th:nth-child(8) a').html('<i class="icon-eye-open"></i>');
+    _calculateColIndex();
 
     // reorder thead
     if (options.MSG_BetterColumn) {
-        var thead = table.find('thead tr');
-        $(thead).find('th:last-child').after($(thead).find('th:nth-child(4)'));
-        $(thead).find('th:last-child').after($(thead).find('th:nth-child(3)'));
-        $(thead).find('th:nth-child(2)').after($(thead).find('th:nth-child(6)'));
+        var theadTH = table.find('thead tr th');
+        // chagne icon
+        $(theadTH[prioIdx]).html('<i class="icon-star"></i>');
+        $(theadTH[viewIdx]).html('<i class="icon-eye-open"></i>');
+        $(theadTH[ackIdx]).html(function () {
+            return $(this).html().replace('Acknowledgement Required', 'Ack Req\'d');
+        });
+        // change order
+        $(theadTH[viewIdx]).insertAfter($(theadTH[prioIdx]));
+        $(theadTH[recIdx]).insertAfter($(theadTH[subCateIdx]));
     }
 
     if (options.MSG_FixTableHeader)
@@ -31,42 +68,120 @@ function messageListAjax() {
 
     // loop through each row
     table.find('tbody tr').each(function (index, tr) {
+        var trTD = $(tr).children('td');
 
         // click row to open msg
-        var onclick = $(tr).find('td:nth-child(1) a').attr('onclick');
-        if (options.MSG_OpenInNewTab)
+        var onclick = $(trTD[0]).children('a').attr('onclick');
+        if (options.MSG_OpenInNewTab) {
             onclick = onclick.replace(/ /g, '').replace("'').submit()", "'','_blank').submit()");
-        $(tr).attr('onclick', onclick);
-
-        // change priority icon
-        var prioTD = $(tr).find('td:nth-child(2)');
-        if (prioTD.text().match(/Normal/))
-            prioTD.html('<i class="icon-star-empty azure-msg-normal-icon"></i>');
-        else
-            prioTD.html('<i class="icon-star azure-msg-important-icon"></i>');
-
-        // change has viewed icon & bold new msg
-        var viewTD = $(tr).find('td:nth-child(8)');
-        if (viewTD.text().match(/Yes/)) {
-            viewTD.html('<i class="icon-envelope azure-msg-viewed-icon"></i>');
-        } else {
-            viewTD.html('<i class="icon-envelope-alt azure-msg-not-viewed-icon"></i>');
-            $(tr).addClass('azure-msg-is-new');
+            $(trTD[0]).children('a').attr('onclick', onclick);
         }
 
         // switch column order
         if (options.MSG_BetterColumn) {
-            $(tr).find('td:last-child').after($(tr).find('td:nth-child(4)'));
-            $(tr).find('td:last-child').after($(tr).find('td:nth-child(3)'));
-            $(tr).find('td:nth-child(2)').after($(tr).find('td:nth-child(6)'));
+
+            $(tr).attr('onclick', onclick);
+
+            // change priority icon
+            var prioTD = $(trTD[prioIdx]);
+            if (prioTD.text().match(/Normal/))
+                prioTD.html('<i class="icon-star-empty azure-msg-normal-icon"></i>');
+            else
+                prioTD.html('<i class="icon-star azure-msg-important-icon"></i>');
+
+            // change has viewed icon & bold new msg
+            var viewTD = $(trTD[viewIdx]);
+            if (viewTD.text().match(/Yes/)) {
+                viewTD.html('<i class="icon-envelope azure-msg-viewed-icon"></i>');
+            } else {
+                viewTD.html('<i class="icon-envelope-alt azure-msg-not-viewed-icon"></i>');
+                $(tr).addClass('azure-msg-is-new');
+            }
+
+            // remove new badge from subject
+            $(trTD[subIdx]).find('.badge').remove();
+
+            // add Ack Req to subject
+            if (!$(trTD[ackIdx]).text().match(/No/)) {
+                $(trTD[subIdx]).prepend('<span class="badge badge-info text-uppercase inline-block margin-right-5">Ack Req\'d</span>');
+            }
+
+            // change order
+            $(trTD[viewIdx]).insertAfter($(trTD[prioIdx]));
+            $(trTD[recIdx]).insertAfter($(trTD[subCateIdx]));
         }
     });
 
+    _calculateColIndex();
+    injectMessageListCSS();
     // resize top scroll bar (waterlooworks origianl function)
     setTimeout(function () {
         sizeTopScroll();
     }, 100);
 
+}
+
+function injectMessageListCSS() {
+
+    if (msgCssInjected) return;
+    msgCssInjected = true;
+
+    // message table stylesheet
+    injectCSS(baseURL + 'css/messages.css', 'head');
+
+    // detect current section and auto hide columns
+    var colCss = '';
+    if (options.MSG_BetterColumn) {
+        colCss += tableColumnCSS('.myMessageTable', 1, {'display': 'none'});
+        colCss += tableColumnCSS('.myMessageTable', prioIdx + 1, {
+            'width': '20px',
+            'text-align': 'center',
+            'padding-left': '8px',
+            'padding-right': '4px'
+        });
+        colCss += tableColumnCSS('.myMessageTable', viewIdx + 1, {
+            'width': '20px',
+            'text-align': 'center',
+            'padding-left': '4px',
+            'padding-right': '8px'
+        });
+        colCss += tableColumnCSS('.myMessageTable', ackIdx + 1, {'display': 'none'});
+        colCss += tableColumnCSS('.myMessageTable', subIdx + 1, {'width': '30%'});
+        colCss += tableColumnCSS('.myMessageTable', recIdx + 1, {
+            'width': '12%',
+            'text-align': 'right',
+            'padding-right': '20px'
+        });
+        colCss += tableColumnCSS('.myMessageTable', respIdx + 1, {'display': 'none'});
+        var tabName = $('.tab-content .row-fluid:nth-child(2) .span12 .nav.nav-pills .active a').text();
+        if (tabName.match(/inbox/gi)) {
+            colCss += tableColumnCSS('.myMessageTable', fromIdx + 1, {'width': '12%'});
+            colCss += tableColumnCSS('.myMessageTable', toIdx + 1, {'display': 'none'});
+        } else if (tabName.match(/sent/gi)) {
+            colCss += tableColumnCSS('.myMessageTable', fromIdx + 1, {'display': 'none'});
+            colCss += tableColumnCSS('.myMessageTable', toIdx + 1, {'width': '12%'});
+        } else {
+            colCss += tableColumnCSS('.myMessageTable', fromIdx + 1, {'width': '12%'});
+            colCss += tableColumnCSS('.myMessageTable', toIdx + 1, {'width': '12%'});
+        }
+
+        if (!options.MSG_ShowCategory) {
+            colCss += tableColumnCSS('.myMessageTable', cateIdx + 1, {'display': 'none'});
+            colCss += tableColumnCSS('.myMessageTable', subCateIdx + 1, {'display': 'none'});
+        } else {
+            colCss += tableColumnCSS('.myMessageTable', cateIdx + 1, {'width': '12%'});
+            colCss += tableColumnCSS('.myMessageTable', subCateIdx + 1, {'width': '15%'});
+        }
+
+    }
+    // default col width
+    else {
+        colCss += '#dashboard_userCommonMyMessages_gridBox {overflow-x: auto !important;}';
+        colCss += '.myMessageTable {table-layout: auto;}';
+        colCss += '.myMessageTable td {max-width: 200px !important;}';
+        colCss += '#dashboard_userCommonMyMessages_topScrollBox {display: block;}';
+    }
+    injectCSS(colCss, 'head', 'text');
 }
 
 function removeMessageListHeaderBg() {
@@ -78,82 +193,6 @@ function removeMessageListHeaderBg() {
     table.find('thead').css('background-color', '');
     table.find('thead tr th').css('background-color', '');
     table.find('thead tr td').css('background-color', '');
-}
-
-function injectMessageListCSS() {
-    // message table stylesheet
-    injectCSS(baseURL + 'css/messages.css', 'head');
-
-    // detect current section and auto hide columns
-    var colCss = '';
-    if (options.MSG_BetterColumn) {
-
-        colCss += tableColumnCSS('.myMessageTable', 1, {'display': 'none'});
-        colCss += tableColumnCSS('.myMessageTable', 2, {
-            'width': '20px',
-            'text-align': 'center',
-            'padding-left': '8px',
-            'padding-right': '4px'
-        });
-        colCss += tableColumnCSS('.myMessageTable', 3, {
-            'width': '20px',
-            'text-align': 'center',
-            'padding-left': '4px',
-            'padding-right': '8px'
-        });
-        colCss += tableColumnCSS('.myMessageTable', 4, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 5, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 6, {'width': '30%'});
-        colCss += tableColumnCSS('.myMessageTable', 7, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 8, {'width': '15%'});
-        colCss += tableColumnCSS('.myMessageTable', 9, {'display': 'none'});
-        colCss += tableColumnCSS('.myMessageTable', 10, {
-            'width': '12%',
-            'text-align': 'right',
-            'padding-right': '20px'
-        });
-
-        var tabName = $('.tab-content .row-fluid:nth-child(2) .span12 .nav.nav-pills .active a').text();
-        if (tabName.match(/inbox/gi)) {
-            colCss += tableColumnCSS('.myMessageTable', 5, {'display': 'none'});
-        } else if (tabName.match(/sent/gi)) {
-            colCss += tableColumnCSS('.myMessageTable', 4, {'display': 'none'});
-        }
-
-        if (!options.MSG_ShowCategory) {
-            colCss += tableColumnCSS('.myMessageTable', 7, {'display': 'none'});
-            colCss += tableColumnCSS('.myMessageTable', 8, {'display': 'none'});
-        }
-
-    }
-    // default col width
-    else {
-        colCss += tableColumnCSS('.myMessageTable', 1, {'display': 'none'});
-        colCss += tableColumnCSS('.myMessageTable', 2, {
-            'width': '30px',
-            'text-align': 'center',
-            'padding-left': '2px',
-            'padding-right': '2px'
-        });
-        colCss += tableColumnCSS('.myMessageTable', 3, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 4, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 5, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 6, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 7, {'width': '30%'});
-        colCss += tableColumnCSS('.myMessageTable', 8, {
-            'width': '30px',
-            'text-align': 'center',
-            'padding-left': '2px',
-            'padding-right': '2px'
-        });
-        colCss += tableColumnCSS('.myMessageTable', 9, {'width': '12%'});
-        colCss += tableColumnCSS('.myMessageTable', 10, {'width': '15%'});
-        if (!options.MSG_ShowCategory) {
-            colCss += tableColumnCSS('.myMessageTable', 9, {'display': 'none'});
-            colCss += tableColumnCSS('.myMessageTable', 10, {'display': 'none'});
-        }
-    }
-    injectCSS(colCss, 'head', 'text');
 }
 
 function messageList() {
@@ -175,8 +214,6 @@ function messageList() {
     $(document).ajaxComplete(function (event, xhr, settings) {
         messageListAjax();
     });
-
-    setTimeout(injectMessageListCSS, 1);
 
 }
 

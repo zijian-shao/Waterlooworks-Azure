@@ -10,7 +10,7 @@ function t(key, params) {
 }
 
 function o(key) {
-    document.write(t(key));
+    // document.write(t(key));
 }
 
 function tE(id, key, attr, esc) {
