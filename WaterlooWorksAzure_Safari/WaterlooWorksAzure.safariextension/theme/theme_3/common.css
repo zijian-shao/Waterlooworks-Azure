@@ -19,7 +19,7 @@ body {
     padding-bottom: 70px !important;
 }
 
-a, a:hover, a:active, a:focus, a:visited {
+a, a:hover, a:active, a:focus, a:visited, ins {
     color: #8599de;
 }
 
@@ -328,33 +328,12 @@ select[multiple]:focus {
     position: relative;
 }
 
-.sidebar-nav > ul > li > a:before {
-    font-family: FontAwesome;
+.sidebar-nav > ul > li > a > i {
     font-size: 16px;
     position: absolute;
     top: 18px;
     left: 24px;
     color: #fff;
-}
-
-.sidebar-nav > ul > li:nth-child(1) > a:before {
-    content: '\F0E4';
-}
-
-.sidebar-nav > ul > li:nth-child(2) > a:before {
-    content: '\F02D';
-}
-
-.sidebar-nav > ul > li:nth-child(3) > a:before {
-    content: '\F0B1';
-}
-
-.sidebar-nav > ul > li:nth-last-child(3) > a:before {
-    content: '\F05A';
-}
-
-.sidebar-nav > ul > li:nth-last-child(2) > a:before {
-    content: '\F08B';
 }
 
 .sidebar-nav > ul > li.active div {

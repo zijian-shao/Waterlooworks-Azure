@@ -7,9 +7,9 @@
     transition: none;
     text-shadow: none;
     border-color: #ddd;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .btn-primary {
@@ -84,11 +84,7 @@
     .span2.bs--hide__column:before {
         border-right: none;
         width: 14.52991452991453%;
-        /*background: #364d68;*/
-        /*background: -moz-linear-gradient(top, #364d68 0%, #2c3f55 100%);*/
-        /*background: -webkit-linear-gradient(top, #364d68 0%, #2c3f55 100%);*/
-        /*background: linear-gradient(to bottom, #364d68 0%, #2c3f55 100%);*/
-        background: #1B1B1B;
+        background: #000;
     }
 
     .sidebar-nav {

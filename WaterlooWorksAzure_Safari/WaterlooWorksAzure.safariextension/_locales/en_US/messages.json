@@ -5,6 +5,9 @@
   "actionButtons": {
     "message": "Action Buttons"
   },
+  "add": {
+    "message": "Add"
+  },
   "addBackToTopButtonOnEachPage": {
     "message": "Add \"Back to top\" button on each page"
   },
@@ -36,7 +39,7 @@
     "message": "Azure is the best extension to enhance your experience with WaterlooWorks."
   },
   "appName": {
-    "message": "WWAzure"
+    "message": "WaterlooWorks Azure"
   },
   "appStatus": {
     "message": "App Status"
@@ -45,10 +48,10 @@
     "message": "Applications"
   },
   "betterMsgColumn": {
-    "message": "Optimize column order and display"
+    "message": "Enable modern layout"
   },
   "betterMsgColumn_tip": {
-    "message": "Reorder columns and auto hide unnecessary columns."
+    "message": "Reorder columns, auto hide unnecessary columns, bold new messages, click row to open message."
   },
   "brightAzureTheme": {
     "message": "Bright Azure"
@@ -65,6 +68,9 @@
   "classicCarbonTheme": {
     "message": "Classic Carbon"
   },
+  "contribute": {
+    "message": "Donate"
+  },
   "copyright": {
     "message": "Created by Zijian Shao"
   },
@@ -75,7 +81,7 @@
     "message": "Disclaimers"
   },
   "disclaimers_intro": {
-    "message": "<p>▷ This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo.</p><p>▷ Use this extension at your own responsibility</p>"
+    "message": "<p>▷ This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo</p><p>▷ Use this extension at your own responsibility</p>"
   },
   "displayHideShowNewTabButton": {
     "message": "Display \"Hide/Show NEW tag\" button"
@@ -110,11 +116,17 @@
   "enableJobIntroPreview_tip": {
     "message": "Click anywhere on a row to preview job in pop-up in current tab without reloading page."
   },
+  "enableKeywordsHighlight": {
+    "message": "Enable keywords highlight"
+  },
+  "enableKeywordsHighlight_tip": {
+    "message": "This feature highlights specific keywords when you are on the posting details page. You can turn on / off it using the switch here."
+  },
   "enableMyMessagesListOptimization": {
     "message": "Enable \"My Messages\" list optimization"
   },
   "enableMyMessagesListOptimization_tip": {
-    "message": "This option controls all items in My Messages section. It can enable / disable all the other options in My Messages. It adjust column with to fit in one single screen, and highlight & bold unread new messages. Also, you can click anywhere on a row to open messages."
+    "message": "This option controls all items in My Messages section. It can enable / disable all the other options in My Messages."
   },
   "enablePaginationFloating": {
     "message": "Enable pagination floating"
@@ -135,7 +147,7 @@
     "message": "<p>Enable this option will allow you to preview posting information in a popup modal. To view in modal, there are 3 ways:</p><p><b>1.</b> Click the globe icon to the right of the job title</p><p><b>2.</b> Right click on the corresponding row and select \"Preview In Modal\"</p><p><b>3.</b> Double click anywhere on the row</p>"
   },
   "enableWaterlooWorksAzure": {
-    "message": "Enable WWAzure"
+    "message": "Enable WaterlooWorks Azure"
   },
   "enableWaterlooWorksAzure_tip": {
     "message": "This option is the total controller. It can enable / disable all the other options in the extension. The switch in the popup is synchronized with this one."
@@ -194,6 +206,21 @@
   "jobTitle": {
     "message": "Job Title"
   },
+  "keepMeLoggedIn": {
+    "message": "Keep me logged in"
+  },
+  "keepMeLoggedIn_tip": {
+    "message": "Prevent WaterlooWorks from logging you out by automatically calling the keepMeLoggedInClicked function every 1700 seconds."
+  },
+  "keywordsHighlight": {
+    "message": "Keywords Highlight"
+  },
+  "keywordsToBeHighlighted": {
+    "message": "▷ Keywords to be highlighted"
+  },
+  "keywordsToBeHighlighted_tip": {
+    "message": "<p>▷ The above keywords will be highlighted on posting details page.</p><p>▷ Use the input box to add a keyword and click the remove icon next to a keyword to remove it.</p><p>▷ Keywords are case insensitive. Symbols are not recommended.</p><p>▷ For performance considerations, please keep the total number of keywords below 10.</p>"
+  },
   "level": {
     "message": "Level"
   },
@@ -225,7 +252,7 @@
     "message": "Instructions"
   },
   "notes_intro": {
-    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WWAzure Extension\">sam.zj.shao@gmail.com</a></p>"
+    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
   },
   "officialWebsite": {
     "message": "Official Website"
@@ -246,7 +273,7 @@
     "message": "Enable view in new tab"
   },
   "openPostingsInNewTab_tip": {
-    "message": "<p>Add \"Open in new tab\" link after job titles and in context menu. Also, this option adds extra operations when clicking a job title:</p><p><b>1.</b> Click job title: open in current tab</p><p><b>2.</b> Hold <b>Ctrl</b> and click job title: open in new background tab</p><p><b>3.</b> Hold <b>Ctrl + Shift</b> and click job title: open in new active tab</p>"
+    "message": "<p>Add \"Open in new tab\" link after job titles and in context menu. Also, this option adds extra operations when clicking a job title:</p><p><b>1.</b> Click job title: open in new active tab</p><p><b>2.</b> Hold <b>Ctrl/Cmd</b> and click job title: open in new background tab</p><p><b>3.</b> Hold <b>Ctrl/Cmd + Shift</b> and click job title: open in current tab</p>"
   },
   "openWaterlooWorks": {
     "message": "Open WaterlooWorks"
@@ -317,11 +344,14 @@
   "selectTheme": {
     "message": "Select Theme"
   },
+  "share": {
+    "message": "Share"
+  },
   "showGlassdoorCompanyRanking": {
     "message": "Show Glassdoor company ranking"
   },
   "showGlassdoorCompanyRanking_tip": {
-    "message": "If available, the extension uses AJAX to request company ranking information from Glassdoor."
+    "message": "The extension uses Ajax to request company ranking information from Glassdoor. Since Glassdoor closed the public API sign up, so it's not possible to request directly from their server. As an alternative approach, this extension requests information from the author's server. Company name is the only data being sent. The server will try to search Glassdoor and send data back to the client. If you don't want this function, please turn the switch off."
   },
   "showGlassdoorQuickSearchLink": {
     "message": "Show Glassdoor quick search link"
@@ -351,24 +381,24 @@
     "message": "Replace the default dark welccome page with the new designed azure version. Important messages such as scheduled maintenance will also be added to the new page."
   },
   "version": {
-    "message": "Version"
+    "message": "Version "
   },
   "waterlooWorks": {
     "message": "WaterlooWorks"
   },
   "waterlooWorksAzure": {
-    "message": "WWAzure"
+    "message": "WaterlooWorks Azure"
   },
   "waterlooWorksAzureOptions": {
-    "message": "WWAzure Options"
+    "message": "WaterlooWorks Azure Options"
   },
   "waterlooWorksAzureTips": {
-    "message": "WWAzure Tips"
+    "message": "WaterlooWorks Azure Tips"
   },
   "welcome": {
     "message": "Welcome"
   },
   "welcomeIntro": {
-    "message": "<p>Thanks for using WWAzure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly recruitment platform. It offers multiple refreshing themes and adds a variety of new helpful features to the original website.</p><p class=\"hidden\">If you like this extension, please <a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">rate and leave a comment</a> in Chrome Web Store.</p>"
+    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform. It offers multiple new themes and adds a variety of new helpful features to the original website.</p><p class=\"hidden\">If you like this extension, please <a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">rate and leave a comment</a> in Chrome Web Store.</p>"
   }
 }

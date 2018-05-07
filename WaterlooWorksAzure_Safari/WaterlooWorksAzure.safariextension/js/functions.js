@@ -50,7 +50,10 @@ function scrollToUtil(pos, time, offset) {
     else if ($.type(pos) === 'string')
         pos = $(pos).first().offset().top;
 
-    $('body').animate({scrollTop: pos - offset}, time);
+    if (isBrowser('safari'))
+        $('body').animate({scrollTop: pos - offset}, time);
+    else
+        $('html').animate({scrollTop: pos - offset}, time);
 
 }
 
@@ -80,12 +83,38 @@ function unblockPage() {
 
 function isOnScreen(element) {
 
+    var html;
+    if (isBrowser('safari'))
+        html = $('body');
+    else
+        html = $('html');
+
     if ($.type(element) === 'object')
-        return ($('body').scrollTop() + themeConfig.navbarHeight < element.offset().top);
+        return (html.scrollTop() + themeConfig.navbarHeight < element.offset().top);
     else if ($.type(element) === 'number')
-        return ($('body').scrollTop() + themeConfig.navbarHeight < element);
+        return (html.scrollTop() + themeConfig.navbarHeight < element);
 
     return true;
+}
+
+function isBrowser(name) {
+    name = name.toLowerCase();
+    if (name == 'opera')
+        return (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    else if (name == 'firefox')
+        return typeof InstallTrigger !== 'undefined';
+    else if (name == 'safari')
+        return /constructor/i.test(window.HTMLElement) || (function (p) {
+            return p.toString() === "[object SafariRemoteNotification]";
+        })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    else if (name == 'ie')
+        return /*@cc_on!@*/false || !!document.documentMode;
+    else if (name == 'edge')
+        return !isIE && !!window.StyleMedia;
+    else if (name == 'chrome')
+        return !!window.chrome && !!window.chrome.webstore;
+    else
+        return false;
 }
 
 function getParaArr(str) {
@@ -408,14 +437,23 @@ function startAzure() {
     }
 
     // employer page
-    // else if (currURL.match(/\/employer\//)) {
-    //     injectCSS(baseURL + 'theme/theme_0/common.css', 'head');
-    //     injectCSS(baseURL + 'css/employer.css', 'head');
-    // }
+    else if (currURL.match(/\/employer\//)) {
+        injectCSS(baseURL + 'theme/theme_0/common.css', 'head');
+        injectCSS(baseURL + 'css/employer.css', 'head');
+    }
 
     // back to top button
     if (options.GLB_BackToTopButton) {
         addBackToTopButton();
+    }
+
+    // keep logged in
+    if (options.GLB_KeepLoggedIn) {
+        if (typeof keepMeLoggedInClicked == 'function') {
+            setInterval(function () {
+                keepMeLoggedInClicked();
+            }, 1700 * 1000);
+        }
     }
 
     // remove cover

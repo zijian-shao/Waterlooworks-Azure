@@ -20,6 +20,38 @@ function rankStarHTML(score) {
     return html;
 }
 
+function addKeyWordReminder(tagArr) {
+
+    if (!tagArr.length) return;
+
+    // remove duplicated tags
+    var uniqueTags = [];
+
+    if (isBrowser('chrome') || isBrowser('safari')) {
+        $.each(tagArr, function (i, el) {
+            if ($.inArray(el.toLowerCase(), uniqueTags) === -1) uniqueTags.push(el);
+        });
+    } else if (isBrowser('firefox')) {
+        // jquery $.inArray broken in Firefox
+        for (var i = 0, len = tagArr.length; i < len; i++) {
+            if ((i == tagArr.indexOf(tagArr[i])) || (tagArr.indexOf(tagArr[i]) == tagArr.lastIndexOf(tagArr[i])))
+                uniqueTags.push(tagArr[i]);
+        }
+    }
+
+    var panelBody = $('<div class="panel-body"></div>')
+    $.each(uniqueTags, function (i, v) {
+        panelBody.append($('<span class="label label-warning">' + v + '</span>'));
+    });
+
+    var panel = $('<div class="panel panel-default azure-posting-keyword-panel"></div>');
+    panel.append($('<div class="panel-heading"><small class="tip pull-right">Configure it in Extension Options</small><strong>HIGHLIGHTED KEYWORDS</strong></div>'));
+    panel.append(panelBody);
+
+    var columnSpan = $('.orbisTabContainer .tabbable .tab-content .row-fluid .span4');
+    columnSpan.find('.panel:last-child').after(panel);
+}
+
 function addPostingFloatInfo() {
 
     function testPostingFloatInfo() {
@@ -49,7 +81,7 @@ function addPostingFloatInfo() {
     var panel = $('<div class="panel panel-default azure-posting-info-panel"></div>');
     panel.append($('<div class="panel-heading"><strong>POSTING INFO</strong></div>'));
     panel.append($('<div class="panel-body">' + title.html() + '</div>'));
-    columnSpan.find('.panel:last-child').before(panel);
+    columnSpan.find('.panel:first-child').first().before(panel);
 
     // column
     var columnSpanFloat = columnSpan.clone();
@@ -120,6 +152,8 @@ function showCompanyRank(data) {
         }
 
     } else {
+
+        // result does not exist
         rank = $('<span class="azure-company-ranking azure-company-ranking-empty"><a href="https://www.glassdoor.com" target="_blank"><i class="icon-share-alt"></i> Visit Glassdoor</a></span>');
     }
 
@@ -562,14 +596,30 @@ function postingListAjax(table, placeholder) {
             exportBtn.text('Export Shortlist')
 
             // btn event
-            exportBtn.on('click', function (e) {
-                e.preventDefault();
-                tableBackup.tableExport({
-                    type: 'excel',
-                    escape: 'false',
-                    ignoreColumn: '[0, 1]'
+            if (isBrowser('chrome') || isBrowser('safari')) {
+                exportBtn.on('click', function (e) {
+                    e.preventDefault();
+                    tableBackup.tableExport({
+                        type: 'excel',
+                        escape: 'false',
+                        ignoreColumn: '[0, 1]'
+                    });
                 });
-            });
+            } else if (isBrowser('firefox')) {
+                exportBtn.on('click', function () {
+
+                    // For Firefox only
+                    var download = tableBackup.tableExport({
+                        type: 'excel',
+                        escape: 'false',
+                        ignoreColumn: '[0, 1]'
+                    });
+                    $(this).attr({
+                        'href': download.filelink,
+                        'download': download.filename
+                    });
+                });
+            }
 
             // add btn
             $('#hideSideNav').after(exportBtn);
@@ -665,26 +715,45 @@ function postingListAjax(table, placeholder) {
         // click job title and open in new tab
         if (options.JOB_OpenInNewTab) {
 
-            jobTitleLink.removeAttr('onclick').off('click');
+            if (isBrowser('chrome') || isBrowser('safari')) {
+                jobTitleLink.removeAttr('onclick').off('click');
 
-            jobTitleLink.on('click', function (e) {
+                jobTitleLink.on('click', function (e) {
 
-                e.preventDefault();
+                    e.preventDefault();
 
-                if (e.which === 1) {
-                    if ((e.ctrlKey && e.shiftKey) || (e.metaKey && e.shiftKey))
-                        eval(newTab);
-                    else if (e.ctrlKey || e.metaKey)
-                        window.open(location.href + '#' + encodeURI(currentTab));
-                    else
-                        eval(currentTab);
-                }
+                    if (e.which === 1) {
+                        if ((e.ctrlKey && e.shiftKey) || (e.metaKey && e.shiftKey))
+                            eval(currentTab);
+                        else if (e.ctrlKey || e.metaKey)
+                            window.open(location.href + '#' + encodeURI(currentTab));
+                        else
+                            eval(newTab);
+                    }
 
-            });
+                });
 
-            // new tab link
-            jobTitleLink.after($('<a href="javascript:void(0);" class="view-in-new-tab-link" onclick="' + newTab + '"><i class="icon-external-link"></i><span> New Tab</span></a>'));
+                // new tab link (deprecated)
+                // jobTitleLink.after($('<a href="javascript:void(0);" class="view-in-new-tab-link" onclick="' + newTab + '"><i class="icon-external-link"></i><span> New Tab</span></a>'));
 
+            } else if (isBrowser('firefox')) {
+                jobTitleLink.removeAttr('onclick').off('click').attr('href', location.href + '#' + encodeURI(currentTab));
+
+                jobTitleLink.on('click', function (e) {
+                    e.preventDefault();
+
+                    if (e.which === 1) {
+                        if (e.ctrlKey || e.metaKey)
+                            eval(currentTab);
+                        else
+                            eval(newTab);
+                    }
+
+                });
+
+                // new tab link (deprecated)
+                // jobTitleLink.after($('<a href="javascript:void(0);" class="view-in-new-tab-link" onclick="' + newTab + '"><i class="icon-external-link"></i><span> New Tab</span></a>'));
+            }
         }
 
         // get apply link & shortlist onclick script
@@ -833,7 +902,9 @@ function postingListAjax(table, placeholder) {
     });
 
     // resize top scroll bar (waterlooworks origianl function)
-    sizeTopScroll();
+    setTimeout(function () {
+        sizeTopScroll();
+    }, 100);
 }
 
 function postingList() {
@@ -856,6 +927,14 @@ function postingList() {
 
     if (!options.JOB_Enabled)
         return;
+
+    // force show sidebar
+    setTimeout(function () {
+        if ($('#closeNav').parent('div.bs--hide__column').css('display') == 'none') {
+            $('#hideSideNav').trigger('click');
+            $('#mainContentDiv').css('margin-left', '');
+        }
+    }, 500);
 
     // cache current url
     var currURL = window.location.href;
@@ -911,8 +990,8 @@ function postingList() {
     $(document).ajaxComplete(function (event, xhr, settings) {
 
         if ((settings.url === '/myAccount/co-op/coop-postings.htm'
-            || settings.url === '/myAccount/hire-waterloo/other-jobs/jobs-postings.htm'
-            || settings.url === '/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm')
+                || settings.url === '/myAccount/hire-waterloo/other-jobs/jobs-postings.htm'
+                || settings.url === '/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm')
             && settings.dataType === 'html') {
             postingListAjax($('#postingsTable'), $('#postingsTablePlaceholder'));
         }
@@ -954,6 +1033,35 @@ function postingDetail() {
             actions.children('div').append(backBtn);
 
             $('body').append(actions);
+        }
+    }
+
+    // Hightlight Keywords
+    if (options.JOB_DetailPageHighlight) {
+        var hlKws = options.JOB_DetailPageHighlightKeywords;
+        if (Array.isArray(hlKws) && hlKws.length) {
+            var regStr = '';
+            hlKws.forEach(function (val) {
+                regStr += '(\\b' + val + '\\b)|';
+            });
+            regStr = regStr.slice(0, -1);
+            regStr = '(' + regStr + ')';
+            var hlRegex = new RegExp(regStr, 'ig');
+            var matchedArr = [];
+
+            $('#postingDiv').find('td').each(function () {
+
+                var matched = $(this).html().match(hlRegex);
+                if (matched) {
+                    $(this).html(
+                        $(this).html().replace(hlRegex, '<span class="azure-keyword-highlight">$1</span>')
+                    );
+                    matchedArr.push(matched[0]);
+                }
+
+            });
+
+            addKeyWordReminder(matchedArr);
         }
     }
 
@@ -1001,6 +1109,7 @@ function postingDetail() {
         });
 
     }
+
 }
 
 postingList();

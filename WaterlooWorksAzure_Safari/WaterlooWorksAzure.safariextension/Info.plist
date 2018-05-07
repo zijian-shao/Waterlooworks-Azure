@@ -7,13 +7,13 @@
 	<key>Builder Version</key>
 	<string>13605.1.33.1.2</string>
 	<key>CFBundleDisplayName</key>
-	<string>WWAzure - Optimization extension for WaterlooWorks</string>
+	<string>WaterlooWorks Azure</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.zijianshao.waterlooworksazure</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.2</string>
+	<string>1.2.0</string>
 	<key>CFBundleVersion</key>
 	<string>1.1.2</string>
 	<key>Chrome</key>

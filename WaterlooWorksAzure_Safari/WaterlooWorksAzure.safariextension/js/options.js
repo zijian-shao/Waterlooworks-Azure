@@ -1,5 +1,21 @@
 function initOptions() {
 
+    function createItemTag(optName, optVal, parentID, save) {
+
+        var itemTag = $('<div class="item-tag" data-option-name="' + optName + '" data-option-value="' + optVal + '">' + optVal + '<div class="item-tag-remove">X</div></div>');
+        itemTag.hide().appendTo($('#' + parentID)).fadeIn(200, function () {
+            itemTag.find('.item-tag-remove').on('click', function () {
+                $(this).prop('disabled', true);
+                onTagOptionChange(itemTag);
+                itemTag.fadeOut(200, function () {
+                    itemTag.remove();
+                });
+            });
+            if (save === true)
+                onTagOptionChange(itemTag, true);
+        });
+    }
+
     function restoreOptions() {
 
         safari.self.addEventListener('message', function (event) {
@@ -96,9 +112,18 @@ function initOptions() {
                             }
                             break;
 
-                        default:
-                            optionElem.prop('checked', items[key]);
-                    }
+                    case 'JOB_DetailPageHighlightKeywords':
+                        var hlKwList = $('#highlightKeywordList');
+
+                        for (var i = 0, len = items[key].length; i < len; i++) {
+                            createItemTag('JOB_DetailPageHighlightKeywords', items[key][i], 'highlightKeywordList');
+                        }
+
+                        break;
+
+                    default:
+                        optionElem.prop('checked', items[key]);
+                }
 
                 }
 
@@ -107,12 +132,6 @@ function initOptions() {
                 else
                     $('#columnsList').hide();
 
-
-                // theme preview color
-                var themeConfigs = getThemeConfigs();
-                $('input[name="GLB_ThemeID"]').each(function (i, e) {
-                    $(e).parent('p').before($('<div class="color-scheme"><span style="background:' + themeConfigs['theme_' + $(e).attr('value')].previewColor + '"></span></div>'));
-                });
 
                 bindEvents();
 
@@ -138,6 +157,24 @@ function initOptions() {
         }
     }
 
+    function onTagOptionChange(elem, saveAll) {
+        var optName = elem.attr('data-option-name');
+        var optVal = elem.attr('data-option-value');
+        if (saveAll !== true) saveAll = false;
+
+        var contentArr = [];
+        $('div[data-option-name="' + optName + '"]').each(function (index, element) {
+            if (saveAll)
+                contentArr.push($(element).attr('data-option-value'));
+            else if ($(element).attr('data-option-value') != optVal)
+                contentArr.push($(element).attr('data-option-value'));
+        });
+
+        var obj = {};
+        obj[optName] = contentArr;
+        saveOption(obj);
+
+    }
 
     function onOptionChange(elem) {
         var inputType = elem.attr('type');
@@ -223,6 +260,27 @@ function initOptions() {
             onOptionChange($(this));
         });
 
+        $('#add-highlight-keyword-btn').on('click', function () {
+            var val = $('#add-highlight-keyword-input').val();
+            $('#add-highlight-keyword-input').val('');
+
+            val = val.trim();
+            if (val == '' || val.length < 1 || val.length > 30) return;
+
+            val = val
+                .replace(/\\/g, '\\\\')
+                .replace(/\u0008/g, '\\b')
+                .replace(/\t/g, '\\t')
+                .replace(/\n/g, '\\n')
+                .replace(/\f/g, '\\f')
+                .replace(/\r/g, '\\r')
+                .replace(/'/g, '\\\'')
+                .replace(/"/g, '\\"');
+
+            createItemTag('JOB_DetailPageHighlightKeywords', val, 'highlightKeywordList', true);
+
+        });
+
         // switch between tabs
         $('.nav-tab').on('click', function () {
 
@@ -239,6 +297,7 @@ function initOptions() {
                 $('#opt-tab-' + prevTabID).addClass('hidden');
                 $('#opt-tab-' + thisTabID).fadeIn(200).removeClass('hidden');
             });
+
 
             window.location.hash = $(this).attr('data-option-tab-name');
 
@@ -276,11 +335,60 @@ function initOptions() {
                 });
             }
         });
+
+        // share
+        $('.share-link').on('click', function (e) {
+            e.preventDefault();
+            var openIn = $(this).attr('data-open-in');
+            var href = $(this).attr('data-href');
+            if (openIn == 'popup') {
+                var width = $(this).attr('data-width');
+                var height = screen.height * 0.6;
+                var left = (screen.width - width) / 2;
+                var top = screen.height * 0.1;
+                window.open(href, '',
+                    'menubar=0, toolbar=0, resizable=1, location=0, scrollbars=1, status=1, ' +
+                    'width=' + width + ', height=' + height + ', left=' + left + ', top=' + top);
+            } else if (openIn == 'newtab') {
+                window.open(href, '_blank');
+            } else if (openIn == 'copy') {
+                $('#clipboard-input').val('https://www.zijianshao.com/wwazure/sharelink/?platform=safari').select();
+                document.execCommand('Copy');
+                alert('Copied to Clipboard~');
+            }
+        });
+
+    }
+
+    function loadThemes() {
+        var themes = getThemeConfigs();
+        var list = $('#theme-list');
+        var index = 0;
+        $.each(themes, function (i, val) {
+
+            if (val['hidden'] == false) {
+
+                $('<div class="color-scheme"><span style="background:' + val['previewColor'] + '"></span></div>').appendTo(list);
+                $('<p><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '">' + val['name'] + '</label></p>').appendTo(list);
+
+            }
+
+            index++;
+        });
     }
 
     $(window).load(function () {
+
+        loadThemes();
+
         restoreOptions();
+
+        // version #
         $('#azure-version').text(safari.extension.displayVersion);
+
+        // clipboard input
+        var clipBoardInput = $('<div class="width-0"><input type="text" id="clipboard-input"></div>');
+        $('body').append(clipBoardInput);
     });
 
     window.addEventListener("hashchange", onHashChange, false);

@@ -5,6 +5,9 @@
   "actionButtons": {
     "message": "操作按鈕"
   },
+  "add": {
+    "message": "添加"
+  },
   "addBackToTopButtonOnEachPage": {
     "message": "添加“返回頂部”按鈕到所有頁面"
   },
@@ -36,7 +39,7 @@
     "message": "Azure 是第一款全方位增強 WaterlooWorks 使用體驗的擴展插件。"
   },
   "appName": {
-    "message": "WWAzure"
+    "message": "WaterlooWorks Azure"
   },
   "appStatus": {
     "message": "申請狀態"
@@ -45,10 +48,10 @@
     "message": "申請人數"
   },
   "betterMsgColumn": {
-    "message": "優化列排序及顯示"
+    "message": "使用現代版佈局"
   },
   "betterMsgColumn_tip": {
-    "message": "啟用該選項後，將調整默認列排序，並根據當前所在位置自動隱藏不必要的列。"
+    "message": "啟用該選項後，將調整默認列排序，自動隱藏不必要的列，加粗顯示新消息，點擊行內任意位置即可打開消息。"
   },
   "brightAzureTheme": {
     "message": "純白天藍色主題"
@@ -65,6 +68,9 @@
   "classicCarbonTheme": {
     "message": "經典炭黑色主題"
   },
+  "contribute": {
+    "message": "捐助作者"
+  },
   "copyright": {
     "message": "Created by Zijian Shao"
   },
@@ -75,7 +81,7 @@
     "message": "免責聲明"
   },
   "disclaimers_intro": {
-    "message": "<p>▷ 此擴展並非由 WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>▷ 由於使用此擴展所造成的一切後果由用戶自行承擔</p> "
+    "message": "<p>▷ 此擴展並非由WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>▷ 由於使用此擴展所造成的一切後果由用戶自行承擔</p> "
   },
   "displayHideShowNewTabButton": {
     "message": "啟用“隱藏/顯示NEW標籤”按鈕"
@@ -110,11 +116,17 @@
   "enableJobIntroPreview_tip": {
     "message": "啟用該選項後，點擊行中的任意位置，即可在當前頁面預覽工作詳情，無需跳轉。"
   },
+  "enableKeywordsHighlight": {
+    "message": "啟用關鍵詞高亮功能"
+  },
+  "enableKeywordsHighlight_tip": {
+    "message": "啟用該選項後，位於職位詳情頁面內的自定義關鍵詞將會被高亮顯示，以避免錯過關鍵內容。"
+  },
   "enableMyMessagesListOptimization": {
     "message": "啟用“我的短消息”列表優化"
   },
   "enableMyMessagesListOptimization_tip": {
-    "message": "該選項為該系列總開關，可以同時開啟或關閉所有我的短消息優化項目。啟用該選項後，將會優化列表的列寬度，並增加高亮顯示未讀消息的功能。同時，點擊行的任意位置，均可打開該消息。"
+    "message": "該選項為該系列總開關，可以同時開啟或關閉所有我的短消息優化項目。"
   },
   "enablePaginationFloating": {
     "message": "啟用懸浮頁碼"
@@ -135,7 +147,7 @@
     "message": "<p>啟用該選項後，將可以在當前窗口內的彈框中預覽職位信息。以下三種方式均可以打開預覽：</p><p><b>1.</ b> 點擊職位名稱右側的小地球圖標</p><p><b>2.</b> 單擊右鍵並在菜單中選擇“Preview In Modal”</p><p><b> 3.</b> 雙擊行內任意位置</p>"
   },
   "enableWaterlooWorksAzure": {
-    "message": "啟用 WWAzure"
+    "message": "啟用 WaterlooWorks Azure"
   },
   "enableWaterlooWorksAzure_tip": {
     "message": "該選項為總開關，可以同時開啟或關閉此擴展的所有選項。在瀏覽器右上角浮動窗口內的開關與此同步。"
@@ -194,6 +206,21 @@
   "jobTitle": {
     "message": "職位名稱"
   },
+  "keepMeLoggedIn": {
+    "message": "保持登錄狀態"
+  },
+  "keepMeLoggedIn_tip": {
+    "message": "每 1700 秒自動調用 keepMeLoggedInClicked 函數，防止 WaterlooWorks 自動退出登陸。"
+  },
+  "keywordsHighlight": {
+    "message": "關鍵詞高亮"
+  },
+  "keywordsToBeHighlighted": {
+    "message": "▷ 添加/刪除高亮關鍵詞"
+  },
+  "keywordsToBeHighlighted_tip": {
+    "message": "<p>▷ 上方的關鍵詞將會在只為詳情頁面內進行高亮顯示</p><p>▷ 使用輸入框添加或點擊X號移除關鍵詞</p>< p>▷ 關鍵詞不區分大小寫，且不建議包含符號</p><p>▷ 處於性能考慮，請將關鍵詞的數量控制在10個以下</p>"
+  },
   "level": {
     "message": "級別"
   },
@@ -225,7 +252,7 @@
     "message": "相關說明"
   },
   "notes_intro": {
-    "message": "<p>▷ 建議不要與其他 WaterlooWorks 插件同時啟用</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WWAzure Extension\">sam.zj.shao@gmail.com</a></p>"
+    "message": "<p>▷ 建議不要與其他WaterlooWorks 插件同時啟用</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
   },
   "officialWebsite": {
     "message": "官方網站"
@@ -246,7 +273,7 @@
     "message": "啟用新標籤查看功能"
   },
   "openPostingsInNewTab_tip": {
-    "message": "<p>啟用該選項後，將在職位名稱後方、右鍵菜單內添加相應的“新標籤頁中打開”鏈接。同時，該選項將對職位名稱的操作進行擴展：</p><p><b>1.</b> 直接點擊職位名稱將照常在當前標籤頁打開職位詳情；</p><p><b>2.</b> 按住<b>Ctrl/Cmd</b> 並點擊職位名稱，將在新的背景標籤頁中打開職位詳情；</p><p><b>3.</b> 按住<b>Ctrl/Cmd + Shift</b> 並點擊職位名稱，將在新的活躍標籤頁中打開職位詳情。</p>"
+    "message": "<p>啟用該選項後，將在職位名稱後方、右鍵菜單內添加相應的“新標籤頁中打開”鏈接。同時，該選項將對職位名稱的操作進行擴展：</p><p><b>1.</b> 直接點擊職位名稱將照常在新標籤頁打開職位詳情；</p><p><b>2.</b> 按住 <b>Ctrl/Cmd</b> 並點擊職位名稱，將在新的背景標籤頁中打開職位詳情；</p><p><b>3.</b> 按住 <b>Ctrl/Cmd + Shift</b> 並點擊職位名稱，將在當前標籤頁中打開職位詳情。</p>"
   },
   "openWaterlooWorks": {
     "message": "打開 WaterlooWorks"
@@ -317,11 +344,14 @@
   "selectTheme": {
     "message": "主題選擇"
   },
+  "share": {
+    "message": "分享"
+  },
   "showGlassdoorCompanyRanking": {
     "message": "展示 Glassdoor 平台上的公司評分"
   },
   "showGlassdoorCompanyRanking_tip": {
-    "message": "如果信息可用，此擴展會使用 AJAX 技術從 Glassdoor 平台獲取公司評分的相關內容。"
+    "message": "擴展會使用 Ajax 技術從 Glassdoor 平台獲取公司評分的相關內容。由於 Glassdoor 暫停了公開 API 的申請，所以無法直接從其服務器獲取。作為替代方案，此擴展會從作者服務器請求相關信息，請求的內容僅包含公司名稱。服務器會搜索 Glassdoor 並返回所請求的信息。若不需要該功能，請將其關閉。"
   },
   "showGlassdoorQuickSearchLink": {
     "message": "顯示 Glassdoor 快捷搜索鏈接"
@@ -351,24 +381,24 @@
     "message": "啟用該選項後，網站引導頁將會替換為全新設計的Azure引導頁。網站維護通知等內容也會在新頁面顯示，不必擔心錯過重要通知。"
   },
   "version": {
-    "message": "版本"
+    "message": "版本 V"
   },
   "waterlooWorks": {
     "message": "WaterlooWorks"
   },
   "waterlooWorksAzure": {
-    "message": "WWAzure"
+    "message": "WaterlooWorks Azure"
   },
   "waterlooWorksAzureOptions": {
-    "message": "WWAzure 選項"
+    "message": "WaterlooWorks Azure 選項"
   },
   "waterlooWorksAzureTips": {
-    "message": "WWAzure 幫助"
+    "message": "WaterlooWorks Azure 幫助"
   },
   "welcome": {
     "message": "歡迎使用"
   },
   "welcomeIntro": {
-    "message": "<p>歡迎使用 WWAzure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p class=\"hidden\">如果你覺得此擴展還不錯，<a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">請在 Chrome 商店給個五星好評吧</a>，親~</p>"
+    "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p class=\"hidden\">如果你覺得此擴展還不錯，<a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">請在 Chrome 商店給個五星好評吧</a>，親~</p>"
   }
 }
