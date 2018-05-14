@@ -117,6 +117,8 @@ function messageListAjax() {
     // resize top scroll bar (waterlooworks origianl function)
     setTimeout(function () {
         sizeTopScroll();
+        if (options.MSG_FixTableHeader)
+            fixTableHeader(table);
     }, 100);
 
 }

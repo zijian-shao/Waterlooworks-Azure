@@ -24,7 +24,7 @@ function initAzureIdle() {
 
             console.log('New version updated (V' + newVer + ')');
 
-            if (newVer == '1.3.0') {
+            if (!oldVer.match(/1\.3\./) && newVer.match(/1\.3\./)) {
                 browser.runtime.sendMessage({
                     action: 'createTab',
                     data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=1.3.0&platform=firefox'}

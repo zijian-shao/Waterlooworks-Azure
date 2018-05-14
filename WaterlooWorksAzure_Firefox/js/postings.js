@@ -27,16 +27,9 @@ function addKeyWordReminder(tagArr) {
     // remove duplicated tags
     var uniqueTags = [];
 
-    if (isBrowser('chrome')) {
-        $.each(tagArr, function (i, el) {
-            if ($.inArray(el.toLowerCase(), uniqueTags) === -1) uniqueTags.push(el);
-        });
-    } else if (isBrowser('firefox')) {
-        // jquery $.inArray broken in Firefox
-        for (var i = 0, len = tagArr.length; i < len; i++) {
-            if ((i == tagArr.indexOf(tagArr[i])) || (tagArr.indexOf(tagArr[i]) == tagArr.lastIndexOf(tagArr[i])))
-                uniqueTags.push(tagArr[i]);
-        }
+    for (var i = 0, len = tagArr.length; i < len; i++) {
+        if ((i == tagArr.indexOf(tagArr[i].toLowerCase())) || (tagArr.indexOf(tagArr[i].toLowerCase()) == tagArr.lastIndexOf(tagArr[i].toLowerCase())))
+            uniqueTags.push(tagArr[i]);
     }
 
     var panelBody = $('<div class="panel-body"></div>')
@@ -49,7 +42,8 @@ function addKeyWordReminder(tagArr) {
     panel.append(panelBody);
 
     var columnSpan = $('.orbisTabContainer .tabbable .tab-content .row-fluid .span4');
-    columnSpan.find('.panel:last-child').after(panel);
+    columnSpan.find('.panel:last-child').first().after(panel);
+
 }
 
 function addPostingFloatInfo() {
@@ -898,6 +892,15 @@ function postingListAjax(table, placeholder) {
                 e.preventDefault();
                 showPostingModal($(tr));
             });
+
+            // re-calculate table header after modal close
+            if (options.JOB_FixTableHeader) {
+                $('#popup-modal').on('hidden.bs.modal', function () {
+                    setTimeout(function () {
+                        fixTableHeader(table);
+                    }, 800);
+                });
+            }
         }
     });
 
