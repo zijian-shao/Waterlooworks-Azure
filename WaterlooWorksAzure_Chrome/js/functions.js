@@ -122,8 +122,15 @@ function getParaArr(str) {
 
 function fixTableHeader(table) {
 
+    // if already executed, re-calculate header width
+    var newTable = $('#' + table.attr('id') + '-thead');
+    if (newTable.length) {
+        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px;');
+        return;
+    }
+
     // clone table
-    var newTable = table.clone();
+    newTable = table.clone();
 
     // remove tbody
     newTable.children('tbody').remove();
