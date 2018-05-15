@@ -47,16 +47,6 @@
 }
 
 /* job title, organization, division */
-.postingsTable > tbody > tr > td:nth-child(4) > a {
-    color: #000;
-    font-weight: bold;
-}
-
-.postingsTable > tbody > tr > td:nth-child(4) > strong > a {
-    /*color: #45b6f7;*/
-    font-weight: bold;
-}
-
 .postingsTable > tbody > tr > td:nth-child(4) .combined-info {
     font-weight: normal;
     display: block;

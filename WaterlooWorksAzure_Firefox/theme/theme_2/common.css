@@ -804,6 +804,15 @@ table.formTable span.inputContainer {
     border-left: none;
 }
 
+.postingsTable > tbody > tr > td:nth-child(4) a {
+    color: #000;
+    font-weight: bold;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) strong a {
+    color: #f4ad24 !important;
+}
+
 .table, .table th, .table td {
     border-color: #eee;
 }
