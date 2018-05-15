@@ -933,11 +933,12 @@ function postingList() {
 
     // force show sidebar
     setTimeout(function () {
-        if ($('#closeNav').parent('div.bs--hide__column').css('display') == 'none') {
+        if ($('#hideSideNav').text().match(/Show Side Nav/)) {
             $('#hideSideNav').trigger('click');
             $('#mainContentDiv').css('margin-left', '');
+            fixTableHeader(table);
         }
-    }, 500);
+    }, 1000);
 
     // cache current url
     var currURL = window.location.href;

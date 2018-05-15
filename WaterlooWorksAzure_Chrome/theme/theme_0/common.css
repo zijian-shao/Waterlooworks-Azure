@@ -360,6 +360,16 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     margin: 0;
 }
 
+/* Postings */
+.postingsTable > tbody > tr > td:nth-child(4) a {
+    color: #000;
+    font-weight: bold;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) strong a {
+    color: #45b6f7;
+}
+
 /* Footer */
 
 .orbisFooter {
