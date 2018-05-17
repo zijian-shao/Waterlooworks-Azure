@@ -26,11 +26,11 @@
   "addExportShortlistButton_tip": {
     "message": "Add a button at the top of the shortlisted table. Export the postings to excel on one-click."
   },
-  "addFloatingInfoToTheRightSideOfThePage": {
-    "message": "Add floating info to the right side of the page"
+  "addPostingTitlesToRightSide": {
+    "message": "Add posting titles to the right side of the page"
   },
-  "addFloatingInfoToTheRightSideOfThePage_tip": {
-    "message": "Add a floating panel containing job title, company, and other information to the right side of the page."
+  "addPostingTitlesToRightSide_tip": {
+    "message": "Add a panel containing job title, company, and other information to the right side of the page."
   },
   "appDeadline": {
     "message": "App Deadline"
@@ -178,6 +178,12 @@
   },
   "floatControlButtonsOnPostingDetailPage_tip": {
     "message": "Float control buttons (Apply, Shortlist, Not Interested, Print, Back to Search, etc.) at the bottom of posting detail page."
+  },
+  "floatRightSidePanels": {
+    "message": "Float right side panels"
+  },
+  "floatRightSidePanels_tip": {
+    "message": "Once the top edge of right side panels becomes invisible on screen, the panels will be fixed to the right."
   },
   "freshCitrusTheme": {
     "message": "Fresh Citrus"
