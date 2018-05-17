@@ -601,7 +601,7 @@ function postingListAjax(table, placeholder) {
             exportBtn.text('Export Shortlist')
 
             // btn event
-            if (isBrowser('chrome')) {
+            if (isBrowser('chrome') || isBrowser('safari')) {
                 exportBtn.on('click', function (e) {
                     e.preventDefault();
                     tableBackup.tableExport({
@@ -720,7 +720,7 @@ function postingListAjax(table, placeholder) {
         // click job title and open in new tab
         if (options.JOB_OpenInNewTab) {
 
-            if (isBrowser('chrome')) {
+            if (isBrowser('chrome') || isBrowser('safari')) {
                 jobTitleLink.removeAttr('onclick').off('click');
 
                 jobTitleLink.on('click', function (e) {
