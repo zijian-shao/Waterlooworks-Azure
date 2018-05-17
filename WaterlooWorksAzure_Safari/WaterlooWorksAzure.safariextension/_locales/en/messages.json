@@ -26,11 +26,11 @@
   "addExportShortlistButton_tip": {
     "message": "Add a button at the top of the shortlisted table. Export the postings to excel on one-click."
   },
-  "addFloatingInfoToTheRightSideOfThePage": {
-    "message": "Add floating info to the right side of the page"
+  "addPostingTitlesToRightSide": {
+    "message": "Add posting titles to the right side of the page"
   },
-  "addFloatingInfoToTheRightSideOfThePage_tip": {
-    "message": "Add a floating panel containing job title, company, and other information to the right side of the page."
+  "addPostingTitlesToRightSide_tip": {
+    "message": "Add a panel containing job title, company, and other information to the right side of the page."
   },
   "appDeadline": {
     "message": "App Deadline"
@@ -179,6 +179,12 @@
   "floatControlButtonsOnPostingDetailPage_tip": {
     "message": "Float control buttons (Apply, Shortlist, Not Interested, Print, Back to Search, etc.) at the bottom of posting detail page."
   },
+  "floatRightSidePanels": {
+    "message": "Float right side panels"
+  },
+  "floatRightSidePanels_tip": {
+    "message": "Once the top edge of right side panels becomes invisible on screen, the panels will be fixed to the right."
+  },
   "freshCitrusTheme": {
     "message": "Fresh Citrus"
   },
@@ -249,7 +255,7 @@
     "message": "Not Interested Button"
   },
   "notes": {
-    "message": "Instructions"
+    "message": "Notes"
   },
   "notes_intro": {
     "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"

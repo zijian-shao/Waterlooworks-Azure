@@ -1,5 +1,8 @@
 function initAzureIdle() {
 
+    if (window.self !== window.top)
+        return;
+
     if (!options.GLB_Enabled)
         return;
 

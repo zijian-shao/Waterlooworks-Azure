@@ -131,8 +131,15 @@ function getParaArr(str) {
 
 function fixTableHeader(table) {
 
+    // if already executed, re-calculate header width
+    var newTable = $('#' + table.attr('id') + '-thead');
+    if (newTable.length) {
+        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px;');
+        return;
+    }
+
     // clone table
-    var newTable = table.clone();
+    newTable = table.clone();
 
     // remove tbody
     newTable.children('tbody').remove();
@@ -278,41 +285,66 @@ function needBuildForm() {
 
 function replaceHomepage() {
 
-    function replaceHomepageAjax(data) {
+    if (isBrowser('safari')) {
+        function replaceHomepageAjax(data) {
 
+            // find notice
+            var notice = $('table').clone();
+
+            $('body').html(data);
+
+            // modify notice
+            if (notice !== null && notice !== undefined) {
+
+                $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
+                    .on('click', function (e) {
+                        e.preventDefault();
+                        notice.remove();
+                    })
+                    .appendTo(notice.find('tbody tr'));
+
+                $('body').append(notice);
+            }
+        }
+
+        $.ajax({
+            url: baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html',
+            dataType: 'html',
+            success: function (data) {
+
+                replaceHomepageAjax(data.responseText);
+
+            },
+            error: function (data) {
+
+                replaceHomepageAjax(data.responseText);
+
+            }
+        });
+    } else {
         // find notice
         var notice = $('table').clone();
 
-        $('body').html(data);
+        // replace body
+        $.get(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html', function (data) {
 
-        // modify notice
-        if (notice !== null && notice !== undefined) {
+            $('body').html(data);
 
-            $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
-                .on('click', function (e) {
-                    e.preventDefault();
-                    notice.remove();
-                })
-                .appendTo(notice.find('tbody tr'));
+            // modify notice
+            if (notice !== null && notice !== undefined) {
 
-            $('body').append(notice);
-        }
+                $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
+                    .on('click', function (e) {
+                        e.preventDefault();
+                        notice.remove();
+                    })
+                    .appendTo(notice.find('tbody tr'));
+
+                $('body').append(notice);
+            }
+        });
+
     }
-
-    $.ajax({
-        url: baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html',
-        dataType: 'html',
-        success: function (data) {
-
-            replaceHomepageAjax(data.responseText);
-
-        },
-        error: function (data) {
-
-            replaceHomepageAjax(data.responseText);
-
-        }
-    });
 
 }
 

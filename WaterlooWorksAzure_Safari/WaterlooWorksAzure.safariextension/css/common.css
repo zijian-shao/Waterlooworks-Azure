@@ -242,7 +242,7 @@ label.gridDropdownButton.is--focused {
     bottom: 60px;
     text-align: center;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1010;
     opacity: 1;
     visibility: visible;
     -webkit-transition: all 0.2s ease;

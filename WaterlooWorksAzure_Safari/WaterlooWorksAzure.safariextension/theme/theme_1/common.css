@@ -905,11 +905,12 @@ img {
 }
 
 /* combined */
-.postingsTable > tbody > tr > td:nth-child(4) > a {
+.postingsTable > tbody > tr > td:nth-child(4) a {
     color: #ddd !important;
+    font-weight: bold;
 }
 
-.postingsTable > tbody > tr > td:nth-child(4) > strong > a {
+.postingsTable > tbody > tr > td:nth-child(4) strong a {
     color: #09b1b9 !important;
 }
 

@@ -267,18 +267,15 @@ function initOptions() {
             val = val.trim();
             if (val == '' || val.length < 1 || val.length > 30) return;
 
-            val = val
-                .replace(/\\/g, '\\\\')
-                .replace(/\u0008/g, '\\b')
-                .replace(/\t/g, '\\t')
-                .replace(/\n/g, '\\n')
-                .replace(/\f/g, '\\f')
-                .replace(/\r/g, '\\r')
-                .replace(/'/g, '\\\'')
-                .replace(/"/g, '\\"');
-
             createItemTag('JOB_DetailPageHighlightKeywords', val, 'highlightKeywordList', true);
 
+        });
+
+        $('#add-highlight-keyword-input').on('keydown', function (e) {
+            var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+            if (key == 13) {
+                $('#add-highlight-keyword-btn').trigger('click');
+            }
         });
 
         // switch between tabs
@@ -297,7 +294,6 @@ function initOptions() {
                 $('#opt-tab-' + prevTabID).addClass('hidden');
                 $('#opt-tab-' + thisTabID).fadeIn(200).removeClass('hidden');
             });
-
 
             window.location.hash = $(this).attr('data-option-tab-name');
 

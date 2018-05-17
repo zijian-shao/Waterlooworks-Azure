@@ -26,11 +26,11 @@
   "addExportShortlistButton_tip": {
     "message": "在收藏列表页面顶端添加一个按钮，点击即可一键将列表导出到 Excel。"
   },
-  "addFloatingInfoToTheRightSideOfThePage": {
-    "message": "页面右侧添加浮动信息面板"
+  "addPostingTitlesToRightSide": {
+    "message": "将职位名称等添加到页面右侧面板"
   },
-  "addFloatingInfoToTheRightSideOfThePage_tip": {
-    "message": "在职位详情页右侧添加浮动面板，展示职位名称、公司及其他相关信息。"
+  "addPostingTitlesToRightSide_tip": {
+    "message": "在职位详情页右侧添加面板，展示职位名称、公司及其他相关信息。"
   },
   "appDeadline": {
     "message": "截止日期"
@@ -178,6 +178,12 @@
   },
   "floatControlButtonsOnPostingDetailPage_tip": {
     "message": "启用该选项后，浏览职位详情时，各种控制按钮（申请、收藏、不感兴趣、打印、返回搜索页等）将会浮动在页面底部，方便操作。"
+  },
+  "floatRightSidePanels": {
+    "message": "浮动右侧面版"
+  },
+  "floatRightSidePanels_tip": {
+    "message": "若右侧面板顶端边缘于屏幕内不可见，所有面板将固定于右侧。"
   },
   "freshCitrusTheme": {
     "message": "清新柑橘色主题"

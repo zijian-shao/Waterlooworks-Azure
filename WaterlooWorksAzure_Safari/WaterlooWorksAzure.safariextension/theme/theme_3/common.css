@@ -893,6 +893,15 @@ table.formTable span.inputContainer {
     border: 1px solid #ddd;
 }
 
+.postingsTable > tbody > tr > td:nth-child(4) a {
+    color: #000;
+    font-weight: bold;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) strong a {
+    color: #8599de !important;
+}
+
 @media (max-width: 767px ) {
     body {
         padding-left: 0;

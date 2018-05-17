@@ -25,6 +25,7 @@ function getOptionListDefault() {
         'JOB_ShortlistExport': true,
         'JOB_FloatDetailPageButton': true,
         'JOB_FloatDetailPageInfo': true,
+        'JOB_DetailPostingInfoPanel': true,
         'JOB_DetailPageFontSize': true,
         'JOB_DetailPageHighlight': true,
         'JOB_DetailPageHighlightKeywords': ['G2', 'driver\'s license'],
