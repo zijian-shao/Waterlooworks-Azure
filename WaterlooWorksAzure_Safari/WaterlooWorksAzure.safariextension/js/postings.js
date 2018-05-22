@@ -229,7 +229,7 @@ function showPostingModal(tr) {
         // prepare buttons
         var buttons = $('<div/>');
 
-        if (apply !== null && apply !== undefined)
+        if (apply !== null && apply !== undefined && tr.css('display') != 'none')
             buttons.append(
                 buttonCreateUtil('Apply', 'a', {
                     'href': 'javascript:void(0);',
@@ -239,13 +239,13 @@ function showPostingModal(tr) {
                 })
             );
 
-        if (shortlist !== null && shortlist !== undefined)
+        if (shortlist !== null && shortlist !== undefined && tr.css('display') != 'none')
             if (!inShortlist)
                 buttons.append(
                     buttonCreateUtil('Shortlist', 'a', {
                         'href': 'javascript:void(0);',
                         'onclick': shortlist,
-                        'class': 'btn btn-default margin-left-5',
+                        'class': 'btn btn-default margin-left-5 modal-btn-shortlist',
                         'id': 'modal-btn-shortlist'
                     })
                 );
@@ -254,12 +254,12 @@ function showPostingModal(tr) {
                     buttonCreateUtil('Unshortlist', 'a', {
                         'href': 'javascript:void(0);',
                         'onclick': shortlist,
-                        'class': 'btn btn-default margin-left-5',
+                        'class': 'btn btn-default margin-left-5 modal-btn-shortlist',
                         'id': 'modal-btn-shortlist'
                     })
                 );
 
-        if (notInterested !== null && notInterested !== undefined)
+        if (notInterested !== null && notInterested !== undefined && tr.css('display') != 'none')
             buttons.append(buttonCreateUtil('Not Interested', 'a', {
                     'href': 'javascript:void(0);',
                     'onclick': notInterested,
@@ -286,7 +286,11 @@ function showPostingModal(tr) {
 
         // add title
         popupModalBody.prepend($('<p class="modal-organization">' + jobCompany + '</p>'));
-        popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + '</h1>'));
+        if (tr.css('display') != 'none') {
+            popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + '</h1>'));
+        } else {
+            popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + ' <span style="color:red">(Not Interested)</span></h1>'));
+        }
 
         // add nav
         var modalNav = $('<div class="modal-nav"></div>');
@@ -304,11 +308,11 @@ function showPostingModal(tr) {
 
         $('.modal-scrollable').scrollTop(0);
 
-        $('#modal-btn-shortlist').on('click', function () {
+        $('.modal-btn-shortlist').on('click', function () {
             if ($(this).text().match(/unshortlist/i)) {
-                $(this).text('Shortlist');
+                $('.modal-btn-shortlist').text('Shortlist');
             } else {
-                $(this).text('Unshortlist')
+                $('.modal-btn-shortlist').text('Unshortlist');
             }
         });
 
@@ -318,11 +322,13 @@ function showPostingModal(tr) {
 
 
         $('#modal-nav-prev').on('click', function () {
-            showPostingModal(tr.prev('tr'));
+            var prev = $($('#postingsTable').children('tbody').children('tr')[parseInt(tr.attr('data-index')) - 1]);
+            showPostingModal(prev);
         });
 
         $('#modal-nav-next').on('click', function () {
-            showPostingModal(tr.next('tr'));
+            var next = $($('#postingsTable').children('tbody').children('tr')[parseInt(tr.attr('data-index')) + 1]);
+            showPostingModal(next);
         });
     }
 
@@ -601,7 +607,7 @@ function postingListAjax(table, placeholder) {
             exportBtn.text('Export Shortlist')
 
             // btn event
-            if (isBrowser('chrome') || isBrowser('safari')) {
+            if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
                 exportBtn.on('click', function (e) {
                     e.preventDefault();
                     tableBackup.tableExport({
@@ -693,6 +699,8 @@ function postingListAjax(table, placeholder) {
     // loop through and modify each row
     table.find('tbody tr').each(function (index, tr) {
 
+        $(tr).attr('data-index', index);
+
         var apply, shortlist, inShortlist, notInterested, jobIntro, currentTab, newTab;
 
         // loop through the view drop down list and get onclick script
@@ -720,7 +728,7 @@ function postingListAjax(table, placeholder) {
         // click job title and open in new tab
         if (options.JOB_OpenInNewTab) {
 
-            if (isBrowser('chrome') || isBrowser('safari')) {
+            if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
                 jobTitleLink.removeAttr('onclick').off('click');
 
                 jobTitleLink.on('click', function (e) {
@@ -1005,8 +1013,8 @@ function postingList() {
     $(document).ajaxComplete(function (event, xhr, settings) {
 
         if ((settings.url === '/myAccount/co-op/coop-postings.htm'
-                || settings.url === '/myAccount/hire-waterloo/other-jobs/jobs-postings.htm'
-                || settings.url === '/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm')
+            || settings.url === '/myAccount/hire-waterloo/other-jobs/jobs-postings.htm'
+            || settings.url === '/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm')
             && settings.dataType === 'html') {
             postingListAjax($('#postingsTable'), $('#postingsTablePlaceholder'));
         }

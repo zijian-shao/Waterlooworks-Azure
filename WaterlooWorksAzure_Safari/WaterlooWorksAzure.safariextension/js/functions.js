@@ -105,8 +105,8 @@ function isBrowser(name) {
         return typeof InstallTrigger !== 'undefined';
     else if (name == 'safari')
         return /constructor/i.test(window.HTMLElement) || (function (p) {
-            return p.toString() === "[object SafariRemoteNotification]";
-        })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+                return p.toString() === "[object SafariRemoteNotification]";
+            })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
     else if (name == 'ie')
         return /*@cc_on!@*/false || !!document.documentMode;
     else if (name == 'edge')

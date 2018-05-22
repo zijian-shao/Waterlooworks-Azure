@@ -276,10 +276,10 @@
     "message": "Open selected messages in new tab instead of current one."
   },
   "openPostingsInNewTab": {
-    "message": "Enable view in new tab"
+    "message": "Enhanced view in new tab"
   },
   "openPostingsInNewTab_tip": {
-    "message": "<p>Add \"Open in new tab\" link after job titles and in context menu. Also, this option adds extra operations when clicking a job title:</p><p><b>1.</b> Click job title: open in new active tab</p><p><b>2.</b> Hold <b>Ctrl/Cmd</b> and click job title: open in new background tab</p><p><b>3.</b> Hold <b>Ctrl/Cmd + Shift</b> and click job title: open in current tab</p>"
+    "message": "<p>Shortcuts instructions:</p><p><b>1.</b> Click job title: open in new active tab</p><p><b>2.</b> Hold <b>Ctrl/Cmd</b> and click job title: open in new background tab</p><p><b>3.</b> Hold <b>Ctrl/Cmd + Shift</b> and click job title: open in current tab</p>"
   },
   "openWaterlooWorks": {
     "message": "Open WaterlooWorks"
