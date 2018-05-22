@@ -8,8 +8,6 @@ Firefox: [View in Firefox Addons](https://addons.mozilla.org/addon/waterlooworks
 
 Safari: [Download from Extension Website](https://www.zijianshao.com/wwazure/updates/?request=safaripack "WaterlooWorks Azure (Safari Version)")
 
-Opera: [Download from Extension Website](https://www.zijianshao.com/wwazure/updates/?request=operapack "WaterlooWorks Azure (Opera Version)")
-
 ## Features
 - Multiple themes
 - Enhanced job posting list
