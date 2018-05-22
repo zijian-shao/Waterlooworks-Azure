@@ -50,7 +50,10 @@ function scrollToUtil(pos, time, offset) {
     else if ($.type(pos) === 'string')
         pos = $(pos).first().offset().top;
 
-    $('html').animate({scrollTop: pos - offset}, time);
+    if (isBrowser('safari'))
+        $('body').animate({scrollTop: pos - offset}, time);
+    else
+        $('html').animate({scrollTop: pos - offset}, time);
 
 }
 
@@ -80,10 +83,16 @@ function unblockPage() {
 
 function isOnScreen(element) {
 
+    var html;
+    if (isBrowser('safari'))
+        html = $('body');
+    else
+        html = $('html');
+
     if ($.type(element) === 'object')
-        return ($('html').scrollTop() + themeConfig.navbarHeight < element.offset().top);
+        return (html.scrollTop() + themeConfig.navbarHeight < element.offset().top);
     else if ($.type(element) === 'number')
-        return ($('html').scrollTop() + themeConfig.navbarHeight < element);
+        return (html.scrollTop() + themeConfig.navbarHeight < element);
 
     return true;
 }
@@ -276,27 +285,66 @@ function needBuildForm() {
 
 function replaceHomepage() {
 
-    // find notice
-    var notice = $('table').clone();
+    if (isBrowser('safari')) {
+        function replaceHomepageAjax(data) {
 
-    // replace body
-    $.get(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html', function (data) {
+            // find notice
+            var notice = $('table').clone();
 
-        $('body').html(data);
+            $('body').html(data);
 
-        // modify notice
-        if (notice !== null && notice !== undefined) {
+            // modify notice
+            if (notice !== null && notice !== undefined) {
 
-            $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
-                .on('click', function (e) {
-                    e.preventDefault();
-                    notice.remove();
-                })
-                .appendTo(notice.find('tbody tr'));
+                $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
+                    .on('click', function (e) {
+                        e.preventDefault();
+                        notice.remove();
+                    })
+                    .appendTo(notice.find('tbody tr'));
 
-            $('body').append(notice);
+                $('body').append(notice);
+            }
         }
-    });
+
+        $.ajax({
+            url: baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html',
+            dataType: 'html',
+            success: function (data) {
+
+                replaceHomepageAjax(data.responseText);
+
+            },
+            error: function (data) {
+
+                replaceHomepageAjax(data.responseText);
+
+            }
+        });
+    } else {
+        // find notice
+        var notice = $('table').clone();
+
+        // replace body
+        $.get(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html', function (data) {
+
+            $('body').html(data);
+
+            // modify notice
+            if (notice !== null && notice !== undefined) {
+
+                $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
+                    .on('click', function (e) {
+                        e.preventDefault();
+                        notice.remove();
+                    })
+                    .appendTo(notice.find('tbody tr'));
+
+                $('body').append(notice);
+            }
+        });
+
+    }
 
 }
 

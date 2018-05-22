@@ -292,7 +292,6 @@ function initOptions() {
                 $('#opt-tab-' + thisTabID).fadeIn(200).removeClass('hidden');
             });
 
-
             window.location.hash = $(this).attr('data-option-tab-name');
 
         });
