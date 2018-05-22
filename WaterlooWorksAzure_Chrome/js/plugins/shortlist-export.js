@@ -82,7 +82,7 @@
                 else if (defaults.type == 'powerpoint')
                     filetype = 'ppt';
 
-                if (isBrowser('chrome') || isBrowser('safari')) {
+                if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
                     var a = document.createElement('a');
                     a.href = 'data:application/vnd.ms-' + defaults.type + ';' + base64data;
                     a.download = 'Shortlist_' + Date.now() + '.' + filetype;

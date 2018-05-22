@@ -276,10 +276,10 @@
     "message": "啟用該選項後，將會在新標籤頁中打開選中的短消息。"
   },
   "openPostingsInNewTab": {
-    "message": "啟用新標籤查看功能"
+    "message": "增強新標籤查看功能"
   },
   "openPostingsInNewTab_tip": {
-    "message": "<p>啟用該選項後，將在職位名稱後方、右鍵菜單內添加相應的“新標籤頁中打開”鏈接。同時，該選項將對職位名稱的操作進行擴展：</p><p><b>1.</b> 直接點擊職位名稱將照常在新標籤頁打開職位詳情；</p><p><b>2.</b> 按住 <b>Ctrl/Cmd</b> 並點擊職位名稱，將在新的背景標籤頁中打開職位詳情；</p><p><b>3.</b> 按住 <b>Ctrl/Cmd + Shift</b> 並點擊職位名稱，將在當前標籤頁中打開職位詳情。</p>"
+    "message": "<p>快捷鍵使用說明：</p><p><b>1.</b> 直接點擊職位名稱將照常在新標籤頁打開職位詳情；</p><p><b>2.</b> 按住 <b>Ctrl/Cmd</b> 並點擊職位名稱，將在新的背景標籤頁中打開職位詳情；</p><p><b>3.</b> 按住 <b>Ctrl/Cmd + Shift</b> 並點擊職位名稱，將在當前標籤頁中打開職位詳情。</p>"
   },
   "openWaterlooWorks": {
     "message": "打開 WaterlooWorks"

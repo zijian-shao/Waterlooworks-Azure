@@ -276,10 +276,10 @@
     "message": "启用该选项后，将会在新标签页中打开选中的短消息。"
   },
   "openPostingsInNewTab": {
-    "message": "启用新标签查看功能"
+    "message": "增强新标签查看功能"
   },
   "openPostingsInNewTab_tip": {
-    "message": "<p>启用该选项后，将在职位名称后方、右键菜单内添加相应的“新标签页中打开”链接。同时，该选项将对职位名称的操作进行扩展：</p><p><b>1.</b> 直接点击职位名称将照常在新标签页打开职位详情；</p><p><b>2.</b> 按住 <b>Ctrl/Cmd</b> 并点击职位名称，将在新的背景标签页中打开职位详情；</p><p><b>3.</b> 按住 <b>Ctrl/Cmd + Shift</b> 并点击职位名称，将在当前标签页中打开职位详情。</p>"
+    "message": "<p>快捷键使用说明：</p><p><b>1.</b> 直接点击职位名称将照常在新标签页打开职位详情；</p><p><b>2.</b> 按住 <b>Ctrl/Cmd</b> 并点击职位名称，将在新的背景标签页中打开职位详情；</p><p><b>3.</b> 按住 <b>Ctrl/Cmd + Shift</b> 并点击职位名称，将在当前标签页中打开职位详情。</p>"
   },
   "openWaterlooWorks": {
     "message": "打开 WaterlooWorks"
