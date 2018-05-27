@@ -986,3 +986,16 @@ img {
 .modal-posting-actions {
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
+
+/* batch */
+.azure-batch-container li:hover {
+    background: rgba(9, 177, 185, 0.15);
+}
+
+.azure-batch-container li.active {
+    background: rgba(9, 177, 185, 0.15);
+}
+
+.azure-batch-container li:active {
+    background: rgba(9, 177, 185, 0.25);
+}

@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Zijian Shao</string>
 	<key>Builder Version</key>
-	<string>13605.1.33.1.2</string>
+	<string>13605.1.33.1.4</string>
 	<key>CFBundleDisplayName</key>
 	<string>WaterlooWorks Azure</string>
 	<key>CFBundleIdentifier</key>
@@ -13,9 +13,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.2</string>
+	<string>1.10.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.2</string>
+	<string>1.10.0</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Database Quota</key>
@@ -65,7 +65,6 @@
 			<array>
 				<string>js/plugins/jquery.js</string>
 				<string>js/configs.js</string>
-				<string>js/themes.js</string>
 				<string>js/init.js</string>
 			</array>
 		</dict>

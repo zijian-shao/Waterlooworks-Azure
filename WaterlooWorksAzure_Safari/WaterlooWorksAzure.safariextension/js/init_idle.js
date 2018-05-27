@@ -12,6 +12,7 @@ function initAzureIdle() {
     jsText += 'var baseURL = "' + baseURL + '";';
     jsText += 'var options = ' + JSON.stringify(options) + ';';
     jsText += 'var themeConfig = ' + JSON.stringify(themeConfigs) + ';';
+    jsText += 'var currURL = "' + currURL + '";';
     injectScript(jsText, 'head', 'text');
 
     // func

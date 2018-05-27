@@ -1,25 +1,46 @@
+var hideNewTagStatus = false, hideShortlistedStatus = false;
+
+/**
+ * GENERAL
+ * Detect if current page is filtered by shortlist
+ * @returns {boolean}
+ */
 function isShortlistPage() {
-    var moduleHeader = $('.orbisModuleHeader');
-    if (moduleHeader.length && moduleHeader.text().match(/ - Shortlist/gi)) {
-        return true;
+
+    if (typeof isShortlistPage.rtnVal === typeof undefined) {
+        var moduleHeader = $('.orbisModuleHeader');
+        isShortlistPage.rtnVal = moduleHeader.length && moduleHeader.text().match(/ - Shortlist/);
     }
+
+    return isShortlistPage.rtnVal;
+
 }
 
-function rankStarHTML(score) {
+/**
+ * GENERAL
+ * Detect if current page is filtered by not interested
+ * @returns {boolean}
+ */
+function isNotInterestedPage() {
 
-    var int = Math.round(score);
-    var html = '';
+    if (typeof isNotInterestedPage.rtnVal === typeof undefined) {
+        var table = $('#postingsTable');
+        if (!table.length) {
+            isNotInterestedPage.rtnVal = false;
+        } else {
+            isNotInterestedPage.rtnVal = table.find('tbody tr').first().find('td:last-child').text().match(/Include/);
+        }
 
-    for (var i = 0; i < int; i++) {
-        html += '<i class="icon-star"></i>';
     }
-    for (var i = 5 - int; i > 0; i--) {
-        html += '<i class="icon-star-empty"></i>';
-    }
 
-    return html;
+    return isNotInterestedPage.rtnVal;
+
 }
 
+/**
+ * POSTING DETAILS
+ * Float right side panel on detail page
+ */
 function floatInfoPanel() {
     function testPostingFloatInfo() {
         if ($(window).width() >= 980) {
@@ -76,38 +97,108 @@ function floatInfoPanel() {
     });
 }
 
-function addKeyWordReminder(tagArr) {
-
-    if (!tagArr.length) return;
-
-    // remove duplicated tags
-    var uniqueTags = [];
-
-    for (var i = 0, len = tagArr.length; i < len; i++) {
-        tagArr[i] = tagArr[i].toLowerCase();
-    }
-
-    for (var i = 0, len = tagArr.length; i < len; i++) {
-        if ((i == tagArr.indexOf(tagArr[i])) || (tagArr.indexOf(tagArr[i]) == tagArr.lastIndexOf(tagArr[i])))
-            uniqueTags.push(tagArr[i].replace(/\w\S*/g, function (txt) {
-                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-            }));
-    }
-
-    var panelBody = $('<div class="panel-body"></div>')
-    $.each(uniqueTags, function (i, v) {
-        panelBody.append($('<span class="label label-warning">' + v + '</span>'));
+/**
+ * POSTING DETAILS & MODAL
+ * Force links in posting detail open in new tab
+ * @param Element that is table or contains table
+ */
+function detailPageLinkNewTab(table) {
+    table.find('tr td a').each(function () {
+        $(this).attr('target', '_blank');
     });
-
-    var panel = $('<div class="panel panel-default azure-posting-keyword-panel"></div>');
-    panel.append($('<div class="panel-heading"><small class="tip pull-right">Configure it in Extension Options</small><strong>HIGHLIGHTED KEYWORDS</strong></div>'));
-    panel.append(panelBody);
-
-    var columnSpan = $('.orbisTabContainer .tabbable .tab-content .row-fluid .span4');
-    columnSpan.find('.panel:last-child').first().after(panel);
-
 }
 
+/**
+ * POSTING DETAILS
+ * Add posting title to page title
+ */
+function detailPageTitle() {
+    var jobTitle = $('#mainContentDiv > div.orbisModuleHeader > div.row-fluid > div:nth-child(1) > h1').text();
+    jobTitle = jobTitle.trim().replace(/\n/g, '').replace(/\t/g, '').replace(/Job ID:([0-9]+) /g, '');
+    var company = $('#mainContentDiv > div.orbisModuleHeader > div.row-fluid > div:nth-child(1) > h5');
+    company.find('span').remove();
+    company = company.text().trim().split(' - ');
+    company.pop();
+    company = company.join(' - ');
+    var pageTitle = $('head title');
+    pageTitle.text(jobTitle + ' - ' + company + ' - ' + pageTitle.text());
+}
+
+/**
+ * POSTING DETAILS & MODAL
+ * Highlight matched keywords
+ * @param table Element that is table or contains table
+ * @param needPanel Boolean. If true, add panel to the right
+ */
+function highlightKeyword(table, needPanel) {
+
+    function _addKeyWordReminder(tagArr) {
+
+        if (!tagArr.length) return;
+
+        // remove duplicated tags
+        var uniqueTags = [];
+
+        for (var i = 0, len = tagArr.length; i < len; i++) {
+            tagArr[i] = tagArr[i].toLowerCase();
+        }
+
+        for (var i = 0, len = tagArr.length; i < len; i++) {
+            if ((i == tagArr.indexOf(tagArr[i])) || (tagArr.indexOf(tagArr[i]) == tagArr.lastIndexOf(tagArr[i])))
+                uniqueTags.push(tagArr[i].replace(/\w\S*/g, function (txt) {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                }));
+        }
+
+        var panelBody = $('<div class="panel-body"></div>')
+        $.each(uniqueTags, function (i, v) {
+            panelBody.append($('<span class="label label-warning">' + v + '</span>'));
+        });
+
+        var panel = $('<div class="panel panel-default azure-posting-keyword-panel"></div>');
+        panel.append($('<div class="panel-heading"><small class="tip pull-right">Configure it in Extension Options</small><strong>HIGHLIGHTED KEYWORDS</strong></div>'));
+        panel.append(panelBody);
+
+        var columnSpan = $('.orbisTabContainer .tabbable .tab-content .row-fluid .span4');
+        columnSpan.find('.panel:last-child').first().after(panel);
+
+    }
+
+    var hlKws = options.JOB_DetailPageHighlightKeywords;
+
+    if (Array.isArray(hlKws) && hlKws.length) {
+        var regStr = '';
+        hlKws.forEach(function (val) {
+            val = val.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+            regStr += '(\\b' + val + ')|';
+        });
+        regStr = regStr.slice(0, -1);
+        regStr = '(' + regStr + ')';
+
+        var hlRegex = new RegExp(regStr + '(?![^<>]*>)', 'ig');
+        var matchedArr = [];
+
+        table.find('tr td:last-child').each(function () {
+
+            var matched = $(this).html().match(hlRegex);
+            if (matched) {
+                $(this).html(
+                    $(this).html().replace(hlRegex, '<span class="azure-keyword-highlight">$1</span>')
+                );
+                Array.prototype.push.apply(matchedArr, matched);
+            }
+
+        });
+
+        if (needPanel === true)
+            _addKeyWordReminder(matchedArr);
+    }
+}
+
+/**
+ * POSTING DETAILS
+ * Add posting title & organization to the right
+ */
 function addPostingInfoPanel() {
 
     var title = $('.orbisModuleHeader .row-fluid:first-child .span6:first-child').first();
@@ -121,7 +212,28 @@ function addPostingInfoPanel() {
 
 }
 
+/**
+ * POSTING DETAILS
+ * Add glassdoor company ranking (Callback function)
+ * @param data
+ */
 function showCompanyRank(data) {
+
+    function _rankStarHTML(score) {
+
+        var int = Math.round(score);
+        var html = '';
+
+        for (var i = 0; i < int; i++) {
+            html += '<i class="icon-star"></i>';
+        }
+        for (var i = 5 - int; i > 0; i--) {
+            html += '<i class="icon-star-empty"></i>';
+        }
+
+        return html;
+    }
+
 
     var company = $('.orbisModuleHeader').find('h5').first();
     var companyName = company.text().split('-')[0].trim().replace(/\t/g, '').replace(/\n/g, '');
@@ -145,7 +257,7 @@ function showCompanyRank(data) {
                 link = 'https://www.glassdoor.ca';
             }
 
-            rank = $('<span class="azure-company-ranking">' + rankStarHTML(score) + ' ' + score + '<a href="' + link + '" target="_blank"><i class="icon-share-alt"></i> View In Glassdoor</a></span>');
+            rank = $('<span class="azure-company-ranking">' + _rankStarHTML(score) + ' ' + score + '<a href="' + link + '" target="_blank"><i class="icon-share-alt"></i> View In Glassdoor</a></span>');
 
         }
 
@@ -170,6 +282,11 @@ function showCompanyRank(data) {
 
 }
 
+/**
+ * POSTING LIST
+ * Show target posting preview in modal
+ * @param tr The target row in posting list
+ */
 function showPostingModal(tr) {
 
     function _showPostingModal(data) {
@@ -224,57 +341,85 @@ function showPostingModal(tr) {
 
         // init body
         newTable = $('<div class="table-responsive"></div>').append(newTable);
+        highlightKeyword(newTable);
+        detailPageLinkNewTab(newTable);
         popupModalBody.html(newTable);
 
         // prepare buttons
         var buttons = $('<div/>');
+        var btnTxt = '';
+        var btnAttr = {};
 
-        if (apply !== null && apply !== undefined && tr.css('display') != 'none')
-            buttons.append(
-                buttonCreateUtil('Apply', 'a', {
-                    'href': 'javascript:void(0);',
-                    'onclick': apply,
-                    'class': 'btn btn-success margin-left-5',
-                    'id': 'modal-btn-apply'
-                })
-            );
+        if (apply !== null && apply !== undefined) {
+            btnAttr = {
+                'href': 'javascript:void(0);',
+                'onclick': apply,
+                'class': 'btn btn-success margin-left-5',
+                'id': 'modal-btn-apply'
+            };
+            if (options.JOB_PopupModalArrowKey) {
+                btnTxt = '<u>A</u>pply';
+                btnAttr['accesskey'] = 'a';
+            } else {
+                btnTxt = 'Apply';
+            }
+            buttons.append(buttonCreateUtil(btnTxt, 'a', btnAttr));
+        }
 
-        if (shortlist !== null && shortlist !== undefined && tr.css('display') != 'none')
-            if (!inShortlist)
-                buttons.append(
-                    buttonCreateUtil('Shortlist', 'a', {
-                        'href': 'javascript:void(0);',
-                        'onclick': shortlist,
-                        'class': 'btn btn-default margin-left-5 modal-btn-shortlist',
-                        'id': 'modal-btn-shortlist'
-                    })
-                );
+        if (shortlist !== null && shortlist !== undefined) {
+            btnAttr = {
+                'href': 'javascript:void(0);',
+                'onclick': shortlist,
+                'class': 'btn btn-default margin-left-5 modal-btn-shortlist',
+                'id': 'modal-btn-shortlist'
+            };
+            if (!inShortlist) {
+                if (options.JOB_PopupModalArrowKey) {
+                    btnTxt = '<u>S</u>hortlist';
+                    btnAttr['accesskey'] = 's';
+                } else {
+                    btnTxt = 'Shortlist';
+                }
+
+            }
+            else {
+                if (options.JOB_PopupModalArrowKey) {
+                    btnTxt = 'Un<u>s</u>hortlist';
+                    btnAttr['accesskey'] = 's';
+                } else {
+                    btnTxt = 'Unshortlist';
+                }
+            }
+            buttons.append(buttonCreateUtil(btnTxt, 'a', btnAttr));
+        }
+
+        if (notInterested !== null && notInterested !== undefined) {
+            if ($(tr).find('td:last-child').last().text().match(/Include/))
+                btnTxt = 'Include';
             else
-                buttons.append(
-                    buttonCreateUtil('Unshortlist', 'a', {
-                        'href': 'javascript:void(0);',
-                        'onclick': shortlist,
-                        'class': 'btn btn-default margin-left-5 modal-btn-shortlist',
-                        'id': 'modal-btn-shortlist'
-                    })
-                );
-
-        if (notInterested !== null && notInterested !== undefined && tr.css('display') != 'none')
-            buttons.append(buttonCreateUtil('Not Interested', 'a', {
+                btnTxt = 'Not Interested';
+            buttons.append(buttonCreateUtil(btnTxt, 'a', {
                     'href': 'javascript:void(0);',
                     'onclick': notInterested,
                     'class': 'btn btn-default margin-left-5',
                     'id': 'modal-btn-not-interested'
                 })
             );
+        }
 
-        buttons.append(buttonCreateUtil('New Tab', 'a', {
-                'href': 'javascript:void(0);',
-                'onclick': newTab,
-                'class': 'btn btn-primary margin-left-5',
-                'id': 'modal-btn-new-tab'
-            })
-        );
+        btnAttr = {
+            'href': 'javascript:void(0);',
+            'onclick': newTab,
+            'class': 'btn btn-primary margin-left-5',
+            'id': 'modal-btn-new-tab'
+        };
+        if (options.JOB_PopupModalArrowKey) {
+            btnTxt = '<u>N</u>ew Tab';
+            btnAttr['accesskey'] = 'n';
+        } else {
+            btnTxt = 'New Tab';
+        }
+        buttons.append(buttonCreateUtil(btnTxt, 'a', btnAttr));
 
         // add buttons
         buttons.append($('<button type="button" class="btn btn-default margin-left-5" data-dismiss="modal">Close</button>'));
@@ -282,24 +427,36 @@ function showPostingModal(tr) {
         var postingActions = $('<div class="modal-posting-actions"></div>').append(buttons.clone());
         popupModalBody.prepend(postingActions);
 
-        popupModalFooter.html(buttons.clone());
+        var btnsClone = buttons.clone();
+        buttons.find('a').removeAttr('accesskey');
+        popupModalFooter.html(btnsClone);
 
         // add title
         popupModalBody.prepend($('<p class="modal-organization">' + jobCompany + '</p>'));
-        if (tr.css('display') != 'none') {
-            popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + '</h1>'));
-        } else {
-            popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + ' <span style="color:red">(Not Interested)</span></h1>'));
-        }
+        popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + '</h1>'));
 
-        // add nav
+        // add prev / next btn
         var modalNav = $('<div class="modal-nav"></div>');
 
-        if (tr.prev('tr').length)
-            modalNav.append($('<i class="prev-posting icon-chevron-left" id="modal-nav-prev"></i>'));
+        var trPrev = tr.prev('tr');
+        while (trPrev.length) {
+            if (trPrev.css('display') != 'none') {
+                modalNav.append($('<i class="prev-posting icon-chevron-left" id="modal-nav-prev"></i>'));
+                break;
+            } else {
+                trPrev = trPrev.prev('tr');
+            }
+        }
 
-        if (tr.next('tr').length)
-            modalNav.append($('<i class="next-posting icon-chevron-right" id="modal-nav-next"></i>'));
+        var trNext = tr.next('tr');
+        while (trNext.length) {
+            if (trNext.css('display') != 'none') {
+                modalNav.append($('<i class="next-posting icon-chevron-right" id="modal-nav-next"></i>'));
+                break;
+            } else {
+                trNext = trNext.next('tr');
+            }
+        }
 
         popupModalBody.prepend(modalNav);
 
@@ -310,9 +467,15 @@ function showPostingModal(tr) {
 
         $('.modal-btn-shortlist').on('click', function () {
             if ($(this).text().match(/unshortlist/i)) {
-                $('.modal-btn-shortlist').text('Shortlist');
+                if (options.JOB_PopupModalArrowKey)
+                    $('.modal-btn-shortlist').html('<u>S</u>hortlist');
+                else
+                    $('.modal-btn-shortlist').text('Shortlist');
             } else {
-                $('.modal-btn-shortlist').text('Unshortlist');
+                if (options.JOB_PopupModalArrowKey)
+                    $('.modal-btn-shortlist').html('Un<u>s</u>hortlist');
+                else
+                    $('.modal-btn-shortlist').text('Unshortlist');
             }
         });
 
@@ -322,12 +485,22 @@ function showPostingModal(tr) {
 
 
         $('#modal-nav-prev').on('click', function () {
-            var prev = $($('#postingsTable').children('tbody').children('tr')[parseInt(tr.attr('data-index')) - 1]);
+            var cntr = 1;
+            var prev;
+            do {
+                prev = $($('#postingsTable').children('tbody').children('tr')[parseInt(tr.attr('data-index')) - cntr]);
+                cntr++;
+            } while (prev.css('display') == 'none');
             showPostingModal(prev);
         });
 
         $('#modal-nav-next').on('click', function () {
-            var next = $($('#postingsTable').children('tbody').children('tr')[parseInt(tr.attr('data-index')) + 1]);
+            var cntr = 1;
+            var next;
+            do {
+                next = $($('#postingsTable').children('tbody').children('tr')[parseInt(tr.attr('data-index')) + cntr]);
+                cntr++;
+            } while (next.css('display') == 'none');
             showPostingModal(next);
         });
     }
@@ -339,6 +512,10 @@ function showPostingModal(tr) {
         notInterested = tr.attr('data-not-interested'),
         currentTab = tr.attr('data-current-tab'),
         newTab = tr.attr('data-new-tab');
+
+    // apply in new tab
+    if (apply !== undefined)
+        apply = apply.replace(").submit()", ", '', '_blank').submit()");
 
     // init post
     var currentTabForm = currentTab.replace('.submit()', '');
@@ -354,6 +531,299 @@ function showPostingModal(tr) {
 
 }
 
+/**
+ * POSTING LIST
+ * Posting list batch operation
+ */
+function postingBatch() {
+
+    // get height of each tr and stores in trTop and trHeight
+    function _getHeights(table) {
+
+        trTop = [];
+        trHeight = [];
+
+        var trs = table.find('tbody tr:visible');
+        if (trs.length == 0) return;
+        trTop[0] = 0;
+        trs.each(function (i, e) {
+            if (i > 0) {
+                trTop.push(trTop[i - 1] + trHeight[i - 1]);
+            }
+            trHeight.push($(e)[0].getBoundingClientRect().height);
+        });
+
+    }
+
+    // adjust the height selectable items
+    function _adjustHeights(table) {
+        var container = $('#azure-batch-container');
+        container.css('top', table.children('thead').height() + 'px');
+        container.children('li').each(function (i, e) {
+            $(e).css({
+                'top': trTop[i] + 'px',
+                'height': trHeight[i] + 'px'
+            });
+        });
+    }
+
+    // count and update selected items
+    function _updateSelected() {
+        counter = $('li.azure-batch-item.active').length;
+        $('#azure-batch-tip-counter').text(counter);
+    }
+
+    // run script of different type
+    function _executeAjax(type, trList, liList, currIndex) {
+
+        var length = trList.length;
+        if (currIndex > length || length == 0) {
+            unblockPage();
+            $('#azure-posting-batch').trigger('click');
+            currIndex = 0;
+            return;
+        }
+
+        if (type == 'shortlist') {
+            if ($(liList[currIndex]).hasClass('active')) {
+                var thisTr = $(trList[currIndex]);
+                if (thisTr.attr('data-in-shortlist') == 'false') {
+                    setTimeout(function () {
+                        eval(thisTr.attr('data-shortlist'));
+                        counterExe++;
+                        blockPageMsg('Shortlisting ' + counterExe + ' / ' + counter);
+                        _executeAjax(type, trList, liList, currIndex + 1);
+                    }, 500);
+                } else {
+                    counterExe++;
+                    blockPageMsg('Shortlisting ' + counterExe + ' / ' + counter);
+                    _executeAjax(type, trList, liList, currIndex + 1);
+                }
+
+            } else {
+                _executeAjax(type, trList, liList, currIndex + 1);
+            }
+        } else if (type == 'not-interested') {
+            if ($(liList[currIndex]).hasClass('active')) {
+                setTimeout(function () {
+                    eval($(trList[currIndex]).attr('data-not-interested'));
+                    counterExe++;
+                    blockPageMsg('Removing ' + counterExe + ' / ' + counter);
+                    _executeAjax(type, trList, liList, currIndex + 1);
+                }, 300);
+            } else {
+                _executeAjax(type, trList, liList, currIndex + 1);
+            }
+        } else if (type == 'new-tab') {
+            if ($(liList[currIndex]).hasClass('active')) {
+                setTimeout(function () {
+                    eval($(trList[currIndex]).attr('data-new-tab'));
+                    counterExe++;
+                    blockPageMsg('Opening ' + counterExe + ' / ' + counter);
+                    _executeAjax(type, trList, liList, currIndex + 1);
+                }, 300);
+            } else {
+                _executeAjax(type, trList, liList, currIndex + 1);
+            }
+        }
+    }
+
+    // add the selectable overlay
+    function _addBatchCheckbox() {
+
+        var table = $('#postingsTable');
+        var tableDiv = $('#postingsTableDiv');
+
+        // get height and margin top
+        _getHeights(table);
+
+        // prepare overlay
+        var list = $('<ul class="azure-batch-container list-unstyled" id="azure-batch-container" style="top:' + table.children('thead').height() + 'px"></ul>');
+        for (var i = 0, len = trTop.length; i < len; i++) {
+            $('<li class="azure-batch-item" style="top:' + trTop[i] + 'px; height:' + trHeight[i] + 'px" data-tr-index="' + i + '"></li>').appendTo(list);
+        }
+        list.appendTo(tableDiv);
+
+        $(window).on('resize', function () {
+            _getHeights(table);
+            _adjustHeights(table);
+        });
+
+        // overlay item click event
+        var batchItems = $('.azure-batch-item');
+        var lastChecked = null;
+        batchItems.on('click', function (e) {
+            e.preventDefault();
+
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            } else {
+                $(this).addClass('active');
+            }
+
+            if (!lastChecked) {
+                lastChecked = $(this);
+                _updateSelected();
+                return;
+            }
+
+            if (e.shiftKey) {
+                var start = parseInt($(this).attr('data-tr-index'));
+                var end = parseInt(lastChecked.attr('data-tr-index'));
+
+                if (lastChecked.hasClass('active')) {
+                    batchItems.slice(Math.min(start, end), Math.max(start, end) + 1).addClass('active');
+                } else {
+                    batchItems.slice(Math.min(start, end), Math.max(start, end) + 1).removeClass('active');
+                }
+
+            }
+
+            lastChecked = $(this);
+
+            _updateSelected();
+        });
+
+    }
+
+    // add the float container
+    function _addTipFloat() {
+        $('body').append('<div class="azure-batch-tip-container" id="azure-batch-tip-container"><div class="actions pull-right"><span class="icon"><i class="icon-check"></i></span>&nbsp;<span class="counter" id="azure-batch-tip-counter">0</span><a class="select-all" id="azure-batch-tip-select-all" href="javascript:void(0);">Select All</a><a class="exit-batch" id="azure-batch-tip-exit" href="javascript:void(0);">Exit Batch</a></div><div class="title">Batch Operation</div><div class="desc">Click on postings to select and operate</div><div class="buttons"><a href="javascript:void(0);" class="btn btn-default" id="azure-batch-tip-shortlist">Shortlist</a><a href="javascript:void(0);" class="btn btn-default" id="azure-batch-tip-not-interested">Not Interested</a><a href="javascript:void(0);" class="btn btn-success" id="azure-batch-tip-new-tab">New Tab</a></div></div>');
+
+        $('#azure-batch-tip-container').animate({
+            opacity: 1,
+            bottom: '20px'
+        }, 500);
+
+        $('#azure-batch-tip-select-all').on('click', function (e) {
+            e.preventDefault();
+            if (counter < trTop.length) {
+                $('#azure-batch-container').children('li').each(function () {
+                    if (!$(this).hasClass('active'))
+                        $(this).trigger('click');
+                });
+            } else {
+                $('#azure-batch-container').children('li').each(function () {
+                    if ($(this).hasClass('active'))
+                        $(this).trigger('click');
+                });
+            }
+        });
+
+        $('#azure-batch-tip-exit').on('click', function (e) {
+            e.preventDefault();
+            $('#azure-posting-batch').trigger('click');
+        });
+
+        $('#azure-batch-tip-shortlist').on('click', function (e) {
+            e.preventDefault();
+            if (counter == 0) return;
+            counterExe = 0;
+            var r = confirm("Are you sure to shortlist " + counter + " postings? Already shortlisted postings will be ignored.");
+            if (r == true) {
+                blockPage();
+                blockPageMsg('Please wait');
+                $('#azure-batch-tip-container').hide();
+                $('#azure-batch-container').hide();
+                _executeAjax('shortlist', $('#postingsTable').children('tbody').children('tr'), $('#azure-batch-container').children('li'), 0);
+            }
+        });
+
+        $('#azure-batch-tip-not-interested').on('click', function (e) {
+            e.preventDefault();
+            if (counter == 0) return;
+            counterExe = 0;
+            var r = confirm("Are you sure to remove " + counter + " postings from the list?");
+            if (r == true) {
+                blockPage();
+                blockPageMsg('Please wait');
+                $('#azure-batch-tip-container').hide();
+                $('#azure-batch-container').hide();
+                _executeAjax('not-interested', $('#postingsTable').children('tbody').children('tr'), $('#azure-batch-container').children('li'), 0);
+            }
+        });
+
+        $('#azure-batch-tip-new-tab').on('click', function (e) {
+            if (counter == 0) return;
+            counterExe = 0;
+            if (counter >= 10) {
+                var r = confirm("You selected more than 10 postings. Opening too many tabs may cause the browser stop responding. Are you sure you want to continue?");
+                if (r == true) {
+                    blockPage();
+                    blockPageMsg('Please wait');
+                    $('#azure-batch-tip-container').hide();
+                    $('#azure-batch-container').hide();
+                    _executeAjax('new-tab', $('#postingsTable').children('tbody').children('tr'), $('#azure-batch-container').children('li'), 0);
+                }
+            } else {
+                blockPage();
+                $('#azure-batch-container').hide();
+                _executeAjax('new-tab', $('#postingsTable').children('tbody').children('tr'), $('#azure-batch-container').children('li'), 0);
+            }
+
+            e.preventDefault();
+        });
+    }
+
+    // if already exist
+    if ($('#azure-posting-batch').length)
+        return;
+
+    // disable on not interested / shortlist page
+    if (isNotInterestedPage() || isShortlistPage())
+        return;
+
+    var trTop = [];
+    var trHeight = [];
+    var counter = 0;
+    var counterExe = 0;
+
+    // batch button
+    var batchBtn = $('<a class="btn btn-small pull-right hidden-xs" id="azure-posting-batch" href="javascript:void(0);" data-in-batch="0">Batch</a>');
+    batchBtn.on('click', function () {
+
+        if ($(this).attr('data-in-batch') == '0') {
+            // enter batch mode
+            counter = 0;
+            blockUI($('#postingsTablePlaceholder'), 'trasparent', 0, 200);
+            $('#azure-hide-shortlisted').hide();
+            $('#azure-toggle-new-tag').hide();
+            $('#postingsTableDiv').scrollLeft(0).css('position', 'relative').css('overflow-x', 'hidden');
+            $('#postingsTable-thead').remove();
+            $('#azure-hide-sidebar').hide();
+
+            $(this).text('Exit batch');
+            $(this).attr('data-in-batch', '1');
+
+            _addBatchCheckbox();
+            _addTipFloat();
+
+        } else {
+            // exit batch mode
+            unblockUI($('#postingsTablePlaceholder'), 0);
+            $('#azure-hide-shortlisted').show();
+            $('#azure-toggle-new-tag').show();
+            $('#postingsTableDiv').css('position', '').css('overflow-x', 'auto');
+            $('#azure-batch-container').remove();
+            $('#azure-batch-tip-container').remove();
+            fixTableHeader($('#postingsTable'));
+            $('#azure-hide-sidebar').show();
+
+            $(this).text('Batch');
+            $(this).attr('data-in-batch', '0');
+        }
+    });
+
+    $('#hideSideNav').after(batchBtn);
+}
+
+/**
+ * POSTING LIST
+ * Optimization scripts for posting list
+ * Runs every time an ajax request completes
+ * @param table  The table itself
+ * @param placeholder The content placeholder
+ */
 function postingListAjax(table, placeholder) {
 
     if (!table.length)
@@ -554,33 +1024,28 @@ function postingListAjax(table, placeholder) {
 
                 // block page
                 blockPage();
+                blockPageMsg('Please wait');
+
 
                 // get all onclick events
-                var actionList = [];
-                table.find('tbody tr td:nth-child(1)').each(function (index1, td) {
-                    actionList.push($(td).children('a').attr('onclick'));
-                });
-                var actionListLength = actionList.length;
+                var trs = table.find('tbody tr');
+                var total = trs.length;
+                var curr = 0;
 
-                // remove every 800ms, otherwise will get portal error
-                for (var i = 0; i < actionListLength; i++) {
-
-                    (function (i) {
-
-                        window.setTimeout(function () {
-                            eval(actionList[i]);
-                        }, i * 800);
-
-                    }(i));
-
+                function _emptyShortlist() {
+                    if (curr < total) {
+                        setTimeout(function () {
+                            eval($(trs[curr]).attr('data-shortlist'));
+                            curr++;
+                            blockPageMsg('Removing ' + curr + ' / ' + total);
+                            _emptyShortlist();
+                        }, 500);
+                    } else {
+                        unblockPage();
+                    }
                 }
 
-                setTimeout(function () {
-                    if (!$('#postingsTable').length) {
-                        $('#azure-empty-shortlist').remove();
-                    }
-                    unblockPage();
-                }, actionListLength * 800);
+                _emptyShortlist();
 
             });
 
@@ -837,15 +1302,23 @@ function postingListAjax(table, placeholder) {
                 }
 
                 // not interested link
-                if (notInterested !== null && notInterested !== undefined)
+                if (notInterested !== null && notInterested !== undefined) {
+                    var btnTxt = '';
+                    if (isNotInterestedPage())
+                        btnTxt = '<i class="icon-plus"></i> Include';
+                    else
+                        btnTxt = '<i class="icon-remove"></i> Not Interested';
+
                     contextMenuUtil('add', {
                         type: 'link',
-                        code: '<i class="icon-remove"></i> Not Interested',
+                        code: btnTxt,
                         property: {
                             'href': 'javascript:void(0);',
                             'onclick': notInterested
                         }
                     });
+                }
+
 
                 // add line
                 contextMenuUtil('add', {
@@ -929,6 +1402,11 @@ function postingListAjax(table, placeholder) {
     }, 100);
 }
 
+/**
+ * POSTING LIST
+ * Optimization scripts for posting list
+ * Runs only once after page loaded
+ */
 function postingList() {
 
     var placeholder = $('#postingsTablePlaceholder');
@@ -956,11 +1434,10 @@ function postingList() {
             $('#hideSideNav').trigger('click');
             $('#mainContentDiv').css('margin-left', '');
             fixTableHeader(table);
+            $('#azure-hide-sidebar').trigger('click');
+            $('#azure-hide-sidebar').trigger('click');
         }
     }, 1000);
-
-    // cache current url
-    var currURL = window.location.href;
 
     injectCSS(baseURL + 'css/postings.css', 'head');
     // injectCSS(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/postings.css', 'head');
@@ -1005,6 +1482,10 @@ function postingList() {
             });
     }
 
+    // batch operation
+    if (options.JOB_ListBatchOperation)
+        postingBatch();
+
     postingListAjax(table, placeholder);
 
     // For each interact with table, it reloads with ajax
@@ -1023,11 +1504,18 @@ function postingList() {
 
 }
 
+/**
+ * POSTING DETAILS
+ * Optimization scripts for posting detail page
+ * Runs only once after page loaded
+ */
 function postingDetail() {
 
     var divDetail = $('#postingDiv');
     if (!divDetail.length)
         return;
+
+    detailPageTitle();
 
     if (options.JOB_FloatDetailPageButton) {
 
@@ -1059,36 +1547,10 @@ function postingDetail() {
         }
     }
 
-    // Highlight Keywords
-    if (options.JOB_DetailPageHighlight) {
-        var hlKws = options.JOB_DetailPageHighlightKeywords;
-        if (Array.isArray(hlKws) && hlKws.length) {
-            var regStr = '';
-            hlKws.forEach(function (val) {
-                val = val.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-                regStr += '(\\b' + val + ')|';
-            });
-            regStr = regStr.slice(0, -1);
-            regStr = '(' + regStr + ')';
+    detailPageLinkNewTab(divDetail);
 
-            var hlRegex = new RegExp(regStr + '(?![^<>]*>)', 'ig');
-            var matchedArr = [];
-
-            $('#postingDiv').find('tr td:last-child').each(function () {
-
-                var matched = $(this).html().match(hlRegex);
-                if (matched) {
-                    $(this).html(
-                        $(this).html().replace(hlRegex, '<span class="azure-keyword-highlight">$1</span>')
-                    );
-                    Array.prototype.push.apply(matchedArr, matched);
-                }
-
-            });
-
-            addKeyWordReminder(matchedArr);
-        }
-    }
+    if (options.JOB_DetailPageHighlight)
+        highlightKeyword(divDetail, true);
 
     if (options.JOB_DetailPostingInfoPanel)
         addPostingInfoPanel();
@@ -1140,5 +1602,8 @@ function postingDetail() {
 
 }
 
+/**
+ * Start
+ */
 postingList();
 postingDetail();

@@ -34,3 +34,9 @@ function initPopup() {
 }
 
 initPopup();
+
+function _popoverHandler() {
+    window.location.reload();
+}
+
+safari.application.addEventListener("popover", _popoverHandler, true);

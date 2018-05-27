@@ -1,6 +1,10 @@
 var prioIdx, ackIdx, fromIdx, toIdx, subIdx, recIdx, viewIdx, cateIdx, subCateIdx, respIdx;
 var msgCssInjected = false;
 
+/**
+ * Optimization scripts for message list
+ * Runs every time an ajax request completes
+ */
 function messageListAjax() {
 
     function _calculateColIndex() {
@@ -123,6 +127,9 @@ function messageListAjax() {
 
 }
 
+/**
+ * Generate and inject customized css
+ */
 function injectMessageListCSS() {
 
     if (msgCssInjected) return;
@@ -186,6 +193,9 @@ function injectMessageListCSS() {
     injectCSS(colCss, 'head', 'text');
 }
 
+/**
+ * Remove message list header inline background css
+ */
 function removeMessageListHeaderBg() {
     var table = $('#dashboard_userCommonMyMessagesTableID');
 
@@ -197,6 +207,10 @@ function removeMessageListHeaderBg() {
     table.find('thead tr td').css('background-color', '');
 }
 
+/**
+ * Optimization scripts for message list
+ * Runs only once after page loaded
+ */
 function messageList() {
 
     var tableContainer = $('#dashboard_userCommonMyMessages');
@@ -219,4 +233,7 @@ function messageList() {
 
 }
 
+/**
+ * Start
+ */
 messageList();

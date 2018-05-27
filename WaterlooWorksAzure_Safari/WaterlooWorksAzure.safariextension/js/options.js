@@ -38,6 +38,10 @@ function initOptions() {
                                 optionElem.first().prop('checked', true);
                                 hasFound = true;
                             } else {
+                            if (key == 'GLB_FontName') {
+                                items[key] = items[key].split('||');
+                                items[key] = items[key][0];
+                            }
                                 optionElem.each(function (index, element) {
                                     if ($(element).attr('value') == items[key]) {
                                         $(element).prop('checked', true);
@@ -244,6 +248,17 @@ function initOptions() {
                     saveOption(obj);
 
                     break;
+
+                // font
+                case 'enum2':
+                    var obj = {};
+                    obj[optName] = elem.attr('value') + '||' + elem.attr('data-font-weight') + '||' + elem.attr('data-font-size');
+                    var fontSrc = elem.attr('data-font-source');
+                    if (typeof fontSrc !== typeof undefined && fontSrc !== false) {
+                        obj[optName] = obj[optName] + '||' + fontSrc;
+                    }
+                    saveOption(obj);
+                    break;
             }
         }
     }
@@ -325,7 +340,10 @@ function initOptions() {
             e.preventDefault();
             var r = confirm($('#restore-popup-modal-rows-confirm-text').text());
             if (r == true) {
-                saveOption(defaultPopupModalRows, function () {
+                var tmpObj = getOptionListDefault();
+                var tmpObj2 = {};
+                tmpObj2['JOB_PopupModalRows'] = tmpObj['JOB_PopupModalRows'];
+                saveOption(tmpObj2, function () {
                     window.scrollTo(0, 0);
                     window.location.reload(true);
                 });
@@ -354,6 +372,13 @@ function initOptions() {
             }
         });
 
+        // show more
+        $('.hide-long-btn').on('click', function (e) {
+            e.preventDefault();
+            $(this).prev('.hide-long').removeClass('hide-long');
+            $(this).remove();
+        });
+
     }
 
     function loadThemes() {
@@ -363,10 +388,7 @@ function initOptions() {
         $.each(themes, function (i, val) {
 
             if (val['hidden'] == false) {
-
-                $('<div class="color-scheme"><span style="background:' + val['previewColor'] + '"></span></div>').appendTo(list);
-                $('<p><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '">' + val['name'] + '</label></p>').appendTo(list);
-
+                $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '"><p>' + val['name'] + '</p><p><img src="../img/theme-thumb-' + val['id'] + '.png" alt="' + val['name'] + '" class="theme-sample"></p></label></div>').appendTo(list);
             }
 
             index++;
@@ -396,96 +418,3 @@ function initOptions() {
 }
 
 initOptions();
-
-const defaultPopupModalRows = {
-    'JOB_PopupModalRows': {
-        'row_0': {
-            'name': 'Job Title',
-            'display': true
-        },
-        'row_1': {
-            'name': 'Organization',
-            'display': true
-        },
-        'row_2': {
-            'name': 'Region',
-            'display': true
-        },
-        'row_3': {
-            'name': 'Application Documents Required',
-            'display': true
-        },
-        'row_4': {
-            'name': 'Application Information',
-            'display': true
-        },
-        'row_5': {
-            'name': 'Application Method',
-            'display': true
-        },
-        'row_6': {
-            'name': 'Required Skills',
-            'display': true
-        },
-        'row_7': {
-            'name': 'Job Summary',
-            'display': true
-        },
-        'row_8': {
-            'name': 'Job Responsibilities',
-            'display': true
-        },
-        'row_9': {
-            'name': 'Compensation And Benefits',
-            'display': true
-        },
-        'row_10': {
-            'name': 'Position Type',
-            'display': false
-        },
-        'row_11': {
-            'name': 'Level',
-            'display': false
-        },
-        'row_12': {
-            'name': 'Job Openings',
-            'display': false
-        },
-        'row_13': {
-            'name': 'Job Category',
-            'display': false
-        },
-        'row_14': {
-            'name': 'Term Posted',
-            'display': false
-        },
-        'row_15': {
-            'name': 'Start Date',
-            'display': false
-        },
-        'row_16': {
-            'name': 'End Date',
-            'display': false
-        },
-        'row_17': {
-            'name': 'Career Development And Training',
-            'display': false
-        },
-        'row_18': {
-            'name': 'Targeted Degrees And Disciplines',
-            'display': false
-        },
-        'row_19': {
-            'name': 'Application Deadline',
-            'display': false
-        },
-        'row_20': {
-            'name': 'Application Delivery',
-            'display': false
-        },
-        'row_21': {
-            'name': 'Division',
-            'display': false
-        }
-    }
-};

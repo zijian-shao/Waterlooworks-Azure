@@ -520,6 +520,10 @@ input.btn-inverse {
     margin-right: 5px !important;
 }
 
+.azure-hide-sidebar {
+    display: none;
+}
+
 /*sidebar*/
 @media (min-width: 980px) {
     .span2.bs--hide__column {
@@ -579,7 +583,7 @@ input.btn-inverse {
         font-size: 24px;
         position: relative;
         display: block !important;
-        margin: 10px auto 5px !important;
+        margin: 2px auto 5px !important;
         width: 100% !important;
     }
 
@@ -608,6 +612,28 @@ input.btn-inverse {
 
     ul[class^="childMenu"].nav.nav-tabs a, ul[class^="childMenu"] a {
         padding: 15px 0 !important;
+    }
+
+    .azure-hide-sidebar {
+        position: fixed;
+        left: 0;
+        bottom: 10px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        line-height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        z-index: 1200;
+    }
+
+    .azure-hide-sidebar:hover {
+        background: rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -677,6 +703,21 @@ pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .a
 
     .orbis-posting-actions-btn-float {
         left: 160px;
+    }
+
+    .azure-full-width .orbis-posting-actions-btn-float,
+    .azure-full-width #mainContentDiv {
+        margin-left: 0;
+    }
+
+    .azure-full-width .bs--hide__column,
+    .azure-full-width #brandingNav {
+        display: none;
+    }
+
+    .azure-full-width .orbis-posting-actions-float:last-child,
+    .azure-full-width .citrus-banner {
+        left: 0;
     }
 }
 
