@@ -1,4 +1,4 @@
-(function startTheme() {
+function startTheme() {
 
     // nav icons
     $('#closeNav ul.nav-list li a').each(function (i, e) {
@@ -55,4 +55,6 @@
         }
     }
 
-})();
+}
+
+setTimeout(startTheme, 5);

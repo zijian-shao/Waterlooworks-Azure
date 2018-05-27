@@ -4,10 +4,6 @@
         outline: none !important;
     }
 
-    label.gridDropdownButton.is--focused {
-        outline: none !important;
-    }
-
     body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
         font-family: 'Muli', "Microsoft YaHei", sans-serif !important;
     }
@@ -15,7 +11,7 @@
     body {
         margin: 0;
         padding: 0;
-        background: #000;
+        background: #2d2d2d;
         text-align: center;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -23,7 +19,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-
     }
 
     div {
@@ -34,65 +29,43 @@
         padding: 0;
     }
 
-    .hidden {
-        display: none;
-    }
-
     .container {
         position: absolute;
         width: 100%;
         max-width: 550px;
-        height: auto;
+        height: 390px;
         top: 50%;
         left: 0;
         right: 0;
-        margin: -260px auto 0;
+        margin: -220px auto 0;
         padding: 10px;
-        background: #000;
-    }
-
-    .logo {
-        width: 100%;
-        position: relative;
-        margin-top: 40px;
-    }
-
-    .logo img {
-        width: 100%;
-        max-width: 148.8px;
-        height: auto;
+        background: #f1f1f1;
+        -webkit-box-shadow:0 10px 30px #111;
+        -moz-box-shadow:0 10px 30px #111;
+        box-shadow: 0 10px 30px #111;
+        border-radius: 4px;
     }
 
     .title {
-        width: 100%;
-        position: relative;
-        margin-top: 30px;
-    }
-
-    .title img {
-        width: 80%;
-        max-width: 420.8px;
-        height: auto;
+        margin: 35px auto 0;
+        padding: 0;
+        font-size: 45px;
+        font-weight: normal;
+        color: #333;
     }
 
     .subtitle {
-        font-size: 20px;
-        color: #FCD450;
+        margin: 5px auto 0;
+        padding: 0;
+        font-size: 16px;
         font-weight: normal;
-        margin: 40px auto 0;
-        line-height: 1.2em;
-    }
-
-    .subtitle span {
-        font-weight: bold;
-        text-transform: uppercase;
-        display: block;
+        color: #999;
     }
 
     .btns {
         width: 100%;
         heigth: auto;
-        margin: 45px auto 0;
+        margin: 35px auto 0;
         text-align: center;
     }
 
@@ -101,86 +74,81 @@
         width: 40%;
         height: auto;
         margin: 0 2px;
-        padding: 20px 0;
-        background: none;
-        font-size: 14px;
-        text-decoration: none !important;
-        color: #FCD450 !important;
-        border-radius: 4px;
-        border: 1px solid #FCD450;
+        padding: 30px 0;
+        background: #005baa;
+        font-size: 16px;
+        text-decoration: none;
+        color: #fff !important;
         font-weight: normal;
         -webkit-transition: all 0.1s linear;
         -moz-transition: all 0.1s linear;
         -ms-transition: all 0.1s linear;
         -o-transition: all 0.1s linear;
         transition: all 0.1s linear;
+        border-radius: 4px;
     }
 
     .btns > a:hover {
-        background: #FCD450;
-        color: #000 !important;
+        background: #00447F;
     }
 
     .btns > a > i {
-        font-size: 16px;
-        margin-right: 0.5em;
+        display: block;
+        font-size: 65px;
+        margin: 0 auto 6px;
     }
 
     .copyright {
         color: #999;
         font-size: 14px;
-        margin: 45px auto 40px;
+        margin: 35px auto 0;
         padding: 0;
     }
 
     @media (max-width: 767px) {
-
         .container {
-            position: relative;
             max-width: none;
-            height: auto;
-            top: 0;
-            margin: 0;
             padding: 30px;
         }
 
-        .logo img {
-            width: 40%;
+        .title {
+            font-size: 30px;
+            margin-top: 15px;
         }
 
         .subtitle {
-            font-size: 18px;
+            font-size: 14px;
+            margin-top: 0px;
+        }
+
+        .btns {
+            margin-top: 30px;
         }
 
         .btns > a {
             display: block;
             width: 100%;
             margin-bottom: 10px;
+            font-size: 14px;
+            padding: 25px 0;
         }
+
+        .btns > a > i {
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 0.5em 0 0;
+        }
+
     }
 
 </style>
 <div class="container">
-    <div class="logo">
-        <img src="site/images/uwlogo.png" alt="University of Waterloo">
-        <h1 class="hidden">University of Waterloo</h1>
-    </div>
-    <div class="title">
-        <img src="site/images/waterlooworkslogo.png" alt="WaterlooWorks">
-        <h2 class="hidden">WaterlooWorks</h2>
-    </div>
-
-    <div class="subtitle">
-        <h3 class="subtitle">
-            <span>Hire Waterloo</span>
-            Students and Alumni
-        </h3>
-    </div>
-
+    <h1 class="title">WaterlooWorks</h1>
+    <h4 class="subtitle">Hire Waterloo Students and Alumni</h4>
     <div class="btns">
         <a href="https://cas.uwaterloo.ca/cas/login?service=https://waterlooworks.uwaterloo.ca/waterloo.htm"
            class="btn-student"><i class="icon-user"></i>Students/Alumni</a>
         <a href="/employer/overview.htm" class="btn-employer"><i class="icon-comments"></i>Employers</a>
     </div>
-    <p class="copyright">&copy; University of Waterloo. All Rights Reserved.</p>
+    <p class="copyright">Copyright &copy; University of Waterloo. All Rights Reserved.</p>
 </div>

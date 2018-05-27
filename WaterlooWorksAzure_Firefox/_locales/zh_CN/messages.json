@@ -14,6 +14,12 @@
   "addBackToTopButtonOnEachPage_tip": {
     "message": "启用该选项后，网站所有页面右下角均将添加“返回顶部”按钮，可一键返回网页顶部。"
   },
+  "addBatchOperationButton": {
+    "message": "添加“批量操作”按钮"
+  },
+  "addBatchOperationButton_tip": {
+    "message": "启用该选项后，将在职位列表右上角添加批量操作按钮。点击按钮进入批量操作模式，使用鼠标左键和 Shift 键进行选择，即可批量进行收藏、不感兴趣、新标签页中打开等操作。"
+  },
   "addButtonsToAdjustDetailPageFontSize": {
     "message": "添加调整职位详情页字号的按钮"
   },
@@ -375,10 +381,10 @@
     "message": "使用默认样式 <small>（合并职位名称、组织、部门）</small>"
   },
   "useKeyboardArrowKeysToSwitchPages": {
-    "message": "使用键盘方向键翻页"
+    "message": "启用键盘快捷键进行操作"
   },
   "useKeyboardArrowKeysToSwitchPages_tip": {
-    "message": "启用该选项后，按下键盘左/右方向键即可切换上一篇/下一篇职位预览。"
+    "message": "启用该选项后，按下键盘左/右方向键即可切换上一篇/下一篇职位预览。按住 Alt + 按钮文本下划线字母，即可点击按钮。"
   },
   "useNewAzureHomepage": {
     "message": "使用全新的 Azure 网站引导页"

@@ -1,9 +1,5 @@
 /* Common */
 
-.hidden {
-    display: none !important;
-}
-
 .margin-top-5 {
     margin-top: 5px !important;
 }
@@ -62,6 +58,268 @@
 
 .block {
     display: block;
+}
+
+.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.invisible {
+    visibility: hidden
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0
+}
+
+.hidden {
+    display: none !important
+}
+
+.affix {
+    position: fixed
+}
+
+.visible-lg, .visible-md, .visible-sm, .visible-xs {
+    display: none !important
+}
+
+.visible-lg-block, .visible-lg-inline, .visible-lg-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block {
+    display: none !important
+}
+
+@media (max-width: 767px) {
+    .visible-xs {
+        display: block !important
+    }
+
+    table.visible-xs {
+        display: table !important
+    }
+
+    tr.visible-xs {
+        display: table-row !important
+    }
+
+    td.visible-xs, th.visible-xs {
+        display: table-cell !important
+    }
+}
+
+@media (max-width: 767px) {
+    .visible-xs-block {
+        display: block !important
+    }
+}
+
+@media (max-width: 767px) {
+    .visible-xs-inline {
+        display: inline !important
+    }
+}
+
+@media (max-width: 767px) {
+    .visible-xs-inline-block {
+        display: inline-block !important
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm {
+        display: block !important
+    }
+
+    table.visible-sm {
+        display: table !important
+    }
+
+    tr.visible-sm {
+        display: table-row !important
+    }
+
+    td.visible-sm, th.visible-sm {
+        display: table-cell !important
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm-block {
+        display: block !important
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm-inline {
+        display: inline !important
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm-inline-block {
+        display: inline-block !important
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .visible-md {
+        display: block !important
+    }
+
+    table.visible-md {
+        display: table !important
+    }
+
+    tr.visible-md {
+        display: table-row !important
+    }
+
+    td.visible-md, th.visible-md {
+        display: table-cell !important
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .visible-md-block {
+        display: block !important
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .visible-md-inline {
+        display: inline !important
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .visible-md-inline-block {
+        display: inline-block !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .visible-lg {
+        display: block !important
+    }
+
+    table.visible-lg {
+        display: table !important
+    }
+
+    tr.visible-lg {
+        display: table-row !important
+    }
+
+    td.visible-lg, th.visible-lg {
+        display: table-cell !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .visible-lg-block {
+        display: block !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .visible-lg-inline {
+        display: inline !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .visible-lg-inline-block {
+        display: inline-block !important
+    }
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none !important
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-sm {
+        display: none !important
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-md {
+        display: none !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .hidden-lg {
+        display: none !important
+    }
+}
+
+.visible-print {
+    display: none !important
+}
+
+@media print {
+    .visible-print {
+        display: block !important
+    }
+
+    table.visible-print {
+        display: table !important
+    }
+
+    tr.visible-print {
+        display: table-row !important
+    }
+
+    td.visible-print, th.visible-print {
+        display: table-cell !important
+    }
+}
+
+.visible-print-block {
+    display: none !important
+}
+
+@media print {
+    .visible-print-block {
+        display: block !important
+    }
+}
+
+.visible-print-inline {
+    display: none !important
+}
+
+@media print {
+    .visible-print-inline {
+        display: inline !important
+    }
+}
+
+.visible-print-inline-block {
+    display: none !important
+}
+
+@media print {
+    .visible-print-inline-block {
+        display: inline-block !important
+    }
+}
+
+@media print {
+    .hidden-print {
+        display: none !important
+    }
 }
 
 /* Outline */
@@ -561,6 +819,7 @@ table.table-header-fixed {
     background: rgba(255, 255, 255, 0.5);
     z-index: 9999;
     cursor: wait;
+    color: #999;
 }
 
 .azure-block-page i {
@@ -568,15 +827,20 @@ table.table-header-fixed {
     top: 50%;
     left: 0;
     right: 0;
-    margin: -10px auto 0;
-    color: #999;
+    margin: -30px auto 0;
+}
+
+.azure-block-page-msg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    margin: 15px auto 0;
 }
 
 .azure-block-page-dark {
     background: rgba(0, 0, 0, 0.3);
-}
-
-.azure-block-page-dark i {
     color: #999;
 }
 
@@ -803,4 +1067,110 @@ li.azure-font-size-control a {
 
 .azure-posting-keyword-panel:hover .tip {
     opacity: 1;
+}
+
+.azure-batch-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 210;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.azure-batch-container li {
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.azure-batch-container li:hover {
+    background: rgba(255, 255, 0, 0.15);
+}
+
+.azure-batch-container li.active {
+    background: rgba(255, 255, 0, 0.15);
+}
+
+.azure-batch-container li:active {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.azure-batch-tip-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 230;
+}
+
+.azure-batch-tip-container .actions a {
+    color: #fff;
+
+    margin-left: 10px;
+}
+
+.azure-batch-tip-container .actions a:hover {
+    text-decoration: underline;
+}
+
+.azure-batch-tip-container .title {
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.azure-batch-tip-container .desc {
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 0.6;
+}
+
+.azure-batch-tip-container .sep {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    opacity: 0.3;
+}
+
+.azure-batch-tip-container .buttons {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+}
+
+.azure-batch-tip-container .buttons .btn {
+    margin: 0 8px 0 0;
+    flex: 1;
+}
+
+.azure-batch-tip-container .buttons .btn:last-child {
+    margin-right: 0;
 }
