@@ -1,3 +1,9 @@
+/**
+ * Inject css
+ * @param url Css text if type = 'text'; otherwise href url
+ * @param tag Inject to target tag
+ * @param type 'text' or others, optional
+ */
 function injectCSS(url, tag, type) {
 
     var style;
@@ -22,6 +28,12 @@ function injectCSS(url, tag, type) {
 
 }
 
+/**
+ * Inject JS
+ * @param url JS text if type = 'text'; otherwise src url
+ * @param tag Inject to target tag
+ * @param type 'text' or others, optional
+ */
 function injectJS(url, tag, type) {
 
     var script = $('<script/>', {
@@ -38,6 +50,13 @@ function injectJS(url, tag, type) {
 
 }
 
+/**
+ * Scroll to
+ * Automatically add the header height to the calculation
+ * @param pos Scroll to position. Supports object / selector
+ * @param time Scroll ani time
+ * @param offset Scroll offset, optional
+ */
 function scrollToUtil(pos, time, offset) {
 
     if ($.type(offset) !== 'number')
@@ -57,22 +76,43 @@ function scrollToUtil(pos, time, offset) {
 
 }
 
-function blockPage(color) {
+/**
+ * Block page
+ * @param color Overlay color, optional
+ * @param color Message, optional
+ */
+function blockPage(color, msg) {
 
-    var elem = $('<div/>', {
-        'id': 'azure-block-page',
-        'class': 'azure-block-page'
-    });
+    if ($('#azure-block-page').length)
+        return;
+
+    var elem = $('<div class="azure-block-page" id="azure-block-page">');
     if (themeConfig.brightness == 'dark')
         elem.addClass('azure-block-page-dark');
 
     if (color !== undefined)
         elem.css('background-color', color);
+    if (msg === undefined)
+        msg = '';
 
-    elem.append($('<i class="icon-spinner icon-spin icon-3x"></i>')).hide().appendTo('body').fadeIn(300);
+    $('<i class="icon-spinner icon-spin icon-3x"></i>').appendTo(elem);
+    $('<div class="azure-block-page-msg">' + msg + '</div>').appendTo(elem);
+
+    elem.hide().appendTo('body').fadeIn(300);
 
 }
 
+/**
+ * Change block page message
+ * @param msg
+ */
+function blockPageMsg(msg) {
+    $('#azure-block-page').find('.azure-block-page-msg').html(msg);
+}
+
+/**
+ * Unblock page
+ */
 function unblockPage() {
 
     $('#azure-block-page').fadeOut(300, function () {
@@ -81,6 +121,86 @@ function unblockPage() {
 
 }
 
+/**
+ * Block element
+ * @param elem
+ */
+function blockUI(elem, color, time, zindex) {
+
+    elem.find('div.blockUI').remove();
+
+    if (color === undefined || color == null || color === false)
+        color = 'rgba(0,0,0,0.6)';
+
+    if (time === undefined || !Number.isInteger(time) || time == null || time === false)
+        time = 300;
+
+    if (zindex === undefined || !Number.isInteger(zindex) || zindex == null || zindex === false)
+        zindex = 1000;
+
+    elem.css({
+        'position': 'relative',
+        'zoom': '1'
+    });
+
+    var base = $('<div class="blockUI" style="display:none"></div>');
+    var overlay = $('<div class="blockUI blockOverlay" style="z-index: ' + zindex + '; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background: ' + color + '; position: absolute;"></div>');
+    overlay.hide();
+
+    elem.append(base);
+    elem.append(overlay);
+
+    overlay.fadeIn(time);
+}
+
+/**
+ * Unblock element
+ * @param elem
+ */
+function unblockUI(elem, time) {
+
+    if (time === undefined || !Number.isInteger(time) || time == null || time === false)
+        time = 300;
+
+    elem.find('div.blockOverlay').fadeOut(time, function () {
+        elem.find('div.blockUI').remove().css({
+            'position': 'static',
+            'zoom': '1'
+        });
+    });
+}
+
+/**
+ * Set cookie
+ * @param key
+ * @param value
+ */
+function setCookie(key, value, length) {
+    var expires = new Date();
+    if (Number.isInteger(length)) {
+        expires.setTime(expires.getTime() + length);
+    } else {
+        expires.setTime(expires.getTime() + (86400 * 30));
+    }
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+/**
+ * Get cookie
+ * @param key
+ * @returns {null}
+ */
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
+
+/**
+ * Test if an element's top is visible on screen
+ * Automatically add the header height to the calculation
+ * @param element
+ * @returns {boolean}
+ */
 function isOnScreen(element) {
 
     var html;
@@ -97,6 +217,11 @@ function isOnScreen(element) {
     return true;
 }
 
+/**
+ * Test current browser type
+ * @param name Supports: opera, firefox, safari, ie, edge, chrome
+ * @returns {boolean}
+ */
 function isBrowser(name) {
     name = name.toLowerCase();
     if (name == 'opera')
@@ -117,18 +242,12 @@ function isBrowser(name) {
         return false;
 }
 
-function getParaArr(str) {
-
-    str = str.replace(/ /g, '');
-    str = str.substring(str.indexOf('(') + 1);
-    str = str.replace(/\)/g, '').replace(/'/g, '"');
-    str = '[' + str + ']';
-    str = JSON.parse(str);
-
-    return str;
-
-}
-
+/**
+ * Fix table header
+ * Requires table to have <thead> element
+ * If already run for a table, the next run will recalculate the width of header
+ * @param table
+ */
 function fixTableHeader(table) {
 
     // if already executed, re-calculate header width
@@ -185,7 +304,11 @@ function fixTableHeader(table) {
 
 }
 
-
+/**
+ * Context menu
+ * @param action 'create' / 'add' / 'show' / 'clear'
+ * @param data. Object {type: 'link'/others, code: 'code'}
+ */
 function contextMenuUtil(action, data) {
     // action = create, add, show, clear
     if (action == 'create') {
@@ -214,8 +337,9 @@ function contextMenuUtil(action, data) {
         // hide
         $('html').on('click', function (e) {
 
-            if (!e.target.matches('#azure-contextmenu'))
+            if (!e.target.matches('#azure-contextmenu')) {
                 $('#azure-contextmenu').addClass('azure-contextmenu-hidden');
+            }
 
         });
 
@@ -238,7 +362,14 @@ function contextMenuUtil(action, data) {
 
     } else if (action == 'show') {
 
-        $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + data.x + 'px');
+        var winW = $(document).width();
+        var cmW = $('#azure-contextmenu-list').width();
+        if (data.x + cmW + 20 > winW) {
+            // if overflow
+            $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + (data.x - cmW) + 'px');
+        } else {
+            $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + data.x + 'px');
+        }
         $('#azure-contextmenu').removeClass('azure-contextmenu-hidden');
 
     } else if (action == 'clear') {
@@ -248,6 +379,13 @@ function contextMenuUtil(action, data) {
     }
 }
 
+/**
+ * Create button
+ * @param text Button display text
+ * @param type Tag name. E.g. a or button
+ * @param prop Obj of attributes [class:'', id:'' ...]
+ * @returns {*|jQuery|HTMLElement}
+ */
 function buttonCreateUtil(text, type, prop) {
     var btn = $('<' + type + '>' + text + '</' + type + '>');
     $.each(prop, function (k, v) {
@@ -256,6 +394,9 @@ function buttonCreateUtil(text, type, prop) {
     return btn;
 }
 
+/**
+ * Reverse title order
+ */
 function reverseTitleOrder() {
 
     var titleTag = $('head').children('title');
@@ -268,6 +409,10 @@ function reverseTitleOrder() {
 
 }
 
+/**
+ * Detect if window.hash is orbis.buildForm, and execute the code
+ * @returns {boolean}
+ */
 function needBuildForm() {
 
     // detect hash and execute as js
@@ -283,6 +428,9 @@ function needBuildForm() {
 
 }
 
+/**
+ * New azure homepage
+ */
 function replaceHomepage() {
 
     if (isBrowser('safari')) {
@@ -348,6 +496,9 @@ function replaceHomepage() {
 
 }
 
+/**
+ * Back to top button
+ */
 function addBackToTopButton() {
 
     $(window).on('scroll', function () {
@@ -369,6 +520,13 @@ function addBackToTopButton() {
 
 }
 
+/**
+ * Table column css generator
+ * @param selector
+ * @param colID The index of nth-child css
+ * @param obj Css properties
+ * @returns {string}
+ */
 function tableColumnCSS(selector, colID, obj) {
 
     var css = selector + '>tbody>tr>td:nth-child(' + colID + '),'
@@ -382,6 +540,9 @@ function tableColumnCSS(selector, colID, obj) {
     return css;
 }
 
+/**
+ * Remove one level of nested panels on dashboard
+ */
 function dashboardNestedBoxes() {
 
     $(document).ajaxComplete(function (event, xhr, settings) {
@@ -413,7 +574,16 @@ function dashboardNestedBoxes() {
     });
 }
 
+/**
+ * Initialization
+ */
 function startAzure() {
+
+    if (typeof jQuery === 'undefined') {
+        // jQuery is NOT available
+        var element = document.getElementById('azure-load-cover');
+        element.parentNode.removeChild(element);
+    }
 
     // redirect page
     if (needBuildForm())
@@ -427,11 +597,24 @@ function startAzure() {
     $('head link[type="image/x-icon"]').attr('href', baseURL + 'icon/icon32.png');
 
     // font
-    injectCSS('//fonts.googleapis.com/css?family=' + options.GLB_FontName.replace(/ /g, '+') + ':400,600,800', 'head');
-    injectCSS('body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {font-family: \'' + options.GLB_FontName + '\', "Microsoft YaHei", sans-serif !important;}', 'head', 'text');
+    var fontConf = options.GLB_FontName.split('||');
+    // fontName||weights||fontSize||source
+    if (fontConf.length == 4) {
+        if (fontConf[3] == 'google') {
+            injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
+        } else if (fontConf[3] == 'none') {
 
-    // cache current url
-    var currURL = window.location.href;
+        } else {
+            injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
+        }
+        injectCSS('body{font-size:' + fontConf[2] + 'px}', 'head', 'text');
+    } else if (fontConf.length == 3) {
+        injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
+        injectCSS('body{font-size:' + fontConf[2] + 'px}', 'head', 'text');
+    } else {
+        injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':400,600,800', 'head');
+    }
+    injectCSS('body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {font-family: \'' + fontConf[0] + '\', "Microsoft YaHei", sans-serif !important;}', 'head', 'text');
 
     // inject global css
     injectCSS(baseURL + 'css/common.css', 'head');
@@ -450,7 +633,12 @@ function startAzure() {
         if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
             // add fade effect to open modal buttons
             $('#uploadDocument, #createApplicationPackage, #searchPostings').addClass('fade');
+            // nested boxes
             dashboardNestedBoxes();
+            // announcement css
+            if ($('#displayOverview').hasClass('active')) {
+                $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
+            }
         }
 
         // extra functions
@@ -495,6 +683,7 @@ function startAzure() {
 
 }
 
-var hideNewTagStatus = false, hideShortlistedStatus = false;
-
+/**
+ * Start
+ */
 startAzure();

@@ -56,7 +56,7 @@
                     i18n-text="jobPostings_title"></li>
                 <li data-option-tab-index="5" data-option-tab-name="posting-modal" id="nav-tab-5" class="nav-tab"
                     i18n-text="postingModal_title">
-                    <div class="new-tag">NEW</div>
+                    <!--<div class="new-tag">NEW</div>-->
                 </li>
                 <li data-option-tab-index="4" data-option-tab-name="posting-detail" id="nav-tab-4" class="nav-tab"
                     i18n-text="postingDetail_title"></li>
@@ -89,6 +89,125 @@
                     </div>
                 </div>
 
+                <!-- Select Theme -->
+                <div class="category-title">
+                    <h5 i18n-text="selectTheme"></h5>
+                </div>
+                <div class="option-group radio-group radio-group-inline">
+                    <div class="width-100" id="theme-list">
+
+                    </div>
+                    <div class="clear-fix"></div>
+                </div>
+
+                <!-- Select Font -->
+                <div class="category-title">
+                    <h5 i18n-text="selectFont"></h5>
+                </div>
+                <div class="option-group radio-group radio-group-inline">
+                    <div class="width-100 font-list hide-long">
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-0" name="GLB_FontName" value="Muli"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,600,800" data-font-size="12">
+                            <label for="opt-global-4-0">
+                                <img src="../img/font-sample-muli.png" alt="Muli" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-4" name="GLB_FontName" value="Lato"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,700,900" data-font-size="12">
+                            <label for="opt-global-4-4">
+                                <img src="../img/font-sample-lato.png" alt="Lato" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-6" name="GLB_FontName" value="Ubuntu"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,500,700" data-font-size="12">
+                            <label for="opt-global-4-6">
+                                <img src="../img/font-sample-ubuntu.png" alt="Ubuntu" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-5" name="GLB_FontName" value="Vollkorn"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,600,700" data-font-size="14">
+                            <label for="opt-global-4-5">
+                                <img src="../img/font-sample-vollkorn.png" alt="Vollkorn" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-7" name="GLB_FontName" value="Raleway"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="500,600,800" data-font-size="12">
+                            <label for="opt-global-4-7">
+                                <img src="../img/font-sample-raleway.png" alt="Raleway" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-1" name="GLB_FontName" value="Helvetica Neue"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="300,400,700" data-font-size="12">
+                            <label for="opt-global-4-1">
+                                <img src="../img/font-sample-helvetica.png" alt="Helvetica Neue" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-2" name="GLB_FontName" value="Roboto"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,700,900" data-font-size="13">
+                            <label for="opt-global-4-2">
+                                <img src="../img/font-sample-roboto.png" alt="Roboto" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-3" name="GLB_FontName" value="Arial"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400" data-font-size="12" data-font-source="none">
+                            <label for="opt-global-4-3">
+                                <img src="../img/font-sample-arial.png" alt="Arial" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-8" name="GLB_FontName" value="Comic Sans MS"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,700" data-font-size="12">
+                            <label for="opt-global-4-8">
+                                <img src="../img/font-sample-comic-sans.png" alt="Comic Sans" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-9" name="GLB_FontName" value="Roboto Condensed"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,700" data-font-size="13">
+                            <label for="opt-global-4-9">
+                                <img src="../img/font-sample-roboto-condensed.png" alt="Roboto Condensed"
+                                     class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-10" name="GLB_FontName" value="Roboto Slab"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400,700" data-font-size="12">
+                            <label for="opt-global-4-10">
+                                <img src="../img/font-sample-roboto-slab.png" alt="Roboto Slab" class="font-sample">
+                            </label>
+                        </div>
+                        <div class="width-50 pull-left">
+                            <input type="radio" id="opt-global-4-11" name="GLB_FontName" value="Crete Round"
+                                   data-option-name="GLB_FontName" data-option-type="enum2"
+                                   data-font-weight="400" data-font-size="13">
+                            <label for="opt-global-4-11">
+                                <img src="../img/font-sample-crete-round.png" alt="Crete Round" class="font-sample">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="hide-long-btn">Show More +</div>
+                    <div class="clear-fix"></div>
+                </div>
+
                 <!-- Welcome Page -->
                 <div class="category-title">
                     <h5 i18n-text="homepage"></h5>
@@ -117,65 +236,6 @@
                     <div class="option-tip hidden">
                         <p i18n-text="redirectToWelcomePageWhenNotLoggedIn_tip"></p>
                     </div>
-                </div>
-
-                <!-- Select Theme -->
-                <div class="category-title">
-                    <h5 i18n-text="selectTheme"></h5>
-                </div>
-                <div class="option-group radio-group" id="theme-list"></div>
-
-                <!-- Select Font -->
-                <div class="category-title">
-                    <h5 i18n-text="selectFont"></h5>
-                </div>
-                <div class="option-group radio-group radio-group-inline">
-                    <table class="table table-noborder">
-                        <tr>
-                            <td>
-                                <input type="radio" id="opt-global-4-0" name="GLB_FontName" value="Muli"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-0">Muli</label>
-                            </td>
-                            <td>
-                                <input type="radio" id="opt-global-4-4" name="GLB_FontName" value="Lato"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-4">Lato</label>
-                            </td>
-                            <td>
-                                <input type="radio" id="opt-global-4-5" name="GLB_FontName" value="Vollkorn"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-5">Vollkorn</label>
-                            </td>
-                            <td>
-                                <input type="radio" id="opt-global-4-6" name="GLB_FontName" value="Ubuntu"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-6">Ubuntu</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="radio" id="opt-global-4-7" name="GLB_FontName" value="Raleway"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-7">Raleway</label>
-                            </td>
-                            <td>
-                                <input type="radio" id="opt-global-4-1" name="GLB_FontName" value="Helvetica Neue"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-1">Helvetica</label>
-                            </td>
-                            <td>
-                                <input type="radio" id="opt-global-4-2" name="GLB_FontName" value="Roboto"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-2">Roboto</label>
-                            </td>
-                            <td>
-                                <input type="radio" id="opt-global-4-3" name="GLB_FontName" value="Arial"
-                                       data-option-name="GLB_FontName" data-option-type="enum">
-                                <label for="opt-global-4-3">Arial</label>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
 
                 <!-- Other -->
@@ -340,6 +400,18 @@
                         <p i18n-text="addExportShortlistButton_tip"></p>
                     </div>
                 </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-job-0-9" data-option-name="JOB_ListBatchOperation"
+                               data-option-type="switch">
+                        <label for="opt-job-0-9"></label>
+                    </div>
+                    <label for="opt-job-0-9" class="checkbox-label" i18n-text="addBatchOperationButton"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="addBatchOperationButton_tip"></p>
+                    </div>
+                </div>
 
                 <!-- Posting List Display -->
                 <div class="category-title">
@@ -397,7 +469,7 @@
                                    data-option-type="item" checked="checked" disabled="disabled">
                             <label for="opt-job-3-3"></label>
                         </div>
-                        <label for="opt-job-3-3" class="checkbox-label" i18n-text="jobTitle">
+                        <label for="opt-job-3-3" class="checkbox-label disabled" i18n-text="jobTitle">
                             <small>(Co-op, Grad, Alumni)</small>
                         </label>
                     </div>
@@ -814,7 +886,6 @@
 <script type="text/javascript" src="/js/plugins/jquery.js"></script>
 <script type="text/javascript" src="/js/plugins/localization.js"></script>
 <script type="text/javascript" src="/js/configs.js"></script>
-<script type="text/javascript" src="/js/themes.js"></script>
 <script type="text/javascript" src="/js/options.js"></script>
 
 </body>

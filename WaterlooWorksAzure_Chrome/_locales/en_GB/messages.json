@@ -14,6 +14,12 @@
   "addBackToTopButtonOnEachPage_tip": {
     "message": "Add \"Back to top\" button. One-click to go back to the top of webspages."
   },
+  "addBatchOperationButton": {
+    "message": "Add \"Batch\" button"
+  },
+  "addBatchOperationButton_tip": {
+    "message": "Add batch button to the top right of the posting list. Click button to enter batch operation mode. Select postings using click and shift. Batch shortlist / not interested / open in new tab selected postings."
+  },
   "addButtonsToAdjustDetailPageFontSize": {
     "message": "Add buttons to adjust detail page font size"
   },
@@ -375,10 +381,10 @@
     "message": "Use default style <small>(Combine job title, organization, division)</small>"
   },
   "useKeyboardArrowKeysToSwitchPages": {
-    "message": "Use keyboard arrow keys to switch pages"
+    "message": "Use keyboard shortcuts to navigate"
   },
   "useKeyboardArrowKeysToSwitchPages_tip": {
-    "message": "Press left / right arrow keys on the keyboard to switch between previous / next job posting preview."
+    "message": "Press left / right arrow keys on the keyboard to switch between previous / next job posting preview. Press Alt + underlined letter in button to trigger click event."
   },
   "useNewAzureHomepage": {
     "message": "Use new Azure welcome page"

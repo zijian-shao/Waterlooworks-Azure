@@ -1,4 +1,4 @@
-(function startTheme() {
+function startTheme() {
     var navHelp, navLogout;
     $('#closeNav ul.nav-list li').each(function (i, e) {
         var navText = $(e).text();
@@ -11,4 +11,6 @@
         }
     });
     navLogout.insertBefore(navHelp);
-})();
+}
+
+setTimeout(startTheme, 5);
