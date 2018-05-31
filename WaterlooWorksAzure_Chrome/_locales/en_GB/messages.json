@@ -233,6 +233,12 @@
   "keywordsToBeHighlighted_tip": {
     "message": "<p>▷ The above keywords will be highlighted on posting details page.</p><p>▷ Use the input box to add a keyword and click the remove icon next to a keyword to remove it.</p><p>▷ Keywords are case insensitive. Symbols are not recommended.</p><p>▷ For performance considerations, please keep the total number of keywords below 10.</p>"
   },
+  "largerFontSize": {
+    "message": "Larger font size"
+  },
+  "largerFontSize_tip": {
+    "message": "Accessibility: Slightly enlarge the font for easier reading"
+  },
   "level": {
     "message": "Level"
   },

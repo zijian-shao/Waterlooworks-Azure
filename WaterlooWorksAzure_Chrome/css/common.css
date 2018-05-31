@@ -60,14 +60,6 @@
     display: block;
 }
 
-.hide {
-    display: none !important
-}
-
-.show {
-    display: block !important
-}
-
 .invisible {
     visibility: hidden
 }
@@ -998,15 +990,21 @@ table.table-header-fixed {
     text-decoration: none;
 }
 
+.azure-company-ranking small {
+    opacity: 0.6;
+    color: inherit !important;
+}
+
 .azure-company-ranking-empty a {
     padding-left: 0;
-    /*opacity: 1;*/
+    opacity: 1;
 }
 
 /* float posting info */
 .azure-posting-info-panel h1 {
     line-height: 1.5em;
     font-size: 1.2em;
+    margin-top: 0;
 }
 
 .azure-posting-info-panel h5 {

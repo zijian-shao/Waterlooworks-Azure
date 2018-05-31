@@ -233,6 +233,12 @@
   "keywordsToBeHighlighted_tip": {
     "message": "<p>▷ 上方的关键词将会在只为详情页面内进行高亮显示</p><p>▷ 使用输入框添加或点击X号移除关键词</p><p>▷ 关键词不区分大小写，且不建议包含符号</p><p>▷ 处于性能考虑，请将关键词的数量控制在10个以下</p>"
   },
+  "largerFontSize": {
+    "message": "使用更大字体"
+  },
+  "largerFontSize_tip": {
+    "message": "辅助功能：将网页字体稍稍放大以方便阅读。"
+  },
   "level": {
     "message": "级别"
   },

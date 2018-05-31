@@ -233,6 +233,12 @@
   "keywordsToBeHighlighted_tip": {
     "message": "<p>▷ 上方的關鍵詞將會在只為詳情頁面內進行高亮顯示</p><p>▷ 使用輸入框添加或點擊X號移除關鍵詞</p>< p>▷ 關鍵詞不區分大小寫，且不建議包含符號</p><p>▷ 處於性能考慮，請將關鍵詞的數量控制在10個以下</p>"
   },
+  "largerFontSize": {
+    "message": "使用更大字體"
+  },
+  "largerFontSize_tip": {
+    "message": "輔助功能：將網頁字體稍稍放大以方便閱讀。"
+  },
   "level": {
     "message": "級別"
   },

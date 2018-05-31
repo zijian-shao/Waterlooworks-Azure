@@ -598,8 +598,11 @@ function startAzure() {
 
     // font
     var fontConf = options.GLB_FontName.split('||');
+    var largerFontSizeExtra = 2;
     // fontName||weights||fontSize||source
     if (fontConf.length == 4) {
+
+        // name, weights, size, source
         if (fontConf[3] == 'google') {
             injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
         } else if (fontConf[3] == 'none') {
@@ -607,14 +610,40 @@ function startAzure() {
         } else {
             injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
         }
+
+        if (options.GLB_LargerFont)
+            fontConf[2] = parseInt(fontConf[2]) + largerFontSizeExtra;
+
         injectCSS('body{font-size:' + fontConf[2] + 'px}', 'head', 'text');
+
     } else if (fontConf.length == 3) {
+
+        // name, weights, size
         injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
+
+        if (options.GLB_LargerFont)
+            fontConf[2] = parseInt(fontConf[2]) + largerFontSizeExtra;
+
         injectCSS('body{font-size:' + fontConf[2] + 'px}', 'head', 'text');
+
     } else {
+
+        // name only
         injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':400,600,800', 'head');
+
+        if (options.GLB_LargerFont)
+            injectCSS('body{font-size:' + (12 + largerFontSizeExtra) + 'px}', 'head', 'text');
+
     }
-    injectCSS('body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {font-family: \'' + fontConf[0] + '\', "Microsoft YaHei", sans-serif !important;}', 'head', 'text');
+
+    var lineHeightLargerCSS = '', bodyLineHeightLargerCSS = '';
+    if (options.GLB_LargerFont) {
+        lineHeightLargerCSS = '.table th,.table td,strong{line-height: 1.5em;}';
+        bodyLineHeightLargerCSS = 'line-height:normal;';
+    }
+
+    injectCSS('body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {font-family: \'' + fontConf[0] + '\', "Microsoft YaHei", sans-serif !important;' + bodyLineHeightLargerCSS + '}' + lineHeightLargerCSS, 'head', 'text');
+
 
     // inject global css
     injectCSS(baseURL + 'css/common.css', 'head');

@@ -244,42 +244,44 @@ function showCompanyRank(data) {
     if (response.totalRecordCount > 0) {
 
         // if first result matches, add score & link
-        if (response.employers['0'].name.match(new RegExp(companyName, 'i'))) {
+        if (response.employers[0].exactMatch == true) {
 
             var score = Number(response.employers['0'].overallRating).toFixed(1);
 
             var link = '';
-            if (response.employers['0'].hasOwnProperty('featuredReview')) {
-                link = response.employers['0'].featuredReview.attributionURL;
-            } else if (response.hasOwnProperty('attributionURL')) {
-                link = response.attributionURL;
+            if (response.employers[0].hasOwnProperty('featuredReview')) {
+                link = response.employers[0].featuredReview.attributionURL;
             } else {
-                link = 'https://www.glassdoor.ca';
+                link = response.attributionURL;
             }
 
-            rank = $('<span class="azure-company-ranking">' + _rankStarHTML(score) + ' ' + score + '<a href="' + link + '" target="_blank"><i class="icon-share-alt"></i> View In Glassdoor</a></span>');
+            var numRatings = '';
+            if (response.employers[0].hasOwnProperty('numberOfRatings')) {
+                numRatings = '<small class="margin-left-5">( ' + response.employers[0].numberOfRatings + ' Ratings )</small>';
+            }
+
+            rank = $('<span class="azure-company-ranking">' + _rankStarHTML(score) + ' ' + score + numRatings + '<a href="' + link + '" target="_blank"><i class="icon-share-alt"></i> View in Glassdoor</a></span>');
 
         }
 
         // if not, add link to search result page
         else {
 
-            rank = $('<span class="azure-company-ranking azure-company-ranking-empty"><a href="' + response.attributionURL + '" target="_blank"><i class="icon-share-alt"></i> View In Glassdoor</a></span>');
+            rank = $('<span class="azure-company-ranking azure-company-ranking-empty"><a href="' + response.attributionURL + '" target="_blank"><i class="icon-share-alt"></i> View in Glassdoor</a></span>');
 
         }
 
     } else {
 
         // result does not exist
-        rank = $('<span class="azure-company-ranking azure-company-ranking-empty"><a href="https://www.glassdoor.com" target="_blank"><i class="icon-share-alt"></i> Visit Glassdoor</a></span>');
+        rank = $('<span class="azure-company-ranking azure-company-ranking-empty"><a href="' + response.attributionURL + '" target="_blank"><i class="icon-search"></i> Search Glassdoor</a></span>');
     }
 
     rank.hide();
     company.append(rank);
     $('.azure-posting-info-panel .panel-body').append(rank.clone());
     $('.azure-company-ranking').fadeIn(300);
-
-
+    
 }
 
 /**
@@ -1515,7 +1517,8 @@ function postingDetail() {
     if (!divDetail.length)
         return;
 
-    detailPageTitle();
+    if (options.GLB_ReverseTitleOrder)
+        detailPageTitle();
 
     if (options.JOB_FloatDetailPageButton) {
 
