@@ -25,7 +25,7 @@ function getOptionListDefault() {
         'JOB_ShortlistExport': true,
         'JOB_FloatDetailPageButton': true,
         'JOB_FloatDetailPageInfo': true,
-        'JOB_ListBatchOperation': true,
+        'JOB_ListBatchOperation': false,
         'JOB_DetailPostingInfoPanel': true,
         'JOB_DetailPageFontSize': true,
         'JOB_DetailPageHighlight': true,
@@ -132,7 +132,8 @@ function getOptionListDefault() {
         'GLB_BackToTopButton': true,
         'GLB_ReverseTitleOrder': true,
         'GLB_ThemeID': 0,
-        'GLB_FontName': 'Muli',
+        'GLB_FontName': 'Muli||400,600,800||12',
+        'GLB_LargerFont': false,
         'GLB_KeepLoggedIn': true,
         'GLB_Enabled': true
     };
