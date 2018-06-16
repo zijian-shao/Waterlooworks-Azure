@@ -385,7 +385,7 @@ function initOptions() {
         $.each(themes, function (i, val) {
 
             if (val['hidden'] == false) {
-                $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '"><p>' + val['name'] + '</p><p><img src="../img/theme-thumb-' + val['id'] + '.png" alt="' + val['name'] + '" class="theme-sample"></p></label></div>').appendTo(list);
+                $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '"><p>' + val['name'] + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>').appendTo(list);
             }
 
             index++;

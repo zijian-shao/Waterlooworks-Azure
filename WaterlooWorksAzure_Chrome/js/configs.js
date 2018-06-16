@@ -192,6 +192,17 @@ function getThemeConfigs(id) {
         "theme_4": {
             "id": 4,
             "hidden": true,
+            "name": "Dodger Blue<div class='new-tag' style='float:left;margin:8px 5px 0 0'>NEW</div>",
+            "author": "Zijian Shao & Tencent TIM",
+            "brightness": "light",
+            "overlayColor": "#fafafa",
+            "previewColor": "#118dee",
+            "navbarPosition": "top",
+            "navbarHeight": 50
+        },
+        "theme_5": {
+            "id": 5,
+            "hidden": true,
             "name": "Daylight Aurora",
             "author": "Zijian Shao",
             "brightness": "light",
@@ -200,8 +211,8 @@ function getThemeConfigs(id) {
             "navbarPosition": "top",
             "navbarHeight": 0
         },
-        "theme_5": {
-            "id": 5,
+        "theme_6": {
+            "id": 6,
             "hidden": true,
             "name": "Midnight Aurora",
             "author": "Zijian Shao",

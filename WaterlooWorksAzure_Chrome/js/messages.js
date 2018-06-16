@@ -67,8 +67,8 @@ function messageListAjax() {
         $(theadTH[recIdx]).insertAfter($(theadTH[subCateIdx]));
     }
 
-    if (options.MSG_FixTableHeader)
-        fixTableHeader(table);
+    // if (options.MSG_FixTableHeader)
+    //     fixTableHeader(table);
 
     // loop through each row
     table.find('tbody tr').each(function (index, tr) {
@@ -103,7 +103,7 @@ function messageListAjax() {
             }
 
             // remove new badge from subject
-            $(trTD[subIdx]).find('.badge').remove();
+            // var badge = $(trTD[subIdx]).find('.badge').remove();
 
             // add Ack Req to subject
             if (!$(trTD[ackIdx]).text().match(/No/)) {
@@ -121,8 +121,8 @@ function messageListAjax() {
     // resize top scroll bar (waterlooworks origianl function)
     setTimeout(function () {
         sizeTopScroll();
-        if (options.MSG_FixTableHeader)
-            fixTableHeader(table);
+        // if (options.MSG_FixTableHeader)
+        //     fixTableHeader(table);
     }, 100);
 
 }

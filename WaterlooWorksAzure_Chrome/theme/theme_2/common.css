@@ -637,6 +637,15 @@ input.btn-inverse {
     }
 }
 
+#mainContentDiv {
+    display: block;
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0;
+}
+
 /*main content*/
 @media (min-width: 980px) {
     #mainContentDiv {
@@ -706,7 +715,8 @@ pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .a
     }
 
     .azure-full-width .orbis-posting-actions-btn-float,
-    .azure-full-width #mainContentDiv {
+    .azure-full-width #mainContentDiv,
+    .azure-full-width .orbisFooter {
         margin-left: 0;
     }
 
@@ -758,7 +768,7 @@ pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .a
 }
 
 table.table-header-fixed {
-    top: 0px;
+    /*top: 0px;*/
     -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);

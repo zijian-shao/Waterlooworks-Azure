@@ -69,6 +69,10 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 }
 
 /* Sidebar */
+.sidebar-nav {
+    font-size: 14px;
+}
+
 @media (min-width: 980px) {
     .span2.bs--hide__column:before {
         display: none;
@@ -886,6 +890,15 @@ img {
 .orbisCheckboxWidget {
     border-color: #424a56 !important;
     background: #373e48 !important;
+}
+
+#mainContentDiv {
+    display: block;
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0;
 }
 
 /* postings */

@@ -1107,11 +1107,12 @@ div.arrow.left {
 }
 
 .theme-sample {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     border-radius: 4px;
     border: 1px solid #ddd;
-    margin-bottom:10px;
+    margin: 0 0 20px 0;
+    display: block;
 }
 
 .hide-long {

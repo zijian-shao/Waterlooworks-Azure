@@ -281,7 +281,7 @@ function showCompanyRank(data) {
     company.append(rank);
     $('.azure-posting-info-panel .panel-body').append(rank.clone());
     $('.azure-company-ranking').fadeIn(300);
-    
+
 }
 
 /**
@@ -817,6 +817,61 @@ function postingBatch() {
     });
 
     $('#hideSideNav').after(batchBtn);
+}
+
+/**
+ * GENERAL
+ * Extra scripts
+ */
+function postingExtra() {
+
+    // CECA refused to change the label from "Country" to "Country / Region".
+    // And their replied was very impatient and arrogant.
+    // I guess they have no budget or intention to make this change.
+    if ($('#mainContentDiv .orbisModuleHeader h1').text().match(/Advanced Search/)) {
+
+        var label = $('label[class="control-label"][for="question_Country"]');
+        if (!label.text().match(/Region/gi)) {
+            label.html(label.html().replace(/Country/gi, 'Country / Region'));
+        }
+
+        var checkbox = $('div.checkboxGroup div.checkboxGroupBody');
+        var checkItem;
+
+        checkItem = checkbox.find('input[name="Country"][value="Hong Kong"]').first().parent();
+        if (!checkItem.text().match(/China/gi))
+            checkItem.html(checkItem.html().replace(/[^"]Hong Kong[^"]/, 'Hong Kong<span class="hidden">, China</span>'));
+
+        checkItem = checkbox.find('input[name="Country"][value="Macao"]').first().parent();
+        if (!checkItem.text().match(/China/gi))
+            checkItem.html(checkItem.html().replace(/[^"]Macao[^"]/, 'Macao<span class="hidden">, China</span>'));
+
+        checkItem = checkbox.find('input[name="Country"][value="Taiwan"]').first().parent();
+        if (!checkItem.text().match(/China/gi))
+            checkItem.html(checkItem.html().replace(/[^"]Taiwan[^"]/, 'Taiwan<span class="hidden">, China</span>'));
+    }
+
+    if ($('#postingDiv').length) {
+
+        var itemTitles = $('#postingDiv table > tbody > tr > td:first-child');
+        itemTitles.each(function () {
+            if ($(this).text().match(/Country/gi) && !$(this).text().match(/Region/gi)) {
+                $(this).html($(this).html().replace(/Country/gi, 'Country / Region'));
+                var itemContent = $(this).next('td');
+                var itemText = itemContent.text();
+                if (!itemText.match(/China/gi) && false) {
+                    if (itemText.match(/Hong Kong/gi)) {
+                        itemContent.html(itemContent.html().replace(/Hong Kong/gi, 'Hong Kong, China'));
+                    } else if (itemText.match(/Macao/gi)) {
+                        itemContent.html(itemContent.html().replace(/Macao/gi, 'Macao, China'));
+                    } else if (itemText.match(/Taiwan/gi)) {
+                        itemContent.html(itemContent.html().replace(/Taiwan/gi, 'Taiwan, China'));
+                    }
+                }
+                return false;
+            }
+        });
+    }
 }
 
 /**
@@ -1610,3 +1665,4 @@ function postingDetail() {
  */
 postingList();
 postingDetail();
+postingExtra();

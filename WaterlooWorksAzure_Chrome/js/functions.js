@@ -253,7 +253,7 @@ function fixTableHeader(table) {
     // if already executed, re-calculate header width
     var newTable = $('#' + table.attr('id') + '-thead');
     if (newTable.length) {
-        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px;');
+        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px; top:' + themeConfig.navbarHeight + 'px;');
         return;
     }
 
@@ -288,18 +288,18 @@ function fixTableHeader(table) {
 
     var tableLeft = table.offset().left;
     var tableWidth = table.width() + 1;
-    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px;');
+    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
 
     setTimeout(function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
     }, 0);
 
     $(window).on('resize', function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
     });
 
 }
@@ -662,10 +662,14 @@ function startAzure() {
         if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
             // add fade effect to open modal buttons
             $('#uploadDocument, #createApplicationPackage, #searchPostings').addClass('fade');
-            // nested boxes
-            dashboardNestedBoxes();
-            // announcement css
+
+            // is Home
             if ($('#displayOverview').hasClass('active')) {
+                // body class
+                $('body').addClass('dashboard-home');
+                // nested boxes
+                dashboardNestedBoxes();
+                // announcement css
                 $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
             }
         }
