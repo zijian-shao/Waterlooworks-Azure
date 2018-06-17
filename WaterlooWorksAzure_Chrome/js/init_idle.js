@@ -16,27 +16,28 @@ function initAzureIdle() {
             });
 
             // return on install
-            // if (oldVer == '0.0.0')
-            //     return;
+            if (oldVer == '0.0.0')
+                return;
 
             if (versionCompare(oldVer, newVer) >= 0)
                 return;
 
             console.log('New version updated (V' + newVer + ')');
 
-            if (!oldVer.match(/2\.9\./) && newVer.match(/1\.9\./)) {
+            if (!oldVer.match(/2\.0\./) && newVer.match(/2\.0\./)) {
                 chrome.runtime.sendMessage({
                     action: 'createTab',
-                    data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=1.9.0&platform=chrome'}
+                    data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=2.0.0&platform=chrome'}
                 });
-            }else if (!oldVer.match(/1\.9\./) && newVer.match(/1\.9\./)) {
-                chrome.runtime.sendMessage({
-                    action: 'createTab',
-                    data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=1.9.0&platform=chrome'}
-                });
-            } else if (newVer == '1.0.0') {
-
             }
+            // else if (!oldVer.match(/1\.9\./) && newVer.match(/1\.9\./)) {
+            //     chrome.runtime.sendMessage({
+            //         action: 'createTab',
+            //         data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=1.9.0&platform=chrome'}
+            //     });
+            // } else if (newVer == '1.0.0') {
+            //
+            // }
 
             console.log('Extension update script executed!');
         });
