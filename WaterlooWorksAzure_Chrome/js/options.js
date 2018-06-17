@@ -382,10 +382,29 @@ function initOptions() {
         var themes = getThemeConfigs();
         var list = $('#theme-list');
         var index = 0;
+        var newTag = '', subTitle = '';
+
         $.each(themes, function (i, val) {
 
+            if (val.hasOwnProperty('isNew') && val['isNew']) {
+                newTag = "<div class='new-tag' style='float:left;margin:8px 5px 0 0'>NEW</div>";
+            } else {
+                newTag = '';
+            }
+
+            if (val.hasOwnProperty('name2')) {
+                subTitle = '<span class="theme-subtitle">' + val['name2'] + '</span>';
+            } else {
+                subTitle = '';
+            }
+
             if (val['hidden'] == false) {
-                $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '"><p>' + val['name'] + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>').appendTo(list);
+                var themeItem = $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '" title="' + val['name'] + '\nCreated by ' + val['author'] + '"><p>' + val['name'] + subTitle + newTag + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>');
+                if (newTag == '') {
+                    themeItem.appendTo(list);
+                } else {
+                    themeItem.prependTo(list);
+                }
             }
 
             index++;

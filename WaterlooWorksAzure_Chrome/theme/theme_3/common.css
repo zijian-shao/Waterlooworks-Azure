@@ -919,3 +919,16 @@ table.formTable span.inputContainer {
         padding-right: 0;
     }
 }
+
+/* posting table tile */
+.postingsTable-tile > tbody > tr > td:nth-child(1) {
+    padding-top: 5px !important;
+}
+
+.postingsTable-tile:not(.table-header-fixed) > thead > tr {
+    border-right: none !important;
+}
+
+.postingsTable-tile.table-header-fixed {
+    border-top: none !important;
+}

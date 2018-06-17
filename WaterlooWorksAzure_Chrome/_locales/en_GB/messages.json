@@ -63,7 +63,7 @@
     "message": "Bright Azure"
   },
   "chooseColumnsToBeDisplayed": {
-    "message": "Choose columns to be displayed"
+    "message": "Basic Table <small>(Choose columns to be displayed)</small>"
   },
   "chromeWebStore": {
     "message": "Chrome Web Store"
@@ -377,6 +377,9 @@
   "showGlassdoorQuickSearchLink_tip": {
     "message": "Add external link to context menu and pop-up job preview to view company rankings and other relative information on Glassdoor."
   },
+  "showMorePlus": {
+    "message": "Show More +"
+  },
   "showMsgCategory": {
     "message": "Show message categories"
   },
@@ -384,13 +387,16 @@
     "message": "Show / hide category and subcategory of messages."
   },
   "useDefaultStyleAndCombine": {
-    "message": "Use default style <small>(Combine job title, organization, division)</small>"
+    "message": "Azure Default <small>(Combine job title, organization, division)</small>"
   },
   "useKeyboardArrowKeysToSwitchPages": {
     "message": "Use keyboard shortcuts to navigate"
   },
   "useKeyboardArrowKeysToSwitchPages_tip": {
     "message": "Press left / right arrow keys on the keyboard to switch between previous / next job posting preview. Press Alt + underlined letter in button to trigger click event."
+  },
+  "useModernTileStyle": {
+    "message": "Modern Tiles <small>(Display postings as tiles)</small>"
   },
   "useNewAzureHomepage": {
     "message": "Use new Azure welcome page"

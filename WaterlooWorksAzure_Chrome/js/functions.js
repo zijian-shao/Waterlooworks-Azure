@@ -362,14 +362,28 @@ function contextMenuUtil(action, data) {
 
     } else if (action == 'show') {
 
-        var winW = $(document).width();
-        var cmW = $('#azure-contextmenu-list').width();
+        var winW = $(document).width(), winH = $(document).height();
+        var cmW = $('#azure-contextmenu-list').width(), cmH = $('#azure-contextmenu-list').outerHeight();
+        var showTop = 0, showLeft = 0;
+
+        // detect h-overflow
         if (data.x + cmW + 20 > winW) {
-            // if overflow
-            $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + (data.x - cmW) + 'px');
+            showLeft = data.x - cmW;
         } else {
-            $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + data.x + 'px');
+            showLeft = data.x;
         }
+
+        // detect v-overflow
+        if (data.y + cmH + 20 > winH) {
+            showTop = data.y - cmH;
+        } else {
+            showTop = data.y;
+        }
+
+        $('#azure-contextmenu-list').css({
+            'top': showTop + 'px',
+            'left': showLeft + 'px'
+        });
         $('#azure-contextmenu').removeClass('azure-contextmenu-hidden');
 
     } else if (action == 'clear') {

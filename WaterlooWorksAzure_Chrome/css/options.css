@@ -1115,6 +1115,13 @@ div.arrow.left {
     display: block;
 }
 
+.theme-subtitle {
+    padding-left: 4px;
+    font-size: 0.8em;
+    opacity: 0.6;
+    vertical-align: top;
+}
+
 .hide-long {
     height: 120px;
     overflow: hidden;

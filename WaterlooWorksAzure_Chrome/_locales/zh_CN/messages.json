@@ -63,7 +63,7 @@
     "message": "纯白天蓝色主题"
   },
   "chooseColumnsToBeDisplayed": {
-    "message": "自定义需要显示的项目"
+    "message": "使用基本样式 <small>（自定义需要显示的项目）</small>"
   },
   "chromeWebStore": {
     "message": "Chrome 商店"
@@ -377,6 +377,9 @@
   "showGlassdoorQuickSearchLink_tip": {
     "message": "启用该选项后，将在右键菜单、职位预览页面添加查看 Glassdoor 网站上关于该公司相关评价的链接。"
   },
+  "showMorePlus": {
+    "message": "查看更多"
+  },
   "showMsgCategory": {
     "message": "显示短消息分类及子分类"
   },
@@ -391,6 +394,9 @@
   },
   "useKeyboardArrowKeysToSwitchPages_tip": {
     "message": "启用该选项后，按下键盘左/右方向键即可切换上一篇/下一篇职位预览。按住 Alt + 按钮文本下划线字母，即可点击按钮。"
+  },
+  "useModernTileStyle": {
+    "message": "使用磁贴样式 <small>（以现代化磁贴样式显示列表）</small>"
   },
   "useNewAzureHomepage": {
     "message": "使用全新的 Azure 网站引导页"

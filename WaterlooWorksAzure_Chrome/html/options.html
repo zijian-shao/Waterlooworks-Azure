@@ -204,7 +204,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="hide-long-btn">Show More +</div>
+                    <div class="hide-long-btn" i18n-text="showMorePlus"></div>
                     <div class="clear-fix"></div>
                 </div>
 
@@ -412,7 +412,7 @@
                         <p i18n-text="addExportShortlistButton_tip"></p>
                     </div>
                 </div>
-                <div class="option-group checkbox-group hidden">
+                <div class="option-group checkbox-group">
                     <div class="checkbox-slide">
                         <input type="checkbox" id="opt-job-0-9" data-option-name="JOB_ListBatchOperation"
                                data-option-type="switch">
@@ -436,9 +436,14 @@
                         <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine"></label>
                     </p>
                     <p>
+                        <input type="radio" id="opt-job-2-2" name="JOB_ColumnDisplayType" value="2"
+                               data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
+                        <label for="opt-job-2-2" i18n-html="useModernTileStyle"></label>
+                    </p>
+                    <p>
                         <input type="radio" id="opt-job-2-1" name="JOB_ColumnDisplayType" value="1"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-1" i18n-text="chooseColumnsToBeDisplayed"></label>
+                        <label for="opt-job-2-1" i18n-html="chooseColumnsToBeDisplayed"></label>
                     </p>
                 </div>
                 <div class="option-group checkbox-group indent-40" id="columnsList">

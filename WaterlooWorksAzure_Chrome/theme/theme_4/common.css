@@ -962,3 +962,8 @@ div.checkboxGroup div.checkboxGroupHeader label {
 .modal .modal-footer {
     border-radius: 0;
 }
+
+/* posting table tile */
+.postingsTable-tile > tbody > tr > td:nth-child(1) {
+    padding-top: 7px !important;
+}

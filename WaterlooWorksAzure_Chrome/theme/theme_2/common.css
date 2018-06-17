@@ -886,3 +886,16 @@ table.formTable span.inputContainer {
     opacity: 0.8;
     margin-top: 4px;
 }
+
+/* posting table tile */
+.postingsTable-tile > tbody > tr > td:nth-child(1) {
+    padding-top: 6px !important;
+}
+
+.postingsTable-tile:not(.table-header-fixed) > thead > tr {
+    border-right: none !important;
+}
+
+.postingsTable-tile.table-header-fixed {
+    border-top: none !important;
+}
