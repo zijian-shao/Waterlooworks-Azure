@@ -204,7 +204,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="hide-long-btn">Show More +</div>
+                    <div class="hide-long-btn" i18n-text="showMorePlus"></div>
                     <div class="clear-fix"></div>
                 </div>
 
@@ -412,13 +412,13 @@
                         <p i18n-text="addExportShortlistButton_tip"></p>
                     </div>
                 </div>
-                <div class="option-group checkbox-group hidden">
+                <div class="option-group checkbox-group">
                     <div class="checkbox-slide">
                         <input type="checkbox" id="opt-job-0-9" data-option-name="JOB_ListBatchOperation"
                                data-option-type="switch">
                         <label for="opt-job-0-9"></label>
                     </div>
-                    <label for="opt-job-0-9" class="checkbox-label" i18n-text="addBatchOperationButton"></label>
+                    <label for="opt-job-0-9" class="checkbox-label" i18n-text="addBatchOperationButton"><div class="new-tag">NEW</div></label>
                     <a class="option-tip-toggle">?</a>
                     <div class="option-tip hidden">
                         <p i18n-text="addBatchOperationButton_tip"></p>
@@ -428,6 +428,7 @@
                 <!-- Posting List Display -->
                 <div class="category-title">
                     <h5 i18n-text="postingListDisplay"></h5>
+                    <div class="new-tag">NEW</div>
                 </div>
                 <div class="option-group radio-group">
                     <p>
@@ -436,9 +437,14 @@
                         <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine"></label>
                     </p>
                     <p>
+                        <input type="radio" id="opt-job-2-2" name="JOB_ColumnDisplayType" value="2"
+                               data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
+                        <label for="opt-job-2-2" i18n-html="useModernTileStyle"></label>
+                    </p>
+                    <p>
                         <input type="radio" id="opt-job-2-1" name="JOB_ColumnDisplayType" value="1"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-1" i18n-text="chooseColumnsToBeDisplayed"></label>
+                        <label for="opt-job-2-1" i18n-html="chooseColumnsToBeDisplayed"></label>
                     </p>
                 </div>
                 <div class="option-group checkbox-group indent-40" id="columnsList">
@@ -812,7 +818,7 @@
                         <p i18n-text="openMessagesInNewTab_tip"></p>
                     </div>
                 </div>
-                <div class="option-group checkbox-group">
+                <div class="option-group checkbox-group hidden">
                     <div class="checkbox-slide">
                         <input type="checkbox" id="opt-msg-0-2" data-option-name="MSG_FixTableHeader"
                                data-option-type="switch">

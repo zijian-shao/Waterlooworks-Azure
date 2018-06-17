@@ -69,6 +69,10 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 }
 
 /* Sidebar */
+.sidebar-nav {
+    font-size: 14px;
+}
+
 @media (min-width: 980px) {
     .span2.bs--hide__column:before {
         display: none;
@@ -888,6 +892,15 @@ img {
     background: #373e48 !important;
 }
 
+#mainContentDiv {
+    display: block;
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0;
+}
+
 /* postings */
 
 /* thead bg */
@@ -998,4 +1011,44 @@ img {
 
 .azure-batch-container li:active {
     background: rgba(9, 177, 185, 0.25);
+}
+
+/* posting table tile */
+.postingsTable-tile {
+    background: none !important;
+}
+
+.postingsTable-tile > tbody > tr {
+    background: #3b434e;
+}
+
+.postingsTable-tile > tbody > tr:hover {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(1) {
+    background: #424a56 !important;
+    border-top-color: #fff !important;
+}
+
+.postingsTable-tile > tbody > tr > span.label.new-tag {
+    background: #09b1b9 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(5) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(5) > span.division {
+    color: #777 !important;
+}
+
+.postingsTable-tile.table-header-fixed {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important;
 }

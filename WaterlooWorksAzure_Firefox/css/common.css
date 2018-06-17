@@ -428,17 +428,6 @@ label.gridDropdownButton.is--focused {
     opacity: 1;
 }
 
-/* Main Content */
-
-#mainContentDiv {
-    display: block;
-    float: none;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 1em;
-    margin: 0;
-}
-
 /* Drop down */
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
     -webkit-transition: background 0.2s ease, color 0.2s ease;
@@ -462,7 +451,6 @@ label.gridDropdownButton.is--focused {
 /* Sidebar */
 
 .sidebar-nav {
-    font-size: 14px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -631,7 +619,7 @@ thead.header-fixed {
 
 table.table-header-fixed {
     position: fixed;
-    top: 60px;
+    /*top: 60px;*/
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -884,6 +872,7 @@ table.table-header-fixed {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    white-space: nowrap;
 }
 
 @media (max-width: 979px) {

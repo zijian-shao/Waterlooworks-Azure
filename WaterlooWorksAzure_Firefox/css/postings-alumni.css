@@ -52,3 +52,60 @@
 .postingsTable > tbody > tr > td:last-child, .postingsTable > thead > tr > th:last-child {
     display: none !important;
 }
+
+/* ======= tile ======= */
+.postingsTable-tile > thead > tr > th:nth-child(1),
+.postingsTable-tile > thead > tr > th:nth-child(2) {
+    display: none;
+}
+
+/* type */
+.postingsTable-tile > tbody > tr > td:nth-child(7) {
+    top: 114px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(7):before {
+    content: '\f114';
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+/* int stat */
+.postingsTable-tile > tbody > tr > td:nth-child(8) {
+    top: 12px;
+    left: 70px;
+    width: auto;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* location */
+.postingsTable-tile > tbody > tr > td:nth-child(9) {
+    top: 95px;
+    left: 120px;
+    color: #aaa;
+    width: auto;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(9):before {
+    content: '\f041';
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+/* deadline */
+.postingsTable-tile > tbody > tr > td:nth-child(10) {
+    top: 95px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(10):before {
+    content: '\f017';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}

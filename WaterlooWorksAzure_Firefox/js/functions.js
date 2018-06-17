@@ -253,7 +253,7 @@ function fixTableHeader(table) {
     // if already executed, re-calculate header width
     var newTable = $('#' + table.attr('id') + '-thead');
     if (newTable.length) {
-        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px;');
+        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px; top:' + themeConfig.navbarHeight + 'px;');
         return;
     }
 
@@ -288,18 +288,18 @@ function fixTableHeader(table) {
 
     var tableLeft = table.offset().left;
     var tableWidth = table.width() + 1;
-    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px;');
+    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
 
     setTimeout(function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
     }, 0);
 
     $(window).on('resize', function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
     });
 
 }
@@ -362,14 +362,28 @@ function contextMenuUtil(action, data) {
 
     } else if (action == 'show') {
 
-        var winW = $(document).width();
-        var cmW = $('#azure-contextmenu-list').width();
+        var winW = $(document).width(), winH = $(document).height();
+        var cmW = $('#azure-contextmenu-list').width(), cmH = $('#azure-contextmenu-list').outerHeight();
+        var showTop = 0, showLeft = 0;
+
+        // detect h-overflow
         if (data.x + cmW + 20 > winW) {
-            // if overflow
-            $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + (data.x - cmW) + 'px');
+            showLeft = data.x - cmW;
         } else {
-            $('#azure-contextmenu-list').attr('style', 'top:' + data.y + 'px; left:' + data.x + 'px');
+            showLeft = data.x;
         }
+
+        // detect v-overflow
+        if (data.y + cmH + 20 > winH) {
+            showTop = data.y - cmH;
+        } else {
+            showTop = data.y;
+        }
+
+        $('#azure-contextmenu-list').css({
+            'top': showTop + 'px',
+            'left': showLeft + 'px'
+        });
         $('#azure-contextmenu').removeClass('azure-contextmenu-hidden');
 
     } else if (action == 'clear') {
@@ -662,10 +676,14 @@ function startAzure() {
         if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
             // add fade effect to open modal buttons
             $('#uploadDocument, #createApplicationPackage, #searchPostings').addClass('fade');
-            // nested boxes
-            dashboardNestedBoxes();
-            // announcement css
+
+            // is Home
             if ($('#displayOverview').hasClass('active')) {
+                // body class
+                $('body').addClass('dashboard-home');
+                // nested boxes
+                dashboardNestedBoxes();
+                // announcement css
                 $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
             }
         }

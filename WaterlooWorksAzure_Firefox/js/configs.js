@@ -25,7 +25,7 @@ function getOptionListDefault() {
         'JOB_ShortlistExport': true,
         'JOB_FloatDetailPageButton': true,
         'JOB_FloatDetailPageInfo': true,
-        'JOB_ListBatchOperation': false,
+        'JOB_ListBatchOperation': true,
         'JOB_DetailPostingInfoPanel': true,
         'JOB_DetailPageFontSize': true,
         'JOB_DetailPageHighlight': true,
@@ -124,7 +124,7 @@ function getOptionListDefault() {
         },
         'MSG_Enabled': true,
         'MSG_OpenInNewTab': true,
-        'MSG_FixTableHeader': true,
+        'MSG_FixTableHeader': false,
         'MSG_BetterColumn': true,
         'MSG_ShowCategory': true,
         'GLB_ReplaceLoginPage': true,
@@ -160,6 +160,7 @@ function getThemeConfigs(id) {
             "id": 1,
             "hidden": false,
             "name": "Dark Turquoise",
+            "name2": "(Night Mode)",
             "author": "Zijian Shao",
             "brightness": "dark",
             "overlayColor": "#282d34",
@@ -191,6 +192,18 @@ function getThemeConfigs(id) {
         },
         "theme_4": {
             "id": 4,
+            "hidden": false,
+            "isNew": true,
+            "name": "Dodger Blue",
+            "author": "Zijian Shao & Tencent TIM",
+            "brightness": "light",
+            "overlayColor": "#fafafa",
+            "previewColor": "#118dee",
+            "navbarPosition": "top",
+            "navbarHeight": 50
+        },
+        "theme_5": {
+            "id": 5,
             "hidden": true,
             "name": "Daylight Aurora",
             "author": "Zijian Shao",
@@ -200,8 +213,8 @@ function getThemeConfigs(id) {
             "navbarPosition": "top",
             "navbarHeight": 0
         },
-        "theme_5": {
-            "id": 5,
+        "theme_6": {
+            "id": 6,
             "hidden": true,
             "name": "Midnight Aurora",
             "author": "Zijian Shao",

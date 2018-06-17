@@ -50,6 +50,21 @@ a {
     display: none;
 }
 
+#mainContentDiv {
+    display: block;
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0;
+}
+
+.orbisFooter {
+    background: #1b1b1b;
+    padding: 0;
+    height: 50px;
+}
+
 @media (min-width: 980px) {
 
     body {
@@ -152,9 +167,6 @@ a {
     }
 
     .orbisFooter {
-        background: #1b1b1b;
-        padding: 0;
-        height: 50px;
         left: 14.52991452991453%;
         right: 0;
         width: auto;
@@ -177,6 +189,10 @@ a {
     .azure-full-width .orbis-posting-actions-btn-float,
     .azure-full-width #mainContentDiv {
         margin-left: 0;
+    }
+
+    .azure-full-width .orbisFooter {
+        left: 0;
     }
 
     .azure-full-width .bs--hide__column {

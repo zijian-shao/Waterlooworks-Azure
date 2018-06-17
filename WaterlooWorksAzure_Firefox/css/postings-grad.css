@@ -47,3 +47,60 @@
 .postingsTable > tbody > tr > td:last-child, .postingsTable > thead > tr > th:last-child {
     width: 6%
 }
+
+/* ======= tile ======= */
+.postingsTable-tile > thead > tr > th:nth-child(1),
+.postingsTable-tile > thead > tr > th:nth-child(2),
+.postingsTable-tile > thead > tr > th:last-child {
+    display: none;
+}
+
+.postingsTable-tile > tbody > tr {
+    height: 180px;
+}
+
+/* type */
+.postingsTable-tile > tbody > tr > td:nth-child(7) {
+    top: 90px;
+    left: 120px;
+    color: #aaa;
+    width: auto;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(7):before {
+    content: '\f114';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+/* int stat */
+.postingsTable-tile > tbody > tr > td:nth-child(8) {
+    top: 12px;
+    left: 70px;
+    width: auto;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* deadline */
+.postingsTable-tile > tbody > tr > td:nth-child(9) {
+    top: 90px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(9):before {
+    content: '\f017';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+/* not interested */
+.postingsTable-tile > tbody > tr > td:nth-child(10) {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+    text-align: right !important;
+    width: 30%;
+}

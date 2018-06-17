@@ -172,6 +172,10 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 }
 
 /* Sidebar */
+.sidebar-nav {
+    font-size: 14px;
+}
+
 @media (min-width: 980px) {
     .span2.bs--hide__column:before {
         display: none;

@@ -1107,11 +1107,19 @@ div.arrow.left {
 }
 
 .theme-sample {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     border-radius: 4px;
     border: 1px solid #ddd;
-    margin-bottom:10px;
+    margin: 0 0 20px 0;
+    display: block;
+}
+
+.theme-subtitle {
+    padding-left: 4px;
+    font-size: 0.8em;
+    opacity: 0.6;
+    vertical-align: top;
 }
 
 .hide-long {
@@ -1300,4 +1308,5 @@ div.arrow.left {
     .share-box {
         display: none;
     }
+
 }
