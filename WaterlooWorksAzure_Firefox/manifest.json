@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_appName__",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "default_locale": "en",
   "description": "__MSG_appDesc__",
   "icons": {
@@ -41,6 +41,8 @@
         "*://waterlooworks.uwaterloo.ca/*"
       ],
       "js": [
+        "js/plugins/jquery.js",
+        "js/functions.js",
         "js/init_idle.js"
       ],
       "run_at": "document_end"
@@ -54,6 +56,7 @@
     "contextMenus",
     "storage",
     "unlimitedStorage",
+    "webRequest",
     "*://waterlooworks.uwaterloo.ca/*"
   ],
   "short_name": "WWAzure",

@@ -40,10 +40,7 @@ function startTheme() {
 
     // remove defaul orbisApp tab logic function
     setTimeout(function () {
-        orbisApp.tabLogic = function () {
-        };
-        orbisApp.startTabLogic = function () {
-        };
+        injectScript('orbisApp.tabLogic = function () {};orbisApp.startTabLogic = function () {};', 'head', 'text');
     }, 1000);
 
     // dashboard

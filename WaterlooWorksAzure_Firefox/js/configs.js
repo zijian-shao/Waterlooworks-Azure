@@ -17,7 +17,7 @@ function getOptionListDefault() {
         'JOB_FlipPageBackToTop': true,
         'JOB_FixTableHeader': true,
         'JOB_NewTagSwitch': true,
-        'JOB_GlassdoorRanking': true,
+        'JOB_GlassdoorRanking': false,
         'JOB_EmptyShortlistButton': true,
         'JOB_ColumnDisplayType': 0,
         'JOB_ColumnSelected': ['action-buttons', 'app-status', 'id', 'job-title', 'organization', 'division', 'openings', 'position-type', 'internal-status', 'city', 'location', 'level', 'applications', 'app-deadline', 'not-interested'],

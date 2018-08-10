@@ -1,4 +1,4 @@
-var baseURL, currURL, options, configs, themeConfigs;
+var baseURL, currURL, options, configs, themeConfig;
 
 function injectScript(url, tag, type, callback) {
 
@@ -52,10 +52,10 @@ function initAzure() {
         if (!options.GLB_Enabled)
             return;
 
-        themeConfigs = getThemeConfigs(options.GLB_ThemeID);
+        themeConfig = getThemeConfigs(options.GLB_ThemeID);
 
         // add cover
-        addCover(themeConfigs.overlayColor);
+        addCover(themeConfig.overlayColor);
 
         // if not logged in
         testRedirect();
@@ -67,6 +67,9 @@ function initAzure() {
     browser.storage.sync.get(configs, function (e) {
         options = e;
         init();
+    });
+
+    browser.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     });
 }
 

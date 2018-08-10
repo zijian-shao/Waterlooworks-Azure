@@ -25,7 +25,7 @@ function initAzureIdle() {
             console.log('New version updated (V' + newVer + ')');
 
             if (!oldVer.match(/2\.0\./) && newVer.match(/2\.0\./)) {
-                chrome.runtime.sendMessage({
+                browser.runtime.sendMessage({
                     action: 'createTab',
                     data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=2.0.0&platform=firefox'}
                 });
@@ -109,16 +109,26 @@ function initAzureIdle() {
     // global var
     jsText += 'var baseURL = "' + baseURL + '";';
     jsText += 'var options = ' + JSON.stringify(options) + ';';
-    jsText += 'var themeConfig = ' + JSON.stringify(themeConfigs) + ';';
+    jsText += 'var themeConfig = ' + JSON.stringify(themeConfig) + ';';
     jsText += 'var currURL = "' + currURL + '";';
     injectScript(jsText, 'head', 'text');
 
     // func
-    injectScript(baseURL + 'js/functions.js', 'head');
+    // injectScript(baseURL + 'js/functions.js', 'head');
 
-    // theme func
-    if (currURL.match(/\/myAccount\//))
-        injectScript(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/functions.js', 'head');
+    startAzure();
+
+    // theme
+    if (currURL.match(/\/myAccount\//)) {
+        // injectScript(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/functions.js', 'head');
+        browser.runtime.sendMessage({
+            action: 'executeScript',
+            data: {
+                type: 'file',
+                content: baseURL + 'theme/theme_' + options.GLB_ThemeID + '/functions.js'
+            }
+        });
+    }
 
     extensionUpdate();
 }

@@ -140,3 +140,62 @@ function initBackground() {
 }
 
 initBackground();
+
+// browser.webRequest.onSendHeaders.addListener(
+//     function (details) {
+//         browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
+//             browser.tabs.sendMessage(tabs[0].id, {
+//                 action: 'webRequest.onSendHeaders',
+//                 data: {
+//                     url: details.url
+//                 }
+//             }, function (response) {
+//             });
+//         });
+//
+//     },
+//     {
+//         urls: ["*://waterlooworks.uwaterloo.ca/myAccount/co-op/coop-postings.htm*",
+//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/other-jobs/jobs-postings.htm*",
+//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm*"]
+//     }
+// );
+//
+// browser.webRequest.onCompleted.addListener(
+//     function (details) {
+//         browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
+//             browser.tabs.sendMessage(tabs[0].id, {
+//                 action: 'webRequest.onCompleted',
+//                 data: {
+//                     url: details.url
+//                 }
+//             }, function (response) {
+//             });
+//         });
+//
+//     },
+//     {
+//         urls: ["*://waterlooworks.uwaterloo.ca/myAccount/co-op/coop-postings.htm*",
+//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/other-jobs/jobs-postings.htm*",
+//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm*"]
+//     }
+// );
+
+
+browser.webRequest.onCompleted.addListener(
+    function (details) {
+        browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
+            browser.tabs.sendMessage(tabs[0].id, {
+                action: 'webRequest.onCompleted',
+                data: {
+                    url: details.url
+                }
+            }, function (response) {
+            });
+        });
+
+    },
+    {
+        urls: ["*://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm*"]
+    }
+);
