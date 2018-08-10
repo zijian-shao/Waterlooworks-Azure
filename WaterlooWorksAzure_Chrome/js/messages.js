@@ -105,10 +105,10 @@ function messageListAjax() {
             // remove new badge from subject
             // var badge = $(trTD[subIdx]).find('.badge').remove();
 
-            // add Ack Req to subject
-            if (!$(trTD[ackIdx]).text().match(/No/)) {
-                $(trTD[subIdx]).prepend('<span class="badge badge-info text-uppercase inline-block margin-right-5">Ack Req\'d</span>');
-            }
+            // add Ack Req to subject - removed
+            // if (!$(trTD[ackIdx]).text().match(/No/)) {
+            //     $(trTD[subIdx]).prepend('<span class="badge badge-info text-uppercase inline-block margin-right-5">Ack Req\'d</span>');
+            // }
 
             // change order
             $(trTD[viewIdx]).insertAfter($(trTD[prioIdx]));
