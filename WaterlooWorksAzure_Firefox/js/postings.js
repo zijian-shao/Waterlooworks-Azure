@@ -777,10 +777,12 @@ function postingBatch() {
                     blockPageMsg('Please wait');
                     $('#azure-batch-tip-container').hide();
                     $('#azure-batch-container').hide();
-                    _executeAjax('new-tab', $('#postingsTable').children('tbody').children('tr'), $('#azure-batch-container').children('li'), 0);
+                    _executeAjax('new-tab', $('#azure-batch-container').find('li.active'));
                 }
             } else {
                 blockPage();
+                blockPageMsg('Please wait');
+                $('#azure-batch-tip-container').hide();
                 $('#azure-batch-container').hide();
                 _executeAjax('new-tab', $('#azure-batch-container').find('li.active'));
             }
