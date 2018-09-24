@@ -411,7 +411,7 @@ function initOptions() {
         });
     }
 
-    $(window).load(function () {
+    $(window).on('load', function (e) {
 
         loadThemes();
 
