@@ -22,10 +22,11 @@ function startTheme() {
         // float dashboard buttons
         if ($('.messageView').length) {
 
-        } else if ($('.orbisModuleHeader').text().match(/Send A Message/)) {
+        } else if ($('.orbisModuleHeader').text().match(/Send A Message/)
+            || $('.orbisModuleHeader').text().match(/Submit A Form/)) {
             $('#mainContentDiv .orbisModuleHeader h1').css('margin-bottom', '20px');
         } else {
-            // not msg view
+            // not msg view / submit form
             $('#mainContentDiv .orbis-posting-actions:first').addClass('blue-dashboard-btn-float');
         }
     }
