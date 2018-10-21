@@ -46,7 +46,8 @@ function startTheme() {
     // dashboard
     if (location.href.match(/\/myAccount\/dashboard\.htm/gi)) {
         // float dashboard buttons
-        if (!$('.messageView').length && !$('.orbisModuleHeader').text().match(/Send A Message/)) {
+        if (!$('.messageView').length && !$('.orbisModuleHeader').text().match(/Send A Message/)
+            && !$('.orbisModuleHeader').text().match(/Submit A Form/)) {
             // not msg view
             $('#mainContentDiv .orbis-posting-actions:first').addClass('violet-dashboard-btn-float');
         }
