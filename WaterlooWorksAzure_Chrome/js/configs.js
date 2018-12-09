@@ -228,7 +228,7 @@ function getThemeConfigs(id) {
             "id": 99,
             "hidden": false,
             "name": "Classic Carbon",
-            "author": "Zijian Shao",
+            "author": "Zijian Shao & Orbis Communications",
             "brightness": "dark",
             "overlayColor": "#f1f1f1",
             "previewColor": "#1b1b1b",

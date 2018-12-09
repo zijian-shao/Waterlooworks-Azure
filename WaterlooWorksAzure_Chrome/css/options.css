@@ -52,6 +52,23 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1157,6 +1174,43 @@ div.arrow.left {
     text-decoration: underline;
 }
 
+/* rec */
+.rec-item {
+    width: 33%;
+    display: inline-block;
+    float: left;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.rec-icon {
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.rec-icon > img {
+    width: 100%;
+}
+
+.rec-info {
+    float: left;
+    width: calc(100% - 60px);
+    margin-left: 8px;
+}
+
+.rec-title {
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.rec-intro {
+    color: #999;
+    font-weight: lighter;
+    font-size: 10px;
+}
+
 @media (max-width: 991px) {
 
     .width-50 {
@@ -1309,4 +1363,10 @@ div.arrow.left {
         display: none;
     }
 
+    .rec-item {
+        width: 100%;
+        display: block;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
 }

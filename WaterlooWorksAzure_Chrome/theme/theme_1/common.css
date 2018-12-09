@@ -1052,3 +1052,33 @@ img {
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important;
 }
+
+/* appointment intro */
+.azure-appt-intro-expand-btn {
+    background: #323841;
+    color: #ccc;
+    border-top: 1px solid #424a56;
+}
+
+.azure-appt-intro-expand-btn:hover {
+    background: #424a56;
+}
+
+.azure-appt-intro-collapse-btn {
+    background: #323841;
+    color: #ccc;
+    border-top: 1px solid #424a56;
+}
+
+.azure-appt-intro-collapse-btn:hover {
+    background: #424a56;
+}
+
+div#eventTooltip {
+    border-color: #424a56;
+    background-color: #323841;
+}
+
+.fc-widget-header, .fc-widget-content {
+    border-color: #424a56;
+}

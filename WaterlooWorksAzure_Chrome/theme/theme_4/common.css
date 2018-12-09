@@ -53,8 +53,7 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     background: #0b6ce3 !important;
 }
 
-.btn, .btn:hover, .btn:focus, .btn:active, .btn:visited
-{
+.btn, .btn:hover, .btn:focus, .btn:active, .btn:visited {
     padding: 4px 14px;
     border: none;
     background: #ddd;
@@ -739,6 +738,10 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     background: transparent url(panel-pattern.png) right no-repeat;
     background-size: contain;
     z-index: -1;
+}
+
+.panel .panel-heading a {
+    color: #fff;
 }
 
 .dashboard-home .panel .panel .panel-heading {

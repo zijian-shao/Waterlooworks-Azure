@@ -9,6 +9,8 @@ function startTheme() {
             $(e).prepend($('<i class="icon-book"></i>'));
         } else if (navText.match(/Hire Waterloo/) && !navText.match(/Hire Waterloo Co-op/)) {
             $(e).prepend($('<i class="icon-briefcase"></i>'));
+        } else if (navText.match(/Appointments/)) {
+            $(e).prepend($('<i class="icon-comment"></i>'));
         } else if (navText.match(/Help/)) {
             $(e).prepend($('<i class="icon-info-sign"></i>'));
         } else if (navText.match(/Logout/)) {
@@ -49,10 +51,14 @@ function startTheme() {
     // dashboard
     if (location.href.match(/\/myAccount\/dashboard\.htm/gi)) {
         // float dashboard buttons
-        if (!$('.messageView').length && !$('.orbisModuleHeader').text().match(/Send A Message/)
-            && !$('.orbisModuleHeader').text().match(/Submit A Form/)) {
+        var headerText = $('.orbisModuleHeader').text();
+        if (!$('.messageView').length && !headerText.match(/Send A Message/)
+            && !headerText.match(/Submit A Form/) && !headerText.match(/Form Details/)) {
             // not msg view / submit form
             $('#mainContentDiv .orbis-posting-actions:first').addClass('violet-dashboard-btn-float');
+        }
+        if (headerText.match(/Form Details/)) {
+            $('.orbisModuleHeader h4').attr('style', '');
         }
     }
 

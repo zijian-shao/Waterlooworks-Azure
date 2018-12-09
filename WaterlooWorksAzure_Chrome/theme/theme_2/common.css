@@ -563,7 +563,7 @@ input.btn-inverse {
     .sidebar-nav .nav-list > li > a {
         color: #606978;
         margin: 0;
-        padding: 15px 0;
+        padding: 12px 0;
         text-align: center;
         text-shadow: none !important;
         -webkit-transition: color 0.2s ease, background 0.2s ease;
@@ -580,10 +580,10 @@ input.btn-inverse {
     }
 
     .sidebar-nav > ul > li > a > i {
-        font-size: 24px;
+        font-size: 20px;
         position: relative;
         display: block !important;
-        margin: 2px auto 5px !important;
+        margin: 2px auto 2px !important;
         width: 100% !important;
     }
 
