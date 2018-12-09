@@ -1074,6 +1074,20 @@ img {
     background: #424a56;
 }
 
+.sidebar--fixed--right {
+    background: #323841;
+}
+
+.sidebar--fixed--right__title {
+    color: #ccc;
+}
+
+.sidebar--btn--close {
+    background: none;
+    border: 1px solid #aaa;
+    color: #aaa !important;
+}
+
 div#eventTooltip {
     border-color: #424a56;
     background-color: #323841;

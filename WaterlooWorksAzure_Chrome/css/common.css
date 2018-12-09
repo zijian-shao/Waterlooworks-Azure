@@ -1216,3 +1216,7 @@ li.azure-font-size-control a {
 .azure-appt-intro-collapse-btn:hover {
     background: #f6f6f6;
 }
+
+.js--ui-sidebar:before {
+    display: none;
+}
