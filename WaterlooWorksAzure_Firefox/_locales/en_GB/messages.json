@@ -161,6 +161,9 @@
   "extension": {
     "message": "Extension"
   },
+  "extensionDidntWork": {
+    "message": "Extension didn’t work?"
+  },
   "extensionOptions": {
     "message": "Extension Options"
   },
@@ -261,7 +264,7 @@
     "message": "My Messages Control"
   },
   "needRefreshToApply": {
-    "message": "Options Saved. Refresh to apply any changes."
+    "message": "Refresh for the changes to take effect."
   },
   "notInterestedButton": {
     "message": "Not Interested Button"
@@ -270,7 +273,7 @@
     "message": "Notes"
   },
   "notes_intro": {
-    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
+    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> or <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform\" target=\"_blank\">submit your feedback online</a></p>"
   },
   "officialWebsite": {
     "message": "Official Website"
@@ -338,11 +341,17 @@
   "postingModal_title": {
     "message": "Posting Preview"
   },
+  "recommended": {
+    "message": "Recommended"
+  },
   "redirectToWelcomePageWhenNotLoggedIn": {
     "message": "Redirect to welcome page when not logged in"
   },
   "redirectToWelcomePageWhenNotLoggedIn_tip": {
     "message": "If the loggin session expires or after log out, redirect to the welcome page automatically without clicking any links."
+  },
+  "reportIssue": {
+    "message": "Report issue"
   },
   "resetConfirmMessage": {
     "message": "Are you sure to reset to default?"

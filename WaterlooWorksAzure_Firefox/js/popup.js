@@ -6,6 +6,13 @@ function initPopup() {
         $('#enable-azure').prop('checked', items.GLB_Enabled);
     });
 
+    $('#report-bug').on('click', function (e) {
+        e.preventDefault();
+        chrome.tabs.create({
+            url: 'https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform'
+        });
+    });
+
     $('#enable-azure').change(function () {
 
         browser.storage.sync.set({

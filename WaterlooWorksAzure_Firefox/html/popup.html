@@ -12,26 +12,29 @@
 
 <body>
 
-<div class="container">
-    <div class="azure-icon"></div>
-    <h1 class="title" i18n-text="waterlooWorksAzure"></h1>
-    <h4 class="subtitle" i18n-text="extensionOptions"></h4>
-    <div class="azure-option-container">
-        <div class="azure-option-group">
-            <p class="azure-option-label" i18n-text="enableAzure"></p>
-            <div class="azure-option-slide">
-                <input type="checkbox" id="enable-azure">
-                <label for="enable-azure"></label>
-            </div>
-        </div>
-        <hr class="azure-option-hr">
-        <div class="azure-option-group">
-            <p class="azure-option-link" i18n-text="moreOptions" id="more-options"></p>
-        </div>
-        <hr class="azure-option-hr">
-        <div class="azure-option-group">
-            <p class="azure-option-link" i18n-text="openWaterlooWorks" id="open-waterlooworks"></p>
-        </div>
+<div class="header">
+    <div class="logo"></div>
+    <div class="checkbox-slide">
+        <input type="checkbox" id="enable-azure">
+        <label for="enable-azure"></label>
+    </div>
+</div>
+
+<div class="content">
+    <div class="btn btn-azure" id="open-waterlooworks">
+        <div class="btn-icon"><img src="../img/popup-icon-waterloo.png" alt="Waterloo"></div>
+        <div class="btn-text" i18n-text="openWaterlooWorks"></div>
+    </div>
+    <div class="btn btn-green" id="more-options">
+        <div class="btn-icon"><img src="../img/popup-icon-cog.png" alt="Settings"></div>
+        <div class="btn-text" i18n-text="moreOptions"></div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="report">
+        <span i18n-text="extensionDidntWork"></span>
+        <span class="link" id="report-bug" i18n-text="reportIssue"></span>
     </div>
 </div>
 

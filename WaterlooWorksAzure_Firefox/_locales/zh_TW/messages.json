@@ -161,6 +161,9 @@
   "extension": {
     "message": "擴展設置"
   },
+  "extensionDidntWork": {
+    "message": "擴展出現問題？"
+  },
   "extensionOptions": {
     "message": "擴展選項"
   },
@@ -261,7 +264,7 @@
     "message": "我的短消息功能"
   },
   "needRefreshToApply": {
-    "message": "設置已保存，請刷新相關頁面以應用更改"
+    "message": " 請刷新相關頁面以應用更改"
   },
   "notInterestedButton": {
     "message": "不感興趣按鈕"
@@ -270,7 +273,7 @@
     "message": "相關說明"
   },
   "notes_intro": {
-    "message": "<p>▷ 建議不要與其他WaterlooWorks 插件同時啟用</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a></p>"
+    "message": "<p>▷ 建議不要與其他WaterlooWorks 插件同時啟用</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> 或 <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform\" target=\"_blank\">在線提交反饋</a></p>"
   },
   "officialWebsite": {
     "message": "官方網站"
@@ -338,11 +341,17 @@
   "postingModal_title": {
     "message": "職位預覽"
   },
+  "recommended": {
+    "message": "推薦擴展"
+  },
   "redirectToWelcomePageWhenNotLoggedIn": {
     "message": "未登錄時自動跳轉至引導頁"
   },
   "redirectToWelcomePageWhenNotLoggedIn_tip": {
     "message": "若用戶登錄過期或退出登錄，則會直接從提示頁面跳轉至引導頁面，無需手動點擊按鈕跳轉。"
+  },
+  "reportIssue": {
+    "message": "立即反饋"
   },
   "resetConfirmMessage": {
     "message": "你確定要將其恢復為默認嗎？"

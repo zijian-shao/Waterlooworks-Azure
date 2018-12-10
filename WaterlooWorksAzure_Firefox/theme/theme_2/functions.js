@@ -31,6 +31,8 @@ function startTheme() {
             $(e).prepend($('<i class="icon-book"></i>'));
         } else if (navText.match(/Hire Waterloo/) && !navText.match(/Hire Waterloo Co-op/)) {
             $(e).prepend($('<i class="icon-briefcase"></i>'));
+        } else if (navText.match(/Appointments/)) {
+            $(e).prepend($('<i class="icon-comment"></i>'));
         } else if (navText.match(/Help/)) {
             $(e).prepend($('<i class="icon-info-sign"></i>'));
         } else if (navText.match(/Logout/)) {

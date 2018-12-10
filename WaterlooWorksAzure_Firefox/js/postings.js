@@ -1438,7 +1438,7 @@ function postingListAjax(table, placeholder) {
                 if (options.JOB_PopupModal) {
                     contextMenuUtil('add', {
                         type: 'link',
-                        code: '<i class="icon-globe"></i> Preview In Modal',
+                        code: '<i class="icon-globe"></i> Preview in Modal',
                         property: {
                             'href': 'javascript:void(0);',
                             'id': 'context-menu-preview'

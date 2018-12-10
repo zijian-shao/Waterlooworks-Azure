@@ -603,6 +603,9 @@ label.gridDropdownButton.is--focused {
 /*=========================================*/
 /* Wide tables
 /*=========================================*/
+.table tbody tr.subtotal td {
+    border-color: inherit;
+}
 
 #hideSideNav {
     display: none;
@@ -1161,4 +1164,59 @@ li.azure-font-size-control a {
 
 .azure-batch-tip-container .buttons .btn:last-child {
     margin-right: 0;
+}
+
+/* appointment intro */
+.azure-appt-intro-collapsed {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.azure-appt-intro-expand-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    background: #fff;
+    color: #999;
+    text-align: center;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.azure-appt-intro-expand-btn:hover {
+    background: #f6f6f6;
+}
+
+.azure-appt-intro-collapse-btn {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    background: #fff;
+    color: #999;
+    text-align: center;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.azure-appt-intro-collapse-btn:hover {
+    background: #f6f6f6;
+}
+
+.js--ui-sidebar:before {
+    display: none;
 }

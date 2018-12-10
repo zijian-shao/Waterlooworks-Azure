@@ -627,15 +627,41 @@ function dashboardNestedBoxes() {
 }
 
 /**
+ * Hide / show appointments introduction
+ */
+function apptHideInstr() {
+    var headText = $('#mainContentDiv h1').text();
+    if (!(headText.match(/Appointments:/) && headText.match(/Book by/))) return;
+
+    var targetBox = $('#mainContentDiv > .box');
+    targetBox.addClass('azure-appt-intro-collapsed');
+    var expandBtn = $('<div class="azure-appt-intro-expand-btn">Expand <i class="icon-angle-down"></i></div>');
+    expandBtn.on('click', function (e) {
+        if ($(this).hasClass('azure-appt-intro-expand-btn')) {
+            $(this).removeClass('azure-appt-intro-expand-btn')
+                .addClass('azure-appt-intro-collapse-btn')
+                .html('Collapse <i class="icon-angle-up"></i>');
+            targetBox.removeClass('azure-appt-intro-collapsed');
+        } else {
+            $(this).removeClass('azure-appt-intro-collapse-btn')
+                .addClass('azure-appt-intro-expand-btn')
+                .html('Expand <i class="icon-angle-down"></i>');
+            targetBox.addClass('azure-appt-intro-collapsed');
+        }
+    });
+    targetBox.append(expandBtn);
+}
+
+/**
  * Initialization
  */
 function startAzure() {
 
-    if (typeof jQuery === 'undefined') {
-        // jQuery is NOT available
-        var element = document.getElementById('azure-load-cover');
-        element.parentNode.removeChild(element);
-    }
+    // if (typeof jQuery === 'undefined') {
+    //     // jQuery is NOT available
+    //     var element = document.getElementById('azure-load-cover');
+    //     element.parentNode.removeChild(element);
+    // }
 
     // redirect page
     if (needBuildForm())
@@ -726,6 +752,8 @@ function startAzure() {
                     $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
                 }
             }, 100);
+        } else if (currURL.match(/\/appointments\.htm/)) {
+            apptHideInstr();
         }
 
         // extra functions
