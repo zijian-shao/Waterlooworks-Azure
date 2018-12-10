@@ -34,7 +34,7 @@ function injectCSS(url, tag, type) {
  * @param tag Inject to target tag
  * @param type 'text' or others, optional
  */
-function injectJS(url, tag, type) {
+function injectJS(url, tag, type, attr) {
 
     var script = $('<script/>', {
         'type': 'text/javascript'
@@ -44,6 +44,10 @@ function injectJS(url, tag, type) {
         script.text(url);
     } else {
         script.attr('src', url);
+    }
+
+    if (typeof attr != typeof undefined) {
+        script.attr(attr);
     }
 
     $(tag).append(script);
@@ -81,10 +85,13 @@ function scrollToUtil(pos, time, offset) {
  * @param color Overlay color, optional
  * @param color Message, optional
  */
-function blockPage(color, msg) {
+function blockPage(color, msg, time) {
 
     if ($('#azure-block-page').length)
         return;
+
+    if (time === undefined || !Number.isInteger(time) || time == null || time === false)
+        time = 300;
 
     var elem = $('<div class="azure-block-page" id="azure-block-page">');
     if (themeConfig.brightness == 'dark')
@@ -98,7 +105,7 @@ function blockPage(color, msg) {
     $('<i class="icon-spinner icon-spin icon-3x"></i>').appendTo(elem);
     $('<div class="azure-block-page-msg">' + msg + '</div>').appendTo(elem);
 
-    elem.hide().appendTo('body').fadeIn(300);
+    elem.hide().appendTo('body').fadeIn(time);
 
 }
 
@@ -113,9 +120,12 @@ function blockPageMsg(msg) {
 /**
  * Unblock page
  */
-function unblockPage() {
+function unblockPage(time) {
 
-    $('#azure-block-page').fadeOut(300, function () {
+    if (time === undefined || !Number.isInteger(time) || time == null || time === false)
+        time = 300;
+
+    $('#azure-block-page').fadeOut(time, function () {
         $(this).remove();
     });
 
