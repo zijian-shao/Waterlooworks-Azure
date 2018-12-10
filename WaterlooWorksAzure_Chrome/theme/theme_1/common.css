@@ -1096,3 +1096,7 @@ div#eventTooltip {
 .fc-widget-header, .fc-widget-content {
     border-color: #424a56;
 }
+
+.fc-state-highlight {
+    background: #424a56;
+}
