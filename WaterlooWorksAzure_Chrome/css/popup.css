@@ -60,7 +60,8 @@ body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
 body {
     margin: 0 !important;
     padding: 0;
-    width: 250px;
+    width: auto;
+    min-width: 250px;
     height: auto;
     font-size: 12px;
     overflow: hidden;
