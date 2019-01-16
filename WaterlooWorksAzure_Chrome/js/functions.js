@@ -247,7 +247,8 @@ function isBrowser(name) {
     else if (name == 'edge')
         return !isIE && !!window.StyleMedia;
     else if (name == 'chrome')
-        return !!window.chrome && !!window.chrome.webstore;
+    // return !!window.chrome && !!window.chrome.webstore;
+        return /chrome/.test(navigator.userAgent.toLowerCase());
     else
         return false;
 }
@@ -722,7 +723,7 @@ function startAzure() {
                 // announcement css
                 $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
             }
-        } else if (currURL.match(/\/appointments\.htm/)) {
+        } else if (currURL.match(/\/appointments\.htm/) || currURL.match(/\/appointments-further-education\.htm/)) {
             apptHideInstr();
         }
 

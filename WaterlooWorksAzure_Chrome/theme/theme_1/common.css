@@ -47,6 +47,11 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     background-color: #424a56;
 }
 
+.sidebar-nav > .nav-list > li > a > small {
+    opacity: 0.6;
+    margin-left: 5px;
+}
+
 /* Nav */
 
 .nav-pills > li > a {
@@ -124,6 +129,12 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         -moz-box-shadow: inset 0 -70px 0 #45B6F7;
         box-shadow: inset 0 -70px 0 #45B6F7;
         color: #fff;
+    }
+
+    .sidebar-nav > .nav-list > li > a > small {
+        vertical-align: text-bottom;
+        font-size: 10px;
+        line-height: 16px;
     }
 
     .sidebar-nav > .nav-list > .active > a {
