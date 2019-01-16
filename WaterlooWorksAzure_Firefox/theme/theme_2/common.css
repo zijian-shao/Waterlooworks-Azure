@@ -516,6 +516,12 @@ input.btn-inverse {
     overflow: hidden;
 }
 
+.sidebar-nav .nav-list > li > a > small {
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 0.5;
+}
+
 .sidebar-nav > ul > li > a > i {
     margin-right: 5px !important;
 }
@@ -577,6 +583,11 @@ input.btn-inverse {
     .sidebar-nav .nav-list > li > a:focus {
         color: #fff;
         background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sidebar-nav .nav-list > li > a > small {
+        display: block;
+        margin: -4px auto 0;
     }
 
     .sidebar-nav > ul > li > a > i {

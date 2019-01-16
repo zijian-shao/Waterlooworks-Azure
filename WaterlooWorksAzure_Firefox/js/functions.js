@@ -247,7 +247,8 @@ function isBrowser(name) {
     else if (name == 'edge')
         return !isIE && !!window.StyleMedia;
     else if (name == 'chrome')
-        return !!window.chrome && !!window.chrome.webstore;
+    // return !!window.chrome && !!window.chrome.webstore;
+        return /chrome/.test(navigator.userAgent.toLowerCase());
     else
         return false;
 }

@@ -65,6 +65,11 @@ a {
     height: 50px;
 }
 
+.sidebar-nav .nav-list > li > a > small {
+    opacity: 0.5;
+    margin-left: 5px;
+}
+
 @media (min-width: 980px) {
 
     body {
@@ -145,6 +150,11 @@ a {
     .sidebar-nav .nav-list li > a:hover,
     .sidebar-nav .nav-list li > a:focus {
         padding-left: 2em !important;
+    }
+
+    .sidebar-nav .nav-list > li > a > small {
+        display: block;
+        margin: -4px auto 0;
     }
 
     .sidebar-nav .nav-list li.active > div {

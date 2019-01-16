@@ -309,6 +309,18 @@ select[multiple]:focus {
     transition: all 0.2s ease;
 }
 
+.sidebar-nav .nav-list > li > a > small {
+    display: block;
+    opacity: 0.5;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.2s ease;
+    -moz-transition: height 0.2s ease;
+    -ms-transition: height 0.2s ease;
+    -o-transition: height 0.2s ease;
+    transition: height 0.2s ease;
+}
+
 .sidebar-nav .nav-list > .active > a, .sidebar-nav .nav-list > .active > a:hover {
     background: #8599de;
     color: rgba(255, 255, 255, 0);
@@ -316,6 +328,10 @@ select[multiple]:focus {
 
 #brandingNav:hover .sidebar-nav .nav-list > li > a {
     color: rgba(255, 255, 255, 255) !important;
+}
+
+#brandingNav:hover .sidebar-nav .nav-list > li > a > small {
+    height: 20px;
 }
 
 .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {

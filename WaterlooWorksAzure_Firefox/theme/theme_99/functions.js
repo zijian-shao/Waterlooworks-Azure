@@ -30,6 +30,14 @@ function startTheme() {
 
         }
     }
+
+    // nav icons
+    $('#closeNav ul.nav-list li a').each(function (i, e) {
+        var navText = $(e).text();
+        if (navText.match(/Appointments/) && navText.match(/Further/)) {
+            $(e).html($(e).html().replace(/ - Further Education/, '<small>Further Education</small>'));
+        }
+    });
 }
 
 setTimeout(startTheme, 5);

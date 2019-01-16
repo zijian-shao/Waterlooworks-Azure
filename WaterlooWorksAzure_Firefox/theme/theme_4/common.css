@@ -184,6 +184,11 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     padding: 7px 10px !important;
 }
 
+.sidebar-nav > .nav-list > li > a > small {
+    opacity: 0.6;
+    margin-left: 5px;
+}
+
 @media (min-width: 980px) {
     .navbar-inverse {
         opacity: 0.9;
@@ -220,6 +225,12 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
         -webkit-box-shadow: inset 0 3px 0 #118dee;
         -moz-box-shadow: inset 0 3px 0 #118dee;
         box-shadow: inset 0 3px 0 #118dee;
+    }
+
+    .sidebar-nav > .nav-list > li > a > small {
+        vertical-align: text-bottom;
+        font-size: 10px;
+        line-height: 16px;
     }
 }
 
