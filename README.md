@@ -6,8 +6,6 @@ Chrome: [View in Chrome Web Store](https://chrome.google.com/webstore/detail/pee
 
 Firefox: [View in Firefox Addons](https://addons.mozilla.org/addon/waterlooworks-azure/ "WaterlooWorks Azure (Firefox Version)")
 
-Safari: [Download from Extension Website](https://www.zijianshao.com/wwazure/updates/?request=safaripack "WaterlooWorks Azure (Safari Version)")
-
 ## Features
 - Multiple themes
 - Enhanced job posting list
@@ -44,10 +42,10 @@ Safari: [Download from Extension Website](https://www.zijianshao.com/wwazure/upd
 - Improved list formatting
 
 ## Notes
-- It’s not recommended to use other WaterlooWorks extensions with Azure to avoid unexpected behaviors
-- WaterlooWorks may change at any time, thus some functions may be invalid
-- If you have any questions regarding this extension, please email sam.zj.shao@gmail.com
+- Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors。
+- WaterlooWorks may change at any time, thus some functions may be invalid.
+- If you have any questions regarding this extension, please email me at sam.zj.shao@gmail.com or [submit your feedback online](https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform "Submit feedback online").
 
 ## Disclaimers
 - This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo.
-- Use this extension at your own responsibility
+- Use this extension at your own responsibility。
