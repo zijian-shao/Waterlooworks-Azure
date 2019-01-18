@@ -433,5 +433,11 @@
   },
   "welcomeIntro": {
     "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p>如果你覺得此擴展還不錯，<a href=\"https://addons.mozilla.org/firefox/addon/waterlooworks-azure/\" target=\"_blank\">請在 Firefox 商店給個五星好評吧</a>，親~</p>"
+  },
+  "welcomePopupButton": {
+    "message": "好的，我知道了"
+  },
+  "welcomePopupContent": {
+    "message": "<h3>歡迎使用 WaterlooWorks Azure</h3><p>Azure 是第一款全方位增強 WaterlooWorks 使用體驗的擴展插件。</p><p><strong>由於擴展功能較複雜，建議仔細瀏覽本頁面各個選項卡，以了解相關功能，並根據需求進行調整。</strong></p><p>若在使用過程中遇到任何問題，請使用反饋功能進行提交，詳見“關於”板塊。</p>"
   }
 }

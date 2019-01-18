@@ -433,5 +433,11 @@
   },
   "welcomeIntro": {
     "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform. It offers multiple new themes and adds a variety of new helpful features to the original website.</p><p>If you like this extension, please <a href=\"https://addons.mozilla.org/firefox/addon/waterlooworks-azure/\" target=\"_blank\">rate and leave a comment</a> in Firefox Add-ons.</p>"
+  },
+  "welcomePopupButton": {
+    "message": "OK, Got It"
+  },
+  "welcomePopupContent": {
+    "message": "<h3>Welcome to WaterlooWorks Azure</h3><p>Azure is an extension created for enhancing your experience with WaterlooWorks.</p><p><strong>Due to the complexity of this extension, it is recommended that you check all the tabs, read each option, and make adjustments according to your needs.</strong></p><p>If you have any questions regarding this extension, please feel free to let me know. See \"About\" section below.</p>"
   }
 }

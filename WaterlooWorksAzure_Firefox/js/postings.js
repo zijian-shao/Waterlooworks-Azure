@@ -1629,7 +1629,27 @@ function postingDetail() {
     if (options.JOB_FloatDetailPageButton) {
 
         var actions = $('.orbis-posting-actions');
+
         if (actions.length) {
+
+            // app btn text
+            var appBtn = $('.applyButton');
+            if (appBtn.text().trim().match(/I intend to/)) {
+                appBtn.text('Intend To Apply').removeClass('btn-primary').addClass('btn-success');
+            }
+
+            actions.find('a.btn.btn-large').each(function (idx, elem) {
+                if (typeof $(elem).attr('onclick') !== typeof undefined
+                    && $(elem).attr('onclick').match(/toggleBlacklistPosting/)) {
+                    $(elem).addClass('notInterestedButton').on('click', function () {
+                        if ($(elem).text().trim().match(/not interested/gi)) {
+                            $('.notInterestedButton').text('Include in search results');
+                        } else {
+                            $('.notInterestedButton').text('Not Interested');
+                        }
+                    });
+                }
+            });
 
             // clone action buttons
             actions = actions.clone().addClass('orbis-posting-actions-btn-float');
@@ -1654,6 +1674,8 @@ function postingDetail() {
 
             $('body').append(actions);
         }
+
+
     }
 
     detailPageLinkNewTab(divDetail);

@@ -470,17 +470,23 @@
                     <p>
                         <input type="radio" id="opt-job-2-0" name="JOB_ColumnDisplayType" value="0"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine"></label>
+                        <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine">
+                            <img src="../img/list-style-0.png" alt="Preview" class="list-style-sample">
+                        </label>
                     </p>
                     <p>
                         <input type="radio" id="opt-job-2-2" name="JOB_ColumnDisplayType" value="2"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-2" i18n-html="useModernTileStyle"></label>
+                        <label for="opt-job-2-2" i18n-html="useModernTileStyle">
+                            <img src="../img/list-style-1.png" alt="Preview" class="list-style-sample">
+                        </label>
                     </p>
                     <p>
                         <input type="radio" id="opt-job-2-1" name="JOB_ColumnDisplayType" value="1"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-1" i18n-html="chooseColumnsToBeDisplayed"></label>
+                        <label for="opt-job-2-1" i18n-html="chooseColumnsToBeDisplayed">
+                            <img src="../img/list-style-2.png" alt="Preview" class="list-style-sample">
+                        </label>
                     </p>
                 </div>
                 <div class="option-group checkbox-group indent-40" id="columnsList">
@@ -936,6 +942,15 @@
 <!-- Toast Start -->
 <div class="azure-toast azure-toast-hidden" id="azure-toast" i18n-text="optionsSaved"></div>
 <!-- Toast End -->
+
+<!-- Welcome Start -->
+<div class="welcome hidden" id="welcome-content">
+    <div i18n-html="welcomePopupContent"></div>
+    <div class="popup-btn-group">
+        <a href="#" class="popup-btn popup-btn-black" i18n-text="welcomePopupButton"></a>
+    </div>
+</div>
+<!-- Welcome End -->
 
 <script type="text/javascript" src="/js/plugins/jquery.js"></script>
 <script type="text/javascript" src="/js/plugins/localization.js"></script>

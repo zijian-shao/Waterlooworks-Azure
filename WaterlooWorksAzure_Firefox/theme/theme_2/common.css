@@ -27,7 +27,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
 /*input*/
 input[type="text"], input[type="password"], input[type="file"] {
-    box-shadow: 0 0 0px transparent !important;
+    box-shadow: 0 0 0 transparent !important;
     outline: none !important;
     border: 1px solid #ccc !important;
     -webkit-transition: box-shadow 0.2s ease, border 0.2s ease !important;
@@ -41,7 +41,7 @@ input[type="text"], input[type="password"], input[type="file"] {
 }
 
 input:focus {
-    box-shadow: 0 0 4px #ffb62e !important;
+    box-shadow: 0 1px 4px #ffb62e !important;
     outline: none !important;
     border-color: #ffb62e !important;
 }
@@ -53,7 +53,7 @@ select {
 }
 
 select:focus {
-    box-shadow: 0 0 4px #ffb62e !important;
+    box-shadow: 0 1px 4px #ffb62e !important;
     outline: none !important;
     border-color: #ffb62e !important;
 }
@@ -542,6 +542,7 @@ input.btn-inverse {
         float: none;
         margin: 0 !important;
         padding: 0 !important;
+        bottom: 0;
     }
 
     .span2.bs--hide__column:before {
@@ -557,6 +558,15 @@ input.btn-inverse {
 
     .nav--branding .navbar-inner {
         max-height: none !important;
+    }
+
+    #closeNav {
+        height: 100%!important;
+        overflow: auto!important;
+    }
+
+    #closeNav::-webkit-scrollbar {
+        width: 0;
     }
 
     .sidebar-nav ul > li {
@@ -909,4 +919,8 @@ table.formTable span.inputContainer {
 
 .postingsTable-tile.table-header-fixed {
     border-top: none !important;
+}
+
+.postingsTable-tile > tbody > tr {
+    border-radius: 15px;
 }
