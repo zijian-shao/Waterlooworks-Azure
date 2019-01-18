@@ -16,6 +16,72 @@ function initOptions() {
         });
     }
 
+    function initPopup(title, content, extraClass, type) {
+        $('body').addClass('lock-scroll');
+        var rnd = Math.floor(Math.random() * 90000) + 10000;
+        var content2;
+        if (type === 1)
+            content2 = content;
+        else
+            content2 = content.next('.popup-template').first().children().clone();
+        if (extraClass === undefined) extraClass = '';
+
+        var template = $('<div class="popup popup-' + rnd + ' ' + extraClass + '">' +
+            '<div class="popup-layer"></div>' +
+            '<div class="popup-container">' +
+            '<div class="popup-frame">' +
+            '<div class="popup-title"></div>' +
+            '<div class="popup-content"></div>' +
+            '</div>' +
+            '</div>' +
+            '</div>');
+        template.find('.popup-title').html(title);
+        template.find('.popup-content').html(content2);
+        template.appendTo('body');
+        template.addClass('popup-show');
+        template.find('.popup-layer').addClass('fadeIn animated');
+        template.find('.popup-frame').addClass('bounceIn animated');
+        return 'popup-' + rnd;
+    }
+
+    function removePopup(cls) {
+        $('.' + cls).remove();
+        if (!$('.popup').length) $('body').removeClass('lock-scroll');
+    }
+
+    function getSearchParameters() {
+
+        // stack overflow 5448545
+        function _transformToAssocArray(prmstr) {
+            var params = {};
+            var prmarr = prmstr.split("&");
+            for (var i = 0; i < prmarr.length; i++) {
+                var tmparr = prmarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            return params;
+        }
+
+        var prmstr = window.location.search.substr(1);
+        return prmstr != null && prmstr != "" ? _transformToAssocArray(prmstr) : {};
+    }
+
+    function removeSearchParameters(sParam) {
+        var url = window.location.href.split('?')[0] + '?';
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] != sParam) {
+                url = url + sParameterName[0] + '=' + sParameterName[1] + '&'
+            }
+        }
+        return url.substring(0, url.length - 1);
+    }
+
     function restoreOptions() {
 
         var configs = getOptionListDefault();
@@ -267,6 +333,9 @@ function initOptions() {
     }
 
     function bindEvents() {
+
+        var params = getSearchParameters();
+
         // event
         $('input').on('change', function () {
             onOptionChange($(this));
@@ -375,6 +444,19 @@ function initOptions() {
             $(this).prev('.hide-long').removeClass('hide-long');
             $(this).remove();
         });
+
+        // welcome
+        if (params.hasOwnProperty('welcome')) {
+            setTimeout(function () {
+                var welcome = $('#welcome-content').clone();
+                welcome.removeAttr('id').removeClass('hidden');
+                welcome.find('.popup-btn').on('click', function (e) {
+                    e.preventDefault();
+                    window.location.href = removeSearchParameters('welcome');
+                });
+                initPopup('WaterlooWorks Azure', welcome, '', 1);
+            }, 500);
+        }
 
     }
 

@@ -4,7 +4,9 @@
  */
 function installWelcome(details) {
     if (details.reason === 'install') {
-        chrome.runtime.openOptionsPage();
+        chrome.tabs.create({
+            'url': chrome.runtime.getURL('/html/options.html?welcome=show')
+        });
     }
 }
 
@@ -26,7 +28,7 @@ function updateOptions(oldVer, newVer) {
     console.log('Option version updated!');
 }
 
-function createContextMenu(id, title, contexts, onClick) {
+function createToolbarContextMenu(id, title, contexts, onClick) {
 
     chrome.contextMenus.remove(id, function () {
         chrome.contextMenus.create({
@@ -34,6 +36,8 @@ function createContextMenu(id, title, contexts, onClick) {
             title: title,
             contexts: contexts
         });
+        if (chrome.runtime.lastError) {
+        }
     });
 
     chrome.contextMenus.onClicked.addListener(function (info, tab) {
@@ -50,6 +54,10 @@ function initBackground() {
      */
     console.log('Welcome to WaterlooWorks Azure!');
     chrome.runtime.onInstalled.addListener(installWelcome);
+    chrome.runtime.setUninstallURL("https://www.zijianshao.com/wwazure/uninstall/?platform=chrome", function () {
+        if (chrome.runtime.lastError) {
+        }
+    });
 
     var version = getOptionVersion();
     var configs = getOptionListDefault();
@@ -73,10 +81,11 @@ function initBackground() {
     chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
         // request = {action: '', data: {type:'', content:''}}
-        var obj = {};
 
         // execute script
         if (request.action == 'executeScript') {
+
+            var obj = {};
 
             if (Array.isArray(request.data)) {
                 for (var i = 0; i < request.data.length; i++) {
@@ -88,19 +97,26 @@ function initBackground() {
 
             chrome.tabs.executeScript(sender.tab.id, obj);
 
+            if (typeof sendResponse === 'function') sendResponse(obj);
+
         }
 
         // inject css
         else if (request.action == 'insertCSS') {
 
+            var obj = {};
+
             obj[request.data.type] = request.data.content;
             chrome.tabs.insertCSS(sender.tab.id, obj);
+
+            if (typeof sendResponse === 'function') sendResponse(obj);
 
         }
 
         // app.getDetails
         else if (request.action == 'getDetails') {
-            obj = chrome.runtime.getManifest();
+            var obj = chrome.runtime.getManifest();
+            if (typeof sendResponse === 'function') sendResponse(obj);
         }
 
         // open new tab
@@ -110,27 +126,22 @@ function initBackground() {
             });
         }
 
-        if (typeof sendResponse === 'function') {
-            // var response = {'status': 1};
-            sendResponse(obj);
-        }
-
     });
 
     /**
      * Add toolbar context menu
      */
-    createContextMenu('azure-website', chrome.i18n.getMessage('officialWebsite'), ['browser_action'], function () {
+    createToolbarContextMenu('azure-website', chrome.i18n.getMessage('officialWebsite'), ['browser_action'], function () {
         chrome.tabs.create({
             'url': 'https://www.zijianshao.com/wwazure/'
         });
     });
-    createContextMenu('azure-contribute', chrome.i18n.getMessage('contribute'), ['browser_action'], function () {
+    createToolbarContextMenu('azure-contribute', chrome.i18n.getMessage('contribute'), ['browser_action'], function () {
         chrome.tabs.create({
             'url': 'https://www.paypal.me/zjshao'
         });
     });
-    createContextMenu('azure-github', 'GitHub', ['browser_action'], function () {
+    createToolbarContextMenu('azure-github', 'GitHub', ['browser_action'], function () {
         chrome.tabs.create({
             'url': 'https://github.com/SssWind/Waterlooworks-Azure'
         });

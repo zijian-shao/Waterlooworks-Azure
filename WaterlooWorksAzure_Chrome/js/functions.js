@@ -603,26 +603,47 @@ function dashboardNestedBoxes() {
  * Hide / show appointments introduction
  */
 function apptHideInstr() {
-    var headText = $('#mainContentDiv h1').text();
-    if (!(headText.match(/Appointments:/) && headText.match(/Book by/))) return;
 
-    var targetBox = $('#mainContentDiv > .box');
-    targetBox.addClass('azure-appt-intro-collapsed');
-    var expandBtn = $('<div class="azure-appt-intro-expand-btn">Expand <i class="icon-angle-down"></i></div>');
-    expandBtn.on('click', function (e) {
-        if ($(this).hasClass('azure-appt-intro-expand-btn')) {
-            $(this).removeClass('azure-appt-intro-expand-btn')
-                .addClass('azure-appt-intro-collapse-btn')
-                .html('Collapse <i class="icon-angle-up"></i>');
-            targetBox.removeClass('azure-appt-intro-collapsed');
-        } else {
-            $(this).removeClass('azure-appt-intro-collapse-btn')
-                .addClass('azure-appt-intro-expand-btn')
-                .html('Expand <i class="icon-angle-down"></i>');
-            targetBox.addClass('azure-appt-intro-collapsed');
-        }
-    });
-    targetBox.append(expandBtn);
+    var headText = $('#mainContentDiv h1').text();
+    if (!headText.match(/Appointments/) && !headText.match(/Book by/)) {
+        // other appt page
+        return;
+    } else if (headText.match(/Appointments/) && !headText.match(/Book by/)) {
+        // auto enter appt book page if only one opt available
+        // var apptLink = $('#mainContentDiv .box.boxContent a');
+        // if (apptLink.length === 1) apptLink.trigger('click');
+    } else {
+        // fold appt book page terms
+        var targetBox = $('#mainContentDiv > .box');
+        targetBox.addClass('azure-appt-intro-collapsed');
+        var expandBtn = $('<div class="azure-appt-intro-expand-btn">Expand <i class="icon-angle-down"></i></div>');
+        expandBtn.on('click', function (e) {
+            if ($(this).hasClass('azure-appt-intro-expand-btn')) {
+                $(this).removeClass('azure-appt-intro-expand-btn')
+                    .addClass('azure-appt-intro-collapse-btn')
+                    .html('Collapse <i class="icon-angle-up"></i>');
+                targetBox.removeClass('azure-appt-intro-collapsed');
+            } else {
+                $(this).removeClass('azure-appt-intro-collapse-btn')
+                    .addClass('azure-appt-intro-expand-btn')
+                    .html('Expand <i class="icon-angle-down"></i>');
+                targetBox.addClass('azure-appt-intro-collapsed');
+            }
+        });
+        targetBox.append(expandBtn);
+    }
+
+    // auto hide type intro
+    // var introRow = $('#mainContentDiv').children('.row-fluid').find('.span6:first-child .row:nth-child(2) .box .boxContent .row');
+    // introRow.each(function (idx, elem) {
+    //     var introDiv = $(elem).find('div:last-child');
+    //     introDiv.attr('data-org-height', introDiv.height() + 'px');
+    //     introDiv.on('click', function (e) {
+    //         e.preventDefault();
+    //         $(elem).removeClass('azure-appt-type-auto-hide');
+    //     });
+    // });
+    // introRow.addClass('azure-appt-type-auto-hide');
 }
 
 /**
