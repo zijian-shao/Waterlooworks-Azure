@@ -53,6 +53,15 @@
   "applications": {
     "message": "Applications"
   },
+  "appointments": {
+    "message": "Appointments"
+  },
+  "autoEnterOnlyBookingOption": {
+    "message": "Auto enter the only booking option"
+  },
+  "autoEnterOnlyBookingOption_tip": {
+    "message": "If there is only one options available under the \"booking options\" box, then automatically select that options."
+  },
   "betterMsgColumn": {
     "message": "Enable modern layout"
   },
@@ -73,6 +82,18 @@
   },
   "classicCarbonTheme": {
     "message": "Classic Carbon"
+  },
+  "collapseAPptTypeIntro": {
+    "message": "Collapse appointment type introduction"
+  },
+  "collapseAPptTypeIntro_tip": {
+    "message": "Collapse all the introductions on booking type selection page. Click the collapsed content to expand."
+  },
+  "collapseTermsOfConsultation": {
+    "message": "Collapse / expand button for \"terms of consultation\""
+  },
+  "collapseTermsOfConsultation_tip": {
+    "message": "Add a button to the bottom of \"terms of consultation\" box to collapse or expand the content. The default state is collapsed."
   },
   "contribute": {
     "message": "Donate"
@@ -311,6 +332,9 @@
   "other": {
     "message": "Other"
   },
+  "otherPages": {
+    "message": "Other Pages"
+  },
   "positionType": {
     "message": "Position Type"
   },
@@ -394,6 +418,12 @@
   },
   "showMsgCategory_tip": {
     "message": "Show / hide category and subcategory of messages."
+  },
+  "switchBookingOptionsToTop": {
+    "message": "Switch \"booking options\" box to the top"
+  },
+  "switchBookingOptionsToTop_tip": {
+    "message": "Switch the position of \"terms of consultation\" and \"booking options\" for easier access."
   },
   "useDefaultStyleAndCombine": {
     "message": "Azure Default <small>(Combine job title, organization, division)</small>"

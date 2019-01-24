@@ -53,6 +53,15 @@
   "applications": {
     "message": "申請人數"
   },
+  "appointments": {
+    "message": "預約頁面"
+  },
+  "autoEnterOnlyBookingOption": {
+    "message": "自動進入唯一的預約選項"
+  },
+  "autoEnterOnlyBookingOption_tip": {
+    "message": "啟用該選項後，若只有一個預約選項，則自動選擇該項。"
+  },
   "betterMsgColumn": {
     "message": "使用現代版佈局"
   },
@@ -73,6 +82,18 @@
   },
   "classicCarbonTheme": {
     "message": "經典炭黑色主題"
+  },
+  "collapseAPptTypeIntro": {
+    "message": "折疊預約類型介紹"
+  },
+  "collapseAPptTypeIntro_tip": {
+    "message": "啟用該選項後，自動折疊每個預約類型的介紹內容，點擊內容即可展開。"
+  },
+  "collapseTermsOfConsultation": {
+    "message": "折疊/展開“使用條款”按鈕"
+  },
+  "collapseTermsOfConsultation_tip": {
+    "message": "啟用該選項後，將在“使用條款”下方添加展開/折疊內容的按鈕，默認為折疊狀態。"
   },
   "contribute": {
     "message": "捐助作者"
@@ -311,6 +332,9 @@
   "other": {
     "message": "其他選項"
   },
+  "otherPages": {
+    "message": "其他頁面"
+  },
   "positionType": {
     "message": "職位類型"
   },
@@ -394,6 +418,12 @@
   },
   "showMsgCategory_tip": {
     "message": "關閉該選項後，將不在短消息列表展示消息所屬分類及子分類。"
+  },
+  "switchBookingOptionsToTop": {
+    "message": "提升“預約選項”至頂部"
+  },
+  "switchBookingOptionsToTop_tip": {
+    "message": "啟用該選項後，將“使用條款”和“預約選項”交換位置以方便進行相關操作。"
   },
   "useDefaultStyleAndCombine": {
     "message": "使用默認樣式 <small>（合併職位名稱、組織、部門）</small>"
