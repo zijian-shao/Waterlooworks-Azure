@@ -53,6 +53,15 @@
   "applications": {
     "message": "申请人数"
   },
+  "appointments": {
+    "message": "预约页面"
+  },
+  "autoEnterOnlyBookingOption": {
+    "message": "自动进入唯一的预约选项"
+  },
+  "autoEnterOnlyBookingOption_tip": {
+    "message": "启用该选项后，若只有一个预约选项，则自动选择该项。"
+  },
   "betterMsgColumn": {
     "message": "使用现代版布局"
   },
@@ -73,6 +82,18 @@
   },
   "classicCarbonTheme": {
     "message": "经典炭黑色主题"
+  },
+  "collapseAPptTypeIntro": {
+    "message": "折叠预约类型介绍"
+  },
+  "collapseAPptTypeIntro_tip": {
+    "message": "启用该选项后，自动折叠每个预约类型的介绍内容，点击内容即可展开。"
+  },
+  "collapseTermsOfConsultation": {
+    "message": "折叠/展开“使用条款”按钮"
+  },
+  "collapseTermsOfConsultation_tip": {
+    "message": "启用该选项后，将在“使用条款”下方添加展开/折叠内容的按钮，默认为折叠状态。"
   },
   "contribute": {
     "message": "捐助作者"
@@ -311,6 +332,9 @@
   "other": {
     "message": "其他选项"
   },
+  "otherPages": {
+    "message": "其他页面"
+  },
   "positionType": {
     "message": "职位类型"
   },
@@ -394,6 +418,12 @@
   },
   "showMsgCategory_tip": {
     "message": "关闭该选项后，将不在短消息列表展示消息所属分类及子分类。"
+  },
+  "switchBookingOptionsToTop": {
+    "message": "提升“预约选项”至顶部"
+  },
+  "switchBookingOptionsToTop_tip": {
+    "message": "启用该选项后，将“使用条款”和“预约选项”交换位置以方便进行相关操作。"
   },
   "useDefaultStyleAndCombine": {
     "message": "使用默认样式 <small>（合并职位名称、组织、部门）</small>"
