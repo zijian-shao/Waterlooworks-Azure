@@ -75,6 +75,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    scrollbar-width: thin;
 }
 
 body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
@@ -1260,7 +1261,7 @@ div.arrow.left {
 
 .popup-frame {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     margin: auto;
     background: #fff;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);

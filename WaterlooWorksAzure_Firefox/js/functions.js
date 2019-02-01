@@ -1,60 +1,4 @@
 /**
- * Inject css
- * @param url Css text if type = 'text'; otherwise href url
- * @param tag Inject to target tag
- * @param type 'text' or others, optional
- */
-function injectCSS(url, tag, type) {
-
-    var style;
-
-    if (type === 'text') {
-
-        style = $('<style/>');
-
-        style.text(url);
-
-    } else {
-
-        style = $('<link/>', {
-            'rel': 'stylesheet',
-            'type': 'text/css',
-            'href': url
-        });
-
-    }
-
-    $(tag).append(style);
-
-}
-
-/**
- * Inject JS
- * @param url JS text if type = 'text'; otherwise src url
- * @param tag Inject to target tag
- * @param type 'text' or others, optional
- */
-function injectJS(url, tag, type, attr) {
-
-    var script = $('<script/>', {
-        'type': 'text/javascript'
-    });
-
-    if (type === 'text') {
-        script.text(url);
-    } else {
-        script.attr('src', url);
-    }
-
-    if (typeof attr != typeof undefined) {
-        script.attr(attr);
-    }
-
-    $(tag).append(script);
-
-}
-
-/**
  * Scroll to
  * Automatically add the header height to the calculation
  * @param pos Scroll to position. Supports object / selector
@@ -66,7 +10,7 @@ function scrollToUtil(pos, time, offset) {
     if ($.type(offset) !== 'number')
         offset = 0;
 
-    offset += themeConfig.navbarHeight;
+    offset += themeConfigs.navbarHeight;
 
     if ($.type(pos) === 'object')
         pos = pos.offset().top;
@@ -94,7 +38,7 @@ function blockPage(color, msg, time) {
         time = 300;
 
     var elem = $('<div class="azure-block-page" id="azure-block-page">');
-    if (themeConfig.brightness == 'dark')
+    if (themeConfigs.brightness == 'dark')
         elem.addClass('azure-block-page-dark');
 
     if (color !== undefined)
@@ -220,9 +164,9 @@ function isOnScreen(element) {
         html = $('html');
 
     if ($.type(element) === 'object')
-        return (html.scrollTop() + themeConfig.navbarHeight < element.offset().top);
+        return (html.scrollTop() + themeConfigs.navbarHeight < element.offset().top);
     else if ($.type(element) === 'number')
-        return (html.scrollTop() + themeConfig.navbarHeight < element);
+        return (html.scrollTop() + themeConfigs.navbarHeight < element);
 
     return true;
 }
@@ -264,7 +208,7 @@ function fixTableHeader(table) {
     // if already executed, re-calculate header width
     var newTable = $('#' + table.attr('id') + '-thead');
     if (newTable.length) {
-        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px; top:' + themeConfig.navbarHeight + 'px;');
+        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px; top:' + themeConfigs.navbarHeight + 'px;');
         return;
     }
 
@@ -299,18 +243,18 @@ function fixTableHeader(table) {
 
     var tableLeft = table.offset().left;
     var tableWidth = table.width() + 1;
-    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
+    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfigs.navbarHeight + 'px;');
 
     setTimeout(function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfigs.navbarHeight + 'px;');
     }, 0);
 
     $(window).on('resize', function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfigs.navbarHeight + 'px;');
     });
 
 }
@@ -435,34 +379,6 @@ function reverseTitleOrder() {
 }
 
 /**
- * Detect if window.hash is orbis.buildForm, and execute the code
- * @returns {boolean}
- */
-function needBuildForm() {
-
-    // detect hash and execute as js
-    var hash = decodeURI(window.location.hash);
-
-    if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
-        window.location.hash = '';
-        // eval(hash.replace(/#/g, ''));
-
-        browser.runtime.sendMessage({
-            action: 'executeScript',
-            data: {
-                type: 'code',
-                content: hash.replace(/#/g, '')
-            }
-        });
-
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-/**
  * New azure homepage
  */
 function replaceHomepage() {
@@ -555,6 +471,23 @@ function addBackToTopButton() {
 }
 
 /**
+ * Detect if window.hash is orbis.buildForm, BUT DO NOT execute the code
+ * @returns {boolean}
+ */
+function needBuildForm() {
+
+    // detect hash and execute as js
+    var hash = decodeURI(window.location.hash);
+
+    if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+/**
  * Table column css generator
  * @param selector
  * @param colID The index of nth-child css
@@ -572,59 +505,6 @@ function tableColumnCSS(selector, colID, obj) {
     css += '}';
 
     return css;
-}
-
-/**
- * Remove one level of nested panels on dashboard
- */
-function dashboardNestedBoxes() {
-
-    function _dashboardNestedBoxes() {
-
-        if (boxContainer.attr('ajaxComplete') == 'true') {
-            return;
-        }
-
-        if (!boxContainer.text().match(/Term:/i)) {
-            return;
-        }
-
-        // remove nested panel
-        boxContainer.find('.panel-default').each(function (index, element) {
-
-            var panelHeading = $(element).children('.panel-heading');
-
-            if (panelHeading.text().match(/Co-op([\s\S]*)Sequence([\s\S]*)Summary/i)) {
-
-                var panelBody = $(element).find('div[id^="orbisAjaxPlaceholder"]').detach();
-                panelBody.children('br').remove();
-                $('div[class^="serviceTeamMembersContainer"]').after(panelBody);
-                $(element).addClass('hidden');
-
-            }
-
-            if (panelHeading.text().match(/Service([\s\S]*)Team/i)) {
-                panelHeading.find('i').remove();
-            }
-        });
-
-        // clearInterval(timer);
-        boxContainer.attr('ajaxComplete', 'true');
-    }
-
-    var boxContainer = $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(2)');
-
-    _dashboardNestedBoxes();
-    // var timer = setInterval(function () {
-    //     _dashboardNestedBoxes(boxContainer);
-    // }, 50);
-
-    browser.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-        if (msg.action == 'webRequest.onCompleted') {
-            _dashboardNestedBoxes();
-        }
-    });
-
 }
 
 /**
@@ -699,28 +579,10 @@ function apptHideInstr() {
 }
 
 /**
- * Initialization
+ * Custom font css
  */
-function startAzure() {
+function customFont() {
 
-    // if (typeof jQuery === 'undefined') {
-    //     // jQuery is NOT available
-    //     var element = document.getElementById('azure-load-cover');
-    //     element.parentNode.removeChild(element);
-    // }
-
-    // redirect page
-    if (needBuildForm())
-        return;
-
-    // title order
-    if (options.GLB_ReverseTitleOrder)
-        reverseTitleOrder();
-
-    // favicon
-    $('head link[type="image/x-icon"]').attr('href', baseURL + 'icon/icon32.png');
-
-    // font
     var fontConf = options.GLB_FontName.split('||');
     var largerFontSizeExtra = 2;
     // fontName||weights||fontSize||source
@@ -768,14 +630,25 @@ function startAzure() {
 
     injectCSS('body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {font-family: \'' + fontConf[0] + '\', "Microsoft YaHei", sans-serif !important;' + bodyLineHeightLargerCSS + '}' + lineHeightLargerCSS, 'head', 'text');
 
+}
 
-    // inject global css
-    injectCSS(baseURL + 'css/common.css', 'head');
+/**
+ * Initialization
+ */
+function startAzure() {
+
+    if (!options.GLB_Enabled)
+        return;
+
+    // title order
+    if (options.GLB_ReverseTitleOrder)
+        reverseTitleOrder();
+
+    // favicon
+    $('head link[type="image/x-icon"]').attr('href', baseURL + 'icon/icon32.png');
 
     // student
     if (currURL.match(/\/myAccount\//i)) {
-
-        injectCSS(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/common.css', 'head');
 
         // grad & alumni guide page
         if (currURL.match(/\/myAccount\/hire-waterloo\/overview\.htm/i)) {
@@ -788,47 +661,16 @@ function startAzure() {
             $('#uploadDocument, #createApplicationPackage, #searchPostings').addClass('fade');
 
             // is Home
-            setTimeout(function () {
-                if ($('#displayOverview').hasClass('active')) {
-                    // body class
-                    $('body').addClass('dashboard-home');
-                    // nested boxes
-                    dashboardNestedBoxes();
-                    // announcement css
-                    $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
-                }
-            }, 100);
+            if ($('#displayOverview').hasClass('active')) {
+                // body class
+                $('body').addClass('dashboard-home');
+                // announcement css
+                $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
+            }
         } else if (currURL.match(/\/appointments\.htm/) || currURL.match(/\/appointments-further-education\.htm/)) {
             apptHideInstr();
         }
 
-        // extra functions
-        if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
-            injectJS(baseURL + 'js/functions_inject.js', 'head');
-            injectJS(baseURL + 'js/messages.js', 'head');
-            // messageList();
-        }
-        if (currURL.match(/\/jobs-postings\.htm/i) || currURL.match(/\/coop-postings\.htm/)) {
-            injectJS(baseURL + 'js/functions_inject.js', 'head');
-            injectJS(baseURL + 'js/postings.js', 'head');
-            // postingList();
-            // postingDetail();
-            // postingExtra();
-        }
-    }
-
-    // homepage page
-    else if (currURL.match(/\/home\.htm/)) {
-        if (options.GLB_ReplaceLoginPage) {
-            injectCSS(baseURL + 'css/homepage.css', 'head');
-            replaceHomepage();
-        }
-    }
-
-    // employer page
-    else if (currURL.match(/\/employer\//)) {
-        injectCSS(baseURL + 'theme/theme_0/common.css', 'head');
-        injectCSS(baseURL + 'css/employer.css', 'head');
     }
 
     // back to top button
@@ -836,24 +678,16 @@ function startAzure() {
         addBackToTopButton();
     }
 
-    // keep logged in
-    if (options.GLB_KeepLoggedIn) {
-        if (typeof keepMeLoggedInClicked == 'function') {
-            setInterval(function () {
-                keepMeLoggedInClicked();
-            }, 1700 * 1000);
-        }
+    // remove cover
+    var hash = decodeURI(window.location.hash);
+    if (needBuildForm()) {
+
+    } else if (currURL.match(/\/coop-postings\.htm/) || currURL.match(/\/jobs-postings\.htm/)) {
+
+    } else {
+        $('#azure-load-cover').delay(300).fadeOut(300, function () {
+            $('#azure-load-cover').remove();
+        });
     }
 
-    // remove cover
-    $('#azure-load-cover').delay(200).fadeOut(400, function () {
-        $('#azure-load-cover').remove();
-    });
-
 }
-
-/**
- * Start
- */
-// startAzure();
-

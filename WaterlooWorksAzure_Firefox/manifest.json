@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_appName__",
-  "version": "2.0.12",
+  "version": "2.1.0",
   "default_locale": "en",
   "description": "__MSG_appDesc__",
   "icons": {
@@ -31,6 +31,7 @@
         "*://waterlooworks.uwaterloo.ca/*"
       ],
       "js": [
+        "js/libs/jquery.js",
         "js/configs.js",
         "js/init.js"
       ],
@@ -41,7 +42,6 @@
         "*://waterlooworks.uwaterloo.ca/*"
       ],
       "js": [
-        "js/plugins/jquery.js",
         "js/functions.js",
         "js/init_idle.js"
       ],
@@ -56,7 +56,6 @@
     "contextMenus",
     "storage",
     "unlimitedStorage",
-    "webRequest",
     "*://waterlooworks.uwaterloo.ca/*"
   ],
   "short_name": "WWAzure",
@@ -70,7 +69,7 @@
   "applications": {
     "gecko": {
       "id": "wwazure@zijianshao.com",
-      "strict_min_version": "42.0"
+      "strict_min_version": "57.0"
     }
   }
 }

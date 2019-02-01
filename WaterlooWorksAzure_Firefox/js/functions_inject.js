@@ -66,7 +66,7 @@ function scrollToUtil(pos, time, offset) {
     if ($.type(offset) !== 'number')
         offset = 0;
 
-    offset += themeConfig.navbarHeight;
+    offset += themeConfigs.navbarHeight;
 
     if ($.type(pos) === 'object')
         pos = pos.offset().top;
@@ -94,7 +94,7 @@ function blockPage(color, msg, time) {
         time = 300;
 
     var elem = $('<div class="azure-block-page" id="azure-block-page">');
-    if (themeConfig.brightness == 'dark')
+    if (themeConfigs.brightness == 'dark')
         elem.addClass('azure-block-page-dark');
 
     if (color !== undefined)
@@ -220,9 +220,9 @@ function isOnScreen(element) {
         html = $('html');
 
     if ($.type(element) === 'object')
-        return (html.scrollTop() + themeConfig.navbarHeight < element.offset().top);
+        return (html.scrollTop() + themeConfigs.navbarHeight < element.offset().top);
     else if ($.type(element) === 'number')
-        return (html.scrollTop() + themeConfig.navbarHeight < element);
+        return (html.scrollTop() + themeConfigs.navbarHeight < element);
 
     return true;
 }
@@ -240,14 +240,15 @@ function isBrowser(name) {
         return typeof InstallTrigger !== 'undefined';
     else if (name == 'safari')
         return /constructor/i.test(window.HTMLElement) || (function (p) {
-                return p.toString() === "[object SafariRemoteNotification]";
-            })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+            return p.toString() === "[object SafariRemoteNotification]";
+        })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
     else if (name == 'ie')
         return /*@cc_on!@*/false || !!document.documentMode;
     else if (name == 'edge')
         return !isIE && !!window.StyleMedia;
     else if (name == 'chrome')
-        return !!window.chrome && !!window.chrome.webstore;
+    // return !!window.chrome && !!window.chrome.webstore;
+        return /chrome/.test(navigator.userAgent.toLowerCase());
     else
         return false;
 }
@@ -263,7 +264,7 @@ function fixTableHeader(table) {
     // if already executed, re-calculate header width
     var newTable = $('#' + table.attr('id') + '-thead');
     if (newTable.length) {
-        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px; top:' + themeConfig.navbarHeight + 'px;');
+        newTable.attr('style', 'width:' + (table.width() + 1) + 'px; margin-left:' + table.offset().left + 'px; top:' + themeConfigs.navbarHeight + 'px;');
         return;
     }
 
@@ -298,18 +299,18 @@ function fixTableHeader(table) {
 
     var tableLeft = table.offset().left;
     var tableWidth = table.width() + 1;
-    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
+    newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfigs.navbarHeight + 'px;');
 
     setTimeout(function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfigs.navbarHeight + 'px;');
     }, 0);
 
     $(window).on('resize', function () {
         tableLeft = table.offset().left;
         tableWidth = table.width() + 1;
-        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfig.navbarHeight + 'px;');
+        newTable.attr('style', 'width:' + tableWidth + 'px; margin-left:' + tableLeft + 'px; top:' + themeConfigs.navbarHeight + 'px;');
     });
 
 }
@@ -419,41 +420,19 @@ function buttonCreateUtil(text, type, prop) {
 }
 
 /**
- * Reverse title order
- */
-function reverseTitleOrder() {
-
-    var titleTag = $('head').children('title');
-    var titleText = titleTag.text();
-    var titleArr = titleText.split(' - ');
-
-    titleArr.reverse();
-    titleText = titleArr.join(' - ');
-    titleTag.text(titleText);
-
-}
-
-/**
  * Detect if window.hash is orbis.buildForm, and execute the code
  * @returns {boolean}
  */
-function needBuildForm() {
+function needBuildForm(needExecute) {
 
     // detect hash and execute as js
     var hash = decodeURI(window.location.hash);
 
     if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
-        window.location.hash = '';
-        // eval(hash.replace(/#/g, ''));
-
-        browser.runtime.sendMessage({
-            action: 'executeScript',
-            data: {
-                type: 'code',
-                content: hash.replace(/#/g, '')
-            }
-        });
-
+        if (needExecute !== false) {
+            window.location.hash = '';
+            eval(hash.replace(/#/g, ''));
+        }
         return true;
     } else {
         return false;
@@ -480,3 +459,64 @@ function tableColumnCSS(selector, colID, obj) {
 
     return css;
 }
+
+/**
+ * Remove one level of nested panels on dashboard
+ */
+function dashboardNestedBoxes() {
+
+    $(document).ajaxComplete(function (event, xhr, settings) {
+
+        if (settings.url === 'https://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm'
+            && settings.dataType === 'html') {
+
+            if (xhr.responseText.match(/Term:/)) {
+
+                // remove nested panel
+                $('.panel-default').each(function (index, element) {
+
+                    var panelHeading = $(element).children('.panel-heading');
+
+                    if (panelHeading.text().match(/Co-op([\s\S]*)Sequence([\s\S]*)Summary/i)) {
+
+                        var panelBody = $(element).find('div[id^="orbisAjaxPlaceholder"]').detach();
+                        panelBody.children('br').remove();
+                        $('div[class^="serviceTeamMembersContainer"]').after(panelBody);
+                        $(element).addClass('hidden');
+                    }
+
+                    if (panelHeading.text().match(/Service([\s\S]*)Team/i)) {
+                        panelHeading.find('i').remove();
+                    }
+                });
+            }
+        }
+    });
+}
+
+function startAzureInject() {
+
+    if (typeof jQuery === typeof  undefined) return;
+
+    // eval form
+    if (needBuildForm(true))
+        return;
+
+    // dashboard nested boxes
+    if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
+        if ($('#displayOverview').hasClass('active')) {
+            dashboardNestedBoxes();
+        }
+    }
+
+    // keep logged in
+    if (options.GLB_KeepLoggedIn) {
+        if (typeof keepMeLoggedInClicked == 'function') {
+            setInterval(function () {
+                keepMeLoggedInClicked();
+            }, 1700 * 1000);
+        }
+    }
+}
+
+startAzureInject();

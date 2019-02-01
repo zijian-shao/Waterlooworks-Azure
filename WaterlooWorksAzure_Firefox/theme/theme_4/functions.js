@@ -39,9 +39,10 @@ function startTheme() {
     }
 
     // remove defaul orbisApp tab logic function
-    setTimeout(function () {
-        injectScript('orbisApp.tabLogic = function () {};orbisApp.startTabLogic = function () {};', 'head', 'text');
-    }, 1000);
+    injectJS('setTimeout(function () {' +
+        'orbisApp.tabLogic = function () {};' +
+        'orbisApp.startTabLogic = function () {};' +
+        '}, 1000);', 'body', 'text');
 
     // detail page h1
     if ($('#postingDiv').length) {

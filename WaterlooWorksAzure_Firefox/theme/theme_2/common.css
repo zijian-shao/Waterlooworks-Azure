@@ -561,8 +561,9 @@ input.btn-inverse {
     }
 
     #closeNav {
-        height: 100%!important;
-        overflow: auto!important;
+        height: 100% !important;
+        overflow: auto !important;
+        scrollbar-width: none;
     }
 
     #closeNav::-webkit-scrollbar {

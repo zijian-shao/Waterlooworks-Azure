@@ -338,6 +338,10 @@ select[multiple]:focus {
     width: 0;
 }
 
+#brandingNav {
+    scrollbar-width: none;
+}
+
 .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {
     background: rgba(0, 0, 0, 0.1);
 }

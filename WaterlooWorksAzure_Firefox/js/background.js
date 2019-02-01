@@ -55,7 +55,7 @@ function initBackground() {
     console.log('Welcome to WaterlooWorks Azure!');
     browser.runtime.onInstalled.addListener(installWelcome);
     browser.runtime.setUninstallURL("https://www.zijianshao.com/wwazure/uninstall/?platform=firefox", function () {
-        if (chrome.runtime.lastError) {
+        if (browser.runtime.lastError) {
         }
     });
 
@@ -76,7 +76,7 @@ function initBackground() {
     });
 
     /**
-     * API Calls From Content Scripts
+     * Firefox API Calls From Content Scripts
      */
     browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
@@ -149,62 +149,3 @@ function initBackground() {
 }
 
 initBackground();
-
-// browser.webRequest.onSendHeaders.addListener(
-//     function (details) {
-//         browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
-//             browser.tabs.sendMessage(tabs[0].id, {
-//                 action: 'webRequest.onSendHeaders',
-//                 data: {
-//                     url: details.url
-//                 }
-//             }, function (response) {
-//             });
-//         });
-//
-//     },
-//     {
-//         urls: ["*://waterlooworks.uwaterloo.ca/myAccount/co-op/coop-postings.htm*",
-//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/other-jobs/jobs-postings.htm*",
-//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm*"]
-//     }
-// );
-//
-// browser.webRequest.onCompleted.addListener(
-//     function (details) {
-//         browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
-//             browser.tabs.sendMessage(tabs[0].id, {
-//                 action: 'webRequest.onCompleted',
-//                 data: {
-//                     url: details.url
-//                 }
-//             }, function (response) {
-//             });
-//         });
-//
-//     },
-//     {
-//         urls: ["*://waterlooworks.uwaterloo.ca/myAccount/co-op/coop-postings.htm*",
-//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/other-jobs/jobs-postings.htm*",
-//             "*://waterlooworks.uwaterloo.ca/myAccount/hire-waterloo/full-time-jobs/jobs-postings.htm*"]
-//     }
-// );
-
-
-browser.webRequest.onCompleted.addListener(
-    function (details) {
-        browser.tabs.query({active: true, currentWindow: true}, function (tabs) {
-            browser.tabs.sendMessage(tabs[0].id, {
-                action: 'webRequest.onCompleted',
-                data: {
-                    url: details.url
-                }
-            }, function (response) {
-            });
-        });
-
-    },
-    {
-        urls: ["*://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm*"]
-    }
-);

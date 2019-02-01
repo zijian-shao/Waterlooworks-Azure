@@ -8,7 +8,7 @@ function initPopup() {
 
     $('#report-bug').on('click', function (e) {
         e.preventDefault();
-        chrome.tabs.create({
+        browser.tabs.create({
             url: 'https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform'
         });
     });
@@ -31,9 +31,8 @@ function initPopup() {
     });
 
     $('#more-options').on('click', function () {
-        // browser.runtime.openOptionsPage();
         browser.tabs.create({
-            url: browser.runtime.getURL('')+'html/options.html'
+            url: browser.runtime.getURL('') + 'html/options.html'
         });
     });
 

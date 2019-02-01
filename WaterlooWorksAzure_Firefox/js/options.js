@@ -450,11 +450,11 @@ function initOptions() {
             setTimeout(function () {
                 var welcome = $('#welcome-content').clone();
                 welcome.removeAttr('id').removeClass('hidden');
-                welcome.find('.popup-btn').on('click', function (e) {
+                var popupCls = initPopup('WaterlooWorks Azure', welcome, '', 1);
+                $('.' + popupCls).find('.popup-btn').on('click', function (e) {
                     e.preventDefault();
                     window.location.href = removeSearchParameters('welcome');
                 });
-                initPopup('WaterlooWorks Azure', welcome, '', 1);
             }, 500);
         }
 

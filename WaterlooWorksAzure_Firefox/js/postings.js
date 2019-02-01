@@ -71,7 +71,7 @@ function floatInfoPanel() {
         'position': 'fixed',
         'display': 'block',
         'width': spanWidth + 'px',
-        'top': (themeConfig.navbarHeight + 10) + 'px',
+        'top': (themeConfigs.navbarHeight + 10) + 'px',
         'left': (spanLeft - 4) + 'px'
     });
     columnSpanFloat.hide();
@@ -90,7 +90,7 @@ function floatInfoPanel() {
             'position': 'fixed',
             'display': 'block',
             'width': spanWidth + 'px',
-            'top': (themeConfig.navbarHeight + 10) + 'px',
+            'top': (themeConfigs.navbarHeight + 10) + 'px',
             'left': (spanLeft - 4) + 'px'
         });
         testPostingFloatInfo();
@@ -862,6 +862,8 @@ function postingBatch() {
  */
 function postingExtra() {
 
+    if (typeof jQuery === typeof  undefined) return;
+
     // CECA refused to change the label from "Country" to "Country / Region".
     // And their replied was very impatient and arrogant.
     // I guess they have no budget or intention to make this change.
@@ -1506,7 +1508,9 @@ function postingListAjax(table, placeholder) {
 
     // resize top scroll bar (waterlooworks origianl function)
     setTimeout(function () {
-        sizeTopScroll();
+        if (typeof sizeTopScroll == 'function') {
+            sizeTopScroll();
+        }
     }, 100);
 }
 
@@ -1516,6 +1520,8 @@ function postingListAjax(table, placeholder) {
  * Runs only once after page loaded
  */
 function postingList() {
+
+    if (typeof jQuery === typeof  undefined) return;
 
     var placeholder = $('#postingsTablePlaceholder');
     if (!placeholder.length)
@@ -1561,9 +1567,6 @@ function postingList() {
     // alumni
     else if (currURL.match(/\/myAccount\/hire-waterloo\/other-jobs\/jobs-postings\.htm/gi))
         injectCSS(baseURL + 'css/postings-alumni.css', 'head');
-
-    if (options.JOB_ShortlistExport)
-        injectJS(baseURL + 'js/plugins/shortlist-export.js', 'head');
 
     // popup modal
     if (options.JOB_PopupModal) {
@@ -1619,6 +1622,8 @@ function postingList() {
  */
 function postingDetail() {
 
+    if (typeof jQuery === typeof  undefined) return;
+
     var divDetail = $('#postingDiv');
     if (!divDetail.length)
         return;
@@ -1641,13 +1646,7 @@ function postingDetail() {
             actions.find('a.btn.btn-large').each(function (idx, elem) {
                 if (typeof $(elem).attr('onclick') !== typeof undefined
                     && $(elem).attr('onclick').match(/toggleBlacklistPosting/)) {
-                    $(elem).addClass('notInterestedButton').on('click', function () {
-                        if ($(elem).text().trim().match(/not interested/gi)) {
-                            $('.notInterestedButton').text('Include in search results');
-                        } else {
-                            $('.notInterestedButton').text('Not Interested');
-                        }
-                    });
+                    $(elem).addClass('notInterestedButton');
                 }
             });
 
@@ -1673,6 +1672,14 @@ function postingDetail() {
             actions.children('div').append(backBtn);
 
             $('body').append(actions);
+
+            $('.notInterestedButton').on('click', function () {
+                if ($(this).text().trim().match(/not interested/gi)) {
+                    $('.notInterestedButton').text('Include in search results');
+                } else {
+                    $('.notInterestedButton').text('Not Interested');
+                }
+            });
         }
 
 
@@ -1730,7 +1737,6 @@ function postingDetail() {
         });
 
     }
-
 }
 
 /**
@@ -1739,3 +1745,7 @@ function postingDetail() {
 postingList();
 postingDetail();
 postingExtra();
+
+$('#azure-load-cover').delay(300).fadeOut(300, function () {
+    $('#azure-load-cover').remove();
+});
