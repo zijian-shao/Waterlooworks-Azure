@@ -31,7 +31,9 @@ function initPopup() {
     });
 
     $('#more-options').on('click', function () {
-        chrome.runtime.openOptionsPage();
+        chrome.tabs.create({
+            url: chrome.runtime.getURL('') + 'html/options.html'
+        });
     });
 
     $('#open-waterlooworks').on('click', function () {

@@ -867,13 +867,28 @@ div.checkboxGroup div.checkboxGroupHeader {
 }
 
 /* scroll bar */
-div::-webkit-scrollbar-thumb {
-    border-color: #282d34 !important;
-    background-color: #565f6d !important;
+*::-webkit-scrollbar {
+    width: 10px;
 }
 
-div::-webkit-scrollbar-track {
-    background-color: #282d34 !important;
+*::-webkit-scrollbar-track {
+    background: #1f242b;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #323841;
+    border: 2px solid #1f242b;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #424a56;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: dark;
 }
 
 /* block quote */

@@ -213,6 +213,8 @@ function removeMessageListHeaderBg() {
  */
 function messageList() {
 
+    if (typeof jQuery === typeof  undefined) return;
+
     var tableContainer = $('#dashboard_userCommonMyMessages');
     if (!tableContainer.length)
         return;

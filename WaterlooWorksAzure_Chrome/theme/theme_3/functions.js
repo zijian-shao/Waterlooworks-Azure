@@ -44,12 +44,10 @@ function startTheme() {
     $('#mainContentDiv').prepend(banner);
 
     // remove defaul orbisApp tab logic function
-    setTimeout(function () {
-        orbisApp.tabLogic = function () {
-        };
-        orbisApp.startTabLogic = function () {
-        };
-    }, 1000);
+    injectJS('setTimeout(function () {' +
+        'orbisApp.tabLogic = function () {};' +
+        'orbisApp.startTabLogic = function () {};' +
+        '}, 1000);', 'body', 'text');
 
     // dashboard
     if (location.href.match(/\/myAccount\/dashboard\.htm/gi)) {

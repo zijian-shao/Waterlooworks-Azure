@@ -1,4 +1,60 @@
 /**
+ * Inject css
+ * @param url Css text if type = 'text'; otherwise href url
+ * @param tag Inject to target tag
+ * @param type 'text' or others, optional
+ */
+function injectCSS(url, tag, type) {
+
+    var style;
+
+    if (type === 'text') {
+
+        style = $('<style/>');
+
+        style.text(url);
+
+    } else {
+
+        style = $('<link/>', {
+            'rel': 'stylesheet',
+            'type': 'text/css',
+            'href': url
+        });
+
+    }
+
+    $(tag).append(style);
+
+}
+
+/**
+ * Inject JS
+ * @param url JS text if type = 'text'; otherwise src url
+ * @param tag Inject to target tag
+ * @param type 'text' or others, optional
+ */
+function injectJS(url, tag, type, attr) {
+
+    var script = $('<script/>', {
+        'type': 'text/javascript'
+    });
+
+    if (type === 'text') {
+        script.text(url);
+    } else {
+        script.attr('src', url);
+    }
+
+    if (typeof attr != typeof undefined) {
+        script.attr(attr);
+    }
+
+    $(tag).append(script);
+
+}
+
+/**
  * Scroll to
  * Automatically add the header height to the calculation
  * @param pos Scroll to position. Supports object / selector
@@ -364,122 +420,19 @@ function buttonCreateUtil(text, type, prop) {
 }
 
 /**
- * Reverse title order
- */
-function reverseTitleOrder() {
-
-    var titleTag = $('head').children('title');
-    var titleText = titleTag.text();
-    var titleArr = titleText.split(' - ');
-
-    titleArr.reverse();
-    titleText = titleArr.join(' - ');
-    titleTag.text(titleText);
-
-}
-
-/**
- * New azure homepage
- */
-function replaceHomepage() {
-
-    if (isBrowser('safari')) {
-        function replaceHomepageAjax(data) {
-
-            // find notice
-            var notice = $('table').clone();
-
-            $('body').html(data);
-
-            // modify notice
-            if (notice !== null && notice !== undefined) {
-
-                $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
-                    .on('click', function (e) {
-                        e.preventDefault();
-                        notice.remove();
-                    })
-                    .appendTo(notice.find('tbody tr'));
-
-                $('body').append(notice);
-            }
-        }
-
-        $.ajax({
-            url: baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html',
-            dataType: 'html',
-            success: function (data) {
-
-                replaceHomepageAjax(data.responseText);
-
-            },
-            error: function (data) {
-
-                replaceHomepageAjax(data.responseText);
-
-            }
-        });
-    } else {
-        // find notice
-        var notice = $('table').clone();
-
-        // replace body
-        $.get(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/homepage.html', function (data) {
-
-            $('body').html(data);
-
-            // modify notice
-            if (notice !== null && notice !== undefined) {
-
-                $('<a href="javascript:void(0);" class="close-notice"><i class="icon-remove-sign"></i></a>')
-                    .on('click', function (e) {
-                        e.preventDefault();
-                        notice.remove();
-                    })
-                    .appendTo(notice.find('tbody tr'));
-
-                $('body').append(notice);
-            }
-        });
-
-    }
-
-}
-
-/**
- * Back to top button
- */
-function addBackToTopButton() {
-
-    $(window).on('scroll', function () {
-
-        if ($(this).scrollTop() < 100)
-            $('#azure-back-to-top').addClass('azure-back-to-top-hidden').delay(200);
-        else
-            $('#azure-back-to-top').removeClass('azure-back-to-top-hidden');
-
-    });
-
-    $('<div/>', {
-        'class': 'azure-back-to-top azure-back-to-top-hidden',
-        'id': 'azure-back-to-top',
-        click: function (e) {
-            scrollToUtil(0, 400);
-        }
-    }).appendTo('body');
-
-}
-
-/**
- * Detect if window.hash is orbis.buildForm, BUT DO NOT execute the code
+ * Detect if window.hash is orbis.buildForm, and execute the code
  * @returns {boolean}
  */
-function needBuildForm() {
+function needBuildForm(needExecute) {
 
     // detect hash and execute as js
     var hash = decodeURI(window.location.hash);
 
     if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
+        if (needExecute !== false) {
+            window.location.hash = '';
+            eval(hash.replace(/#/g, ''));
+        }
         return true;
     } else {
         return false;
@@ -508,186 +461,62 @@ function tableColumnCSS(selector, colID, obj) {
 }
 
 /**
- * Hide / show appointments introduction
+ * Remove one level of nested panels on dashboard
  */
-function apptHideInstr() {
+function dashboardNestedBoxes() {
 
-    var headText = $('#mainContentDiv h1').text();
+    $(document).ajaxComplete(function (event, xhr, settings) {
 
-    // other appt page
-    if (!headText.match(/Appointments/) && !headText.match(/Book by/)) return;
+        if (settings.url === 'https://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm'
+            && settings.dataType === 'html') {
 
-    // appt guide page
-    else if (headText.match(/Appointments/) && !headText.match(/Book by/)) {
+            if (xhr.responseText.match(/Term:/)) {
 
-        var boxes = $('#mainContentDiv > .box');
-        boxes.css('position', 'relative');
+                // remove nested panel
+                $('.panel-default').each(function (index, element) {
 
-        var termBox = boxes.first();
-        var btnBox = boxes.last();
+                    var panelHeading = $(element).children('.panel-heading');
 
-        // fold terms
-        if (options.APPT_AutoFoldTerm) {
-            termBox.addClass('azure-appt-intro-collapsed');
-            var expandBtn = $('<div class="azure-appt-intro-expand-btn">Expand <i class="icon-angle-down"></i></div>');
-            expandBtn.on('click', function (e) {
-                if ($(this).hasClass('azure-appt-intro-expand-btn')) {
-                    $(this).removeClass('azure-appt-intro-expand-btn')
-                        .addClass('azure-appt-intro-collapse-btn')
-                        .html('Collapse <i class="icon-angle-up"></i>');
-                    termBox.removeClass('azure-appt-intro-collapsed').addClass('azure-appt-intro-expanded');
-                } else {
-                    $(this).removeClass('azure-appt-intro-collapse-btn')
-                        .addClass('azure-appt-intro-expand-btn')
-                        .html('Expand <i class="icon-angle-down"></i>');
-                    termBox.addClass('azure-appt-intro-collapsed').removeClass('azure-appt-intro-expanded');
-                }
-            });
-            termBox.append(expandBtn);
-        }
+                    if (panelHeading.text().match(/Co-op([\s\S]*)Sequence([\s\S]*)Summary/i)) {
 
-        // swtich appt box and terms box
-        if (options.APPT_SwitchTermAndLink) {
-            termBox.insertAfter(btnBox);
-        }
+                        var panelBody = $(element).find('div[id^="orbisAjaxPlaceholder"]').detach();
+                        panelBody.children('br').remove();
+                        $('div[class^="serviceTeamMembersContainer"]').after(panelBody);
+                        $(element).addClass('hidden');
+                    }
 
-        // auto enter appt book page if only one opt available
-        if (options.APPT_AutoEnterBookPage) {
-            var apptLink = btnBox.find('a');
-            if (apptLink.length === 1) apptLink.trigger('click');
-        }
-    }
-
-    // appt book page
-    else if (headText.match(/Appointments/) && headText.match(/Book by/)) {
-
-        // auto hide type intro
-        if (options.APPT_AutoHideTypeIntro) {
-            var introRow = $('#mainContentDiv').children('.row-fluid').find('.span6:first-child .row:nth-child(2) .box .boxContent .row');
-            introRow.each(function (idx, elem) {
-                var introDiv = $(elem).find('div:last-child');
-                // introDiv.attr('data-org-height', introDiv.height() + 'px');
-                introDiv.on('click', function (e) {
-                    e.preventDefault();
-                    $(elem).removeClass('azure-appt-type-auto-hide');
+                    if (panelHeading.text().match(/Service([\s\S]*)Team/i)) {
+                        panelHeading.find('i').remove();
+                    }
                 });
-            });
-            introRow.addClass('azure-appt-type-auto-hide');
+            }
         }
-    }
-
+    });
 }
 
-/**
- * Custom font css
- */
-function customFont() {
+function startAzureInject() {
 
-    var fontConf = options.GLB_FontName.split('||');
-    var largerFontSizeExtra = 2;
-    // fontName||weights||fontSize||source
-    if (fontConf.length == 4) {
+    if (typeof jQuery === typeof  undefined) return;
 
-        // name, weights, size, source
-        if (fontConf[3] == 'google') {
-            injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
-        } else if (fontConf[3] == 'none') {
-
-        } else {
-            injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
-        }
-
-        if (options.GLB_LargerFont)
-            fontConf[2] = parseInt(fontConf[2]) + largerFontSizeExtra;
-
-        injectCSS('body{font-size:' + fontConf[2] + 'px}', 'head', 'text');
-
-    } else if (fontConf.length == 3) {
-
-        // name, weights, size
-        injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':' + fontConf[1], 'head');
-
-        if (options.GLB_LargerFont)
-            fontConf[2] = parseInt(fontConf[2]) + largerFontSizeExtra;
-
-        injectCSS('body{font-size:' + fontConf[2] + 'px}', 'head', 'text');
-
-    } else {
-
-        // name only
-        injectCSS('//fonts.googleapis.com/css?family=' + fontConf[0].replace(/ /g, '+') + ':400,600,800', 'head');
-
-        if (options.GLB_LargerFont)
-            injectCSS('body{font-size:' + (12 + largerFontSizeExtra) + 'px}', 'head', 'text');
-
-    }
-
-    var lineHeightLargerCSS = '', bodyLineHeightLargerCSS = '';
-    if (options.GLB_LargerFont) {
-        lineHeightLargerCSS = '.table th,.table td,strong{line-height: 1.5em;}';
-        bodyLineHeightLargerCSS = 'line-height:normal;';
-    }
-
-    injectCSS('body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {font-family: \'' + fontConf[0] + '\', "Microsoft YaHei", sans-serif !important;' + bodyLineHeightLargerCSS + '}' + lineHeightLargerCSS, 'head', 'text');
-
-}
-
-/**
- * Initialization
- */
-function startAzure() {
-
-    if (!options.GLB_Enabled)
+    // eval form
+    if (needBuildForm(true))
         return;
 
-    // title order
-    if (options.GLB_ReverseTitleOrder)
-        reverseTitleOrder();
-
-    // favicon
-    $('head link[type="image/x-icon"]').attr('href', baseURL + 'icon/icon32.png');
-
-    // student
-    if (currURL.match(/\/myAccount\//i)) {
-
-        // grad & alumni guide page
-        if (currURL.match(/\/myAccount\/hire-waterloo\/overview\.htm/i)) {
-            $('#mainContentDiv').find('.boxContent a').addClass('btn btn-primary azure-grad-guide-link');
+    // dashboard nested boxes
+    if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
+        if ($('#displayOverview').hasClass('active')) {
+            dashboardNestedBoxes();
         }
+    }
 
-        // dashboard
-        if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
-            // add fade effect to open modal buttons
-            $('#uploadDocument, #createApplicationPackage, #searchPostings').addClass('fade');
-
-            // is Home
-            if ($('#displayOverview').hasClass('active')) {
-                // body class
-                $('body').addClass('dashboard-home');
-                // announcement css
-                $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
-            }
-        } else if (currURL.match(/\/appointments\.htm/) || currURL.match(/\/appointments-further-education\.htm/)) {
-            apptHideInstr();
+    // keep logged in
+    if (options.GLB_KeepLoggedIn) {
+        if (typeof keepMeLoggedInClicked == 'function') {
+            setInterval(function () {
+                keepMeLoggedInClicked();
+            }, 1700 * 1000);
         }
-
     }
-
-    // back to top button
-    if (options.GLB_BackToTopButton) {
-        addBackToTopButton();
-    }
-
-    // remove cover
-    var hash = decodeURI(window.location.hash);
-    if (needBuildForm()) {
-
-    } else if (currURL.match(/\/coop-postings\.htm/) || currURL.match(/\/jobs-postings\.htm/)) {
-
-    } else {
-        $('#azure-load-cover').delay(300).fadeOut(300, function () {
-            $('#azure-load-cover').remove();
-        });
-    }
-
 }
+
+startAzureInject();

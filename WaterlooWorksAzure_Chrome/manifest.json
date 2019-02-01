@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_appName__",
-  "version": "2.0.12",
+  "version": "2.1.0",
   "author": "Zijian Shao",
   "background": {
     "persistent": false,
@@ -22,6 +22,7 @@
   "content_scripts": [
     {
       "js": [
+        "js/libs/jquery.js",
         "js/configs.js",
         "js/init.js"
       ],
@@ -32,12 +33,13 @@
     },
     {
       "js": [
+        "js/functions.js",
         "js/init_idle.js"
       ],
       "matches": [
         "*://waterlooworks.uwaterloo.ca/*"
       ],
-      "run_at": "document_idle"
+      "run_at": "document_end"
     }
   ],
   "default_locale": "en",

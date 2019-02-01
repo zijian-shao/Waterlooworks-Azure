@@ -18,12 +18,10 @@ function startTheme() {
     $('#mainContentDiv').prepend(banner);
 
     // remove defaul orbisApp tab logic function
-    setTimeout(function () {
-        orbisApp.tabLogic = function () {
-        };
-        orbisApp.startTabLogic = function () {
-        };
-    }, 1000);
+    injectJS('setTimeout(function () {' +
+        'orbisApp.tabLogic = function () {};' +
+        'orbisApp.startTabLogic = function () {};' +
+        '}, 1000);', 'body', 'text');
 
     // nav icons
     $('#closeNav ul.nav-list li a').each(function (i, e) {
@@ -74,7 +72,7 @@ function startTheme() {
                 fixTableHeader($('#postingsTable'));
             });
             $('.bs--hide__column').before(hideBtn);
-
+            fixTableHeader($('#postingsTable'));
         }
     }
 
