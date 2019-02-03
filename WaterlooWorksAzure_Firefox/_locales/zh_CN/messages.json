@@ -294,7 +294,7 @@
     "message": "相关说明"
   },
   "notes_intro": {
-    "message": "<p>▷ 建议不要与其他 WaterlooWorks 插件同时启用</p><p>▷ WaterlooWorks 随时会进行页面改动，可能导致扩展功能异常或失效</p><p>▷ 若在使用过程中遇到任何问题，或提出更改建议，请发送邮件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> 或 <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform\" target=\"_blank\">在线提交反馈</a></p>"
+    "message": "<p>▷ 建议不要与其他 WaterlooWorks 插件同时启用</p><p>▷ WaterlooWorks 随时会进行页面改动，可能导致扩展功能异常或失效</p><p>▷ 若在使用过程中遇到任何问题，或提出更改建议，请发送邮件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> 或 <a href=\"#\" target=\"_blank\" id=\"feedback-link\">在线提交反馈</a></p>"
   },
   "officialWebsite": {
     "message": "官方网站"
