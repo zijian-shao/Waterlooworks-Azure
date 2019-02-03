@@ -294,7 +294,7 @@
     "message": "Notes"
   },
   "notes_intro": {
-    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> or <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSc8teQisXY9j7mGFWwlNgna5qLqi3kjh31R3iR742oQpJ0fOA/viewform\" target=\"_blank\">submit your feedback online</a></p>"
+    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> or <a href=\"#\" target=\"_blank\" id=\"feedback-link\">submit your feedback online</a></p>"
   },
   "officialWebsite": {
     "message": "Official Website"
