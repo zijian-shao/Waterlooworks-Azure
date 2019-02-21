@@ -164,6 +164,10 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     border: none;
 }
 
+.dropdown-menu .active > a {
+    background: #118dee !important;
+}
+
 .input-append .add-on, .input-prepend .add-on {
     padding: 4px 5px !important;
     border: 1px solid #ccc !important;
@@ -659,7 +663,7 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     .orbisModuleTabs .nav-tabs > li > a {
         border: none;
         height: 64px;
-        padding: 0 30px;
+        padding: 0 25px;
         line-height: 64px;
         background: #fff;
         color: #888;
@@ -980,4 +984,17 @@ div.checkboxGroup div.checkboxGroupHeader label {
 /* posting table tile */
 .postingsTable-tile > tbody > tr > td:nth-child(1) {
     padding-top: 7px !important;
+}
+
+/* campus connect */
+.btn--filter-results,
+.btn--filter-results:hover,
+.btn--filter-results:active,
+.btn--filter-results:focus {
+    padding-right: 56px !important;
+    border: none !important;
+}
+
+.btn--filter-results.btn-primary {
+    color: #fff !important;
 }

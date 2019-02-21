@@ -104,6 +104,9 @@
   "darkTurquoiseTheme": {
     "message": "Dark Turquoise"
   },
+  "dashboard": {
+    "message": "Dashboard"
+  },
   "disclaimers": {
     "message": "Disclaimers"
   },
@@ -226,6 +229,12 @@
   },
   "goToTips": {
     "message": "Tips"
+  },
+  "hideCampusConnectBadge": {
+    "message": "Hide Campus Connect badge on navigation tabs"
+  },
+  "hideCampusConnectTab": {
+    "message": "Hide Campus Connect navigation tab"
   },
   "homepage": {
     "message": "Welcome Page"

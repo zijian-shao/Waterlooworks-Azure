@@ -666,6 +666,14 @@ function startAzure() {
                 // announcement css
                 $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
             }
+
+            // campus connect
+            if (options.DASH_HideCampusConnectBadge)
+                $('#displayStudentCampusLink').addClass('hideBadge');
+
+            if (options.DASH_HideCampusConnect)
+                $('#displayStudentCampusLink').addClass('hidden');
+
         } else if (currURL.match(/\/appointments\.htm/) || currURL.match(/\/appointments-further-education\.htm/)) {
             apptHideInstr();
         }

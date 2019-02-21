@@ -466,7 +466,7 @@ input.btn-inverse {
     .orbisModuleTabs .nav-tabs > li > a {
         border: none;
         height: 50px;
-        padding: 0 30px;
+        padding: 0 20px;
         line-height: 50px;
         background: #fff;
         color: #7a7a7a;
@@ -924,4 +924,19 @@ table.formTable span.inputContainer {
 
 .postingsTable-tile > tbody > tr {
     border-radius: 15px;
+}
+
+/* campus connect */
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn:before,
+#externalPostingAjax .bootRobot--sidebar__btn--close:before {
+    display: none !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__btn--close {
+    position: absolute !important;
+    box-shadow: none !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn.is--active {
+    color: #fff !important;
 }

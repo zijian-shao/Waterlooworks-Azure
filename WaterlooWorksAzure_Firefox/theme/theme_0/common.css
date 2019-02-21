@@ -96,6 +96,10 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     border: none;
 }
 
+.dropdown-menu .active > a {
+    background: #45b6f7 !important;
+}
+
 /* Buttons */
 
 .button {
@@ -411,4 +415,14 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
 .orbisModuleHeader .pager li a {
     border-radius: 100px;
+}
+
+/* campus connect */
+.btn--filter-results {
+    border-color: #E6E6E6 !important;
+}
+
+.btn--filter-results.btn-primary {
+    border-color: #45b6f7 !important;
+    color: #fff;
 }

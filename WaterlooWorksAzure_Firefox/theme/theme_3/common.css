@@ -84,6 +84,10 @@ select[multiple]:focus {
     border: none;
 }
 
+.dropdown-menu .active > a {
+    background: #8599de !important;
+}
+
 /* Buttons */
 .button {
     padding: 10px 20px;
@@ -704,7 +708,7 @@ body.is--hidden {
     .orbisModuleTabs .nav-tabs > li > a {
         border: none;
         height: 64px;
-        padding: 0 30px;
+        padding: 0 25px;
         line-height: 64px;
         background: #fff;
         color: #7a7a7a;
@@ -955,4 +959,9 @@ table.formTable span.inputContainer {
 
 .postingsTable-tile.table-header-fixed {
     border-top: none !important;
+}
+
+/* campus connect */
+.btn--filter-results.btn-primary {
+    color: #fff !important;
 }
