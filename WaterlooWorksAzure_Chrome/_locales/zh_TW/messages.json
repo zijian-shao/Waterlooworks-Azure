@@ -104,6 +104,9 @@
   "darkTurquoiseTheme": {
     "message": "黑暗綠寶石主題"
   },
+  "dashboard": {
+    "message": "儀錶盤"
+  },
   "disclaimers": {
     "message": "免責聲明"
   },
@@ -226,6 +229,12 @@
   },
   "goToTips": {
     "message": "幫助中心"
+  },
+  "hideCampusConnectBadge": {
+    "message": "隱藏導航選項卡中 Campus Connect 的計數角標"
+  },
+  "hideCampusConnectTab": {
+    "message": "隱藏 Campus Connect 導航選項卡"
   },
   "homepage": {
     "message": "網站引導頁"

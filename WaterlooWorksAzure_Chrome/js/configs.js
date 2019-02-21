@@ -139,7 +139,9 @@ function getOptionListDefault() {
         'GLB_FontName': 'Muli||400,600,800||12',
         'GLB_LargerFont': false,
         'GLB_KeepLoggedIn': true,
-        'GLB_Enabled': true
+        'GLB_Enabled': true,
+        'DASH_HideCampusConnectBadge': true,
+        'DASH_HideCampusConnect': false
     };
 
     return obj;

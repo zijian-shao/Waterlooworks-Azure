@@ -1281,3 +1281,45 @@ li.azure-font-size-control a {
 .azure-appt-type-auto-hide div:last-child:hover:after {
     opacity: 0.4;
 }
+
+/* campus connect */
+#displayStudentCampusLink.hideBadge .badge {
+    display: none;
+}
+
+#externalPostingAjax.bootRobot--sidebar {
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header {
+    height: auto !important;
+    padding-top: 25px !important;
+    padding-bottom: 55px !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #c1c1c1 !important;
+    box-shadow: none !important;
+    color: #000 !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn:before,
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn:after,
+#externalPostingAjax .bootRobot--sidebar__btn--close:before,
+#externalPostingAjax .bootRobot--sidebar__btn--close:after {
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn.is--active {
+    background: #444 !important;
+    color: #fff !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__btn--close {
+    position: absolute !important;
+    box-shadow: none !important;
+}

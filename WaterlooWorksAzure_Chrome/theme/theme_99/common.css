@@ -238,3 +238,8 @@ a {
 .azure-contextmenu > ul > li > a:hover, .azure-contextmenu > ul > li > a:active, .azure-contextmenu > ul > li > a:visited {
     color: #000;
 }
+
+/* campus connect */
+.btn--filter-results.btn-primary {
+    color: #fff !important;
+}

@@ -648,6 +648,10 @@ hr {
     color: #fff;
 }
 
+.dropdown-menu .active > a {
+    background: #09b1b9 !important;
+}
+
 .btn-primary .caret {
     border-top-color: #09b1b9;
     border-bottom-color: #09b1b9;
@@ -1131,4 +1135,43 @@ div#eventTooltip {
 
 .fc-state-highlight {
     background: #424a56;
+}
+
+/* campus connect */
+.btn--filter-results {
+    border-color: #aaa !important;
+}
+
+.btn--filter-results.btn-primary {
+    border-color: #09b1b9 !important;
+    color: #fff;
+}
+
+.btn--filter-results span:nth-of-type(2) {
+    background: #ddd !important;
+    color: #333 !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn--filter-results.btn-primary span:nth-of-type(2) {
+    background: #09b1b9 !important;
+    color: #fff !important;
+}
+
+#externalPostingAjax {
+    color: #000;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn {
+    color: #333 !important;
+}
+
+#externalPostingAjax .bootRobot--sidebar__header-tabs .btn.is--active {
+    color: #fff !important;
+}
+
+.well {
+    color: #ddd;
+    background-color: #424a56;
+    border-color: rgba(0, 0, 0, 0);
 }

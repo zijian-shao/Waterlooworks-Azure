@@ -104,6 +104,9 @@
   "darkTurquoiseTheme": {
     "message": "黑暗绿宝石主题"
   },
+  "dashboard": {
+    "message": "仪表盘"
+  },
   "disclaimers": {
     "message": "免责声明"
   },
@@ -226,6 +229,12 @@
   },
   "goToTips": {
     "message": "帮助中心"
+  },
+  "hideCampusConnectBadge": {
+    "message": "隐藏导航选项卡中 Campus Connect 的计数角标"
+  },
+  "hideCampusConnectTab": {
+    "message": "隐藏 Campus Connect 导航选项卡"
   },
   "homepage": {
     "message": "网站引导页"
