@@ -205,6 +205,72 @@ function getCookie(key) {
     return keyValue ? keyValue[2] : null;
 }
 
+function evalBuildForm(str, overrideTarget, needSubmit) {
+    if (str.match(/orbisApp\.buildForm\(.*\)\.submit/g)) {
+        if (typeof orbisApp.buildForm === 'function') {
+            str = str.replace(/ /g, '').replace(/orbisApp\.buildForm\(/g, '').replace(/\)\.submit\(\);/g, '');
+            str = str.replace(/'/g, '"').replace(/([a-zA-Z0-9\-_]+):/g, "\"$1\":");
+            str = '[' + str + ']';
+            str = JSON.parse(str);
+
+            if (str[1] == '') {
+                str[1] = window.location.href.split('#')[0];
+            }
+
+            if (typeof overrideTarget !== typeof undefined) {
+                str[2] = overrideTarget;
+            }
+
+            var theForm = orbisApp.buildForm(str[0], str[1], str[2]);
+            if (needSubmit !== false) {
+                theForm.submit();
+            }
+
+            return theForm;
+        } else {
+            alert('ERROR: orbisApp.buildForm function does not exist! Please report this issue to the extension developer. Thank you.');
+            return false;
+        }
+    } else {
+        alert('ERROR: orbisApp.buildForm function has been renamed! Please report this issue to the extension developer. Thank you.');
+        return false;
+    }
+}
+
+function evalToggleBlacklistPosting(str) {
+    if (str.match(/toggleBlacklistPosting/g)) {
+        if (typeof toggleBlacklistPosting === 'function') {
+            str = str.trim().replace(/ /g, '').replace(/toggleBlacklistPosting\(this,/g, '').replace(/\)/g, '');
+            toggleBlacklistPosting(null, Number(str));
+            return true;
+        } else {
+            alert('ERROR: toggleBlacklistPosting function does not exist! Please report this issue to the extension developer. Thank you.');
+            return false;
+        }
+    } else {
+        alert('ERROR: toggleBlacklistPosting function has been renamed! Please report this issue to the extension developer. Thank you.');
+        return false;
+    }
+}
+
+function evalToggleFavouritePosting(str) {
+    if (str.match(/toggleFavouritePosting/g)) {
+        if (typeof toggleFavouritePosting === 'function') {
+            str = str.trim().replace(/ /g, '').replace(/toggleFavouritePosting\(this,/g, '').replace(/\)/g, '').replace(/'/g, '"');
+            str = '[' + str + ']';
+            str = JSON.parse(str);
+            toggleFavouritePosting(null, str[0], str[1], str[2], str[3], str[4], str[5], str[6]);
+            return true;
+        } else {
+            alert('ERROR: toggleFavouritePosting function does not exist! Please report this issue to the extension developer. Thank you.');
+            return false;
+        }
+    } else {
+        alert('ERROR: toggleFavouritePosting function has been renamed! Please report this issue to the extension developer. Thank you.');
+        return false;
+    }
+}
+
 /**
  * Test if an element's top is visible on screen
  * Automatically add the header height to the calculation
@@ -419,27 +485,6 @@ function buttonCreateUtil(text, type, prop) {
 }
 
 /**
- * Detect if window.hash is orbis.buildForm, and execute the code
- * @returns {boolean}
- */
-function needBuildForm(needExecute) {
-
-    // detect hash and execute as js
-    var hash = decodeURI(window.location.hash);
-
-    if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
-        if (needExecute !== false) {
-            window.location.hash = '';
-            eval(hash.replace(/#/g, ''));
-        }
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-/**
  * Table column css generator
  * @param selector
  * @param colID The index of nth-child css
@@ -497,10 +542,6 @@ function startAzureInject() {
 
     if (typeof jQuery === typeof  undefined) return;
 
-    // eval form
-    if (needBuildForm(true))
-        return;
-
     // dashboard nested boxes
     if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
         if ($('#displayOverview').hasClass('active')) {
@@ -510,7 +551,7 @@ function startAzureInject() {
 
     // keep logged in
     if (options.GLB_KeepLoggedIn) {
-        if (typeof keepMeLoggedInClicked == 'function') {
+        if (typeof keepMeLoggedInClicked === 'function') {
             setInterval(function () {
                 keepMeLoggedInClicked();
             }, 1700 * 1000);

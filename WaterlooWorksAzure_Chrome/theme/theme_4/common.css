@@ -1,10 +1,10 @@
-::-moz-selection {
-    background: #118dee;
+::selection {
+    background: rgba(17, 141, 238, 1);
     color: #fff;
 }
 
-::selection {
-    background: #118dee;
+::-moz-selection {
+    background: rgba(17, 141, 238, 0.75);
     color: #fff;
 }
 
@@ -542,13 +542,13 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     }
 }
 
-.blue-dashboard-btn-float {
+.azure-dashboard-action-btn {
     position: absolute;
     top: 100px;
     right: 30px;
 }
 
-.blue-dashboard-btn-float .btn {
+.azure-dashboard-action-btn .btn {
     border: none;
     box-shadow: none !important;
     background-color: transparent;
@@ -561,7 +561,7 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     transition: background 0.2s ease;
 }
 
-.blue-dashboard-btn-float .btn:hover {
+.azure-dashboard-action-btn .btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
 }
@@ -603,7 +603,7 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
         top: 150px;
     }
 
-    .blue-dashboard-btn-float {
+    .azure-dashboard-action-btn {
         position: relative;
         top: 0;
         right: 0;

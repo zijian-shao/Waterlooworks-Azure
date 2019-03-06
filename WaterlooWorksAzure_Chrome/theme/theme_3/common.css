@@ -1,10 +1,10 @@
-::-moz-selection {
-    background: #8599de;
+::selection {
+    background: rgba(133, 153, 222, 1);
     color: #fff;
 }
 
-::selection {
-    background: #8599de;
+::-moz-selection {
+    background: rgba(133, 153, 222, 0.75);
     color: #fff;
 }
 
@@ -330,22 +330,6 @@ select[multiple]:focus {
     color: rgba(255, 255, 255, 0);
 }
 
-#brandingNav:hover .sidebar-nav .nav-list > li > a {
-    color: rgba(255, 255, 255, 255) !important;
-}
-
-#brandingNav:hover .sidebar-nav .nav-list > li > a > small {
-    height: 20px;
-}
-
-#brandingNav::-webkit-scrollbar {
-    width: 0;
-}
-
-#brandingNav {
-    scrollbar-width: none;
-}
-
 .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {
     background: rgba(0, 0, 0, 0.1);
 }
@@ -366,12 +350,22 @@ select[multiple]:focus {
     margin-left: 0 !important;
 }
 
-.sidebar-nav ul[class^="childMenu"] > li.active > a {
+.sidebar-nav > ul > li.active .childMenu1 {
     background: rgba(0, 0, 0, 0.2) !important;
 }
 
 .sidebar-nav ul[class^="childMenu"] > li > a {
     padding: 18px 0 18px 55px !important;
+    background: none !important;
+    opacity: 0.4;
+}
+
+.sidebar-nav ul[class^="childMenu"] > li.active > a {
+    opacity: 1;
+}
+
+.sidebar-nav ul[class^="childMenu"] > li > a:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .sidebar-nav ul.childMenu1 > li > a:before,
@@ -391,6 +385,22 @@ select[multiple]:focus {
 .sidebar-nav ul.childMenu2 > li > a:before {
     content: '\F101';
     left: 26px;
+}
+
+#brandingNav:hover .sidebar-nav .nav-list > li > a {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+#brandingNav:hover .sidebar-nav .nav-list > li > a > small {
+    height: 20px;
+}
+
+#brandingNav::-webkit-scrollbar {
+    width: 0;
+}
+
+#brandingNav {
+    scrollbar-width: none;
 }
 
 @media (max-width: 767px) {
@@ -415,19 +425,31 @@ select[multiple]:focus {
         box-shadow: none;
     }
 
+    #brandingNav:hover .sidebar-nav .nav-list > li > a > small {
+        height: 0;
+    }
+
     #brandingNav:hover .sidebar-nav .nav-list > li a {
         color: rgba(255, 255, 255, 0) !important;
     }
 
     #brandingNav .sidebar-nav .nav-list > li a:hover {
-        color: rgba(255, 255, 255, 255) !important;
+        color: rgba(255, 255, 255, 1) !important;
         width: 170px;
         background: #8599de !important;
         border-radius: 0 4px 4px 0;
         padding-left: 80px !important;
-        -webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+    }
+
+    #brandingNav .sidebar-nav .nav-list > li a:hover > small {
+        height: 20px;
+    }
+
+    .sidebar-nav ul[class^="childMenu"] > li > a {
+        opacity: 1;
     }
 }
 
@@ -587,13 +609,13 @@ body.is--hidden {
     box-shadow: 0 8px 80px #768acd;
 }
 
-.violet-dashboard-btn-float {
+.azure-dashboard-action-btn {
     position: absolute;
     top: 60px;
     right: 30px;
 }
 
-.violet-dashboard-btn-float .btn {
+.azure-dashboard-action-btn .btn {
     border: none;
     box-shadow: none !important;
     background-color: transparent;
@@ -601,7 +623,7 @@ body.is--hidden {
     text-transform: none;
 }
 
-.violet-dashboard-btn-float .btn:hover {
+.azure-dashboard-action-btn .btn:hover {
     background-color: #8599de;
     border: none;
 }
@@ -637,7 +659,7 @@ body.is--hidden {
         right: 120px;
     }
 
-    .violet-dashboard-btn-float {
+    .azure-dashboard-action-btn {
         position: relative;
         top: 0;
         right: 0;

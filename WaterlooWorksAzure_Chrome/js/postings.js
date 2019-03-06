@@ -520,11 +520,9 @@ function showPostingModal(tr) {
         apply = apply.replace(").submit()", ", '', '_blank').submit()");
 
     // init post
-    var currentTabForm = currentTab.replace('.submit()', '');
-    currentTabForm = eval(currentTabForm);
-    currentTabForm = currentTabForm.serialize();
-
     blockPage('rgba(0,0,0,0.2)');
+
+    var currentTabForm = evalBuildForm(currentTab, '', false).serialize();
 
     $.post(window.location, currentTabForm, function (data) {
         unblockPage();
@@ -605,7 +603,7 @@ function postingBatch() {
             var thisTr = $('#posting' + $(liList[currIndex]).attr('data-posting-id'));
             if (thisTr.attr('data-in-shortlist') == 'false') {
                 setTimeout(function () {
-                    eval(thisTr.attr('data-shortlist'));
+                    evalToggleFavouritePosting(thisTr.attr('data-shortlist'));
                     blockPageMsg('Shortlisting ' + (currIndex + 1) + ' / ' + counter);
                     _executeAjax(type, liList, currIndex + 1);
                 }, 500);
@@ -617,7 +615,7 @@ function postingBatch() {
         } else if (type == 'not-interested') {
 
             setTimeout(function () {
-                eval($('#posting' + $(liList[currIndex]).attr('data-posting-id')).attr('data-not-interested'));
+                evalToggleBlacklistPosting($('#posting' + $(liList[currIndex]).attr('data-posting-id')).attr('data-not-interested'));
                 blockPageMsg('Removing ' + (currIndex + 1) + ' / ' + counter);
                 _executeAjax(type, liList, currIndex + 1);
             }, 300);
@@ -625,7 +623,7 @@ function postingBatch() {
         } else if (type == 'new-tab') {
 
             setTimeout(function () {
-                eval($('#posting' + $(liList[currIndex]).attr('data-posting-id')).attr('data-new-tab'));
+                evalBuildForm($('#posting' + $(liList[currIndex]).attr('data-posting-id')).attr('data-new-tab'));
                 blockPageMsg('Opening ' + (currIndex + 1) + ' / ' + counter);
                 _executeAjax(type, liList, currIndex + 1);
             }, 300);
@@ -1141,7 +1139,7 @@ function postingListAjax(table, placeholder) {
                 function _emptyShortlist() {
                     if (curr < total) {
                         setTimeout(function () {
-                            eval($(trs[curr]).attr('data-shortlist'));
+                            evalToggleFavouritePosting($(trs[curr]).attr('data-shortlist'));
                             curr++;
                             blockPageMsg('Removing ' + curr + ' / ' + total);
                             _emptyShortlist();
@@ -1312,11 +1310,11 @@ function postingListAjax(table, placeholder) {
 
                     if (e.which === 1) {
                         if ((e.ctrlKey && e.shiftKey) || (e.metaKey && e.shiftKey))
-                            eval(currentTab);
+                            evalBuildForm(currentTab);
                         else if (e.ctrlKey || e.metaKey)
-                            window.open(location.href + '#' + encodeURI(currentTab));
+                            window.open(location.href + '#' + encodeURIComponent(currentTab));
                         else
-                            eval(newTab);
+                            evalBuildForm(newTab);
                     }
 
                 });
@@ -1325,16 +1323,16 @@ function postingListAjax(table, placeholder) {
                 // jobTitleLink.after($('<a href="javascript:void(0);" class="view-in-new-tab-link" onclick="' + newTab + '"><i class="icon-external-link"></i><span> New Tab</span></a>'));
 
             } else if (isBrowser('firefox')) {
-                jobTitleLink.removeAttr('onclick').off('click').attr('href', location.href + '#' + encodeURI(currentTab));
+                jobTitleLink.removeAttr('onclick').off('click').attr('href', location.href + '#' + encodeURIComponent(currentTab));
 
                 jobTitleLink.on('click', function (e) {
                     e.preventDefault();
 
                     if (e.which === 1) {
                         if (e.ctrlKey || e.metaKey)
-                            eval(currentTab);
+                            evalBuildForm(currentTab);
                         else
-                            eval(newTab);
+                            evalBuildForm(newTab);
                     }
 
                 });
@@ -1746,6 +1744,7 @@ postingList();
 postingDetail();
 postingExtra();
 
+$('#azure-body-hide').remove();
 $('#azure-load-cover').delay(300).fadeOut(300, function () {
     $('#azure-load-cover').remove();
 });
