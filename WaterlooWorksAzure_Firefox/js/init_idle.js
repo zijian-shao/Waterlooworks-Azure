@@ -199,7 +199,7 @@ function initAzureIdle() {
     // employer
     if (currURL.match(/\/employer\//)) {
         injectCSS(baseURL + 'css/employer.css', 'head');
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
             action: 'executeScript',
             data: {
                 type: 'file',
