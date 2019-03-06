@@ -709,10 +709,28 @@ table.table-header-fixed {
 }
 
 @media (max-width: 767px) {
+    .dropdown-menu {
+        min-width: auto;
+    }
+
+    .dropdown-menu li a {
+        min-width: auto;
+    }
+
     .orbis-posting-actions .btn {
         display: block;
         width: 100%;
         margin-bottom: 5px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .azure-dashboard-action-btn .btn {
+        display: inline-block;
+        width: 50%;
+        margin: 0 0 5px 0;
+        float: left;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;

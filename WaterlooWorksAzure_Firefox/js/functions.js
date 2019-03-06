@@ -172,31 +172,6 @@ function isOnScreen(element) {
 }
 
 /**
- * Test current browser type
- * @param name Supports: opera, firefox, safari, ie, edge, chrome
- * @returns {boolean}
- */
-function isBrowser(name) {
-    name = name.toLowerCase();
-    if (name == 'opera')
-        return (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-    else if (name == 'firefox')
-        return typeof InstallTrigger !== 'undefined';
-    else if (name == 'safari')
-        return /constructor/i.test(window.HTMLElement) || (function (p) {
-            return p.toString() === "[object SafariRemoteNotification]";
-        })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-    else if (name == 'ie')
-        return /*@cc_on!@*/false || !!document.documentMode;
-    else if (name == 'edge')
-        return !isIE && !!window.StyleMedia;
-    else if (name == 'chrome')
-        return /chrome/.test(navigator.userAgent.toLowerCase());
-    else
-        return false;
-}
-
-/**
  * Fix table header
  * Requires table to have <thead> element
  * If already run for a table, the next run will recalculate the width of header
@@ -470,23 +445,6 @@ function addBackToTopButton() {
 }
 
 /**
- * Detect if window.hash is orbis.buildForm, BUT DO NOT execute the code
- * @returns {boolean}
- */
-function needBuildForm() {
-
-    // detect hash and execute as js
-    var hash = decodeURI(window.location.hash);
-
-    if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-/**
  * Table column css generator
  * @param selector
  * @param colID The index of nth-child css
@@ -674,6 +632,17 @@ function startAzure() {
             if (options.DASH_HideCampusConnect)
                 $('#displayStudentCampusLink').addClass('hidden');
 
+            // float dashboard buttons
+            var headerText = $('.orbisModuleHeader').text();
+            if ($('.messageView').length
+                || headerText.match(/Send A Message/)
+                || headerText.match(/Submit A Form/)
+                || headerText.match(/Form Details/)) {
+            } else {
+                // not msg view / submit form
+                $('#mainContentDiv .orbis-posting-actions:first').addClass('azure-dashboard-action-btn');
+            }
+
         } else if (currURL.match(/\/appointments\.htm/) || currURL.match(/\/appointments-further-education\.htm/)) {
             apptHideInstr();
         }
@@ -687,11 +656,10 @@ function startAzure() {
 
     // remove cover
     var hash = decodeURI(window.location.hash);
-    if (needBuildForm()) {
-
-    } else if (currURL.match(/\/coop-postings\.htm/) || currURL.match(/\/jobs-postings\.htm/)) {
+    if (currURL.match(/\/coop-postings\.htm/) || currURL.match(/\/jobs-postings\.htm/)) {
 
     } else {
+        $('#azure-body-hide').remove();
         $('#azure-load-cover').delay(300).fadeOut(300, function () {
             $('#azure-load-cover').remove();
         });

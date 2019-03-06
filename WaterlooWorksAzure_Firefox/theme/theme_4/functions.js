@@ -23,16 +23,7 @@ function startTheme() {
     if (location.href.match(/\/myAccount\/dashboard\.htm/gi)) {
         // float dashboard buttons
         var headerText = $('.orbisModuleHeader').text();
-        if ($('.messageView').length) {
 
-        } else if (headerText.match(/Send A Message/)
-            || headerText.match(/Submit A Form/)
-            || headerText.match(/Form Details/)) {
-            $('#mainContentDiv .orbisModuleHeader h1').css('margin-bottom', '20px');
-        } else {
-            // not msg view / submit form
-            $('#mainContentDiv .orbis-posting-actions:first').addClass('blue-dashboard-btn-float');
-        }
         if (headerText.match(/Form Details/)) {
             $('.orbisModuleHeader h4').attr('style', '');
         }

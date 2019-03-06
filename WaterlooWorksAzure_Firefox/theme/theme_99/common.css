@@ -109,6 +109,10 @@ a {
         left: 0;
     }
 
+    .span2.bs--hide__column {
+        width: 14.52991452991453%;
+    }
+
     .span2.bs--hide__column:before {
         border-right: none;
         width: 14.52991452991453%;
@@ -119,11 +123,11 @@ a {
         font-size: 12px;
     }
 
-    .sidebar-nav .nav-list li {
+    .sidebar-nav ul.nav-list > li {
         margin: 0;
     }
 
-    .sidebar-nav .nav-list li > a {
+    .sidebar-nav ul.nav-list > li > a {
         display: block;
         margin: 0;
         padding: 1em 1.5em !important;
@@ -138,41 +142,93 @@ a {
         -ms-transition: all 0.2s ease;
         -o-transition: all 0.2s ease;
         transition: all 0.2s ease;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
-    .sidebar-nav .nav-list li.active > a,
-    .sidebar-nav .nav-list li > a:hover,
-    .sidebar-nav .nav-list li > a:focus {
-        color: #fff;
+    .sidebar-nav ul.nav-list > li.active > a,
+    .sidebar-nav ul.nav-list > li > a:hover,
+    .sidebar-nav ul.nav-list > li > a:focus {
+        color: #fff !important;
+        font-weight: normal !important;
         background: rgba(255, 255, 255, 0.05) !important;
+        text-shadow: none !important;
+        position: relative;
     }
 
-    .sidebar-nav .nav-list li > a:hover,
-    .sidebar-nav .nav-list li > a:focus {
+    .sidebar-nav ul.nav-list > li.active a {
+        border-left: 2px solid #aaa;
+    }
+
+    .sidebar-nav ul.nav-list > li.active > a:after {
+        content: '';
+        background: #f1f1f1;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        right: -8px;
+        top: calc(50% - 8px);
+        transform: rotate(45deg);
+    }
+
+    .sidebar-nav ul.nav-list > li > a:hover,
+    .sidebar-nav ul.nav-list > li > a:focus {
         padding-left: 2em !important;
+        /*background: rgba(255, 255, 255, 0.1) !important;*/
     }
 
-    .sidebar-nav .nav-list > li > a > small {
+    .sidebar-nav ul.nav-list > li > a > small {
         display: block;
         margin: -4px auto 0;
     }
 
-    .sidebar-nav .nav-list li.active > div {
+    .sidebar-nav ul.nav-list > li.active > div {
         margin-left: 0 !important;
     }
 
-    ul[class^='childMenu'] a:before {
+    .sidebar-nav ul.childMenu1 {
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .sidebar-nav ul.childMenu2 > li > a {
+        padding-left: 2.5em !important;
+    }
+
+    .sidebar-nav ul.childMenu2 > li > a:hover,
+    .sidebar-nav ul.childMenu2 > li > a:focus {
+        padding-left: 3em !important;
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li.active > a,
+    .sidebar-nav ul[class^='childMenu'] > li > a:hover,
+    .sidebar-nav ul[class^='childMenu'] > li > a:focus {
+        color: #fff !important;
+        font-weight: normal !important;
+        background: none !important;
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li.active > a:after {
+        display: none;
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li > a:hover,
+    .sidebar-nav ul[class^='childMenu'] > li > a:focus {
+        /*background: rgba(255, 255, 255, 0.05) !important;*/
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li > a:before {
         content: '';
         font-family: FontAwesome;
         font-size: 14px;
-        padding-right: 1em;
+        padding-right: 0.6em;
     }
 
-    ul.childMenu1 a:before {
+    .sidebar-nav ul.childMenu1 > li > a:before {
         content: '\F105';
     }
 
-    ul.childMenu2 a:before {
+    .sidebar-nav ul.childMenu2 > li > a:before {
         content: '\F101';
     }
 

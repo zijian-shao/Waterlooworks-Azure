@@ -1,5 +1,7 @@
 var baseURL, currURL, options, configs, themeConfigs;
 
+var initReady = false;
+
 /**
  * Inject css
  * @param url Css text if type = 'text'; otherwise href url
@@ -28,6 +30,38 @@ function injectCSS(url, tag, type) {
 
     $(tag).append(style);
 
+}
+
+function injectCSSnative(url, tag, type, callback, id) {
+
+    var style;
+
+    if (type == 'text') {
+        style = document.createElement('style');
+        style.textContent = url;
+    } else {
+        style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.type = 'text/css';
+        style.href = url;
+    }
+    if (typeof id === typeof undefined) {
+        id = 'azure-style-' + Math.random() * 100000;
+    }
+    style.id = id;
+
+    var tags = document.getElementsByTagName(tag);
+
+    if (tags.length > 0) {
+        tags[0].appendChild(style);
+    } else {
+        document.documentElement.appendChild(style);
+    }
+
+    if (typeof callback === 'function')
+        callback();
+
+    return id;
 }
 
 /**
@@ -62,18 +96,56 @@ function injectJS(url, tag, type, callback) {
 }
 
 function addCover(color) {
-    var cover = document.createElement("div");
-    cover.id = 'azure-load-cover';
-    cover.style = 'position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; background: ' + color + ';';
-    document.documentElement.appendChild(cover);
+    var existCover = document.getElementById('azure-load-cover');
+    if (existCover) {
+        existCover.style.background = color;
+    } else {
+        var cover = document.createElement('div');
+        cover.id = 'azure-load-cover';
+        cover.style.position = 'fixed';
+        cover.style.top = '0px';
+        cover.style.right = '0px';
+        cover.style.bottom = '0px';
+        cover.style.left = '0px';
+        cover.style.zIndex = '9999';
+        cover.style.background = color;
+        document.documentElement.appendChild(cover);
+    }
+}
+
+/**
+ * Test current browser type
+ * @param name Supports: opera, firefox, safari, ie, edge, chrome
+ * @returns {boolean}
+ */
+function isBrowser(name) {
+    name = name.toLowerCase();
+    if (name == 'opera')
+        return (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    else if (name == 'firefox')
+        return typeof InstallTrigger !== 'undefined';
+    else if (name == 'safari')
+        return /constructor/i.test(window.HTMLElement) || (function (p) {
+            return p.toString() === "[object SafariRemoteNotification]";
+        })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    else if (name == 'ie')
+        return /*@cc_on!@*/false || !!document.documentMode;
+    else if (name == 'edge')
+        return !isIE && !!window.StyleMedia;
+    else if (name == 'chrome')
+        return /chrome/.test(navigator.userAgent.toLowerCase());
+    else
+        return false;
 }
 
 function initAzure() {
 
     function init() {
 
-        if (!options.GLB_Enabled)
+        if (!options.GLB_Enabled) {
+            document.getElementById('azure-body-hide').remove();
             return;
+        }
 
         // redirect to home
         if (options.GLB_AutoRedirectToLogin
@@ -86,6 +158,11 @@ function initAzure() {
         themeConfigs = getThemeConfigs(options.GLB_ThemeID);
         addCover(themeConfigs.overlayColor);
 
+        initReady = true;
+    }
+
+    if (isBrowser('firefox')) {
+        injectCSSnative('body{opacity:0!important}', 'head', 'text', null, 'azure-body-hide');
     }
 
     baseURL = browser.runtime.getURL('');

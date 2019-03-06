@@ -2,31 +2,27 @@ var template = {};
 tDocLoader();
 
 function t(key, params) {
-    var s = browser.i18n.getMessage(key, params)
-    if (s == "") {
-        throw "Missing string '" + key + "'.";
+    var s = browser.i18n.getMessage(key, params);
+    if (s === '') {
+        return "Missing string '" + key + "'.";
     }
     return s;
 }
 
-function o(key) {
-    // document.write(t(key));
-}
-
 function tE(id, key, attr, esc) {
     if (attr) {
-        document.getElementById(id).setAttribute(attr, t(key));
-    } else if (typeof esc == "undefined" || esc) {
-        document.getElementById(id).appendChild(document.createTextNode(t(key)));
+        $('#' + id).attr(attr, t(key));
+    } else if (typeof esc === typeof undefined || esc) {
+        $('#' + id).append(t(key));
     } else {
-        document.getElementById(id).innerHTML = t(key);
+        $('#' + id).html(t(key));
     }
 }
 
 function tHTML(html) {
-    var node = document.createElement("div");
-    node.innerHTML = html.replace(/>\s+</g, '><'); // spaces are removed; use &nbsp; for an explicit space
-    tNodeList(node.querySelectorAll("*"));
+    var node = $('<div/>');
+    node.html(html.replace(/>\s+</g, '><')); // spaces are removed; use &nbsp; for an explicit space
+    tNodeList(node[0].querySelectorAll("*"));
     var child = node.removeChild(node.firstElementChild);
     node.remove();
     return child;
@@ -53,13 +49,13 @@ function tNodeList(nodes) {
             var value = t(attr.value);
             switch (name) {
                 case "text":
-                    node.insertBefore(document.createTextNode(value), node.firstChild);
+                    $(node).text(value);
                     break;
                 case "html":
-                    node.insertAdjacentHTML("afterbegin", value);
+                    $(node).html(value);
                     break;
                 default:
-                    node.setAttribute(name, value);
+                    $(node).attr(name, value);
             }
             node.removeAttribute(attr.nodeName);
         }

@@ -91,9 +91,103 @@ function versionCompare(v1, v2, options) {
     return 0;
 }
 
+function orbisBuildForm(parameters, action, target) {
+    var theForm = $('<form/>', {
+        method: 'post',
+        action: action,
+        enctype: 'multipart/form-data'
+    });
+
+    if (typeof target === typeof '') {
+        theForm.attr('target', target);
+    } else if (typeof target === typeof true) {
+        theForm.attr('target', '_blank' + Math.random() * 100000);
+    }
+
+    $.each(parameters, function (name, value) {
+
+        var elem = theForm.find('[name="' + name + '"]');
+
+        if (typeof value === typeof []) {
+            $.each(value, function (arrayIndex, arrayValue) {
+                $('<input/>', {
+                    type: 'checkbox',
+                    name: name,
+                    value: arrayValue,
+                    checked: 'checked',
+                    style: 'display:none'
+                }).appendTo(theForm);
+            });
+        } else if (typeof value === typeof {}) {
+            if (elem.length > 0) {
+                elem.val(JSON.stringify(value));
+            } else {
+                $('<input/>', {
+                    type: 'hidden',
+                    name: name,
+                    value: JSON.stringify(value)
+                }).appendTo(theForm);
+            }
+        } else {
+            if (elem.length > 0) {
+                elem.val(value);
+            } else {
+                $('<input/>', {
+                    type: "hidden",
+                    name: name,
+                    value: value
+                }).appendTo(theForm);
+            }
+        }
+    });
+
+    $('<input/>', {
+        type: 'hidden',
+        name: 'rand',
+        value: Math.floor(Math.random() * 100000)
+    }).appendTo(theForm);
+
+    theForm.appendTo('body');
+    return theForm;
+}
+
+/**
+ * Detect if window.hash contains #orbis.buildForm
+ * @returns {boolean}
+ */
+function testBuildForm() {
+
+    // detect hash and execute as js
+    var hash = decodeURIComponent(window.location.hash).trim();
+
+    if (hash.match(/#orbisApp\.buildForm\(.*\)\.submit\(\);/gi)) {
+
+        hash = hash.substring(1);
+        hash = hash.replace(/ /g, '').replace(/orbisApp\.buildForm\(/g, '').replace(/\)\.submit\(\);/g, '');
+        hash = hash.replace(/'/g, '"').replace(/([a-zA-Z0-9\-_]+):/g, "\"$1\":");
+        hash = '[' + hash + ']';
+        hash = JSON.parse(hash);
+
+        if (hash[1] == '') {
+            hash[1] = window.location.href.split('#')[0];
+        }
+
+        orbisBuildForm(hash[0], hash[1], hash[2]).submit();
+
+        return true;
+
+    } else {
+        return false;
+    }
+
+}
+
 function initAzureIdle() {
 
     if (!options.GLB_Enabled)
+        return;
+
+    if (testBuildForm())
         return;
 
     var jsText = '';
@@ -101,6 +195,19 @@ function initAzureIdle() {
     // css
     customFont();
     injectCSS(baseURL + 'css/common.css', 'head');
+
+    // employer
+    if (currURL.match(/\/employer\//)) {
+        injectCSS(baseURL + 'css/employer.css', 'head');
+        chrome.runtime.sendMessage({
+            action: 'executeScript',
+            data: {
+                type: 'file',
+                content: 'js/employer.js'
+            }
+        });
+        return;
+    }
 
     if (currURL.match(/\/myAccount\//i)) {
         // student
@@ -111,10 +218,6 @@ function initAzureIdle() {
             injectCSS(baseURL + 'css/homepage.css', 'head');
             replaceHomepage();
         }
-    } else if (currURL.match(/\/employer\//)) {
-        // employer page
-        injectCSS(baseURL + 'theme/theme_0/common.css', 'head');
-        injectCSS(baseURL + 'css/employer.css', 'head');
     }
 
     // global var
@@ -125,18 +228,16 @@ function initAzureIdle() {
     injectJS(jsText, 'head', 'text');
 
     // extra functions
-    injectJS(baseURL + 'js/functions_inject.js', 'head', 'url', function () {
-        if (!needBuildForm()) {
-            setTimeout(function () {
-                if (currURL.match(/\/myAccount\/dashboard\.htm/i))
-                    injectJS(baseURL + 'js/messages.js', 'head');
-                if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)) {
-                    injectJS(baseURL + 'js/postings.js', 'head');
-                    if (options.JOB_ShortlistExport)
-                        injectJS(baseURL + 'js/libs/shortlist-export.js', 'head');
-                }
-            }, 50);
-        }
+    injectJS(baseURL + 'js/functions_inject.js', 'body', 'url', function () {
+        setTimeout(function () {
+            if (currURL.match(/\/myAccount\/dashboard\.htm/i))
+                injectJS(baseURL + 'js/messages.js', 'body');
+            if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)) {
+                injectJS(baseURL + 'js/postings.js', 'body');
+                if (options.JOB_ShortlistExport)
+                    injectJS(baseURL + 'js/libs/shortlist-export.js', 'body');
+            }
+        }, 50);
     });
 
     // theme func
@@ -155,4 +256,20 @@ function initAzureIdle() {
     startAzure();
 }
 
-initAzureIdle();
+if (initReady) {
+    initAzureIdle();
+} else {
+    var initIntvCnt = 0;
+    var initIntv = setInterval(function () {
+        if (initReady) {
+            initAzureIdle();
+            clearInterval(initIntv);
+        } else {
+            initIntvCnt++;
+            if (initIntvCnt > 50) {
+                $('#azure-load-cover').remove();
+                clearInterval(initIntv);
+            }
+        }
+    }, 100);
+}
