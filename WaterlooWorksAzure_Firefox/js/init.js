@@ -123,7 +123,7 @@ function isBrowser(name) {
     if (name == 'opera')
         return (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
     else if (name == 'firefox')
-        return typeof InstallTrigger !== 'undefined';
+        return /firefox/.test(navigator.userAgent.toLowerCase());
     else if (name == 'safari')
         return /constructor/i.test(window.HTMLElement) || (function (p) {
             return p.toString() === "[object SafariRemoteNotification]";
@@ -142,8 +142,10 @@ function initAzure() {
 
     function init() {
 
+        var hideBody = document.getElementById('azure-body-hide');
+
         if (!options.GLB_Enabled) {
-            document.getElementById('azure-body-hide').remove();
+            if (hideBody !== null) hideBody.remove();
             return;
         }
 
@@ -157,6 +159,8 @@ function initAzure() {
         // overlay
         themeConfigs = getThemeConfigs(options.GLB_ThemeID);
         addCover(themeConfigs.overlayColor);
+
+        if (hideBody !== null) hideBody.remove();
 
         initReady = true;
     }

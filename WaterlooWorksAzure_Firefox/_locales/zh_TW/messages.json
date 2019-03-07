@@ -471,7 +471,7 @@
     "message": "歡迎使用"
   },
   "welcomeIntro": {
-    "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p>如果你覺得此擴展還不錯，<a href=\"https://addons.mozilla.org/firefox/addon/waterlooworks-azure/\" target=\"_blank\">請在 Firefox 商店給個五星好評吧</a>，親~</p>"
+    "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p>如果你覺得此擴展還不錯，<a data-href=\"azureStore\" target=\"_blank\">請在 Firefox 商店給個五星好評吧</a>，親~</p>"
   },
   "welcomePopupButton": {
     "message": "好的，我知道了"

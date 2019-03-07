@@ -199,12 +199,8 @@ function initAzureIdle() {
     // employer
     if (currURL.match(/\/employer\//)) {
         injectCSS(baseURL + 'css/employer.css', 'head');
-        browser.runtime.sendMessage({
-            action: 'executeScript',
-            data: {
-                type: 'file',
-                content: 'js/employer.js'
-            }
+        $('#azure-load-cover').delay(300).fadeOut(300, function () {
+            $('#azure-load-cover').remove();
         });
         return;
     }

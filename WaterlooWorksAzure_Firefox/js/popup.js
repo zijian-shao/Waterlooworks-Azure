@@ -31,12 +31,12 @@ function initPopup() {
             return {name: M[0], version: M[1]};
         }
 
-        var urlText = 'https://docs.google.com/forms/d/e/1FAIpQLSfXzHmscryMryP_LyaRKdNDVUKBz_9NTdVGOSnlEQEBZDPUoQ/viewform?usp=pp_url' +
-            '&entry.775641191=' + encodeURI(browser.runtime.getManifest().version) +
-            '&entry.424865672=' + encodeURI(_getBrowser().name + ' ' + _getBrowser().version) +
-            '&entry.1807838560=' + encodeURI(_getOS());
+        var urlTpl = getLink('feedback');
+        urlTpl = urlTpl.replace('@@extVersion@@', encodeURI(browser.runtime.getManifest().version));
+        urlTpl = urlTpl.replace('@@browser@@', encodeURI(_getBrowser().name + ' ' + _getBrowser().version));
+        urlTpl = urlTpl.replace('@@os@@', encodeURI(_getOS()));
 
-        return urlText;
+        return urlTpl;
     }
 
     browser.storage.sync.get({
@@ -71,13 +71,13 @@ function initPopup() {
 
     $('#more-options').on('click', function () {
         browser.tabs.create({
-            url: browser.runtime.getURL('') + 'html/options.html'
+            url: browser.runtime.getURL('html/options.html')
         });
     });
 
     $('#open-waterlooworks').on('click', function () {
         browser.tabs.create({
-            url: 'https://waterlooworks.uwaterloo.ca'
+            url: getLink('waterlooWorksLink')
         });
     });
 

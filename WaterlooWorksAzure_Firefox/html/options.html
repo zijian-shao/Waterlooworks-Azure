@@ -22,25 +22,20 @@
             <div class="share-box">
                 <div class="share-tag" i18n-text="share"></div>
                 <!-- Facebook Share -->
-                <a data-open-in="popup" data-width="560"
-                   data-href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox&display=popup&ref=plugin&src=share_button"
+                <a data-open-in="popup" data-width="560" data-href="facebookShare"
                    target="_blank" class="share-link share-link-facebook"></a>
-
                 <!-- Twitter Share -->
-                <a data-open-in="popup" data-width="500"
-                   data-href="https://twitter.com/intent/tweet?hashtags=UWaterloo&original_referer=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2F&ref_src=twsrc%5Etfw&text=WaterlooWorks%20Azure%20-%20The%20best%20browser%20extension%20to%20enhance%20experience%20with%20WaterlooWorks&tw_p=tweetbutton&url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox"
+                <a data-open-in="popup" data-width="500" data-href="twitterShare"
                    target="_blank" class="share-link share-link-twitter"></a>
-
                 <!-- Reddit Share -->
-                <a data-open-in="newtab"
-                   data-href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox&title=WaterlooWorks+Azure+-+The+best+browser+extension+to+enhance+experience+with+WaterlooWorks"
+                <a data-open-in="newtab" data-href="redditShare"
                    target="_blank" class="share-link share-link-reddit"></a>
-
                 <!-- Google Plus Share -->
-                <a data-open-in="popup" data-width="380"
-                   data-href="https://plus.google.com/share?url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox"
-                   target="_blank" class="share-link share-link-googleplus"></a>
-
+                <!--<a data-open-in="popup" data-width="380" data-href="gplusShare"-->
+                <!--target="_blank" class="share-link share-link-googleplus"></a>-->
+                <!-- LinkedIn Share -->
+                <a data-open-in="popup" data-width="500" data-href="linkedInShare" target="_blank"
+                   class="share-link share-link-linkedin"></a>
                 <!-- Copy Link -->
                 <a data-open-in="copy" class="share-link share-link-copy"></a>
             </div>
@@ -94,8 +89,7 @@
                     <h5 i18n-text="recommended"></h5>
                 </div>
                 <div class="table">
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/learn-darklight/"
-                       target="_blank">
+                    <a data-href="darklightStore" target="_blank">
                         <div class="rec-item">
                             <div class="rec-icon"><img src="../img/options-rec-learn.png" alt="Learn Darklight"></div>
                             <div class="rec-info">
@@ -104,8 +98,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/waterloo-autolog/"
-                       target="_blank">
+                    <a data-href="autologStore" target="_blank">
                         <div class="rec-item">
                             <div class="rec-icon"><img src="../img/options-rec-log.png" alt="Waterloo Autolog"></div>
                             <div class="rec-info">
@@ -114,8 +107,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="https://addons.mozilla.org/en-US/firefox/addon/quest-raspberry/"
-                       target="_blank">
+                    <a data-href="raspberryStore" target="_blank">
                         <div class="rec-item">
                             <div class="rec-icon"><img src="../img/options-rec-quest.png" alt="Quest Raspberry"></div>
                             <div class="rec-info">
@@ -470,21 +462,24 @@
                     <p>
                         <input type="radio" id="opt-job-2-0" name="JOB_ColumnDisplayType" value="0"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine">
+                        <label for="opt-job-2-0" i18n-html="useDefaultStyleAndCombine"></label>
+                        <label for="opt-job-2-0">
                             <img src="../img/list-style-0.png" alt="Preview" class="list-style-sample">
                         </label>
                     </p>
                     <p>
                         <input type="radio" id="opt-job-2-2" name="JOB_ColumnDisplayType" value="2"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-2" i18n-html="useModernTileStyle">
+                        <label for="opt-job-2-2" i18n-html="useModernTileStyle"></label>
+                        <label for="opt-job-2-2">
                             <img src="../img/list-style-1.png" alt="Preview" class="list-style-sample">
                         </label>
                     </p>
                     <p>
                         <input type="radio" id="opt-job-2-1" name="JOB_ColumnDisplayType" value="1"
                                data-option-name="JOB_ColumnDisplayType" data-option-type="enum">
-                        <label for="opt-job-2-1" i18n-html="chooseColumnsToBeDisplayed">
+                        <label for="opt-job-2-1" i18n-html="chooseColumnsToBeDisplayed"></label>
+                        <label for="opt-job-2-1">
                             <img src="../img/list-style-2.png" alt="Preview" class="list-style-sample">
                         </label>
                     </p>
@@ -972,15 +967,11 @@
                 <p i18n-text="version"><span id="azure-version"></span></p>
                 <p i18n-text="copyright"></p>
                 <div>
-                    <a class="btn btn-primary" href="https://www.zijianshao.com/wwazure/" target="_blank"
+                    <a class="btn btn-primary" data-href="officialWebsite" target="_blank"
                        i18n-text="officialWebsite"></a>
-                    <a class="btn btn-success" href="https://www.paypal.me/zjshao" target="_blank"
-                       i18n-text="contribute"></a>
-                    <a class="btn btn-default"
-                       href="https://github.com/SssWind/Waterlooworks-Azure" target="_blank">GitHub</a>
-                    <a class="btn btn-default"
-                       href="https://addons.mozilla.org/firefox/addon/waterlooworks-azure/"
-                       target="_blank" i18n-text="chromeWebStore"></a>
+                    <a class="btn btn-success" data-href="donate" target="_blank" i18n-text="contribute"></a>
+                    <a class="btn btn-default" data-href="github" target="_blank">GitHub</a>
+                    <a class="btn btn-default" data-href="azureStore" target="_blank" i18n-text="chromeWebStore"></a>
                 </div>
 
                 <!-- Welcome -->

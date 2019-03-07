@@ -249,3 +249,26 @@ function getThemeConfigs(id) {
         return configs["theme_" + id];
 
 }
+
+function getLink(key) {
+    var list = {
+        darklightStore: 'https://addons.mozilla.org/firefox/addon/learn-darklight/',
+        azureStore: 'https://addons.mozilla.org/firefox/addon/waterlooworks-azure/',
+        autologStore: 'https://addons.mozilla.org/firefox/addon/waterloo-autolog/',
+        raspberryStore: 'https://addons.mozilla.org/firefox/addon/quest-raspberry/',
+        feedback: 'https://docs.google.com/forms/d/e/1FAIpQLSfXzHmscryMryP_LyaRKdNDVUKBz_9NTdVGOSnlEQEBZDPUoQ/viewform?usp=pp_url&entry.775641191=@@extVersion@@&entry.424865672=@@browser@@&entry.1807838560=@@os@@',
+        officialWebsite: 'https://www.zijianshao.com/wwazure/',
+        github: 'https://github.com/SssWind/Waterlooworks-Azure',
+        donate: 'https://www.paypal.me/zjshao',
+        linkShare: 'https://www.zijianshao.com/wwazure/sharelink/?platform=firefox',
+        facebookShare: 'https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox&display=popup&ref=plugin&src=share_button',
+        twitterShare: 'https://twitter.com/intent/tweet?hashtags=UWaterloo&original_referer=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2F&ref_src=twsrc%5Etfw&text=WaterlooWorks%20Azure%20-%20The%20best%20browser%20extension%20to%20enhance%20experience%20with%20WaterlooWorks&tw_p=tweetbutton&url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox',
+        redditShare: 'https://www.reddit.com/submit?url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox&title=WaterlooWorks+Azure+-+The+best+browser+extension+to+enhance+experience+with+WaterlooWorks',
+        gplusShare: 'https://plus.google.com/share?url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox',
+        linkedInShare: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox',
+        mailTo: 'mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension',
+        waterlooWorksLink: 'https://waterlooworks.uwaterloo.ca',
+        uninstall: 'https://www.zijianshao.com/wwazure/uninstall/?platform=@@platform@@&version=@@extVersion@@&browser=@@browser@@&os=@@os@@'
+    };
+    return list[key];
+}
