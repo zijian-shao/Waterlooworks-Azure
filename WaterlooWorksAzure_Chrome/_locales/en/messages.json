@@ -471,7 +471,7 @@
     "message": "Welcome"
   },
   "welcomeIntro": {
-    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform. It offers multiple new themes and adds a variety of new helpful features to the original website.</p><p>If you like this extension, please <a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">rate and leave a comment</a> in Chrome Web Store.</p>"
+    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform. It offers multiple new themes and adds a variety of new helpful features to the original website.</p><p>If you like this extension, please <a data-href=\"azureStore\" target=\"_blank\">rate and leave a comment</a> in Chrome Web Store.</p>"
   },
   "welcomePopupButton": {
     "message": "OK, Got It"

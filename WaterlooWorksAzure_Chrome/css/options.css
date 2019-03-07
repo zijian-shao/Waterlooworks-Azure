@@ -1122,6 +1122,14 @@ div.arrow.left {
     /*background-color: #dc4e41;*/
 }
 
+.share-box a.share-link-linkedin {
+    background-image: url(../img/share-linkedin.png);
+}
+
+.share-box a.share-link-googleplus:hover {
+    /*background-color: #dc4e41;*/
+}
+
 .font-sample {
     display: block;
     width: auto;
@@ -1147,9 +1155,9 @@ div.arrow.left {
 }
 
 .list-style-sample {
-    width: 100%;
+    width: calc(100% - 40px);
     max-width: 500px;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 40px;
     display: block;
 }
 

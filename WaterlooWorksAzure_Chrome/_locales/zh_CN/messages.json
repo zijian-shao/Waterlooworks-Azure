@@ -471,7 +471,7 @@
     "message": "欢迎使用"
   },
   "welcomeIntro": {
-    "message": "<p>欢迎使用 WaterlooWorks Azure！这是目前最棒的一款针对 WaterlooWorks 开发的浏览器扩展插件。此扩展可以使该网站平台更易于使用，包括但不限于调整页面样式、新增各种快捷功能等。</p><p>如果你觉得此扩展还不错，<a href=\"https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm\" target=\"_blank\">请在 Chrome 商店给个五星好评吧</a>，亲~</p>"
+    "message": "<p>欢迎使用 WaterlooWorks Azure！这是目前最棒的一款针对 WaterlooWorks 开发的浏览器扩展插件。此扩展可以使该网站平台更易于使用，包括但不限于调整页面样式、新增各种快捷功能等。</p><p>如果你觉得此扩展还不错，<a data-href=\"azureStore\" target=\"_blank\">请在 Chrome 商店给个五星好评吧</a>，亲~</p>"
   },
   "welcomePopupButton": {
     "message": "好的，我知道了"

@@ -31,12 +31,12 @@ function initOptions() {
             return {name: M[0], version: M[1]};
         }
 
-        var urlText = 'https://docs.google.com/forms/d/e/1FAIpQLSfXzHmscryMryP_LyaRKdNDVUKBz_9NTdVGOSnlEQEBZDPUoQ/viewform?usp=pp_url' +
-            '&entry.775641191=' + encodeURI(chrome.runtime.getManifest().version) +
-            '&entry.424865672=' + encodeURI(_getBrowser().name + ' ' + _getBrowser().version) +
-            '&entry.1807838560=' + encodeURI(_getOS());
+        var urlTpl = getLink('feedback');
+        urlTpl = urlTpl.replace('@@extVersion@@', encodeURI(chrome.runtime.getManifest().version));
+        urlTpl = urlTpl.replace('@@browser@@', encodeURI(_getBrowser().name + ' ' + _getBrowser().version));
+        urlTpl = urlTpl.replace('@@os@@', encodeURI(_getOS()));
 
-        return urlText;
+        return urlTpl;
     }
 
     function createItemTag(optName, optVal, parentID, save) {
@@ -459,7 +459,7 @@ function initOptions() {
         $('.share-link').on('click', function (e) {
             e.preventDefault();
             var openIn = $(this).attr('data-open-in');
-            var href = $(this).attr('data-href');
+            var href = $(this).attr('href');
             if (openIn == 'popup') {
                 var width = $(this).attr('data-width');
                 var height = screen.height * 0.6;
@@ -471,7 +471,7 @@ function initOptions() {
             } else if (openIn == 'newtab') {
                 window.open(href, '_blank');
             } else if (openIn == 'copy') {
-                $('#clipboard-input').val('https://www.zijianshao.com/wwazure/sharelink/?platform=chrome').select();
+                $('#clipboard-input').val(getLink('linkShare')).select();
                 document.execCommand('Copy');
                 alert('Copied to Clipboard~');
             }
@@ -533,6 +533,10 @@ function initOptions() {
     }
 
     $(window).on('load', function (e) {
+
+        $('*[data-href]').each(function (idx, elem) {
+            $(elem).attr('href', getLink($(elem).attr('data-href')));
+        });
 
         loadThemes();
 

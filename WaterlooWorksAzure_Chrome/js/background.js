@@ -59,12 +59,13 @@ function getUninstallLink() {
         return {name: M[0], version: M[1]};
     }
 
-    var urlText = 'https://www.zijianshao.com/wwazure/uninstall/?platform=' + _getBrowser().name.toLowerCase() +
-        '&version=' + encodeURI(chrome.runtime.getManifest().version) +
-        '&browser=' + encodeURI(_getBrowser().name + ' ' + _getBrowser().version) +
-        '&os=' + encodeURI(_getOS());
+    var urlTpl = getLink('uninstall');
+    urlTpl = urlTpl.replace('@@platform@@', encodeURI(_getBrowser().name.toLowerCase()));
+    urlTpl = urlTpl.replace('@@extVersion@@', encodeURI(chrome.runtime.getManifest().version));
+    urlTpl = urlTpl.replace('@@browser@@', encodeURI(_getBrowser().name + ' ' + _getBrowser().version));
+    urlTpl = urlTpl.replace('@@os@@', encodeURI(_getOS()));
 
-    return urlText;
+    return urlTpl;
 }
 
 function createToolbarContextMenu(id, title, contexts, onClick) {
@@ -172,17 +173,17 @@ function initBackground() {
      */
     createToolbarContextMenu('azure-website', chrome.i18n.getMessage('officialWebsite'), ['browser_action'], function () {
         chrome.tabs.create({
-            'url': 'https://www.zijianshao.com/wwazure/'
+            'url': getLink('officialWebsite')
         });
     });
     createToolbarContextMenu('azure-contribute', chrome.i18n.getMessage('contribute'), ['browser_action'], function () {
         chrome.tabs.create({
-            'url': 'https://www.paypal.me/zjshao'
+            'url': getLink('donate')
         });
     });
     createToolbarContextMenu('azure-github', 'GitHub', ['browser_action'], function () {
         chrome.tabs.create({
-            'url': 'https://github.com/SssWind/Waterlooworks-Azure'
+            'url': getLink('github')
         });
     });
 }
