@@ -334,8 +334,7 @@ function showPostingModal(tr) {
                     jobTitle = currVal.children('td').last().text().trim();
                 } else if (rowName.match(/organization/i)) {
                     jobCompany = currVal.children('td').last().text().trim();
-                }
-                else if (rowConfig[key] == true && rowName.match(new RegExp(key, 'i'))) {
+                } else if (rowConfig[key] == true && rowName.match(new RegExp(key, 'i'))) {
                     newTable.append(currVal);
                 }
             });
@@ -383,8 +382,7 @@ function showPostingModal(tr) {
                     btnTxt = 'Shortlist';
                 }
 
-            }
-            else {
+            } else {
                 if (options.JOB_PopupModalArrowKey) {
                     btnTxt = 'Un<u>s</u>hortlist';
                     btnAttr['accesskey'] = 's';
@@ -860,7 +858,7 @@ function postingBatch() {
  */
 function postingExtra() {
 
-    if (typeof jQuery === typeof  undefined) return;
+    if (typeof jQuery === typeof undefined) return;
 
     // CECA refused to change the label from "Country" to "Country / Region".
     // And their replied was very impatient and arrogant.
@@ -1519,7 +1517,7 @@ function postingListAjax(table, placeholder) {
  */
 function postingList() {
 
-    if (typeof jQuery === typeof  undefined) return;
+    if (typeof jQuery === typeof undefined) return;
 
     var placeholder = $('#postingsTablePlaceholder');
     if (!placeholder.length)
@@ -1556,15 +1554,15 @@ function postingList() {
 
     // coop
     if (currURL.match(/\/myAccount\/co-op\/coop-postings\.htm/gi))
-        injectCSS(baseURL + 'css/postings-coop.css', 'head');
+        $('body').addClass('postings-coop');
 
     // grad / full-time
     else if (currURL.match(/\/myAccount\/hire-waterloo\/full-time-jobs\/jobs-postings\.htm/gi))
-        injectCSS(baseURL + 'css/postings-grad.css', 'head');
+        $('body').addClass('postings-grad');
 
     // alumni
     else if (currURL.match(/\/myAccount\/hire-waterloo\/other-jobs\/jobs-postings\.htm/gi))
-        injectCSS(baseURL + 'css/postings-alumni.css', 'head');
+        $('body').addClass('postings-alumni');
 
     // popup modal
     if (options.JOB_PopupModal) {
@@ -1620,7 +1618,7 @@ function postingList() {
  */
 function postingDetail() {
 
-    if (typeof jQuery === typeof  undefined) return;
+    if (typeof jQuery === typeof undefined) return;
 
     var divDetail = $('#postingDiv');
     if (!divDetail.length)
@@ -1744,6 +1742,4 @@ postingList();
 postingDetail();
 postingExtra();
 
-$('#azure-load-cover').delay(300).fadeOut(300, function () {
-    $('#azure-load-cover').remove();
-});
+removeOverlay();

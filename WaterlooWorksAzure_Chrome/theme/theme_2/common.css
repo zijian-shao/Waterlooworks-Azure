@@ -626,7 +626,7 @@ input.btn-inverse {
         background: rgba(255, 255, 255, 0.05) !important;
         /*padding-top: 10px;*/
         /*padding-bottom: 10px;*/
-        box-shadow: inset 3px 0 0 0 rgba(255, 255, 255, 0.2);
+        /*box-shadow: inset 3px 0 0 0 #606978;*/
     }
 
     .sidebar-nav > .nav-list > .active ul[class^="childMenu"] a {
@@ -635,6 +635,8 @@ input.btn-inverse {
         white-space: nowrap;
         text-overflow: ellipsis;
         background: none !important;
+        border-bottom: 1px solid #3e444a;
+        /*border-left: 3px solid #3e444a;*/
     }
 
     .sidebar-nav > .nav-list > .active ul[class^="childMenu"] a:hover {
@@ -648,7 +650,7 @@ input.btn-inverse {
     }
 
     .sidebar-nav > .nav-list > .active ul.childMenu2 a:before {
-        content: "\f101";
+        content: "\f105";
     }
 
     .sidebar-nav > .nav-list > .active ul[class^="childMenu"] .active > a {
