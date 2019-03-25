@@ -180,6 +180,18 @@ function unblockUI(elem, time) {
     });
 }
 
+function removeOverlay(forcible) {
+    if (forcible === true) {
+        $('.azure-load-cover').remove();
+    } else {
+        setTimeout(function () {
+            $('#azure-load-cover').on('webkitTransitionEnd transitionend', function (e) {
+                $(this).remove();
+            }).addClass('azure-load-cover-hide');
+        }, 200);
+    }
+}
+
 /**
  * Set cookie
  * @param key
@@ -540,7 +552,7 @@ function dashboardNestedBoxes() {
 
 function startAzureInject() {
 
-    if (typeof jQuery === typeof  undefined) return;
+    if (typeof jQuery === typeof undefined) return;
 
     // dashboard nested boxes
     if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {

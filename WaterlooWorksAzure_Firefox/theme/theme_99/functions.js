@@ -27,7 +27,7 @@ function startTheme() {
                 fixTableHeader($('#postingsTable'));
             });
             $('.bs--hide__column').before(hideBtn);
-            fixTableHeader($('#postingsTable'));
+            // fixTableHeader($('#postingsTable'));
         }
     }
 

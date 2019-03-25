@@ -102,12 +102,7 @@ function addCover(color) {
     } else {
         var cover = document.createElement('div');
         cover.id = 'azure-load-cover';
-        cover.style.position = 'fixed';
-        cover.style.top = '0px';
-        cover.style.right = '0px';
-        cover.style.bottom = '0px';
-        cover.style.left = '0px';
-        cover.style.zIndex = '9999';
+        cover.className = 'azure-load-cover';
         cover.style.background = color;
         document.documentElement.appendChild(cover);
     }

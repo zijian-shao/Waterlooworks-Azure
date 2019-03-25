@@ -491,3 +491,427 @@
 .postingsTable-tile > tbody > tr > td:nth-child(6) {
     display: none;
 }
+
+/* postings-coop */
+/* apply btns */
+.postings-coop .postingsTable > tbody > tr > td:first-child,
+.postings-coop .postingsTable > thead > tr > th:first-child {
+    width: 10%
+}
+
+/* app stat */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(2),
+.postings-coop .postingsTable > thead > tr > th:nth-child(2) {
+    width: 5%
+}
+
+/* id */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(3),
+.postings-coop .postingsTable > thead > tr > th:nth-child(3) {
+    width: 5%
+}
+
+/* job title */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(4),
+.postings-coop .postingsTable > thead > tr > th:nth-child(4) {
+    width: 30%
+}
+
+/* organization */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(5),
+.postings-coop .postingsTable > thead > tr > th:nth-child(5) {
+    width: 18%
+}
+
+/* division */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(6),
+.postings-coop .postingsTable > thead > tr > th:nth-child(6) {
+    width: 14%
+}
+
+/* openings */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(7),
+.postings-coop .postingsTable > thead > tr > th:nth-child(7) {
+    width: 5%
+}
+
+/* int stat */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(8),
+.postings-coop .postingsTable > thead > tr > th:nth-child(8) {
+    width: 10%
+}
+
+/* city */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(9),
+.postings-coop .postingsTable > thead > tr > th:nth-child(9) {
+    width: 8%
+}
+
+/* level */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(10),
+.postings-coop .postingsTable > thead > tr > th:nth-child(10) {
+    width: 10%
+}
+
+/* apps */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(11),
+.postings-coop .postingsTable > thead > tr > th:nth-child(11) {
+    width: 4%
+}
+
+/* deadline */
+.postings-coop .postingsTable > tbody > tr > td:nth-child(12),
+.postings-coop .postingsTable > thead > tr > th:nth-child(12) {
+    width: 8%
+}
+
+/* del btn */
+.postings-coop .postingsTable > tbody > tr > td:last-child,
+.postings-coop .postingsTable > thead > tr > th:last-child {
+    width: 4%
+}
+
+/* ======= tile ======= */
+.postings-coop .postingsTable-tile > thead > tr > th:nth-child(1),
+.postings-coop .postingsTable-tile > thead > tr > th:nth-child(2),
+.postings-coop .postingsTable-tile > thead > tr > th:last-child {
+    display: none;
+}
+
+/* open */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(7) {
+    top: 95px;
+    left: 70px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(7):before {
+    content: '\f015';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(7):after {
+    /*content: ' Opens';*/
+}
+
+/* int stat */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(8) {
+    top: 12px;
+    left: 70px;
+    width: auto;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* city */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(9) {
+    top: 95px;
+    left: 130px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(9):before {
+    content: '\f041';
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+/* level */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(10) {
+    top: 114px;
+    left: 126px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(10):before {
+    content: '\f0fc';
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+/* apps */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(11) {
+    top: 95px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(11):before {
+    content: '\f007';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(11):after {
+    /*content: ' Apps';*/
+}
+
+/* deadline */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(12) {
+    top: 114px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(12):before {
+    content: '\f017';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+/* not interested */
+.postings-coop .postingsTable-tile > tbody > tr > td:nth-child(13) {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+    text-align: right !important;
+    width: 30%;
+}
+
+/* postings-grad */
+/* apply btns */
+.postings-grad .postingsTable > tbody > tr > td:first-child,
+.postings-grad .postingsTable > thead > tr > th:first-child {
+    width: 10%
+}
+
+/* app stat */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(2),
+.postings-grad .postingsTable > thead > tr > th:nth-child(2) {
+    width: 8%
+}
+
+/* id */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(3),
+.postings-grad .postingsTable > thead > tr > th:nth-child(3) {
+    width: 8%
+}
+
+/* job title */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(4),
+.postings-grad .postingsTable > thead > tr > th:nth-child(4) {
+    width: 35%
+}
+
+/* organization */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(5),
+.postings-grad .postingsTable > thead > tr > th:nth-child(5) {
+    width: 20%
+}
+
+/* division */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(6),
+.postings-grad .postingsTable > thead > tr > th:nth-child(6) {
+    width: 15%
+}
+
+/* pos type */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(7),
+.postings-grad .postingsTable > thead > tr > th:nth-child(7) {
+    width: 10%
+}
+
+/* int stat */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(8),
+.postings-grad .postingsTable > thead > tr > th:nth-child(8) {
+    width: 12%
+}
+
+/* deadline */
+.postings-grad .postingsTable > tbody > tr > td:nth-child(9),
+.postings-grad .postingsTable > thead > tr > th:nth-child(9) {
+    width: 8%
+}
+
+/* del btn */
+.postings-grad .postingsTable > tbody > tr > td:last-child,
+.postings-grad .postingsTable > thead > tr > th:last-child {
+    width: 6%
+}
+
+/* ======= tile ======= */
+.postings-grad .postingsTable-tile > thead > tr > th:nth-child(1),
+.postings-grad .postingsTable-tile > thead > tr > th:nth-child(2),
+.postings-grad .postingsTable-tile > thead > tr > th:last-child {
+    display: none;
+}
+
+.postings-grad .postingsTable-tile > tbody > tr {
+    height: 180px;
+}
+
+/* type */
+.postings-grad .postingsTable-tile > tbody > tr > td:nth-child(7) {
+    top: 90px;
+    left: 120px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-grad .postingsTable-tile > tbody > tr > td:nth-child(7):before {
+    content: '\f114';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+/* int stat */
+.postings-grad .postingsTable-tile > tbody > tr > td:nth-child(8) {
+    top: 12px;
+    left: 70px;
+    width: auto;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* deadline */
+.postings-grad .postingsTable-tile > tbody > tr > td:nth-child(9) {
+    top: 90px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-grad .postingsTable-tile > tbody > tr > td:nth-child(9):before {
+    content: '\f017';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}
+
+/* not interested */
+.postings-grad .postingsTable-tile > tbody > tr > td:nth-child(10) {
+    position: absolute;
+    right: 15px;
+    bottom: 13px;
+    text-align: right !important;
+    width: 30%;
+}
+
+/* postings-alumni */
+/* apply btns */
+.postings-alumni .postingsTable > tbody > tr > td:first-child,
+.postings-alumni .postingsTable > thead > tr > th:first-child {
+    width: 10%
+}
+
+/* app stat */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(2),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(2) {
+    width: 5%
+}
+
+/* id */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(3),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(3) {
+    width: 5%
+}
+
+/* job title */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(4),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(4) {
+    width: 30%
+}
+
+/* organization */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(5),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(5) {
+    width: 15%
+}
+
+/* division */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(6),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(6) {
+    width: 10%
+}
+
+/* pos type */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(7),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(7) {
+    width: 10%
+}
+
+/* int stat */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(8),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(8) {
+    width: 12%
+}
+
+/* location */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(9),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(9) {
+    width: 12%
+}
+
+/* deadline */
+.postings-alumni .postingsTable > tbody > tr > td:nth-child(10),
+.postings-alumni .postingsTable > thead > tr > th:nth-child(10) {
+    width: 8%
+}
+
+/* del btn */
+.postings-alumni .postingsTable > tbody > tr > td:last-child,
+.postings-alumni .postingsTable > thead > tr > th:last-child {
+    display: none !important;
+}
+
+/* ======= tile ======= */
+.postings-alumni .postingsTable-tile > thead > tr > th:nth-child(1),
+.postings-alumni .postingsTable-tile > thead > tr > th:nth-child(2) {
+    display: none;
+}
+
+/* type */
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(7) {
+    top: 114px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(7):before {
+    content: '\f114';
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+/* int stat */
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(8) {
+    top: 12px;
+    left: 70px;
+    width: auto;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* location */
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(9) {
+    top: 95px;
+    left: 120px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(9):before {
+    content: '\f041';
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+/* deadline */
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(10) {
+    top: 95px;
+    left: 20px;
+    color: #aaa;
+    width: auto;
+}
+
+.postings-alumni .postingsTable-tile > tbody > tr > td:nth-child(10):before {
+    content: '\f017';
+    padding-right: 4px;
+    font-family: FontAwesome;
+}

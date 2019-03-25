@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_appName__",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "author": "Zijian Shao",
   "background": {
     "scripts": [
@@ -20,6 +20,9 @@
   },
   "content_scripts": [
     {
+      "css": [
+        "css/base.css"
+      ],
       "js": [
         "js/libs/jquery.js",
         "js/configs.js",
@@ -32,7 +35,6 @@
     },
     {
       "js": [
-        "js/functions.js",
         "js/init_idle.js"
       ],
       "matches": [
