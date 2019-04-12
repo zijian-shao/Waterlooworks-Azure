@@ -874,6 +874,13 @@ function initAzureIdle() {
     if (testBuildForm())
         return;
 
+    // campus connect
+    var campusConnectLogo = $('.postings__back-to div img');
+    if (campusConnectLogo.length && campusConnectLogo.attr('alt').includes('CampusConnect')) {
+        removeOverlay();
+        return;
+    }
+
     var jsText = '';
 
     // css
