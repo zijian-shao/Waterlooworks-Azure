@@ -4,9 +4,13 @@ function startTheme() {
         if ($('#postingsTablePlaceholder').length) {
 
             var hideBtn;
-            if (getCookie('azure-sidebar-visibility') == '0') {
+            // if (getCookie('azure-sidebar-visibility') == '0') {
+            if (window.localStorage.getItem('azure-sidebar-visibility') == '0') {
                 $('body').addClass('azure-full-width');
                 hideBtn = $('<div class="azure-hide-sidebar" id="azure-hide-sidebar"><i class="icon-angle-right"></i></div>');
+                setTimeout(function () {
+                    fixTableHeader($('#postingsTable'));
+                }, 1500);
             } else {
                 hideBtn = $('<div class="azure-hide-sidebar" id="azure-hide-sidebar"><i class="icon-angle-left"></i></div>');
             }
@@ -18,10 +22,12 @@ function startTheme() {
                 $('.bs--hide__column').removeAttr('style');
                 if (body.hasClass('azure-full-width')) {
                     icon.addClass('icon-angle-left').removeClass('icon-angle-right');
-                    setCookie('azure-sidebar-visibility', '1');
+                    // setCookie('azure-sidebar-visibility', '1');
+                    window.localStorage.setItem('azure-sidebar-visibility', '1');
                 } else {
                     icon.removeClass('icon-angle-left').addClass('icon-angle-right');
-                    setCookie('azure-sidebar-visibility', '0');
+                    // setCookie('azure-sidebar-visibility', '0');
+                    window.localStorage.setItem('azure-sidebar-visibility', '0');
                 }
                 body.toggleClass('azure-full-width');
                 fixTableHeader($('#postingsTable'));

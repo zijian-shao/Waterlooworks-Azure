@@ -1,3 +1,5 @@
+var azureInjectReady = false;
+
 /**
  * Inject css
  * @param url Css text if type = 'text'; otherwise href url
@@ -569,6 +571,8 @@ function startAzureInject() {
             }, 1700 * 1000);
         }
     }
+
+    azureInjectReady = true;
 }
 
 startAzureInject();

@@ -858,8 +858,6 @@ function postingBatch() {
  */
 function postingExtra() {
 
-    if (typeof jQuery === typeof undefined) return;
-
     // CECA refused to change the label from "Country" to "Country / Region".
     // And their replied was very impatient and arrogant.
     // I guess they have no budget or intention to make this change.
@@ -1019,8 +1017,14 @@ function postingListAjax(table, placeholder) {
     injectCSS(showColCSS, 'head', 'text');
 
     // fixed header
-    if (options.JOB_FixTableHeader)
+    if (options.JOB_FixTableHeader) {
         fixTableHeader(table);
+        $(window).on('load', function () {
+            setTimeout(function () {
+                fixTableHeader(table);
+            }, 500);
+        });
+    }
 
     // float pagination
     if (options.JOB_FloatPagination) {
@@ -1517,8 +1521,6 @@ function postingListAjax(table, placeholder) {
  */
 function postingList() {
 
-    if (typeof jQuery === typeof undefined) return;
-
     var placeholder = $('#postingsTablePlaceholder');
     if (!placeholder.length)
         return;
@@ -1543,11 +1545,11 @@ function postingList() {
         if ($('#hideSideNav').text().match(/Show Side Nav/)) {
             $('#hideSideNav').trigger('click');
             $('#mainContentDiv').css('margin-left', '');
-            fixTableHeader(table);
+            // fixTableHeader(table);
             $('#azure-hide-sidebar').trigger('click');
             $('#azure-hide-sidebar').trigger('click');
         }
-    }, 1000);
+    }, 300);
 
     injectCSS(baseURL + 'css/postings.css', 'head');
     // injectCSS(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/postings.css', 'head');
@@ -1617,8 +1619,6 @@ function postingList() {
  * Runs only once after page loaded
  */
 function postingDetail() {
-
-    if (typeof jQuery === typeof undefined) return;
 
     var divDetail = $('#postingDiv');
     if (!divDetail.length)
@@ -1710,25 +1710,37 @@ function postingDetail() {
 
         // panel list
         var panelTD = $('#postingDiv table td');
-        var fontSize = 1.0;
+        // var fontSize = 1.0;
+        var fontSize = window.localStorage.getItem('azure-posting-detail-font-size');
+        if (fontSize === null || !fontSize.match(/^[0-9]+\.[0-9]+$/g)) {
+            fontSize = 1.0;
+            window.localStorage.setItem('azure-posting-detail-font-size', fontSize.toString());
+        } else {
+            fontSize = Number(fontSize);
+        }
+
+        function _initFontSize() {
+            panelTD.css({
+                'font-size': fontSize + 'em',
+                'line-height': (fontSize * 1.5) + 'em'
+            });
+        }
+
+        _initFontSize();
 
         fontINC.on('click', function () {
             if (fontSize <= 1.5) {
                 fontSize = fontSize + 0.1;
-                panelTD.css({
-                    'font-size': fontSize + 'em',
-                    'line-height': (fontSize * 1.5) + 'em'
-                });
+                window.localStorage.setItem('azure-posting-detail-font-size', fontSize.toString());
+                _initFontSize();
             }
         });
 
         fontDEC.on('click', function () {
             if (fontSize >= 1.0) {
                 fontSize = fontSize - 0.1;
-                panelTD.css({
-                    'font-size': fontSize + 'em',
-                    'line-height': (fontSize * 1.5) + 'em'
-                });
+                window.localStorage.setItem('azure-posting-detail-font-size', fontSize.toString());
+                _initFontSize();
             }
         });
 
@@ -1738,8 +1750,30 @@ function postingDetail() {
 /**
  * Start
  */
-postingList();
-postingDetail();
-postingExtra();
-
-removeOverlay();
+if (typeof jQuery !== typeof undefined) {
+    if (typeof startAzureInject === 'function' && azureInjectReady === true) {
+        postingList();
+        postingDetail();
+        postingExtra();
+        removeOverlay();
+    } else {
+        var injectIntCnt = 0;
+        var injectInt = setInterval(function () {
+            if (typeof startAzureInject === 'function' && azureInjectReady === true) {
+                clearInterval(injectInt);
+                postingList();
+                postingDetail();
+                postingExtra();
+                removeOverlay();
+            } else if (injectIntCnt > 50) {
+                clearInterval(injectInt);
+                removeOverlay();
+            }
+            injectIntCnt++;
+        }, 200);
+    }
+} else {
+    document.querySelectorAll('.azure-load-cover').forEach(function (el) {
+        el.remove();
+    });
+}
