@@ -1689,8 +1689,11 @@ function postingDetail() {
     if (options.JOB_DetailPostingInfoPanel)
         addPostingInfoPanel();
 
-    if (options.JOB_FloatDetailPageInfo)
-        floatInfoPanel();
+    if (options.JOB_FloatDetailPageInfo) {
+        $(window).on('load', function () {
+            floatInfoPanel();
+        });
+    }
 
     if (options.JOB_GlassdoorRanking) {
 
