@@ -913,17 +913,15 @@ function initAzureIdle() {
     injectJS(jsText, 'head', 'text');
 
     // extra functions
-    injectJS(baseURL + 'js/functions_inject.js', 'body', 'url', function () {
-        setTimeout(function () {
-            if (currURL.match(/\/myAccount\/dashboard\.htm/i))
-                injectJS(baseURL + 'js/messages.js', 'body');
-            if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)) {
-                injectJS(baseURL + 'js/postings.js', 'body');
-                if (options.JOB_ShortlistExport)
-                    injectJS(baseURL + 'js/libs/shortlist-export.js', 'body');
-            }
-        }, 50);
-    });
+    injectJS(baseURL + 'js/functions_inject.js', 'body', 'url');
+    if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
+        injectJS(baseURL + 'js/messages.js', 'body');
+    }
+    if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)) {
+        injectJS(baseURL + 'js/postings.js', 'body');
+        if (options.JOB_ShortlistExport)
+            injectJS(baseURL + 'js/libs/shortlist-export.js', 'body');
+    }
 
     // theme func
     if (currURL.match(/\/myAccount\//)) {

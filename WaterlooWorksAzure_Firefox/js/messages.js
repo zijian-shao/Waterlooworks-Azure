@@ -213,8 +213,6 @@ function removeMessageListHeaderBg() {
  */
 function messageList() {
 
-    if (typeof jQuery === typeof  undefined) return;
-
     var tableContainer = $('#dashboard_userCommonMyMessages');
     if (!tableContainer.length)
         return;
@@ -238,4 +236,19 @@ function messageList() {
 /**
  * Start
  */
-messageList();
+if (typeof jQuery !== typeof undefined) {
+    if (typeof startAzureInject === 'function' && azureInjectReady === true) {
+        messageList();
+    } else {
+        var injectIntCnt = 0;
+        var injectInt = setInterval(function () {
+            if (typeof startAzureInject === 'function' && azureInjectReady === true) {
+                clearInterval(injectInt);
+                messageList();
+            } else if (injectIntCnt > 50) {
+                clearInterval(injectInt);
+            }
+            injectIntCnt++;
+        }, 200);
+    }
+}
