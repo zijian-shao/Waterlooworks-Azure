@@ -280,7 +280,9 @@ function showCompanyRank(data) {
     rank.hide();
     company.append(rank);
     $('.azure-posting-info-panel .panel-body').append(rank.clone());
-    $('.azure-company-ranking').fadeIn(300);
+    setTimeout(function () {
+        $('.azure-company-ranking').fadeIn(300);
+    }, 100);
 
 }
 

@@ -566,6 +566,8 @@ body.is--hidden {
     background-color: transparent;
     font-weight: normal;
     text-transform: none;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 
 .azure-dashboard-action-btn .btn:hover {
@@ -675,7 +677,7 @@ body.is--hidden {
     .orbisModuleTabs .nav-tabs > li > a {
         border: none;
         height: 64px;
-        padding: 0 25px;
+        padding: 0 20px;
         line-height: 64px;
         background: #fff;
         color: #7a7a7a;
