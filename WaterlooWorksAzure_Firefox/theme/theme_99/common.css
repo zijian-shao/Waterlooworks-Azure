@@ -4,15 +4,9 @@ a {
 
 .btn {
     background: #fafafa;
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
     transition: none;
     text-shadow: none;
     border-color: #ddd;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
 }
 
@@ -77,8 +71,6 @@ a {
     }
 
     .navbar {
-        /*-webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);*/
-        /*-moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);*/
         /*box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);*/
     }
 
@@ -134,13 +126,7 @@ a {
         width: 100%;
         color: rgba(255, 255, 255, 0.6);
         border-radius: 0 !important;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
         transition: all 0.2s ease;
         overflow: hidden;
         text-overflow: ellipsis;

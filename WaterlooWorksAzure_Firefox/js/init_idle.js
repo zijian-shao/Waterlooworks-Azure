@@ -189,7 +189,7 @@ function blockUI(elem, color, time, zindex) {
     });
 
     var base = $('<div class="blockUI" style="display:none"></div>');
-    var overlay = $('<div class="blockUI blockOverlay" style="z-index: ' + zindex + '; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background: ' + color + '; position: absolute;"></div>');
+    var overlay = $('<div class="blockUI blockOverlay" style="z-index: ' + zindex + '; border: none; margin: 0; padding: 0; width: 100%; height: 100%; top: 0; left: 0; background: ' + color + '; position: absolute;"></div>');
     overlay.hide();
 
     elem.append(base);
@@ -575,11 +575,40 @@ function apptHideInstr() {
     var headText = $('#mainContentDiv h1').text();
 
     // other appt page
-    if (!headText.match(/Appointments/) && !headText.match(/Book by/)) return;
+    // if (!headText.match(/Appointments/) && !headText.match(/Book by/)) return;
 
-    // appt guide page
-    else if (headText.match(/Appointments/) && !headText.match(/Book by/)) {
+    // return on booking page
+    if ($('#bookSlotForm').length) return;
 
+    // test page
+    var pager = $('#mainContentDiv > .orbisModuleHeader ul.pager > li > a');
+    var page = '';
+    if (!pager.length) {
+        if (currURL.match(/appointments-group/))
+            page = 'home';
+        else
+            page = 'guide';
+    } else {
+        page = 'detail';
+    }
+
+    // appt modules page
+    if (page === 'home' && false) {
+        // console.log('home');
+        $('#mainContentDiv > .box .customContentContainer.withOutHeader a').each(function () {
+            var self = $(this);
+            if (self.attr('href').match(/\/appts\//)) {
+                self
+                // .html(self.text())
+                    .addClass('btn btn-primary')
+                    .css('margin-bottom', '0.5em')
+                    .after('<br>');
+            }
+        });
+    }
+    // single appt guide page
+    else if (page === 'guide') {
+        // console.log('guide');
         var boxes = $('#mainContentDiv > .box');
         boxes.css('position', 'relative');
 
@@ -587,7 +616,7 @@ function apptHideInstr() {
         var btnBox = boxes.last();
 
         // fold terms
-        if (options.APPT_AutoFoldTerm) {
+        if (options.APPT_AutoFoldTerm && boxes.length > 1) {
             termBox.addClass('azure-appt-intro-collapsed');
             var expandBtn = $('<div class="azure-appt-intro-expand-btn">Expand <i class="icon-angle-down"></i></div>');
             expandBtn.on('click', function (e) {
@@ -621,9 +650,9 @@ function apptHideInstr() {
         }
     }
 
-    // appt book page
-    else if (headText.match(/Appointments/) && headText.match(/Book by/)) {
-
+    // single appt category index page
+    else if (page === 'detail') {
+        // console.log('detail');
         // auto hide type intro
         if (options.APPT_AutoHideTypeIntro && !headText.match(/Appointment Provider/)) {
             var introRow = $('#mainContentDiv').children('.row-fluid').find('.span6:first-child .row:nth-child(2) .box .boxContent .row');
@@ -816,8 +845,6 @@ function startAzure() {
 
         // dashboard
         if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
-            // add fade effect to open modal buttons
-            $('#uploadDocument, #createApplicationPackage, #searchPostings').addClass('fade');
 
             // is Home
             if ($('#displayOverview').hasClass('active')) {
@@ -842,10 +869,28 @@ function startAzure() {
                 || headerText.match(/Form Details/)) {
             } else {
                 // not msg view / submit form
-                $('#mainContentDiv .orbis-posting-actions:first').addClass('azure-dashboard-action-btn');
+                $('#mainContentDiv .orbis-posting-actions:first').addClass('azure-dashboard-action-btn').find('a.btn').each(function () {
+                    var self = $(this);
+                    if (self.text().match(/Upload a Document/))
+                        self.text('Upload Document');
+                    else if (self.text().match(/Create Application Package/))
+                        self.text('Create App Package');
+                    else if (self.text().match(/Register for an Event/))
+                        self.text('Register for Event');
+                    else if (self.text().match(/Send A Message/))
+                        self.text('Send Message');
+                    else if (self.text().match(/Submit A Form/))
+                        self.text('Submit    Form');
+
+                    // add fade effect to modal
+                    if (self.attr('data-toggle') === 'modal') {
+                        $(self.attr('href')).addClass('fade');
+                    }
+
+                });
             }
 
-        } else if (currURL.match(/\/appointments\.htm/) || currURL.match(/\/appointments-further-education\.htm/)) {
+        } else if (currURL.match(/\/appts\/.*\.htm/)) {
             apptHideInstr();
         }
 

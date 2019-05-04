@@ -156,7 +156,7 @@ function blockUI(elem, color, time, zindex) {
     });
 
     var base = $('<div class="blockUI" style="display:none"></div>');
-    var overlay = $('<div class="blockUI blockOverlay" style="z-index: ' + zindex + '; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background: ' + color + '; position: absolute;"></div>');
+    var overlay = $('<div class="blockUI blockOverlay" style="z-index: ' + zindex + '; border: none; margin: 0; padding: 0; width: 100%; height: 100%; top: 0; left: 0; background: ' + color + '; position: absolute;"></div>');
     overlay.hide();
 
     elem.append(base);

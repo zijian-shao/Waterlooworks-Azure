@@ -30,10 +30,6 @@ input[type="text"], input[type="password"], input[type="file"] {
     box-shadow: 0 0 0 transparent !important;
     outline: none !important;
     border: 1px solid #ccc !important;
-    -webkit-transition: box-shadow 0.2s ease, border 0.2s ease !important;
-    -moz-transition: box-shadow 0.2s ease, border 0.2s ease !important;
-    -ms-transition: box-shadow 0.2s ease, border 0.2s ease !important;
-    -o-transition: box-shadow 0.2s ease, border 0.2s ease !important;
     transition: box-shadow 0.2s ease, border 0.2s ease !important;
     border-radius: 30px;
     padding-left: 10px;
@@ -107,25 +103,14 @@ select:focus {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-
-    -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-
-    -webkit-transition: box-shadow 0.2s ease !important;
-    -moz-transition: box-shadow 0.2s ease !important;
-    -ms-transition: box-shadow 0.2s ease !important;
-    -o-transition: box-shadow 0.2s ease !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease !important;
-
     z-index: 1 !important;
 }
 
 .btn:hover, .btn:active, .btn:focus, .btn:visited,
 input.btn:hover, input.btn:active, input.btn:focus, input.btn:visited {
-    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
-    -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
 }
 
 .btn:before {
@@ -136,17 +121,11 @@ input.btn:hover, input.btn:active, input.btn:focus, input.btn:visited {
     width: 100%;
     height: 100%;
     background-color: #ffb82e;
-    background-image: -moz-linear-gradient(left, #eee 0%, #f5f5f5 50%, #eee 100%);
-    background-image: -webkit-linear-gradient(left, #eee 0%, #f5f5f5 50%, #eee 100%);
     background-image: linear-gradient(to right, #eee 0%, #f5f5f5 50%, #eee 100%);
 
     background-position: -100% 0;
     background-size: 200% 100%;
 
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
     transition: background 0.2s ease;
 
     z-index: -1;
@@ -165,7 +144,7 @@ input.btn:hover, input.btn:active, input.btn:focus, input.btn:visited {
 }
 
 .btn-mini {
-    padding: 0px 6px;
+    padding: 0 6px;
 }
 
 .btn-primary, .btn-danger, .btn-success, .btn-info {
@@ -174,65 +153,47 @@ input.btn:hover, input.btn:active, input.btn:focus, input.btn:visited {
 
 .btn-primary:before {
     background-color: #ffb82e;
-    background-image: -moz-linear-gradient(left, #f49524 0%, #f8b023 50%, #f49524 100%);
-    background-image: -webkit-linear-gradient(left, #f49524 0%, #f8b023 50%, #f49524 100%);
     background-image: linear-gradient(to right, #f49524 0%, #f8b023 50%, #f49524 100%);
 }
 
 input.btn-primary {
     background-color: #ffb82e;
-    background-image: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%) !important;
-    background-image: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%) !important;
     background-image: linear-gradient(to right, #f8b023 0%, #f49524 100%) !important;
     background-position: left top;
 }
 
 input.btn-primary:hover {
     background-color: #ffb82e;
-    background-image: -moz-linear-gradient(left, #f49524 0%, #f8b023 100%) !important;
-    background-image: -webkit-linear-gradient(left, #f49524 0%, #f8b023 100%) !important;
     background-image: linear-gradient(to right, #f49524 0%, #f8b023 100%) !important;
 }
 
 .btn-danger:before {
     background-color: #FF5E52;
-    background-image: -moz-linear-gradient(left, #d83327 0%, #FF5E52 50%, #d83327 100%);
-    background-image: -webkit-linear-gradient(left, #d83327 0%, #FF5E52 50%, #d83327 100%);
     background-image: linear-gradient(to right, #d83327 0%, #FF5E52 50%, #d83327 100%);
 }
 
 input.btn-danger {
     background-color: #FF5E52;
-    background-image: -moz-linear-gradient(left, #FF5E52 0%, #d83327 100%) !important;
-    background-image: -webkit-linear-gradient(left, #FF5E52 0%, #d83327 100%) !important;
     background-image: linear-gradient(to right, #FF5E52 0%, #d83327 100%) !important;
 }
 
 .btn-success:before {
     background-color: #68c568;
-    background-image: -moz-linear-gradient(left, #3cab3c 0%, #68c568 50%, #3cab3c 100%);
-    background-image: -webkit-linear-gradient(left, #3cab3c 0%, #68c568 50%, #3cab3c 100%);
     background-image: linear-gradient(to right, #3cab3c 0%, #68c568 50%, #3cab3c 100%);
 }
 
 input.btn-success {
     background-color: #68c568;
-    background-image: -moz-linear-gradient(left, #68c568 0%, #3cab3c 100%) !important;
-    background-image: -webkit-linear-gradient(left, #68c568 0%, #3cab3c 100%) !important;
     background-image: linear-gradient(to right, #68c568 0%, #3cab3c 100%) !important;
 }
 
 .btn-info:before {
     background-color: #5dcbea;
-    background-image: -moz-linear-gradient(left, #31a7ca 0%, #5dcbea 50%, #31a7ca 100%);
-    background-image: -webkit-linear-gradient(left, #31a7ca 0%, #5dcbea 50%, #31a7ca 100%);
     background-image: linear-gradient(to right, #31a7ca 0%, #5dcbea 50%, #31a7ca 100%);
 }
 
 input.btn-info {
     background: #5dcbea;
-    background: -moz-linear-gradient(left, #5dcbea 0%, #31a7ca 100%) !important;
-    background: -webkit-linear-gradient(left, #5dcbea 0%, #31a7ca 100%) !important;
     background: linear-gradient(to right, #5dcbea 0%, #31a7ca 100%) !important;
 }
 
@@ -243,16 +204,12 @@ input.btn-info {
 .btn-inverse:before {
     color: #fff !important;
     background-color: #000;
-    background-image: -moz-linear-gradient(left, #000 0%, #333 50%, #000 100%);
-    background-image: -webkit-linear-gradient(left, #000 0%, #333 50%, #000 100%);
     background-image: linear-gradient(to right, #000 0%, #333 50%, #000 100%);
 }
 
 input.btn-inverse {
     color: #fff !important;
     background: #333;
-    background: -moz-linear-gradient(left, #333 0%, #000 100%) !important;
-    background: -webkit-linear-gradient(left, #333 0%, #000 100%) !important;
     background: linear-gradient(to right, #333 0%, #000 100%) !important;
 }
 
@@ -262,9 +219,7 @@ input.btn-inverse {
     overflow: hidden;
     background: #fff;
     border: none;
-    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .panel .panel-heading {
@@ -285,8 +240,6 @@ input.btn-inverse {
 
     .nav--branding {
         width: 160px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
@@ -294,12 +247,8 @@ input.btn-inverse {
         text-align: center;
         background: #232a34;
         border: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
         padding: 0;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
@@ -308,14 +257,10 @@ input.btn-inverse {
         margin: auto;
         text-transform: uppercase;
         font-weight: normal;
-        padding: 0px;
+        padding: 0;
         line-height: 70px;
         /*font-size: 50px;*/
         color: #fff;
-        -webkit-transition: background 0.2s ease;
-        -moz-transition: background 0.2s ease;
-        -ms-transition: background 0.2s ease;
-        -o-transition: background 0.2s ease;
         transition: background 0.2s ease;
         /*background: rgba(255, 255, 255, 0.02);*/
     }
@@ -328,10 +273,7 @@ input.btn-inverse {
         width: 45px;
         height: 36px;
         margin-top: 0;
-        -webkit-transition: filter 0.2s ease;
-        -moz-transition: filter 0.2s ease;
-        -ms-transition: filter 0.2s ease;
-        -o-transition: filter 0.2s ease;
+
         transition: filter 0.2s ease;
     }
 
@@ -382,8 +324,6 @@ input.btn-inverse {
     .sidebar-nav .nav-list > .active > a, .sidebar-nav .nav-list > .active > a:hover {
         color: #fff !important;
         background: #ffb82e !important;
-        background: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%) !important;
-        background: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%) !important;
         background: linear-gradient(to right, #f8b023 0%, #f49524 100%) !important;
     }
 
@@ -404,13 +344,11 @@ input.btn-inverse {
         background: #232a34;
         overflow: hidden;
         z-index: -1;
-        -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .orbisModuleHeader {
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     .orbisModuleHeader h1 {
@@ -431,14 +369,12 @@ input.btn-inverse {
 }
 
 #userImageDiv {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 #userImageDiv img {
     max-width: 60px;
     border-radius: 50%;
-    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -446,9 +382,7 @@ input.btn-inverse {
     .orbisModuleTabs {
         background: #fff;
         border-bottom: 1px solid #e0e0e0;
-        -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
         overflow: hidden;
         margin-bottom: 20px;
@@ -471,10 +405,6 @@ input.btn-inverse {
         background: #fff;
         color: #7a7a7a;
         font-weight: 600;
-        -webkit-transition: background 0.2s ease;
-        -moz-transition: background 0.2s ease;
-        -ms-transition: background 0.2s ease;
-        -o-transition: background 0.2s ease;
         transition: background 0.2s ease;
     }
 
@@ -487,8 +417,6 @@ input.btn-inverse {
         color: #212121;
         border: none;
         background: #ffb82e;
-        background: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%);
-        background: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%);
         background: linear-gradient(to right, #f8b023 0%, #f49524 100%);
         color: #fff;
     }
@@ -509,9 +437,7 @@ input.btn-inverse {
 }
 
 .orbisTabContainer .tab-content, .box {
-    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -551,9 +477,7 @@ input.btn-inverse {
         border: none;
         width: 160px;
         display: block;
-        -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .nav--branding .navbar-inner {
@@ -583,10 +507,6 @@ input.btn-inverse {
         padding: 20px 0;
         text-align: center;
         text-shadow: none !important;
-        -webkit-transition: color 0.2s ease, background 0.2s ease;
-        -moz-transition: color 0.2s ease, background 0.2s ease;
-        -ms-transition: color 0.2s ease, background 0.2s ease;
-        -o-transition: color 0.2s ease, background 0.2s ease;
         transition: color 0.2s ease, background 0.2s ease;
     }
 
@@ -617,8 +537,6 @@ input.btn-inverse {
     .sidebar-nav > .nav-list > .active > a:hover,
     .sidebar-nav > .nav-list > .active > a:focus {
         background: #ffb82e;
-        background: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%);
-        background: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%);
         background: linear-gradient(to right, #f8b023 0%, #f49524 100%);
     }
 
@@ -701,10 +619,6 @@ input.btn-inverse {
 .nav-pills > li > a {
     color: #666;
     border-radius: 100px;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
     transition: background 0.2s ease;
 }
 
@@ -716,8 +630,6 @@ input.btn-inverse {
 .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
     color: #fff;
     background: #ffb82e;
-    background: -moz-linear-gradient(left, #f8b023 0%, #f49524 100%);
-    background: -webkit-linear-gradient(left, #f8b023 0%, #f49524 100%);
     background: linear-gradient(to right, #f8b023 0%, #f49524 100%);
     border-radius: 100px;
 }
@@ -807,14 +719,12 @@ pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .a
 }
 
 .panel .table {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 table.table-header-fixed {
-    /*top: 0px;*/
-    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /*top: 0;*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .azure-contextmenu > ul > li > a:hover, .azure-contextmenu > ul > li > a:active, .azure-contextmenu > ul > li > a:visited {
@@ -854,9 +764,7 @@ table.table-header-fixed {
 /* Checkbox group */
 div.checkboxGroup {
     border-color: #f7f7f7;
-    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 div.checkboxGroup div.checkboxGroupBody {
@@ -872,7 +780,7 @@ div.checkboxGroup div.checkboxGroupHeader td:first-child {
 }
 
 div.checkboxGroup div.checkboxGroupHeader label {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 /* Form table */
@@ -888,9 +796,7 @@ table.formTable div.orbisCheckboxWidget {
 }
 
 table.formTable span.inputContainer {
-    /*-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
-    /*-moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
-    /*box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
 }
 
 /* Postings */

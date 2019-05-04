@@ -17,8 +17,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 }
 
 .orbisTabContainer .tab-content, .box {
-    /*-webkit-box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;*/
-    /*-moz-box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;*/
     /*box-shadow: -1px -1px 0 #eaeaea, -1px -1px 0 #eaeaea;*/
 }
 
@@ -28,20 +26,14 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     background: #fff;
     border: none;
     border-bottom: 1px solid #EAEAEA;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
 .navbar-inverse .brand, .navbar-inverse .brand:visited {
     color: #000;
     text-transform: uppercase;
-    margin-left: 0px;
+    margin-left: 0;
     font-weight: bold;
-    -webkit-transition: color 0.2s ease;
-    -moz-transition: color 0.2s ease;
-    -ms-transition: color 0.2s ease;
-    -o-transition: color 0.2s ease;
     transition: color 0.2s ease;
 }
 
@@ -105,8 +97,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 .button {
     border-radius: 100px !important;
     text-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
     box-shadow: none !important;
     color: #fff !important;
     background-color: #45B6F7 !important;
@@ -121,8 +111,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 .btn {
     border-radius: 100px !important;
     text-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
     background: #fff;
     border: 1px solid #ddd;
@@ -192,7 +180,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
     .bs--hide__column {
         position: fixed;
-        top: 0px;
+        top: 0;
         left: 270px;
         right: 15px;
         width: auto !important;
@@ -221,20 +209,12 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         padding: 20px 14px;
         background: none !important;
         color: #666;
-        -webkit-box-shadow: inset 0 0 0 #45b6f7;
-        -moz-box-shadow: inset 0 0 0 #45b6f7;
         box-shadow: inset 0 0 0 #45b6f7;
-        -webkit-transition: box-shadow 0.2s ease, color 0.2s ease;
-        -moz-transition: box-shadow 0.2s ease, color 0.2s ease;
-        -ms-transition: box-shadow 0.2s ease, color 0.2s ease;
-        -o-transition: box-shadow 0.2s ease, color 0.2s ease;
         transition: box-shadow 0.2s ease, color 0.2s ease;
     }
 
     .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {
         background: none !important;
-        -webkit-box-shadow: inset 0 -70px 0 #45b6f7;
-        -moz-box-shadow: inset 0 -70px 0 #45b6f7;
         box-shadow: inset 0 -70px 0 #45b6f7;
         color: #fff;
     }
@@ -248,8 +228,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > .active > a {
         background: none;
         color: #666;
-        -webkit-box-shadow: inset 0 -3px 0 #45b6f7;
-        -moz-box-shadow: inset 0 -3px 0 #45b6f7;
         box-shadow: inset 0 -3px 0 #45b6f7;
     }
 
@@ -266,8 +244,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         border: 1px solid #ddd;
         padding: 1em 0 !important;
         width: 200px;
-        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         background: #FFF;
         border-radius: 4px;
@@ -288,22 +264,14 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > li .childMenu1.nav-list li a {
         display: block;
         background: #fff !important;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
         color: #666;
         line-height: 30px !important;
-        -webkit-transition: background 0.2s ease, color 0.2s ease;
-        -moz-transition: background 0.2s ease, color 0.2s ease;
-        -ms-transition: background 0.2s ease, color 0.2s ease;
-        -o-transition: background 0.2s ease, color 0.2s ease;
         transition: background 0.2s ease, color 0.2s ease;
     }
 
     .sidebar-nav > .nav-list > li .childMenu1.nav-list li a:hover, .sidebar-nav > .nav-list > li .childMenu1.nav-list li a:focus {
         background: #f6f6f6 !important;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
         color: #45B6F7;
         text-shadow: none;
@@ -311,8 +279,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
     .sidebar-nav > .nav-list > li .childMenu1.nav-list > .active > a, .sidebar-nav > .nav-list > li .childMenu2.nav-list > .active > a {
         color: #45B6F7;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
     }
 

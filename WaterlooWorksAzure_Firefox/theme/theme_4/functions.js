@@ -5,19 +5,26 @@ function startTheme() {
 
     // nav button float right
     var navHelp, navLogout;
-    $('#closeNav ul.nav-list li').each(function (i, e) {
-        var navText = $(e).text();
+    $('#closeNav .sidebar-nav > ul.nav-list > li > a').each(function (i, e) {
+        var self = $(this);
+        var navText = self.text();
         if (navText.match(/Help/)) {
-            navHelp = $(e);
-            $(e).addClass('azure-nav-right');
+            navHelp = self.closest('li');
+            navHelp.addClass('azure-nav-right');
         } else if (navText.match(/Logout/)) {
-            navLogout = $(e);
-            $(e).addClass('azure-nav-right');
-        } else if (navText.match(/Appointments/) && navText.match(/Further/)) {
-            $(e).html($(e).html().replace(/ - Further Education/, '<small>( Further Education )</small>'));
+            navLogout = self.closest('li');
+            navLogout.addClass('azure-nav-right');
+        } else if (navText.match(/Appointments/)) {
+            self.closest('li').find('ul.nav-list.childMenu1 > li > a').each(function (i, e) {
+                var self = $(this);
+                self.text(self.text().replace(/Appointments - /g, ''));
+                self.text(self.text().replace(/ Students/g, ''));
+                self.text(self.text().replace(/ Education/g, ' Edu'));
+            });
         }
     });
-    navLogout.insertBefore(navHelp);
+    if (typeof navHelp !== typeof undefined && typeof navLogout !== typeof undefined)
+        navLogout.insertBefore(navHelp);
 
     // dashboard
     if (location.href.match(/\/myAccount\/dashboard\.htm/gi)) {

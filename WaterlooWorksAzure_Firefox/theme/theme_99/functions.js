@@ -38,10 +38,16 @@ function startTheme() {
     }
 
     // nav icons
-    $('#closeNav ul.nav-list li a').each(function (i, e) {
-        var navText = $(e).text();
-        if (navText.match(/Appointments/) && navText.match(/Further/)) {
-            $(e).html($(e).html().replace(/ - Further Education/, '<small>Further Education</small>'));
+    $('#closeNav .sidebar-nav > ul.nav-list > li > a').each(function (i, e) {
+        var self = $(this);
+        var navText = self.text();
+        if (navText.match(/Appointments/)) {
+            self.closest('li').find('ul.nav-list.childMenu1 > li > a').each(function (i, e) {
+                var self = $(this);
+                self.text(self.text().replace(/Appointments - /g, ''));
+                self.text(self.text().replace(/ Students/g, ''));
+                self.text(self.text().replace(/ Education/g, ' Edu'));
+            });
         }
     });
 }

@@ -430,10 +430,6 @@ label.gridDropdownButton.is--focused {
 
 /* Drop down */
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
-    -webkit-transition: background 0.2s ease, color 0.2s ease;
-    -moz-transition: background 0.2s ease, color 0.2s ease;
-    -ms-transition: background 0.2s ease, color 0.2s ease;
-    -o-transition: background 0.2s ease, color 0.2s ease;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -483,17 +479,11 @@ label.gridDropdownButton.is--focused {
     z-index: 1010;
     opacity: 1;
     visibility: visible;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
 .azure-back-to-top:hover {
     background: rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -520,10 +510,6 @@ label.gridDropdownButton.is--focused {
 .azure-contextmenu {
     visibility: visible;
     opacity: 1;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    -ms-transition: all 0.1s ease;
-    -o-transition: all 0.1s ease;
     transition: all 0.1s ease;
 }
 
@@ -557,7 +543,7 @@ label.gridDropdownButton.is--focused {
     top: 0;
     background: #fff;
     border: 1px solid #ddd;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     z-index: 1000;
     list-style-type: none;
@@ -578,8 +564,6 @@ label.gridDropdownButton.is--focused {
     font-size: 12px;
     text-align: left;
     text-decoration: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 
 }
@@ -637,10 +621,6 @@ table.table-header-fixed {
 
 @media (min-width: 980px) {
     .table-hover tbody tr:hover > td {
-        -webkit-transition: background-color 0.1s ease-out;
-        -moz-transition: background-color 0.1s ease-out;
-        -ms-transition: background-color 0.1s ease-out;
-        -o-transition: background-color 0.1s ease-out;
         transition: background-color 0.1s ease-out;
     }
 
@@ -721,8 +701,6 @@ table.table-header-fixed {
         display: block;
         width: 100%;
         margin-bottom: 5px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
@@ -731,8 +709,6 @@ table.table-header-fixed {
         width: 50%;
         margin: 0 0 5px 0;
         float: left;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
@@ -798,8 +774,6 @@ table.table-header-fixed {
 }
 
 .pagination ul {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
 }
 
@@ -927,21 +901,13 @@ table.table-header-fixed {
 
     .spaceForSearchFilters select[multiple] {
         height: 30px;
-        -webkit-transition: box-shadow 0.2s ease, height 0.2s ease, border 0.2s ease;
-        -moz-transition: box-shadow 0.2s ease, height 0.2s ease, border 0.2s ease;
-        -ms-transition: box-shadow 0.2s ease, height 0.2s ease, border 0.2s ease;
-        -o-transition: box-shadow 0.2s ease, height 0.2s ease, border 0.2s ease;
         transition: box-shadow 0.2s ease, height 0.2s ease, border 0.2s ease;
     }
 
     .spaceForSearchFilters select[multiple] ~ a.btn.btn-small {
         opacity: 0;
         height: 0;
-        margin-bottom: 0px;
-        -webkit-transition: opacity 0.2s ease, margin 0.2s ease;
-        -moz-transition: opacity 0.2s ease, margin 0.2s ease;
-        -ms-transition: opacity 0.2s ease, margin 0.2s ease;
-        -o-transition: opacity 0.2s ease, margin 0.2s ease;
+        margin-bottom: 0;
         transition: opacity 0.2s ease, margin 0.2s ease;
     }
 
@@ -988,10 +954,6 @@ table.table-header-fixed {
     color: inherit !important;
     opacity: 0;
     text-decoration: none;
-    -webkit-transition: opacity 0.1s ease;
-    -moz-transition: opacity 0.1s ease;
-    -ms-transition: opacity 0.1s ease;
-    -o-transition: opacity 0.1s ease;
     transition: opacity 0.1s ease;
 }
 
@@ -1029,10 +991,6 @@ table.table-header-fixed {
 
 .azure-posting-info-panel,
 .azure-posting-info-panel .panel-body {
-    -webkit-transition: height 0.2s ease;
-    -moz-transition: height 0.2s ease;
-    -ms-transition: height 0.2s ease;
-    -o-transition: height 0.2s ease;
     transition: height 0.2s ease;
 }
 
@@ -1040,7 +998,7 @@ table.table-header-fixed {
 li.azure-font-size-control a {
     padding-left: 3px;
     padding-right: 6px;
-    margin-right: 0px !important;
+    margin-right: 0 !important;
     margin-left: 4px;
 }
 
@@ -1067,10 +1025,6 @@ li.azure-font-size-control a {
 
 .azure-posting-keyword-panel .tip {
     opacity: 0;
-    -webkit-transition: opacity 0.2s ease;
-    -moz-transition: opacity 0.2s ease;
-    -ms-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
 }
 
@@ -1087,8 +1041,6 @@ li.azure-font-size-control a {
     padding: 0;
     list-style: none;
     z-index: 210;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -1098,13 +1050,7 @@ li.azure-font-size-control a {
     right: 0;
     overflow: hidden;
     cursor: pointer;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
     transition: background 0.2s ease;
 }
 
@@ -1133,8 +1079,6 @@ li.azure-font-size-control a {
     color: #fff;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 4px;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 230;
 }
@@ -1207,10 +1151,6 @@ li.azure-font-size-control a {
     text-align: center;
     border-top: 1px solid #eee;
     cursor: pointer;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
     transition: background 0.2s ease;
 }
 
@@ -1230,10 +1170,6 @@ li.azure-font-size-control a {
     text-align: center;
     border-top: 1px solid #eee;
     cursor: pointer;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
     transition: background 0.2s ease;
 }
 
@@ -1261,17 +1197,11 @@ li.azure-font-size-control a {
     width: 100%;
     height: 50%;
     max-height: 3em;
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
@@ -1289,10 +1219,6 @@ li.azure-font-size-control a {
     bottom: -14px;
     left: 0;
     opacity: 0;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 

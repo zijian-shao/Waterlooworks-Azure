@@ -21,21 +21,14 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 .navbar-inverse .navbar-inner {
     background: #323841;
     border: none;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
 }
 
 .navbar-inverse .brand, .navbar-inverse .brand:visited {
     color: #ddd;
     text-transform: uppercase;
-    margin-left: 0px;
+    margin-left: 0;
     font-weight: bold;
-
-    -webkit-transition: color 0.2s ease;
-    -moz-transition: color 0.2s ease;
-    -ms-transition: color 0.2s ease;
-    -o-transition: color 0.2s ease;
     transition: color 0.2s ease;
 }
 
@@ -85,7 +78,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
     .bs--hide__column {
         position: fixed;
-        top: 0px;
+        top: 0;
         left: 270px;
         right: 15px;
         width: auto !important;
@@ -113,20 +106,12 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         padding: 20px 14px;
         background: none !important;
         color: #666;
-        -webkit-box-shadow: inset 0 0 0 #45b6f7;
-        -moz-box-shadow: inset 0 0 0 #45b6f7;
         box-shadow: inset 0 0 0 #45b6f7;
-        -webkit-transition: box-shadow 0.2s ease, color 0.2s ease;
-        -moz-transition: box-shadow 0.2s ease, color 0.2s ease;
-        -ms-transition: box-shadow 0.2s ease, color 0.2s ease;
-        -o-transition: box-shadow 0.2s ease, color 0.2s ease;
         transition: box-shadow 0.2s ease, color 0.2s ease;
     }
 
     .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {
         background: none !important;
-        -webkit-box-shadow: inset 0 -70px 0 #45B6F7;
-        -moz-box-shadow: inset 0 -70px 0 #45B6F7;
         box-shadow: inset 0 -70px 0 #45B6F7;
         color: #fff;
     }
@@ -140,8 +125,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > .active > a {
         background: none;
         color: #666;
-        -webkit-box-shadow: inset 0 -3px 0 #45B6F7;
-        -moz-box-shadow: inset 0 -3px 0 #45B6F7;
         box-shadow: inset 0 -3px 0 #45B6F7;
     }
 
@@ -158,9 +141,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         border: 1px solid #ddd;
         padding: 1em 0 !important;
         width: 200px;
-        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         background: #FFF;
         border-radius: 4px;
         margin: 0;
@@ -180,22 +161,14 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > li .childMenu1.nav-list li a {
         display: block;
         background: #fff !important;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
         color: #666;
         line-height: 30px !important;
-        -webkit-transition: background 0.2s ease, color 0.2s ease;
-        -moz-transition: background 0.2s ease, color 0.2s ease;
-        -ms-transition: background 0.2s ease, color 0.2s ease;
-        -o-transition: background 0.2s ease, color 0.2s ease;
         transition: background 0.2s ease, color 0.2s ease;
     }
 
     .sidebar-nav > .nav-list > li .childMenu1.nav-list li a:hover, .sidebar-nav > .nav-list > li .childMenu1.nav-list li a:focus {
         background: #f6f6f6 !important;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
         color: #45B6F7;
         text-shadow: none;
@@ -203,8 +176,6 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
     .sidebar-nav > .nav-list > li .childMenu1.nav-list > .active > a, .sidebar-nav > .nav-list > li .childMenu2.nav-list > .active > a {
         color: #45B6F7;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
         box-shadow: none;
     }
 
@@ -214,14 +185,10 @@ a, a:hover, a:active, a:focus, a:visited, ins {
 
     .sidebar-nav > .nav-list > li > a {
         color: #aaa;
-        -webkit-box-shadow: inset 0 0 0 #09b1b9;
-        -moz-box-shadow: inset 0 0 0 #09b1b9;
         box-shadow: inset 0 0 0 #09b1b9;
     }
 
     .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {
-        -webkit-box-shadow: inset 0 -70px 0 #09b1b9;
-        -moz-box-shadow: inset 0 -70px 0 #09b1b9;
         box-shadow: inset 0 -70px 0 #09b1b9;
         color: #fff;
     }
@@ -229,17 +196,13 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > .active > a {
         background: none;
         color: #aaa;
-        -webkit-box-shadow: inset 0 -3px 0 #09b1b9;
-        -moz-box-shadow: inset 0 -3px 0 #09b1b9;
         box-shadow: inset 0 -3px 0 #09b1b9;
     }
 
     /* Child menu */
     .sidebar-nav > .nav-list > li .childMenu1.nav.nav-list {
         border: none;
-        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         background: #323841;
     }
 
@@ -318,8 +281,6 @@ hr {
 /* panel */
 .panel {
     background-color: #373e48;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
 }
 
@@ -446,6 +407,10 @@ hr {
     background-color: #373e48;
 }
 
+.table tbody + tbody {
+    border-color: #424a56;
+}
+
 .table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
     background-color: #3b434e;
     /*border: none;*/
@@ -498,7 +463,7 @@ hr {
 }
 
 .panel .table {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 /* form */
@@ -512,8 +477,6 @@ hr {
 .button {
     border-radius: 100px !important;
     text-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
     box-shadow: none !important;
     background: none !important;
     border: 1px solid #09b1b9 !important;
@@ -527,16 +490,12 @@ hr {
 }
 
 .btn:focus, .btn:active {
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
 
 .btn {
     border-radius: 100px !important;
     text-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
     background: none;
     color: #aaa !important;
@@ -676,8 +635,6 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="text"]:focus, input[type="password"]:focus {
-    -webkit-box-shadow: 0 0 4px #19979d !important;
-    -moz-box-shadow: 0 0 4px #19979d !important;
     box-shadow: 0 0 4px #19979d !important;
     outline: none !important;
     border-color: #19979d !important;
@@ -713,8 +670,6 @@ input[type="text"]:focus, input[type="password"]:focus {
 .modal .modal-footer {
     background: #373e48;
     border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
 }
 
@@ -748,8 +703,6 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .orbisTabContainer .tab-content, .box {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
     background: #323841;
 }
@@ -824,9 +777,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 .azure-contextmenu > ul {
     background: #323841;
     border: none;
-    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .azure-contextmenu > ul > li > a, .azure-contextmenu > ul > li > a:visited {
@@ -907,7 +858,6 @@ blockquote {
 
 /* images */
 img {
-    -webkit-filter: brightness(0.8);
     filter: brightness(0.8);
 }
 
@@ -1053,8 +1003,6 @@ img {
 }
 
 .postingsTable-tile > tbody > tr:hover {
-    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
-    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -1078,8 +1026,6 @@ img {
 }
 
 .postingsTable-tile.table-header-fixed {
-    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
-    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -1105,8 +1051,6 @@ img {
 }
 
 .azure-appt-type-auto-hide div:last-child:before {
-    background: -moz-linear-gradient(top, rgba(50, 56, 65, 0) 0%, rgba(50, 56, 65, 1) 100%);
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(50, 56, 65, 1) 100%);
     background: linear-gradient(to bottom, rgba(50, 56, 65, 0) 0%, rgba(50, 56, 65, 1) 100%);
 }
 
