@@ -85,10 +85,6 @@
     visibility: hidden;
     text-decoration: none;
     opacity: 0;
-    -webkit-transition: opacity 0.1s ease-out;
-    -moz-transition: opacity 0.1s ease-out;
-    -ms-transition: opacity 0.1s ease-out;
-    -o-transition: opacity 0.1s ease-out;
     transition: opacity 0.1s ease-out;
 }
 
@@ -98,10 +94,6 @@
 
 .postingsTable > tbody > tr > td .view-in-new-tab-link > span {
     opacity: 0;
-    -webkit-transition: opacity 0.1s ease-out;
-    -moz-transition: opacity 0.1s ease-out;
-    -ms-transition: opacity 0.1s ease-out;
-    -o-transition: opacity 0.1s ease-out;
     transition: opacity 0.1s ease-out;
 }
 
@@ -171,10 +163,6 @@
     text-decoration: none !important;
     z-index: 10;
     position: relative;
-    -webkit-transition: opacity 0.2s ease;
-    -moz-transition: opacity 0.2s ease;
-    -ms-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
 }
 
@@ -201,10 +189,6 @@
     opacity: 0.1;
     text-shadow: 0 0 0 #000;
     cursor: pointer;
-    -webkit-transition: opacity 0.2s ease, text-shadow 0.2s ease;
-    -moz-transition: opacity 0.2s ease, text-shadow 0.2s ease;
-    -ms-transition: opacity 0.2s ease, text-shadow 0.2s ease;
-    -o-transition: opacity 0.2s ease, text-shadow 0.2s ease;
     transition: opacity 0.2s ease, text-shadow 0.2s ease;
 }
 
@@ -234,18 +218,7 @@
 /* tile */
 
 .postingsTable-tile.table-header-fixed {
-    /*-webkit-animation: tileHeaderShowAni 0.2s ease;*/
-    /*-o-animation: tileHeaderShowAni 0.2s ease;*/
     /*animation: tileHeaderShowAni 0.2s ease;*/
-}
-
-@-webkit-keyframes tileHeaderShowAni {
-    from {
-        transform: translateY(-50px);
-    }
-    to {
-        transform: translateY(0);
-    }
 }
 
 @keyframes tileHeaderShowAni {
@@ -260,8 +233,6 @@
 .postingsTable-tile:not(.table-header-fixed) > thead > tr {
     border: 1px solid #dddddd;
     border-left: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: calc(100% - 14px) !important;
     margin: auto;
@@ -327,16 +298,10 @@
     margin: 0 7px 15px;
     border: 1px solid #dddddd;
     overflow: hidden;
-    -webkit-transition: box-shadow 0.2s ease;
-    -moz-transition: box-shadow 0.2s ease;
-    -ms-transition: box-shadow 0.2s ease;
-    -o-transition: box-shadow 0.2s ease;
     transition: box-shadow 0.2s ease;
 }
 
 .postingsTable-tile > tbody > tr:hover {
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
@@ -458,10 +423,6 @@
     border-radius: 0;
     font-size: 12px;
     padding: 1px 20px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
