@@ -582,6 +582,11 @@ body.is--hidden {
     color: #fff;
 }
 
+.orbisModuleHeader h4 {
+    font-weight: normal;
+    color: #fff !important;
+}
+
 .orbisModuleHeader h5 {
     font-weight: normal;
     color: #fff;

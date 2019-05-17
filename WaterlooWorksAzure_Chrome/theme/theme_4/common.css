@@ -519,6 +519,11 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     color: #fff;
 }
 
+.orbisModuleHeader h4 {
+    font-weight: normal;
+    color: #fff !important;
+}
+
 .orbisModuleHeader h5 {
     font-weight: normal;
     color: #fff;
