@@ -1571,7 +1571,26 @@ function postingList() {
     // popup modal
     if (options.JOB_PopupModal) {
         // insert popup modal
-        $('body').append($('<div class="modal modal-fluid modal-posting fade" id="popup-modal" role="dialog"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">Posting Preview</h4></div><div class="modal-body" id="popup-modal-body"></div><div class="modal-footer" id="popup-modal-footer"></div></div></div></div>'));
+        $('body').append($('<div class="modal modal-fluid modal-posting fade" id="popup-modal" role="dialog">' +
+            '<div class="modal-dialog modal-lg">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">Posting Preview</h4></div>' +
+            '<div class="modal-body" id="popup-modal-body"></div>' +
+            '<div class="modal-footer" id="popup-modal-footer"></div>' +
+            '</div></div></div>'));
+        // warning
+        var alertInfo = window.localStorage.getItem('azure-preview-modal-alert');
+        if (alertInfo === null) {
+            $('<div class="alert alert-info alert-block" id="azure-preview-modal-alert">' +
+                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                '<strong>WaterlooWorks Azure</strong><br>' +
+                'Content in this modal is for preview only. It does not contain all the items. Please view the posting in new tab before apply.<br>' +
+                'You may customize the items by visiting <i>Extension Options > Posting Preview > Posting Preview Display</i>.' +
+                '</div>').insertBefore($('#popup-modal-body'));
+            $('#azure-preview-modal-alert').on('closed', function () {
+                window.localStorage.setItem('azure-preview-modal-alert', '1');
+            });
+        }
         // keyboard event
         if (options.JOB_PopupModalArrowKey)
             $('#popup-modal').keydown(function (e) {

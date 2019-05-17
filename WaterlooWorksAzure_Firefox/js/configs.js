@@ -58,66 +58,70 @@ function getOptionListDefault() {
                 'display': true
             },
             'row_6': {
-                'name': 'Required Skills',
+                'name': 'Job Requirements',
                 'display': true
             },
             'row_7': {
-                'name': 'Job Summary',
+                'name': 'Required Skills',
                 'display': true
             },
             'row_8': {
-                'name': 'Job Responsibilities',
+                'name': 'Job Summary',
                 'display': true
             },
             'row_9': {
-                'name': 'Compensation And Benefits',
+                'name': 'Job Responsibilities',
                 'display': true
             },
             'row_10': {
+                'name': 'Compensation And Benefits',
+                'display': true
+            },
+            'row_11': {
                 'name': 'Position Type',
                 'display': false
             },
-            'row_11': {
+            'row_12': {
                 'name': 'Level',
                 'display': false
             },
-            'row_12': {
+            'row_13': {
                 'name': 'Job Openings',
                 'display': false
             },
-            'row_13': {
+            'row_14': {
                 'name': 'Job Category',
                 'display': false
             },
-            'row_14': {
+            'row_15': {
                 'name': 'Term Posted',
                 'display': false
             },
-            'row_15': {
+            'row_16': {
                 'name': 'Start Date',
                 'display': false
             },
-            'row_16': {
+            'row_17': {
                 'name': 'End Date',
                 'display': false
             },
-            'row_17': {
+            'row_18': {
                 'name': 'Career Development And Training',
                 'display': false
             },
-            'row_18': {
+            'row_19': {
                 'name': 'Targeted Degrees And Disciplines',
                 'display': false
             },
-            'row_19': {
+            'row_20': {
                 'name': 'Application Deadline',
                 'display': false
             },
-            'row_20': {
+            'row_21': {
                 'name': 'Application Delivery',
                 'display': false
             },
-            'row_21': {
+            'row_22': {
                 'name': 'Division',
                 'display': false
             }
