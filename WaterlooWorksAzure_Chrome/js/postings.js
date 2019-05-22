@@ -1177,7 +1177,7 @@ function postingListAjax(table, placeholder) {
                 'class': 'btn btn-success btn-small btn-right-4',
                 'id': 'azure-export-shortlist'
             });
-            exportBtn.text('Export Shortlist')
+            exportBtn.text('Export Shortlist');
 
             // btn event
             if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
@@ -1635,6 +1635,105 @@ function postingList() {
 }
 
 /**
+ * APPLICATION LIST
+ */
+function applicationListAjax() {
+    var theadTd = $('#na_studentApplicationGridTableHead tr td');
+    if (theadTd.length) {
+        theadTd.after('<th></th>');
+        theadTd.remove();
+        $('#azure-export-applications').show();
+    } else {
+        $('#azure-export-applications').hide();
+    }
+}
+
+/**
+ * APPLICATION LIST
+ */
+function applicationList() {
+
+    function _setupAjaxComplete() {
+        $(document).ajaxComplete(function (event, xhr, settings) {
+            if ((settings.url === '/myAccount/hire-waterloo/full-time-jobs/applications.htm')
+                && settings.dataType === 'html') {
+                applicationListAjax();
+            }
+        });
+    }
+
+    var placeholder = $('#na_studentApplicationGrid_gridBox');
+    if (!placeholder.length)
+        return;
+
+    // css
+    injectCSS(baseURL + 'css/postings.css', 'head');
+    $('#na_studentApplicationGrid').addClass('applicationGrid');
+
+
+    // export button
+    if (options.JOB_ApplicationExport) {
+        var exportBtn = $('<a href="javascript:void(0);" ' +
+            'class="btn btn-success btn-small margin-bottom-10" ' +
+            'id="azure-export-applications">Export Applications</a>');
+
+        exportBtn.insertBefore($('#na_studentApplicationGrid_processing'));
+
+        if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
+            exportBtn.on('click', function (e) {
+                e.preventDefault();
+                $('#na_studentApplicationGridTableID').tableExport({
+                    type: 'excel',
+                    escape: 'false',
+                    ignoreColumn: '[0, 1]',
+                    fileNamePrefix: 'Applications_'
+                });
+            });
+        } else if (isBrowser('firefox')) {
+            $('#na_studentApplicationGridTableID').on('click', function () {
+
+                // For Firefox only
+                var download = tableBackup.tableExport({
+                    type: 'excel',
+                    escape: 'false',
+                    ignoreColumn: '[0, 1]',
+                    fileNamePrefix: 'Applications_'
+                });
+                $(this).attr({
+                    'href': download.filelink,
+                    'download': download.filename
+                });
+            });
+        }
+
+        exportBtn.hide();
+    }
+
+    // detect table content
+    if ($('#na_studentApplicationGridTableID tbody').text().trim().length === 0) {
+        // might be loading
+        if ($('#na_studentApplicationGrid_noRecordsMessage').css('display') === 'block') {
+            // loaded, but no records
+        } else {
+            // might be loading
+            if ($('#na_studentApplicationGrid_processing').css('display') === 'block') {
+                // still loading
+                _setupAjaxComplete();
+            } else {
+                // already loaded
+                applicationListAjax();
+                _setupAjaxComplete();
+            }
+        }
+    } else {
+        // already loaded
+        applicationListAjax();
+        _setupAjaxComplete();
+    }
+
+}
+
+/**
  * POSTING DETAILS
  * Optimization scripts for posting detail page
  * Runs only once after page loaded
@@ -1777,6 +1876,7 @@ function postingDetail() {
 if (typeof jQuery !== typeof undefined) {
     if (typeof startAzureInject === 'function' && azureInjectReady === true) {
         postingList();
+        applicationList();
         postingDetail();
         postingExtra();
         removeOverlay();
@@ -1786,6 +1886,7 @@ if (typeof jQuery !== typeof undefined) {
             if (typeof startAzureInject === 'function' && azureInjectReady === true) {
                 clearInterval(injectInt);
                 postingList();
+                applicationList();
                 postingDetail();
                 postingExtra();
                 removeOverlay();

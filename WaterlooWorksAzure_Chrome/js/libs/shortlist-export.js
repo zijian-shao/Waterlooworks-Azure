@@ -6,7 +6,8 @@
                 ignoreColumn: [],
                 type: 'excel',
                 escape: 'true',
-                htmlContent: 'false'
+                htmlContent: 'false',
+                fileNamePrefix: 'Shortlist_'
             };
 
             var options = $.extend(defaults, options);
@@ -85,10 +86,10 @@
                 if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
                     var a = document.createElement('a');
                     a.href = 'data:application/vnd.ms-' + defaults.type + ';' + base64data;
-                    a.download = 'Shortlist_' + Date.now() + '.' + filetype;
+                    a.download = defaults.fileNamePrefix + Date.now() + '.' + filetype;
                     a.click();
                 } else if (isBrowser('firefox')) {
-                    var filename = 'Shortlist_' + Date.now() + '.' + filetype;
+                    var filename = defaults.fileNamePrefix + Date.now() + '.' + filetype;
                     var filelink = 'data:application/vnd.ms-' + defaults.type + ';' + base64data;
                     return {
                         'filename': filename,
@@ -116,7 +117,7 @@
     });
 })(jQuery);
 
-jQuery.base64 = ( function ($) {
+jQuery.base64 = (function ($) {
 
     var _PADCHAR = "=",
         _ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -146,22 +147,22 @@ jQuery.base64 = ( function ($) {
             return s;
 
         for (i = 0; i < imax; i += 3) {
-            b10 = ( _getbyte(s, i) << 16 ) | ( _getbyte(s, i + 1) << 8 ) | _getbyte(s, i + 2);
+            b10 = (_getbyte(s, i) << 16) | (_getbyte(s, i + 1) << 8) | _getbyte(s, i + 2);
             x.push(_ALPHA.charAt(b10 >> 18));
-            x.push(_ALPHA.charAt(( b10 >> 12 ) & 0x3F));
-            x.push(_ALPHA.charAt(( b10 >> 6 ) & 0x3f));
+            x.push(_ALPHA.charAt((b10 >> 12) & 0x3F));
+            x.push(_ALPHA.charAt((b10 >> 6) & 0x3f));
             x.push(_ALPHA.charAt(b10 & 0x3f));
         }
 
         switch (s.length - imax) {
             case 1:
                 b10 = _getbyte(s, i) << 16;
-                x.push(_ALPHA.charAt(b10 >> 18) + _ALPHA.charAt(( b10 >> 12 ) & 0x3F) + _PADCHAR + _PADCHAR);
+                x.push(_ALPHA.charAt(b10 >> 18) + _ALPHA.charAt((b10 >> 12) & 0x3F) + _PADCHAR + _PADCHAR);
                 break;
 
             case 2:
-                b10 = ( _getbyte(s, i) << 16 ) | ( _getbyte(s, i + 1) << 8 );
-                x.push(_ALPHA.charAt(b10 >> 18) + _ALPHA.charAt(( b10 >> 12 ) & 0x3F) + _ALPHA.charAt(( b10 >> 6 ) & 0x3f) + _PADCHAR);
+                b10 = (_getbyte(s, i) << 16) | (_getbyte(s, i + 1) << 8);
+                x.push(_ALPHA.charAt(b10 >> 18) + _ALPHA.charAt((b10 >> 12) & 0x3F) + _ALPHA.charAt((b10 >> 6) & 0x3f) + _PADCHAR);
                 break;
         }
 
@@ -172,4 +173,4 @@ jQuery.base64 = ( function ($) {
         encode: _encode
     };
 
-}(jQuery) );
+}(jQuery));

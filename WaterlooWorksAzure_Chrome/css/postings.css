@@ -876,3 +876,18 @@
     padding-right: 4px;
     font-family: FontAwesome;
 }
+
+/* application table */
+.applicationGrid table thead, .applicationGrid table thead td, .applicationGrid table thead th {
+    background-color: transparent !important;
+}
+
+.applicationGrid table thead th.shortenedColumn span, .applicationGrid table tbody td.shortenedColumn span {
+    max-width: none !important;
+    min-width: 150px !important;
+    width: auto !important;
+}
+
+.applicationGrid .gridBox {
+    max-height: none;
+}

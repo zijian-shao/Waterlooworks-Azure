@@ -28,6 +28,14 @@
     margin-top: 80px !important;
 }
 
+.margin-bottom-5 {
+    margin-bottom: 5px !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px !important;
+}
+
 .margin-left-5 {
     margin-left: 5px !important;
 }
@@ -464,6 +472,11 @@ label.gridDropdownButton.is--focused {
 .modal-fluid {
     width: 800px;
     margin-left: -400px;
+}
+
+#pdfPreviewToolbarContainer {
+    background: rgba(0, 0, 0, 0.8);
+    padding-bottom: 3px;
 }
 
 /* Back to top button*/

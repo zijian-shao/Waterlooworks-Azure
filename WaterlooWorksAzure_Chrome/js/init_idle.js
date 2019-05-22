@@ -965,9 +965,10 @@ function initAzureIdle() {
     if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
         injectJS(baseURL + 'js/messages.js', 'body');
     }
-    if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)) {
+    if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)
+        || currURL.match(/\/applications\.htm/) || currURL.match(/\/coopApplications\.htm/)) {
         injectJS(baseURL + 'js/postings.js', 'body');
-        if (options.JOB_ShortlistExport)
+        if (options.JOB_ShortlistExport || options.JOB_AppliedToExport)
             injectJS(baseURL + 'js/libs/shortlist-export.js', 'body');
     }
 

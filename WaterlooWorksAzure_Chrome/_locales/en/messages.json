@@ -26,6 +26,12 @@
   "addButtonsToAdjustDetailPageFontSize_tip": {
     "message": "Add two buttons at the top of posting information. Click the buttons to increase / decrease the font size"
   },
+  "addExportAppliedToButton": {
+    "message": "Add \"Export Applications\" button"
+  },
+  "addExportAppliedToButton_tip": {
+    "message": "Add a button at the top of the Applied To list. Export the postings to excel on one-click."
+  },
   "addExportShortlistButton": {
     "message": "Add \"Export Shortlist\" button"
   },
