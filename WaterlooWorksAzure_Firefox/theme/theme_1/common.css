@@ -458,8 +458,38 @@ hr {
     border: none;
 }
 
-.orbisTableSorter_both, .orbisTableSorter_desc，.orbisTableSorter_asc {
+.orbisTableSorter_both, .orbisTableSorter_desc, .orbisTableSorter_asc {
     background-image: none;
+}
+
+.orbisTableSorter_both::after, .orbisTableSorter_desc::after, .orbisTableSorter_asc::after {
+    content: "";
+    background: no-repeat center right;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.orbisTableSorter_both::after {
+    background-image: url(https://waterlooworks.uwaterloo.ca/core/orbis/images/sort_both.png);
+}
+
+.orbisTableSorter_desc::after {
+    background-image: url(https://waterlooworks.uwaterloo.ca/core/orbis/images/sort_desc.png);
+    filter: brightness(2.3);
+}
+
+.orbisTableSorter_asc::after {
+    background-image: url(https://waterlooworks.uwaterloo.ca/core/orbis/images/sort_asc.png);
+    filter: brightness(2.3);
+}
+
+.orbisTableSorter_desc, .orbisTableSorter_asc {
+    border-bottom-color: #09b1b9 !important;
 }
 
 .panel .table {
@@ -655,12 +685,12 @@ input[type="text"]:focus, input[type="password"]:focus {
 /* modal */
 .modal {
     background: #323841;
-
 }
 
 .modal .modal-header {
     background: #373e48;
     border: none;
+    border-radius: 6px 6px 0 0;
 }
 
 .modal .modal-body {
@@ -677,6 +707,11 @@ input[type="text"]:focus, input[type="password"]:focus {
     opacity: 0.5;
     color: #fff;
     text-shadow: none;
+}
+
+/* popup modal */
+.modal-posting-actions {
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* orbis tab */
@@ -818,32 +853,45 @@ div.checkboxGroup div.checkboxGroupHeader {
 /* my documents */
 #doc_commonTableTableID > thead, #doc_commonTableTableID > thead th, #doc_commonTableTableID > thead td,
 #doc_commonTableTableID .gridChecks {
-    background: transparent !important;
+    background-color: transparent !important;
 }
 
 /* scroll bar */
 *::-webkit-scrollbar {
+    -webkit-appearance: none;
     width: 10px;
 }
 
-*::-webkit-scrollbar-track {
-    background: #1f242b;
-    border-radius: 10px;
+*::-webkit-scrollbar:vertical,
+.grid_topScrollBox::-webkit-scrollbar:vertical, .gridBox::-webkit-scrollbar:vertical {
+    width: 12px;
 }
 
-*::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar:horizontal,
+.grid_topScrollBox::-webkit-scrollbar:horizontal, .gridBox::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track,
+.grid_topScrollBox::-webkit-scrollbar-track, .gridBox::-webkit-scrollbar-track {
+    background: #1f242b;
+}
+
+*::-webkit-scrollbar-thumb,
+.grid_topScrollBox::-webkit-scrollbar-thumb, .gridBox::-webkit-scrollbar-thumb {
     background: #323841;
     border: 2px solid #1f242b;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-*::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover,
+.grid_topScrollBox::-webkit-scrollbar-thumb:hover, .gridBox::-webkit-scrollbar-thumb:hover {
     background: #424a56;
 }
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: dark;
+    scrollbar-color: #323841 #1f242b;
 }
 
 /* block quote */
@@ -969,15 +1017,6 @@ img {
     background: #0c8e94;
     font-weight: bold;
     padding: 0 2px;
-}
-
-/* popup modal */
-.modal {
-    overflow: hidden;
-}
-
-.modal-posting-actions {
-    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* batch */

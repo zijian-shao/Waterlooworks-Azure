@@ -26,6 +26,12 @@
   "addButtonsToAdjustDetailPageFontSize_tip": {
     "message": "在职位详情页顶部添加两个按钮用以增大/减小页面字号。"
   },
+  "addExportAppliedToButton": {
+    "message": "添加“导出已申请列表”按钮"
+  },
+  "addExportAppliedToButton_tip": {
+    "message": "在已申请列表页面顶端添加一个按钮，点击即可一键将列表导出到 Excel。"
+  },
   "addExportShortlistButton": {
     "message": "添加“导出收藏列表”按钮"
   },

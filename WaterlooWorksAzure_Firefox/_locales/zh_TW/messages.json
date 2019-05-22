@@ -26,6 +26,12 @@
   "addButtonsToAdjustDetailPageFontSize_tip": {
     "message": "在職位詳情頁頂部添加兩個按鈕用以增大/減小頁面字號。"
   },
+  "addExportAppliedToButton": {
+    "message": "添加“導出已申請列表”按鈕"
+  },
+  "addExportAppliedToButton_tip": {
+    "message": "在已申請列表頁面頂端添加一個按鈕，點擊即可一鍵將列表導出到 Excel。"
+  },
   "addExportShortlistButton": {
     "message": "添加“導出收藏列表”按鈕"
   },

@@ -23,6 +23,7 @@ function getOptionListDefault() {
         'JOB_ColumnSelected': ['action-buttons', 'app-status', 'id', 'job-title', 'organization', 'division', 'openings', 'position-type', 'internal-status', 'city', 'location', 'level', 'applications', 'app-deadline', 'not-interested'],
         'JOB_ShortlistedSwitch': true,
         'JOB_ShortlistExport': true,
+        'JOB_ApplicationExport': true,
         'JOB_FloatDetailPageButton': true,
         'JOB_FloatDetailPageInfo': true,
         'JOB_ListBatchOperation': true,

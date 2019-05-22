@@ -6,7 +6,8 @@
                 ignoreColumn: [],
                 type: 'excel',
                 escape: 'true',
-                htmlContent: 'false'
+                htmlContent: 'false',
+                fileNamePrefix: 'Shortlist_'
             };
 
             var options = $.extend(defaults, options);
@@ -85,10 +86,10 @@
                 if (isBrowser('chrome') || isBrowser('safari') || isBrowser('opera')) {
                     var a = document.createElement('a');
                     a.href = 'data:application/vnd.ms-' + defaults.type + ';' + base64data;
-                    a.download = 'Shortlist_' + Date.now() + '.' + filetype;
+                    a.download = defaults.fileNamePrefix + Date.now() + '.' + filetype;
                     a.click();
                 } else if (isBrowser('firefox')) {
-                    var filename = 'Shortlist_' + Date.now() + '.' + filetype;
+                    var filename = defaults.fileNamePrefix + Date.now() + '.' + filetype;
                     var filelink = 'data:application/vnd.ms-' + defaults.type + ';' + base64data;
                     return {
                         'filename': filename,
