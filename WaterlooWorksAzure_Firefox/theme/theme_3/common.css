@@ -480,6 +480,20 @@ div::-webkit-scrollbar-thumb {
     border-color: #f2dede;
 }
 
+.dashboard-home .panel .panel {
+    margin: 0 -15px !important;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+}
+
+.dashboard-home .panel .panel .panel-heading {
+    background: #f5f5f5;
+    color: #333;
+    border-bottom: none;
+    border-radius: 0;
+}
+
 /* Hr */
 .orbisModuleHeader hr {
     opacity: 0.1;
@@ -922,4 +936,36 @@ table.formTable span.inputContainer {
 /* campus connect */
 .btn--filter-results.btn-primary {
     color: #fff !important;
+}
+
+/* upcoming events */
+#upcomingEvents .panel-body {
+    padding: 15px 0;
+}
+
+#upcomingEvents .stat-table > thead {
+    background: #f5f5f5;
+}
+
+#upcomingEvents .stat-table tr > td {
+    line-height: 18px;
+    vertical-align: unset;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#upcomingEvents .stat-table tr > td:first-child {
+    padding-left: 15px;
+}
+
+#upcomingEvents .stat-table tr > td:last-child {
+    padding-right: 15px;
+}
+
+#upcomingEvents .stat-table tbody + tbody {
+    border-top: 1px solid #eee;
+}
+
+#upcomingEvents .stat-table .label {
+    margin-left: 0;
 }

@@ -1280,3 +1280,7 @@ li.azure-font-size-control a {
     position: absolute !important;
     box-shadow: none !important;
 }
+
+.panel .panel-heading i.icon-2x {
+    display: none;
+}

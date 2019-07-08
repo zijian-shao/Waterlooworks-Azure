@@ -523,33 +523,43 @@ function tableColumnCSS(selector, colID, obj) {
  */
 function dashboardNestedBoxes() {
 
-    $(document).ajaxComplete(function (event, xhr, settings) {
+    function _dashboardNestedBoxes() {
+        // remove nested panel
+        $('.panel-default').each(function (index, element) {
 
-        if (settings.url === 'https://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm'
-            && settings.dataType === 'html') {
+            var panelHeading = $(element).children('.panel-heading');
 
-            if (xhr.responseText.match(/Term:/)) {
+            if (panelHeading.text().match(/Co-op([\s\S]*)Sequence([\s\S]*)Summary/i)) {
 
-                // remove nested panel
-                $('.panel-default').each(function (index, element) {
-
-                    var panelHeading = $(element).children('.panel-heading');
-
-                    if (panelHeading.text().match(/Co-op([\s\S]*)Sequence([\s\S]*)Summary/i)) {
-
-                        var panelBody = $(element).find('div[id^="orbisAjaxPlaceholder"]').detach();
-                        panelBody.children('br').remove();
-                        $('div[class^="serviceTeamMembersContainer"]').after(panelBody);
-                        $(element).addClass('hidden');
-                    }
-
-                    if (panelHeading.text().match(/Service([\s\S]*)Team/i)) {
-                        panelHeading.find('i').remove();
-                    }
-                });
+                var panelBody = $(element).find('div[id^="orbisAjaxPlaceholder"]').detach();
+                panelBody.children('br').remove();
+                $('div[class^="serviceTeamMembersContainer"]').after(panelBody);
+                $(element).addClass('hidden');
             }
-        }
-    });
+
+            // if (panelHeading.text().match(/Service([\s\S]*)Team/i)) {
+            //     panelHeading.find('i').remove();
+            // }
+        });
+    }
+
+    var coopPanel = $('div[class^="serviceTeamMembersContainer"]').next('div.panel.panel-default');
+
+    if (!coopPanel.find('.panel-heading').text().match(/Co-op.*Sequence.*Summary/gi))
+        return;
+
+    if (coopPanel.find('.panel-body img.ajaxLoader').length) {
+        $(document).ajaxComplete(function (event, xhr, settings) {
+            if (settings.url === 'https://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm'
+                && settings.dataType === 'html') {
+                if (xhr.responseText.match(/Term:/)) {
+                    _dashboardNestedBoxes();
+                }
+            }
+        });
+    } else {
+        _dashboardNestedBoxes();
+    }
 }
 
 function startAzureInject() {
