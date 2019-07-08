@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_appName__",
-  "version": "2.1.12",
+  "version": "2.1.13",
   "author": "Zijian Shao",
   "background": {
     "persistent": false,

@@ -344,6 +344,17 @@ hr {
     border-color: rgba(0, 0, 0, 0);
 }
 
+.dashboard-home .panel .panel {
+    margin: 0 -15px !important;
+    border: none;
+    border-radius: 0;
+}
+
+.dashboard-home .panel .panel .panel-heading {
+    border: none;
+    border-radius: 0;
+}
+
 /* nav tabs */
 .nav-tabs.nav-stacked {
     background-color: rgba(255, 255, 255, 0.05);
@@ -1157,4 +1168,38 @@ div#eventTooltip {
     color: #ddd;
     background-color: #424a56;
     border-color: rgba(0, 0, 0, 0);
+}
+
+/* upcoming events */
+#upcomingEvents .panel-body {
+    padding: 15px 0;
+}
+
+#upcomingEvents .stat-table {
+    margin-bottom: 0;
+}
+
+#upcomingEvents .stat-table > thead {
+    background: #424a55;
+}
+
+#upcomingEvents .stat-table tr > td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#upcomingEvents .stat-table tr > td:first-child {
+    padding-left: 15px;
+}
+
+#upcomingEvents .stat-table tr > td:last-child {
+    padding-right: 15px;
+}
+
+#upcomingEvents .stat-table tbody + tbody {
+    border-top: 1px solid #424a55;
+}
+
+#upcomingEvents .stat-table .label {
+    margin-left: 0;
 }
