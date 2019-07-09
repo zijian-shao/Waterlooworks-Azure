@@ -434,8 +434,9 @@ function showPostingModal(tr) {
         popupModalFooter.html(btnsClone);
 
         // add title
-        popupModalBody.prepend($('<p class="modal-organization">' + jobCompany + '</p>'));
-        popupModalBody.prepend($('<h1 class="modal-job-title">' + jobTitle + '</h1>'));
+        var upperC = options.JOB_PopupModalCapitalTitle ? ' text-uppercase' : '';
+        popupModalBody.prepend($('<p class="modal-organization' + upperC + '">' + jobCompany + '</p>'));
+        popupModalBody.prepend($('<h1 class="modal-job-title' + upperC + '">' + jobTitle + '</h1>'));
 
         // add prev / next btn
         var modalNav = $('<div class="modal-nav"></div>');

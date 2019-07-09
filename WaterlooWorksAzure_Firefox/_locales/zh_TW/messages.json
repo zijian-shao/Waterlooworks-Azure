@@ -434,6 +434,12 @@
   "showMsgCategory_tip": {
     "message": "關閉該選項後，將不在短消息列表展示消息所屬分類及子分類。"
   },
+  "showTitlesInUppercaseLetters": {
+    "message": "以大寫字母展示職位名稱"
+  },
+  "showTitlesInUppercaseLetters_tip": {
+    "message": "若需以原有樣式顯示職位名稱，請關閉此選項。"
+  },
   "switchBookingOptionsToTop": {
     "message": "提升“預約選項”至頂部"
   },

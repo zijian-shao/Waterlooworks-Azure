@@ -32,6 +32,7 @@ function getOptionListDefault() {
         'JOB_DetailPageHighlight': true,
         'JOB_DetailPageHighlightKeywords': ['G2', 'driver\'s license'],
         'JOB_PopupModal': true,
+        'JOB_PopupModalCapitalTitle': true,
         'JOB_PopupModalArrowKey': true,
         'JOB_PopupModalRows': {
             'row_0': {

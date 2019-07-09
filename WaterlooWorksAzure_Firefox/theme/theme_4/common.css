@@ -934,29 +934,11 @@ div.checkboxGroup div.checkboxGroupHeader label {
     padding: 0;
 }
 
-#upcomingEvents .stat-table > thead {
-    background: #f5f5f5;
+#upcomingEvents .panel-body img.ajaxLoader {
+    margin: 15px;
 }
 
 #upcomingEvents .stat-table tr > td {
     line-height: 18px;
     vertical-align: unset;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#upcomingEvents .stat-table tr > td:first-child {
-    padding-left: 15px;
-}
-
-#upcomingEvents .stat-table tr > td:last-child {
-    padding-right: 15px;
-}
-
-#upcomingEvents .stat-table tbody + tbody {
-    border-top: 1px solid #eee;
-}
-
-#upcomingEvents .stat-table .label {
-    margin-left: 0;
 }

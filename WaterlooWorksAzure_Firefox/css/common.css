@@ -1281,6 +1281,50 @@ li.azure-font-size-control a {
     box-shadow: none !important;
 }
 
+/* panel */
 .panel .panel-heading i.icon-2x {
     display: none;
+}
+
+/* upcoming events */
+.azure-upcoming-events .panel-body {
+    padding: 15px 0;
+}
+
+.azure-upcoming-events .panel-body img.ajaxLoader {
+    margin: 0 15px;
+}
+
+.azure-upcoming-events .stat-table {
+    margin-bottom: 0;
+}
+
+.azure-upcoming-events .stat-table > thead {
+    background: #f5f5f5;
+}
+
+.azure-upcoming-events .stat-table tr > td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+.azure-upcoming-events .stat-table tr > td:first-child {
+    padding-left: 15px;
+}
+
+.azure-upcoming-events .stat-table tr > td:last-child {
+    padding-right: 15px;
+}
+
+.azure-upcoming-events .stat-table tbody tr > td {
+    cursor: pointer;
+}
+
+.azure-upcoming-events .stat-table tbody + tbody {
+    border-top: 1px solid #eee;
+}
+
+.azure-upcoming-events .stat-table .label {
+    margin-left: 0;
 }

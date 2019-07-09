@@ -850,12 +850,17 @@ function startAzure() {
         if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
 
             // is Home
-            if ($('#displayOverview').hasClass('active')) {
-                // body class
-                $('body').addClass('dashboard-home');
-                // announcement css
-                $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
-            }
+            $(window).on('load', function () {
+                if ($('#displayOverview').hasClass('active')) {
+                    // body class
+                    $('body').addClass('dashboard-home');
+                    // announcement css
+                    $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
+                }
+            });
+
+            // upcoming events
+            $('#upcomingEvents').addClass('azure-upcoming-events');
 
             // campus connect
             if (options.DASH_HideCampusConnectBadge)
