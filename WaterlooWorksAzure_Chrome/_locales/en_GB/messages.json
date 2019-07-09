@@ -434,6 +434,12 @@
   "showMsgCategory_tip": {
     "message": "Show / hide category and subcategory of messages."
   },
+  "showTitlesInUppercaseLetters": {
+    "message": "Show titles in uppercase letters"
+  },
+  "showTitlesInUppercaseLetters_tip": {
+    "message": "Disable this option to display preview titles in original styles"
+  },
   "switchBookingOptionsToTop": {
     "message": "Switch \"booking options\" box to the top"
   },

@@ -568,9 +568,11 @@ function startAzureInject() {
 
     // dashboard nested boxes
     if (currURL.match(/\/myAccount\/dashboard\.htm/i)) {
-        if ($('#displayOverview').hasClass('active')) {
-            dashboardNestedBoxes();
-        }
+        $(window).on('load', function () {
+            if ($('#displayOverview').hasClass('active')) {
+                dashboardNestedBoxes();
+            }
+        });
     }
 
     // keep logged in
