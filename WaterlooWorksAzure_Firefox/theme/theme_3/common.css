@@ -939,7 +939,7 @@ table.formTable span.inputContainer {
 }
 
 /* upcoming events */
-#upcomingEvents .stat-table tr > td {
+.azure-upcoming-events .stat-table tr > td {
     line-height: 18px;
     vertical-align: unset;
 }

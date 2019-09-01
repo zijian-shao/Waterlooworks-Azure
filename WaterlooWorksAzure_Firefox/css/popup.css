@@ -195,8 +195,8 @@ div {
     }
 
     .header {
-        background: #222;
-        border-bottom-color: #222;
+        background: #2d2d2d;
+        border-bottom-color: #2d2d2d;
     }
 
     .header .logo {
@@ -223,8 +223,8 @@ div {
 
     .btn {
         color: #fff;
-        border-color: #222;
-        background: #222;
+        border-color: #2d2d2d;
+        background: #2d2d2d;
     }
 
     .btn-icon img {
@@ -232,7 +232,7 @@ div {
     }
 
     .btn:hover {
-        border-color: #222;
+        border-color: #2d2d2d;
     }
 
     .btn:active {
@@ -241,7 +241,7 @@ div {
     }
 
     .footer {
-        background: #222;
+        background: #2d2d2d;
     }
 
     .footer .report {
@@ -249,7 +249,7 @@ div {
     }
 
     .footer .report .link {
-        color: #3176c4;
+        color: #3283d2;
     }
 
     .raspberry-toast {
