@@ -1328,3 +1328,8 @@ li.azure-font-size-control a {
 .azure-upcoming-events .stat-table .label {
     margin-left: 0;
 }
+
+.azure-upcoming-events > div.panel-body > div[id^="orbisAjaxPlaceholder"] > div.row-fluid > div[class^="span"] > strong {
+    padding: 15px;
+    display: block;
+}

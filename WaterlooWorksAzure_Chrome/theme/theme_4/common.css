@@ -930,15 +930,15 @@ div.checkboxGroup div.checkboxGroupHeader label {
 }
 
 /* upcoming events */
-#upcomingEvents .panel-body {
+.azure-upcoming-events .panel-body {
     padding: 0;
 }
 
-#upcomingEvents .panel-body img.ajaxLoader {
+.azure-upcoming-events .panel-body img.ajaxLoader {
     margin: 15px;
 }
 
-#upcomingEvents .stat-table tr > td {
+.azure-upcoming-events .stat-table tr > td {
     line-height: 18px;
     vertical-align: unset;
 }

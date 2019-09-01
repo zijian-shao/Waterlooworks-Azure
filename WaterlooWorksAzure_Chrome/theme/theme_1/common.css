@@ -1171,10 +1171,10 @@ div#eventTooltip {
 }
 
 /* upcoming events */
-#upcomingEvents .stat-table > thead {
+.azure-upcoming-events .stat-table > thead {
     background: #424a55;
 }
 
-#upcomingEvents .stat-table tbody + tbody {
+.azure-upcoming-events .stat-table tbody + tbody {
     border-top: 1px solid #424a55;
 }

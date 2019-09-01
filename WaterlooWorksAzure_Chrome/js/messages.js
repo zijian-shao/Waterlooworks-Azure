@@ -57,8 +57,8 @@ function messageListAjax() {
     if (options.MSG_BetterColumn) {
         var theadTH = table.find('thead tr th');
         // chagne icon
-        $(theadTH[prioIdx]).html('<i class="icon-star"></i>');
-        $(theadTH[viewIdx]).html('<i class="icon-eye-open"></i>');
+        $(theadTH[prioIdx]).html('<i class="icon-star" title="Priority"></i>');
+        $(theadTH[viewIdx]).html('<i class="icon-envelope-alt" title="Viewed"></i>');
         $(theadTH[ackIdx]).html(function () {
             return $(this).html().replace('Acknowledgement Required', 'Ack Req\'d');
         });
@@ -75,10 +75,11 @@ function messageListAjax() {
         var trTD = $(tr).children('td');
 
         // click row to open msg
-        var onclick = $(trTD[0]).children('a').attr('onclick');
+        var onclick = $(trTD[0]).find('div.btn-group ul.dropdown-menu li a:contains(current tab)').attr('onclick');
         if (options.MSG_OpenInNewTab) {
-            onclick = onclick.replace(/ /g, '').replace("'').submit()", "'','_blank').submit()");
-            $(trTD[0]).children('a').attr('onclick', onclick);
+            // onclick = onclick.replace(/ /g, '').replace("'').submit()", "'','_blank').submit()");
+            // $(trTD[0]).children('a').attr('onclick', onclick);
+            onclick = $(trTD[0]).find('div.btn-group ul.dropdown-menu li a:contains(new tab)').attr('onclick');
         }
 
         // switch column order
@@ -89,16 +90,18 @@ function messageListAjax() {
             // change priority icon
             var prioTD = $(trTD[prioIdx]);
             if (prioTD.text().match(/Normal/))
-                prioTD.html('<i class="icon-star-empty azure-msg-normal-icon"></i>');
+                prioTD.html('<i class="icon-star-empty azure-msg-normal-icon" title="' + prioTD.text() + '"></i>');
+            else if (prioTD.text().match(/Alert/))
+                prioTD.html('<i class="icon-flag azure-msg-important-icon" title="' + prioTD.text() + '"></i>');
             else
-                prioTD.html('<i class="icon-star azure-msg-important-icon"></i>');
+                prioTD.html('<i class="icon-star azure-msg-important-icon" title="' + prioTD.text() + '"></i>');
 
             // change has viewed icon & bold new msg
             var viewTD = $(trTD[viewIdx]);
             if (viewTD.text().match(/Yes/)) {
-                viewTD.html('<i class="icon-envelope azure-msg-viewed-icon"></i>');
+                viewTD.html('<i class="icon-envelope azure-msg-viewed-icon" title="' + viewTD.text() + '"></i>');
             } else {
-                viewTD.html('<i class="icon-envelope-alt azure-msg-not-viewed-icon"></i>');
+                viewTD.html('<i class="icon-envelope-alt azure-msg-not-viewed-icon" title="' + viewTD.text() + '"></i>');
                 $(tr).addClass('azure-msg-is-new');
             }
 
