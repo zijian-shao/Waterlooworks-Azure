@@ -881,3 +881,8 @@ table.formTable span.inputContainer {
 #externalPostingAjax .bootRobot--sidebar__header-tabs .btn.is--active {
     color: #fff !important;
 }
+
+/* appointment intro */
+.azure-appt-home-navigation > tbody > tr {
+    border-radius: 10px;
+}

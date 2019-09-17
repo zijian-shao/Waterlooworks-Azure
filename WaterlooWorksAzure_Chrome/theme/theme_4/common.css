@@ -942,3 +942,12 @@ div.checkboxGroup div.checkboxGroupHeader label {
     line-height: 18px;
     vertical-align: unset;
 }
+
+/* appointment intro */
+.azure-appt-home-navigation > tbody > tr {
+    border-radius: 0;
+}
+
+.azure-appt-home-navigation > tbody > tr:hover {
+    box-shadow: 0 2px 12px rgba(50, 50, 50, 0.1);
+}

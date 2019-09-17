@@ -1104,6 +1104,24 @@ img {
     background: linear-gradient(to bottom, rgba(50, 56, 65, 0) 0%, rgba(50, 56, 65, 1) 100%);
 }
 
+.azure-appt-home-navigation > tbody > tr {
+    background: #373e48;
+    border: none;
+}
+
+.azure-appt-home-navigation > tbody > tr img {
+    filter: invert(1) hue-rotate(180deg) brightness(0.8);
+    mix-blend-mode: screen;
+}
+
+.azure-appt-home-navigation > tbody > tr:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.azure-appt-home-navigation > tbody > tr > td:last-child span {
+    color: #aaa;
+}
+
 .sidebar--fixed--right {
     background: #323841;
 }

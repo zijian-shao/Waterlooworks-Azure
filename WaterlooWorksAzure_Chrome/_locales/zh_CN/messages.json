@@ -59,8 +59,20 @@
   "applications": {
     "message": "申请人数"
   },
+  "appointmentNavPageLayout": {
+    "message": "使用全新预约导航页"
+  },
+  "appointmentNavPageLayout_tip": {
+    "message": "优化预约导航页布局，采用更加现代化的磁贴设计"
+  },
   "appointments": {
     "message": "预约页面"
+  },
+  "autoCollapseMultiSelectBox": {
+    "message": "自动折叠筛选区域多项选择框"
+  },
+  "autoCollapseMultiSelectBox_tip": {
+    "message": "在搜索页面自动折叠筛选区域的多项选择框，禁用此选项以使用默认样式。"
   },
   "autoEnterOnlyBookingOption": {
     "message": "自动进入唯一的预约选项"

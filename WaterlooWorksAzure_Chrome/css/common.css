@@ -908,27 +908,27 @@ table.table-header-fixed {
 }
 
 @media (min-width: 980px) {
-    .aaaa .spaceForSearchFilters {
+    .azure-auto-collapse-multi-select .aaaa .spaceForSearchFilters {
         padding-bottom: 0;
     }
 
-    .spaceForSearchFilters select[multiple] {
+    .azure-auto-collapse-multi-select .spaceForSearchFilters select[multiple] {
         height: 30px;
         transition: box-shadow 0.2s ease, height 0.2s ease, border 0.2s ease;
     }
 
-    .spaceForSearchFilters select[multiple] ~ a.btn.btn-small {
+    .azure-auto-collapse-multi-select .spaceForSearchFilters select[multiple] ~ a.btn.btn-small {
         opacity: 0;
         height: 0;
         margin-bottom: 0;
         transition: opacity 0.2s ease, margin 0.2s ease;
     }
 
-    .spaceForSearchFilters div.fqDiv.margin--r--m:hover select[multiple] {
+    .azure-auto-collapse-multi-select .spaceForSearchFilters div.fqDiv.margin--r--m:hover select[multiple] {
         height: 150px;
     }
 
-    .spaceForSearchFilters div.fqDiv.margin--r--m:hover a.btn.btn-small {
+    .azure-auto-collapse-multi-select .spaceForSearchFilters div.fqDiv.margin--r--m:hover a.btn.btn-small {
         opacity: 1;
         height: auto;
         margin-bottom: 20px;
@@ -1237,6 +1237,79 @@ li.azure-font-size-control a {
 
 .azure-appt-type-auto-hide div:last-child:hover:after {
     opacity: 0.4;
+}
+
+.azure-appt-home-navigation {
+
+}
+
+.azure-appt-home-navigation > tbody {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+.azure-appt-home-navigation > tbody > tr {
+    margin: 10px;
+    padding: 20px;
+    flex: 0 0 calc(25% - 20px);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border 0.2s ease, background 0.2s ease;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.azure-appt-home-navigation > tbody > tr:hover {
+    box-shadow: 0 2px 6px rgba(50, 50, 50, 0.1);
+    transform: translateY(-4px);
+    border-color: #eee;
+}
+
+.azure-appt-home-navigation > tbody > tr > td:first-child,
+.azure-appt-home-navigation > tbody > tr > td:first-child > a {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.azure-appt-home-navigation > tbody > tr > td:last-child span {
+    font-size: 12px !important;
+    color: #666;
+    line-height: 1.5;
+}
+
+.azure-appt-home-navigation > tbody > tr > td:last-child strong a:first-child,
+.azure-appt-home-navigation > tbody > tr > td:last-child a:first-child strong {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    line-height: 30px !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.azure-appt-home-navigation > tbody > tr > td:last-child a:first-child:hover {
+    text-decoration: none !important;
+}
+
+@media (max-width: 1199px) {
+    .azure-appt-home-navigation > tbody > tr {
+        flex: 0 0 calc(33% - 20px);
+    }
+}
+
+@media (max-width: 979px) {
+    .azure-appt-home-navigation > tbody > tr {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 767px) {
+    .azure-appt-home-navigation > tbody > tr {
+        flex: 0 0 calc(100% - 20px);
+    }
 }
 
 /* campus connect */
