@@ -1524,6 +1524,9 @@ function postingListAjax(table, placeholder) {
  */
 function postingList() {
 
+    if (options.JOB_AutoCollapseMultiSelect)
+        $('body').addClass('azure-auto-collapse-multi-select');
+
     var placeholder = $('#postingsTablePlaceholder');
     if (!placeholder.length)
         return;

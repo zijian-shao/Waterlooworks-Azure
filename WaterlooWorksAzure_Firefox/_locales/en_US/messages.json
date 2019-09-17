@@ -59,8 +59,20 @@
   "applications": {
     "message": "Applications"
   },
+  "appointmentNavPageLayout": {
+    "message": "Use new navigation page layout"
+  },
+  "appointmentNavPageLayout_tip": {
+    "message": "Optimize the appointment navigation page layout to a modern tile design"
+  },
   "appointments": {
     "message": "Appointments"
+  },
+  "autoCollapseMultiSelectBox": {
+    "message": "Auto collapse multiple selection box in search filter area"
+  },
+  "autoCollapseMultiSelectBox_tip": {
+    "message": "Auto collapse multiple selection box on search postings page. Turn off this switch to use default style."
   },
   "autoEnterOnlyBookingOption": {
     "message": "Auto enter the only booking option"

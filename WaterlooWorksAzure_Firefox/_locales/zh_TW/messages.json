@@ -59,8 +59,20 @@
   "applications": {
     "message": "申請人數"
   },
+  "appointmentNavPageLayout": {
+    "message": "使用全新預約導航頁"
+  },
+  "appointmentNavPageLayout_tip": {
+    "message": "優化預約導航頁佈局，採用更加現代化的磁貼設計"
+  },
   "appointments": {
     "message": "預約頁面"
+  },
+  "autoCollapseMultiSelectBox": {
+    "message": "自動折疊篩選區域多項選擇框"
+  },
+  "autoCollapseMultiSelectBox_tip": {
+    "message": "在搜索頁面自動折疊篩選區域的多項選擇框，禁用此選項以使用默認樣式。"
   },
   "autoEnterOnlyBookingOption": {
     "message": "自動進入唯一的預約選項"

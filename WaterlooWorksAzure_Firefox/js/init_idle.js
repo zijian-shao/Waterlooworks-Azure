@@ -593,18 +593,33 @@ function apptHideInstr() {
     }
 
     // appt modules page
-    if (page === 'home' && false) {
+    if (page === 'home') {
         // console.log('home');
-        $('#mainContentDiv > .box .customContentContainer.withOutHeader a').each(function () {
-            var self = $(this);
-            if (self.attr('href').match(/\/appts\//)) {
-                self
-                // .html(self.text())
-                    .addClass('btn btn-primary')
-                    .css('margin-bottom', '0.5em')
-                    .after('<br>');
-            }
-        });
+        // $('#mainContentDiv > .box > .customContentContainer.withOutHeader a').each(function () {
+        //     var self = $(this);
+        //     if (self.attr('href').match(/\/appts\//)) {
+        //         self
+        //         // .html(self.text())
+        //             .addClass('btn btn-primary')
+        //             .css('margin-bottom', '0.5em')
+        //             .after('<br>');
+        //     }
+        // });
+        if (options.APPT_HomeNavTile) {
+            var appttb = $('#mainContentDiv > .box > .customContentContainer.withOutHeader > table');
+            appttb.addClass('azure-appt-home-navigation');
+            appttb.find('tbody tr').each(function () {
+                var self = $(this);
+                if (self.text().trim().length === 0) {
+                    self.remove();
+                } else {
+                    self.find('img').closest('a').attr('href', 'javascript:void(0);');
+                    self.on('click', function () {
+                        window.location.href = self.find('td:last-child a').first().attr('href');
+                    });
+                }
+            });
+        }
     }
     // single appt guide page
     else if (page === 'guide') {
@@ -973,7 +988,7 @@ function initAzureIdle() {
     if (currURL.match(/\/jobs-postings\.htm/) || currURL.match(/\/coop-postings\.htm/)
         || currURL.match(/\/applications\.htm/) || currURL.match(/\/coopApplications\.htm/)) {
         injectJS(baseURL + 'js/postings.js', 'body');
-        if (options.JOB_ShortlistExport || options.JOB_AppliedToExport)
+        if (options.JOB_ShortlistExport || options.JOB_ApplicationExport)
             injectJS(baseURL + 'js/libs/shortlist-export.js', 'body');
     }
 
