@@ -258,6 +258,7 @@ div.arrow.left{background-image:url(../img/icon-sort-left.png)}
     .radio-group input[type=radio]:checked+label:before,.radio-group input[type=radio]:not(:checked)+label:before{border-color:#555;background:#555}
     .radio-group input[type=radio]:checked+label:after,.radio-group input[type=radio]:not(:checked)+label:after{background:var(--color-fern)}
     .checkbox-square{border-color:#555;background:#555}
+    .checkbox-square label:after{border-color:var(--color-fern)}
     .input-box{border-color:#555;background:0 0;color:#ddd}
     .item-tag{background:#555}
     .item-tag-remove{opacity:.3}
