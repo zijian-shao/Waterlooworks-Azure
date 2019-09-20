@@ -862,8 +862,6 @@ function postingBatch() {
 function postingExtra() {
 
     // CECA refused to change the label from "Country" to "Country / Region".
-    // And their replied was very impatient and arrogant.
-    // I guess they have no budget or intention to make this change.
     if ($('#mainContentDiv .orbisModuleHeader h1').text().match(/Advanced Search/)) {
 
         var label = $('label[class="control-label"][for="question_Country"]');
@@ -872,19 +870,20 @@ function postingExtra() {
         }
 
         var checkbox = $('div.checkboxGroup div.checkboxGroupBody');
-        var checkItem;
+        if (checkbox.length) {
+            var checkItem;
+            checkItem = checkbox.find('input[name="Country"][value="Hong Kong"]').first().parent();
+            if (checkItem.length > 0 && !checkItem.text().match(/China/gi))
+                checkItem.html(checkItem.html().replace(/[^"]Hong Kong[^"]/, 'Hong Kong<span class="hidden">, China</span>'));
 
-        checkItem = checkbox.find('input[name="Country"][value="Hong Kong"]').first().parent();
-        if (!checkItem.text().match(/China/gi))
-            checkItem.html(checkItem.html().replace(/[^"]Hong Kong[^"]/, 'Hong Kong<span class="hidden">, China</span>'));
+            checkItem = checkbox.find('input[name="Country"][value="Macao"]').first().parent();
+            if (checkItem.length > 0 && !checkItem.text().match(/China/gi))
+                checkItem.html(checkItem.html().replace(/[^"]Macao[^"]/, 'Macao<span class="hidden">, China</span>'));
 
-        checkItem = checkbox.find('input[name="Country"][value="Macao"]').first().parent();
-        if (!checkItem.text().match(/China/gi))
-            checkItem.html(checkItem.html().replace(/[^"]Macao[^"]/, 'Macao<span class="hidden">, China</span>'));
-
-        checkItem = checkbox.find('input[name="Country"][value="Taiwan"]').first().parent();
-        if (!checkItem.text().match(/China/gi))
-            checkItem.html(checkItem.html().replace(/[^"]Taiwan[^"]/, 'Taiwan<span class="hidden">, China</span>'));
+            checkItem = checkbox.find('input[name="Country"][value="Taiwan"]').first().parent();
+            if (checkItem.length > 0 && !checkItem.text().match(/China/gi))
+                checkItem.html(checkItem.html().replace(/[^"]Taiwan[^"]/, 'Taiwan<span class="hidden">, China</span>'));
+        }
     }
 
     if ($('#postingDiv').length) {

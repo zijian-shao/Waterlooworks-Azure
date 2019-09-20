@@ -186,7 +186,7 @@ function getThemeConfigs(id) {
         },
         "theme_2": {
             "id": 2,
-            "sort_id": 6,
+            "sort_id": 8,
             "hidden": false,
             "name": "Fresh Citrus",
             "author": "Zijian Shao",
@@ -207,10 +207,9 @@ function getThemeConfigs(id) {
             "previewColor": "#8599de",
             "navbarPosition": "left",
             "navbarHeight": 0
-        },
-        "theme_4": {
+        }, "theme_4": {
             "id": 4,
-            "sort_id": 3,
+            "sort_id": 4,
             "hidden": false,
             "isNew": false,
             "name": "Dodger Blue",
@@ -221,22 +220,51 @@ function getThemeConfigs(id) {
             "navbarPosition": "top",
             "navbarHeight": 50
         },
+        "theme_5": {
+            "id": 5,
+            "sort_id": 3,
+            "parent_id": 3,
+            "hidden": true,
+            "name": "Arctic Fjord",
+            "name2": "(Night Mode)",
+            "author": "Zijian Shao",
+            "brightness": "dark",
+            "overlayColor": "#1f1f1f",
+            "previewColor": "#465072",
+            "navbarPosition": "top",
+            "navbarHeight": 50
+        },
+        "theme_6": {
+            "id": 6,
+            "sort_id": 5,
+            "parent_id": 4,
+            "hidden": true,
+            "name": "Chathams Blue",
+            "name2": "(Night Mode)",
+            "author": "Zijian Shao & Tencent TIM",
+            "brightness": "light",
+            "overlayColor": "#1f1f1f",
+            "previewColor": "#2C5971",
+            "navbarPosition": "top",
+            "navbarHeight": 50
+        },
         "theme_98": {
             "id": 98,
-            "sort_id": 5,
-            "hidden": false,
+            "sort_id": 7,
+            "parent_id": 99,
+            "hidden": true,
             "name": "Minimalist Gray",
             "name2": "(Night Mode)",
             "author": "Zijian Shao & Orbis Communications",
             "brightness": "dark",
             "overlayColor": "#1f1f1f",
-            "previewColor": "#1f1f1f",
+            "previewColor": "#1b1b1b",
             "navbarPosition": "top",
             "navbarHeight": 60
         },
         "theme_99": {
             "id": 99,
-            "sort_id": 4,
+            "sort_id": 6,
             "hidden": false,
             "name": "Classic Carbon",
             "author": "Zijian Shao & Orbis Communications",
