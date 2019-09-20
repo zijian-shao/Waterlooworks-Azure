@@ -161,6 +161,7 @@ function getThemeConfigs(id) {
     var configs = {
         "theme_0": {
             "id": 0,
+            "sort_id": 0,
             "hidden": false,
             "name": "Bright Azure",
             "author": "Zijian Shao",
@@ -172,6 +173,7 @@ function getThemeConfigs(id) {
         },
         "theme_1": {
             "id": 1,
+            "sort_id": 1,
             "hidden": false,
             "name": "Dark Turquoise",
             "name2": "(Night Mode)",
@@ -184,6 +186,7 @@ function getThemeConfigs(id) {
         },
         "theme_2": {
             "id": 2,
+            "sort_id": 6,
             "hidden": false,
             "name": "Fresh Citrus",
             "author": "Zijian Shao",
@@ -195,6 +198,7 @@ function getThemeConfigs(id) {
         },
         "theme_3": {
             "id": 3,
+            "sort_id": 2,
             "hidden": false,
             "name": "Elegant Violet",
             "author": "Zijian Shao",
@@ -206,8 +210,9 @@ function getThemeConfigs(id) {
         },
         "theme_4": {
             "id": 4,
+            "sort_id": 3,
             "hidden": false,
-            "isNew": true,
+            "isNew": false,
             "name": "Dodger Blue",
             "author": "Zijian Shao & Tencent TIM",
             "brightness": "light",
@@ -216,30 +221,22 @@ function getThemeConfigs(id) {
             "navbarPosition": "top",
             "navbarHeight": 50
         },
-        "theme_5": {
-            "id": 5,
-            "hidden": true,
-            "name": "Daylight Aurora",
-            "author": "Zijian Shao",
-            "brightness": "light",
-            "overlayColor": "#fff",
-            "previewColor": "#0084ff",
-            "navbarPosition": "top",
-            "navbarHeight": 0
-        },
-        "theme_6": {
-            "id": 6,
-            "hidden": true,
-            "name": "Midnight Aurora",
-            "author": "Zijian Shao",
+        "theme_98": {
+            "id": 98,
+            "sort_id": 5,
+            "hidden": false,
+            "name": "Minimalist Gray",
+            "name2": "(Night Mode)",
+            "author": "Zijian Shao & Orbis Communications",
             "brightness": "dark",
-            "overlayColor": "#000",
-            "previewColor": "#8599de",
+            "overlayColor": "#1f1f1f",
+            "previewColor": "#1f1f1f",
             "navbarPosition": "top",
-            "navbarHeight": 0
+            "navbarHeight": 60
         },
         "theme_99": {
             "id": 99,
+            "sort_id": 4,
             "hidden": false,
             "name": "Classic Carbon",
             "author": "Zijian Shao & Orbis Communications",
@@ -262,6 +259,7 @@ function getLink(key) {
     var list = {
         darklightStore: 'https://addons.mozilla.org/firefox/addon/learn-darklight/',
         azureStore: 'https://addons.mozilla.org/firefox/addon/waterlooworks-azure/',
+        azureStoreReviewSuffix: 'reviews/',
         autologStore: 'https://addons.mozilla.org/firefox/addon/waterloo-autolog/',
         raspberryStore: 'https://addons.mozilla.org/firefox/addon/quest-raspberry/',
         feedback: 'https://docs.google.com/forms/d/e/1FAIpQLSfXzHmscryMryP_LyaRKdNDVUKBz_9NTdVGOSnlEQEBZDPUoQ/viewform?usp=pp_url&entry.775641191=@@extVersion@@&entry.424865672=@@browser@@&entry.1807838560=@@os@@',

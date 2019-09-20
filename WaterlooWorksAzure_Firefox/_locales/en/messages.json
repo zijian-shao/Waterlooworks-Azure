@@ -92,9 +92,6 @@
   "chooseColumnsToBeDisplayed": {
     "message": "Basic Table <small>(Choose columns to be displayed)</small>"
   },
-  "chromeWebStore": {
-    "message": "Firefox Add-ons"
-  },
   "city": {
     "message": "City"
   },
@@ -129,7 +126,7 @@
     "message": "Disclaimers"
   },
   "disclaimers_intro": {
-    "message": "<p>▷ This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo</p><p>▷ Use this extension at your own responsibility</p>"
+    "message": "<p>▷ This extension has no affiliation with WaterlooWorks, its developers, or the University of Waterloo.</p><p>▷ Use this extension at your own responsibility.</p>"
   },
   "displayHideShowNewTabButton": {
     "message": "Display \"Hide/Show NEW tag\" button"
@@ -200,6 +197,21 @@
   "enableWaterlooWorksAzure_tip": {
     "message": "This option is the total controller. It can enable / disable all the other options in the extension. The switch in the popup is synchronized with this one."
   },
+  "export": {
+    "message": "Export"
+  },
+  "exportFailed": {
+    "message": "Export failed, please report this issue to the developer."
+  },
+  "exportOptions": {
+    "message": "Export Options"
+  },
+  "exportPlaceholder": {
+    "message": "Click 'Export' to generate options text"
+  },
+  "exportSuccess": {
+    "message": "Options text generated successfully. Content copied to clipboard."
+  },
   "extension": {
     "message": "Extension"
   },
@@ -208,6 +220,9 @@
   },
   "extensionOptions": {
     "message": "Extension Options"
+  },
+  "extensionStore": {
+    "message": "Store"
   },
   "extensionTips": {
     "message": "Extension Tips"
@@ -256,6 +271,30 @@
   },
   "homepage": {
     "message": "Welcome Page"
+  },
+  "import": {
+    "message": "Import"
+  },
+  "importExport": {
+    "message": "Import / Export"
+  },
+  "importFailed": {
+    "message": "Import failed. Incorrect option text format. Please check your input."
+  },
+  "importFromPlainText": {
+    "message": "Import from text"
+  },
+  "importFromUrl": {
+    "message": "Import from URL"
+  },
+  "importOptions": {
+    "message": "Import Options"
+  },
+  "importPlaceholder": {
+    "message": "Paste options text here and click 'Import'"
+  },
+  "importSuccess": {
+    "message": "Extension options imported successfully!"
   },
   "internalStatus": {
     "message": "Internal Status"
@@ -321,10 +360,10 @@
     "message": "Notes"
   },
   "notes_intro": {
-    "message": "<p>▷ Don't use other WaterlooWorks extensions with Azure to avoid unexpected behaviors</p><p>▷ WaterlooWorks may change at any time, thus the extension may not function properly</p><p>▷ If you have any questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> or <a href=\"#\" target=\"_blank\" id=\"feedback-link\">submit your feedback online</a></p>"
+    "message": "<p>▷ Don't use other WaterlooWorks extensions together with Azure to avoid unexpected behaviors.</p><p>▷ WaterlooWorks may change at any time, thus the extension may not always function properly.</p><p>▷ If you have any suggestions or questions regarding this extension, please email me at <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> or <a href=\"#\" target=\"_blank\" id=\"feedback-link\">submit your feedback online</a>.</p>"
   },
   "officialWebsite": {
-    "message": "Official Website"
+    "message": "Website"
   },
   "oneClickEmptyShortlist": {
     "message": "One-click empty shortlist"
@@ -425,6 +464,12 @@
   "share": {
     "message": "Share"
   },
+  "shareAsPlainText": {
+    "message": "Share as text"
+  },
+  "shareAsUrl": {
+    "message": "Share as URL"
+  },
   "showGlassdoorCompanyRanking": {
     "message": "Show Glassdoor company ranking"
   },
@@ -457,6 +502,9 @@
   },
   "switchBookingOptionsToTop_tip": {
     "message": "Switch the position of \"terms of consultation\" and \"booking options\" for easier access."
+  },
+  "thankYou": {
+    "message": "Thank You!"
   },
   "useDefaultStyleAndCombine": {
     "message": "Azure Default <small>(Combine job title, organization, division)</small>"
@@ -495,7 +543,7 @@
     "message": "Welcome"
   },
   "welcomeIntro": {
-    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform. It offers multiple new themes and adds a variety of new helpful features to the original website.</p><p>If you like this extension, please <a data-href=\"azureStore\" target=\"_blank\">rate and leave a comment</a> in Firefox Add-ons.</p>"
+    "message": "<p>Thanks for using WaterlooWorks Azure! This is one of the best extensions created for WaterlooWorks. It makes WaterlooWorks a much more user-friendly platform with multiple new themes and a variety of new helpful features.</p><p>If you like this extension, please <a data-href=\"azureStore\" data-href-suffix=\"azureStoreReviewSuffix\" target=\"_blank\">rate and leave a comment</a> in the extension store.</p>"
   },
   "welcomePopupButton": {
     "message": "OK, Got It"

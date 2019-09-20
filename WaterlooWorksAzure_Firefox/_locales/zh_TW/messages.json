@@ -92,9 +92,6 @@
   "chooseColumnsToBeDisplayed": {
     "message": "使用基本樣式 <small>（自定義需要顯示的項目）</small>"
   },
-  "chromeWebStore": {
-    "message": "Firefox 商店"
-  },
   "city": {
     "message": "城市"
   },
@@ -129,7 +126,7 @@
     "message": "免責聲明"
   },
   "disclaimers_intro": {
-    "message": "<p>▷ 此擴展並非由WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>▷ 由於使用此擴展所造成的一切後果由用戶自行承擔</p> "
+    "message": "<p>▷ 此擴展並非由 WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>▷ 由於使用此擴展所造成的一切後果由您自行承擔</p> "
   },
   "displayHideShowNewTabButton": {
     "message": "啟用“隱藏/顯示NEW標籤”按鈕"
@@ -200,6 +197,21 @@
   "enableWaterlooWorksAzure_tip": {
     "message": "該選項為總開關，可以同時開啟或關閉此擴展的所有選項。在瀏覽器右上角浮動窗口內的開關與此同步。"
   },
+  "export": {
+    "message": "導出"
+  },
+  "exportFailed": {
+    "message": "導出失敗，請將該錯誤通知擴展作者。"
+  },
+  "exportOptions": {
+    "message": "導出擴展選項"
+  },
+  "exportPlaceholder": {
+    "message": "點擊“導出”按鈕以生成文本"
+  },
+  "exportSuccess": {
+    "message": "文本生成成功，並已復製到剪貼板。"
+  },
   "extension": {
     "message": "擴展設置"
   },
@@ -208,6 +220,9 @@
   },
   "extensionOptions": {
     "message": "擴展選項"
+  },
+  "extensionStore": {
+    "message": "擴展商店"
   },
   "extensionTips": {
     "message": "幫助中心"
@@ -256,6 +271,30 @@
   },
   "homepage": {
     "message": "網站引導頁"
+  },
+  "import": {
+    "message": "導入"
+  },
+  "importExport": {
+    "message": "導入與導出"
+  },
+  "importFailed": {
+    "message": "導入失敗，文本格式錯誤，請檢查輸入內容。"
+  },
+  "importFromPlainText": {
+    "message": "從文本導入"
+  },
+  "importFromUrl": {
+    "message": "從網址導入"
+  },
+  "importOptions": {
+    "message": "導入擴展選項"
+  },
+  "importPlaceholder": {
+    "message": "粘貼文本到此處並點擊“導入”按鈕"
+  },
+  "importSuccess": {
+    "message": "擴展選項導入成功！"
   },
   "internalStatus": {
     "message": "內部狀態"
@@ -321,7 +360,7 @@
     "message": "相關說明"
   },
   "notes_intro": {
-    "message": "<p>▷ 建議不要與其他WaterlooWorks 插件同時啟用</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> 或 <a href=\"#\" target=\"_blank\" id=\"feedback-link\">在線提交反饋</a></p>"
+    "message": "<p>▷ 建議不要與其他 WaterlooWorks 擴展插件同時啟用。</p><p>▷ WaterlooWorks 隨時會進行頁面改動，可能導致擴展功能異常或失效。</p><p>▷ 若在使用過程中遇到任何問題，或提出更改建議，請發送郵件至 <a href=\"mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension\">sam.zj.shao@gmail.com</a> 或 <a href=\"#\" target=\"_blank\" id=\"feedback-link\">在線提交反饋</a>。</p>"
   },
   "officialWebsite": {
     "message": "官方網站"
@@ -405,7 +444,7 @@
     "message": "立即反饋"
   },
   "resetConfirmMessage": {
-    "message": "你確定要將其恢復為默認嗎？"
+    "message": "您確定要將其恢復為默認嗎？"
   },
   "resetToDefault": {
     "message": "恢復默認"
@@ -424,6 +463,12 @@
   },
   "share": {
     "message": "分享"
+  },
+  "shareAsPlainText": {
+    "message": "以文本分享"
+  },
+  "shareAsUrl": {
+    "message": "以網址分享"
   },
   "showGlassdoorCompanyRanking": {
     "message": "展示 Glassdoor 平台上的公司評分"
@@ -457,6 +502,9 @@
   },
   "switchBookingOptionsToTop_tip": {
     "message": "啟用該選項後，將“使用條款”和“預約選項”交換位置以方便進行相關操作。"
+  },
+  "thankYou": {
+    "message": "感謝您的支持！"
   },
   "useDefaultStyleAndCombine": {
     "message": "使用默認樣式 <small>（合併職位名稱、組織、部門）</small>"
@@ -495,7 +543,7 @@
     "message": "歡迎使用"
   },
   "welcomeIntro": {
-    "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p>如果你覺得此擴展還不錯，<a data-href=\"azureStore\" target=\"_blank\">請在 Firefox 商店給個五星好評吧</a>，親~</p>"
+    "message": "<p>歡迎使用 WaterlooWorks Azure！這是目前最棒的一款針對 WaterlooWorks 開發的瀏覽器擴展插件。此擴展可以使該網站平台更易於使用，包括但不限於調整頁面樣式、新增各種快捷功能等。</p><p>如果您覺得此擴展還不錯，<a data-href=\"azureStore\" data-href-suffix=\"azureStoreReviewSuffix\" target=\"_blank\">歡迎您在擴展商店給予五星好評或留下寶貴評論</a>。</p>"
   },
   "welcomePopupButton": {
     "message": "好的，我知道了"

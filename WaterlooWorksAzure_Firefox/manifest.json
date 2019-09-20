@@ -1,7 +1,10 @@
 {
-  "manifest_version": 2,
-  "name": "__MSG_appName__",
-  "version": "2.1.15",
+  "applications": {
+    "gecko": {
+      "id": "wwazure@zijianshao.com",
+      "strict_min_version": "57.0"
+    }
+  },
   "author": "Zijian Shao",
   "background": {
     "scripts": [
@@ -46,10 +49,12 @@
   "default_locale": "en",
   "description": "__MSG_appDesc__",
   "icons": {
-    "128": "icon/icon128.png",
     "16": "icon/icon16.png",
-    "48": "icon/icon48.png"
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
   },
+  "manifest_version": 2,
+  "name": "__MSG_appName__",
   "options_ui": {
     "page": "html/options.html"
   },
@@ -61,17 +66,12 @@
     "*://waterlooworks.uwaterloo.ca/*"
   ],
   "short_name": "WWAzure",
+  "version": "3.0.0",
   "web_accessible_resources": [
     "js/*",
     "css/*",
     "icon/*",
     "img/*",
     "theme/*"
-  ],
-  "applications": {
-    "gecko": {
-      "id": "wwazure@zijianshao.com",
-      "strict_min_version": "57.0"
-    }
-  }
+  ]
 }

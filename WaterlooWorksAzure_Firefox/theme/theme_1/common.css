@@ -79,7 +79,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .bs--hide__column {
         position: fixed;
         top: 0;
-        left: 270px;
+        left: 265px;
         right: 15px;
         width: auto !important;
         height: auto;
@@ -92,7 +92,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > li {
         display: inline-block;
         padding: 0;
-        margin: 0 35px 0 0 !important;
+        margin: 0 30px 0 0 !important;
         box-sizing: border-box;
     }
 
@@ -854,11 +854,15 @@ div.checkboxGroup div.checkboxGroupHeader {
 }
 
 .bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover {
-    background: #09b1b9;
+    background: #09b1b9 !important;
 }
 
 .bootstrap-datetimepicker-widget td span:hover {
     background: #09b1b9;
+}
+
+.bootstrap-datetimepicker-widget:after {
+    border-bottom-color: #323841;
 }
 
 /* my documents */

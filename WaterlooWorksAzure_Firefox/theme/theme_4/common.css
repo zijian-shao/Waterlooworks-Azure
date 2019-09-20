@@ -250,7 +250,7 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     .bs--hide__column {
         position: fixed;
         top: 0;
-        left: 197px;
+        left: 192px;
         right: 15px;
         width: auto !important;
         height: auto;
@@ -264,7 +264,7 @@ input:hover, input:focus, select:hover, select:focus, textarea:hover, textarea:f
     .sidebar-nav > .nav-list > li {
         display: block;
         padding: 0;
-        margin: 0 10px 0 0 !important;
+        margin: 0 5px 0 0 !important;
         float: left;
     }
 

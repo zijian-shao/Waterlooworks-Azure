@@ -567,8 +567,8 @@ input.btn-inverse {
         white-space: nowrap;
         text-overflow: ellipsis;
         background: none !important;
-        border-bottom: 1px solid #3e444a;
-        /*border-left: 3px solid #3e444a;*/
+        /*border-bottom: 1px solid #3e444a;*/
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
     }
 
     .sidebar-nav > .nav-list > .active ul[class^="childMenu"] a:hover {
