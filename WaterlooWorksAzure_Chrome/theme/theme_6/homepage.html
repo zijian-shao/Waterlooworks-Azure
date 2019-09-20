@@ -1,0 +1,250 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli:200,400,800">
+<style>
+    a:focus, button:focus, input:focus, textarea:focus, select:focus, .btn:focus {
+        outline: none !important;
+    }
+
+    label.gridDropdownButton.is--focused {
+        outline: none !important;
+    }
+
+    body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
+        font-family: 'Muli', "Microsoft YaHei", sans-serif !important;
+    }
+
+    html, body {
+        overflow: hidden;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fafafa;
+        text-align: center;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+    }
+
+    div {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .bg-color {
+        background: #319be8;
+        background: linear-gradient(to bottom, #319be8 0%, #0086f1 100%);
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .bg-pattern-blue {
+        background: #38479b;
+        position: absolute;
+        width: 300vh;
+        height: 100vh;
+        top: auto;
+        left: auto;
+        bottom: -85vh;
+        right: -100vh;
+        z-index: 0;
+        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+        transform: rotate(160deg);
+    }
+
+    .bg-pattern-white {
+        background: #fafafa;
+        position: absolute;
+        width: 300vh;
+        height: 100vh;
+        top: auto;
+        right: auto;
+        bottom: -70vh;
+        left: -100vh;
+        z-index: 1;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+
+        transform: rotate(20deg);
+    }
+
+    .container {
+        position: absolute;
+        width: 550px;
+        height: 400px;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: -220px auto 0;
+        padding: 30px;
+        background: none;
+        z-index: 10;
+    }
+
+    .title {
+        margin: 20px auto 0;
+        padding: 0;
+        font-size: 45px;
+        font-weight: 200;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+    }
+
+    .subtitle {
+        margin: 10px auto 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .btns {
+        width: 100%;
+        heigth: auto;
+        margin: 30px auto 0;
+        text-align: center;
+    }
+
+    .btns > a {
+        outline: none !important;
+        position: relative;
+        display: block;
+        width: 80%;
+        height: auto;
+        margin: 12px auto;
+        padding: 30px 0;
+        background: none;
+        border: 1px solid rgba(255,255,255,0.8);
+        font-size: 16px;
+        text-decoration: none;
+        color: #fff !important;
+        font-weight: normal;
+        box-shadow: none;
+        transition: all 0.2s ease !important;
+    }
+
+    .btns > a:hover {
+        color: #118dee !important;
+        background: #fff;
+        border-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .btns > a > i {
+        position: absolute;
+        left: 30px;
+        top: 22px;
+        font-size: 30px;
+    }
+
+    .copyright {
+        position: fixed;
+        left: 40px;
+        bottom: 20px;
+        color: #aaa;
+        font-size: 14px;
+        padding: 0;
+    }
+
+    @media (max-width: 767px) {
+        .bg-pattern-white {
+            bottom: -95vh;
+        }
+
+        .bg-pattern-blue {
+            bottom: -100vh;
+        }
+
+        .container {
+            width: 100%;
+            height: 370px;
+            margin-top: -160px;
+            max-width: none;
+            padding: 0;
+        }
+
+        .title {
+            font-size: 28px;
+            margin-top: 15px;
+            letter-spacing: 0;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            letter-spacing: 0;
+            margin-top: 0;
+        }
+
+        .btns {
+            margin-top: 30px;
+        }
+
+        .btns > a {
+            display: block;
+            width: 80%;
+            margin-bottom: 10px;
+            font-size: 14px;
+            padding: 20px 0;
+        }
+
+        .btns > a > i {
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 0.5em 0 0;
+        }
+
+        .copyright {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            color: #aaa;
+            font-size: 12px;
+            padding: 0;
+            margin: auto;
+        }
+
+    }
+
+
+</style>
+<div class="bg">
+    <div class="bg-color"></div>
+    <div class="bg-pattern-blue"></div>
+    <div class="bg-pattern-white"></div>
+</div>
+<div class="container">
+    <h1 class="title">WaterlooWorks</h1>
+    <h4 class="subtitle">Hire Waterloo Students and Alumni</h4>
+    <div class="btns">
+        <a href="https://cas.uwaterloo.ca/cas/login?service=https://waterlooworks.uwaterloo.ca/waterloo.htm"
+           class="btn-student"><i class="icon-user"></i>Students / Alumni</a>
+        <a href="/employer/overview.htm" class="btn-employer"><i class="icon-comments"></i>Employers</a>
+    </div>
+    <p class="copyright">&copy; University of Waterloo</p>
+</div>

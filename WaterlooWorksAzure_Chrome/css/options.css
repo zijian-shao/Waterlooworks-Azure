@@ -242,7 +242,7 @@ div.arrow.left{background-image:url(../img/icon-sort-left.png)}
     .header h3{opacity:.4}
     .share-box .share-tag{color:#ddd}
     .nav{background:#282828}
-    .nav-donate{color:var(--color-fern)!important;background:0 0;box-shadow:inset 4px 0 0 var(--color-fern);transition:background .2s}
+    .nav-donate{color:var(--color-fern)!important;background:0 0;box-shadow:inset 5px 0 0 var(--color-fern);transition:background .2s}
     .nav-donate:hover{background:var(--color-fern)}
     .nav-donate span:last-child{color:#fff!important}
     .content-container,.nav ul li:focus,.nav ul li:hover{background:#2d2d2d}
@@ -254,7 +254,7 @@ div.arrow.left{background-image:url(../img/icon-sort-left.png)}
     #opt-tab-0>div>div.table>a:nth-child(1)>div>div.rec-icon>img{filter:invert(0.9)}
     .checkbox-slide{border-color:#555}
     .checkbox-slide:after{background:#555}
-    .checkbox-slide label{background:#ddd}
+    .checkbox-slide label{background:#ccc}
     .radio-group input[type=radio]:checked+label:before,.radio-group input[type=radio]:not(:checked)+label:before{border-color:#555;background:#555}
     .radio-group input[type=radio]:checked+label:after,.radio-group input[type=radio]:not(:checked)+label:after{background:var(--color-fern)}
     .checkbox-square{border-color:#555;background:#555}
