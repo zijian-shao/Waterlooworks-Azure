@@ -1,4 +1,7 @@
 /* Common */
+.margin-top-0 {
+    margin-top: 0 !important;
+}
 
 .margin-top-5 {
     margin-top: 5px !important;
@@ -26,6 +29,10 @@
 
 .margin-top-80 {
     margin-top: 80px !important;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0 !important;
 }
 
 .margin-bottom-5 {
@@ -493,6 +500,7 @@ label.gridDropdownButton.is--focused {
     opacity: 1;
     visibility: visible;
     transition: all 0.2s ease;
+    border-radius: 4px;
 }
 
 .azure-back-to-top:hover {

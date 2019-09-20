@@ -1,117 +1,24 @@
-body {
-    padding-top: 70px;
-    padding-bottom: 50px;
-}
-
-.orbisFooter {
-    height: auto;
-}
-
-.orbisFooter div[class^="span"] {
-    min-height: 0;
-}
-
-.nav--branding.sticky {
-    top: 0;
-}
-
-@media (min-width: 980px) {
-    .nbs--fixed-nav {
-        position: fixed;
-        top: 0;
-        right: 15px;
-        left: auto;
-    }
-
-    .nbs--fixed-nav.sticky {
-        left: auto;
-    }
-
-    .navbar .brand {
-        margin-left: 0;
-        padding-left: 10px;
-    }
-
-    .nav-collapse.in.collapse .nbs--fixed-nav {
-        background: none !important;
-    }
-
-    .nav-collapse.in.collapse {
-        font-size: 12px !important;
-    }
-}
-
-@media (max-width: 979px) {
-    .nav-collapse .nav {
-        margin-bottom: 0;
-    }
-
-    .nav-collapse.collapse .nbs--fixed-nav {
-        background: #1b1b1b !important;
-    }
-
-    .nav-collapse.collapse li {
-        margin-bottom: 0 !important;
-    }
-
-    .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
-        color: #fff !important;
-    }
-
-    .nbs--fixed-nav .nav-tabs > li > a {
-        line-height: 30px;
-    }
-
-    .public .nav-tabs > .active > a, .public .nav-tabs > .active > a:hover, .public .nav-tabs > .active > a:focus {
-        line-height: 30px;
-    }
-
-    .nav-collapse.collapse .nbs--fixed-nav .dropdown-menu {
-        background: none !important;
-    }
-
-    ul[class^="childMenu"].nav.nav-tabs li:hover, ul[class^="childMenu"] li:focus {
-        background: #333 !important;
-    }
-
-    .nav-collapse.collapse .nbs--fixed-nav .dropdown-menu li {
-        margin-bottom: 0 !important;
-    }
-
-    .nav-collapse.collapse .nbs--fixed-nav .dropdown-menu li a {
-        font-size: 12px !important;
-        padding: 0 0 0 10px !important;
-        line-height: 30px !important;
-    }
-
-    .nav-collapse.in.collapse .nbs--fixed-nav .dropdown-menu li a {
-        font-size: 12px !important;
-    }
-
-    .orbisFooter .span8 {
-        display: none;
-    }
-
-    .orbisFooter .span4.pull-right {
-        padding: 0 !important;
-    }
-
-    .nav--admin {
-        width: 0;
-    }
-
-    .nav--admin .navbar-inner {
-        background: none !important;
-        box-shadow: none !important;
-    }
-
-    .nav-collapse.collapse {
-        position: fixed !important;
-        top: 60px !important;
-        left: 0 !important;
-        right: 0 !important;
-    }
-
-    .nav-collapse.in.collapse {
-    }
-}
+body{padding-top:70px;padding-bottom:50px}
+.orbisFooter{height:auto}
+.orbisFooter div[class^=span]{min-height:0}
+.nav--branding.sticky{top:0}
+@media (min-width:980px){.nbs--fixed-nav{position:fixed;top:0;right:15px;left:auto}
+    .nbs--fixed-nav.sticky{left:auto}
+    .navbar .brand{margin-left:0;padding-left:10px}
+    .nav-collapse.in.collapse .nbs--fixed-nav{background:none!important}
+    .nav-collapse.in.collapse{font-size:12px!important}}
+@media (max-width:979px){.nav-collapse .nav{margin-bottom:0}
+    .nav-collapse.collapse .nbs--fixed-nav{background:#1b1b1b!important}
+    .nav-collapse.collapse li{margin-bottom:0!important}
+    .nav-collapse .dropdown-menu a,.nav-collapse .nav>li>a{color:#fff!important}
+    .nbs--fixed-nav .nav-tabs>li>a,.public .nav-tabs>.active>a,.public .nav-tabs>.active>a:focus,.public .nav-tabs>.active>a:hover{line-height:30px}
+    .nav-collapse.collapse .nbs--fixed-nav .dropdown-menu{background:none!important}
+    ul[class^=childMenu] li:focus,ul[class^=childMenu].nav.nav-tabs li:hover{background:#333!important}
+    .nav-collapse.collapse .nbs--fixed-nav .dropdown-menu li{margin-bottom:0!important}
+    .nav-collapse.collapse .nbs--fixed-nav .dropdown-menu li a{font-size:12px!important;padding:0 0 0 10px!important;line-height:30px!important}
+    .nav-collapse.in.collapse .nbs--fixed-nav .dropdown-menu li a{font-size:12px!important}
+    .orbisFooter .span8{display:none}
+    .orbisFooter .span4.pull-right{padding:0!important}
+    .nav--admin{width:0}
+    .nav--admin .navbar-inner{background:none!important;box-shadow:none!important}
+    .nav-collapse.collapse{position:fixed!important;top:60px!important;left:0!important;right:0!important}}

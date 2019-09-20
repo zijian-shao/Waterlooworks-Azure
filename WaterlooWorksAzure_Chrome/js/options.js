@@ -288,6 +288,8 @@ function initOptions() {
         var optName = elem.attr('data-option-name');
         var optVal = elem.attr('data-option-value');
 
+        if (optName === undefined) return;
+
         if (inputType == 'checkbox') {
 
             switch (optType) {
@@ -337,9 +339,7 @@ function initOptions() {
                 default:
 
             }
-        }
-
-        else if (inputType == 'radio') {
+        } else if (inputType == 'radio') {
 
             switch (optType) {
                 // save "value" attr of the radio
@@ -484,6 +484,76 @@ function initOptions() {
             $(this).remove();
         });
 
+        // import & export
+        var importContainer = $('#opt-import-0-0');
+        var importTextarea = importContainer.children('textarea');
+        importTextarea.attr('placeholder', importContainer.find('.lang .placeholder').text());
+        importContainer.find('a.btn').on('click', function (e) {
+            e.preventDefault();
+            try {
+                importContainer.addClass('wait');
+                var value = importTextarea.val();
+                if (value.length === 0) {
+                    importContainer.removeClass('wait');
+                    return;
+                }
+                if (!value.startsWith('----------- WATERLOOWORKS AZURE OPTIONS BEGIN -----------')
+                    || !value.endsWith('----------- WATERLOOWORKS AZURE OPTIONS END -----------')) {
+                    throw 'Format error';
+                } else {
+                    value = value.replace(/-----------.*-----------/g, '').trim();
+                    value = JSON.parse(window.atob(value));
+                    chrome.storage.sync.set(value, function () {
+                        alert(importContainer.find('.lang .success').text());
+                        window.location.hash = '';
+                        window.location.reload();
+                    });
+                }
+            } catch (error) {
+                importContainer.removeClass('wait');
+                importContainer.find('.import-info-container .import-info')
+                    .removeClass('success')
+                    .addClass('failed')
+                    .text(
+                        importContainer.find('.lang .failed').text()
+                    );
+            }
+        });
+
+        var exportContainer = $('#opt-import-1-0');
+        var exportTextarea = exportContainer.children('textarea');
+        exportTextarea.attr('placeholder', exportContainer.find('.lang .placeholder').text());
+        exportContainer.find('a.btn').on('click', function (e) {
+            e.preventDefault();
+            try {
+                exportContainer.addClass('wait');
+                chrome.storage.sync.get(getOptionListDefault(), function (items) {
+                    exportTextarea.val(
+                        '----------- WATERLOOWORKS AZURE OPTIONS BEGIN -----------\n' +
+                        window.btoa(JSON.stringify(items)) +
+                        '\n----------- WATERLOOWORKS AZURE OPTIONS END -----------'
+                    );
+                    exportContainer.removeClass('wait');
+                    exportContainer.find('.import-info-container .import-info')
+                        .removeClass('failed')
+                        .addClass('success')
+                        .text(
+                            exportContainer.find('.lang .success').text()
+                        );
+                    exportTextarea.select();
+                    document.execCommand('Copy');
+                });
+            } catch (error) {
+                exportContainer.removeClass('wait');
+                exportContainer.find('.import-info-container .import-info')
+                    .removeClass('success')
+                    .addClass('failed')
+                    .text(
+                        exportContainer.find('.lang .failed').text()
+                    );
+            }
+        });
+
         // welcome
         if (params.hasOwnProperty('welcome')) {
             setTimeout(function () {
@@ -499,13 +569,29 @@ function initOptions() {
 
     }
 
+    function sortThemes(a, b) {
+        if (a.sort_id < b.sort_id) {
+            return -1;
+        }
+        if (a.sort_id > b.sort_id) {
+            return 1;
+        }
+        return 0;
+    }
+
     function loadThemes() {
         var themes = getThemeConfigs();
         var list = $('#theme-list');
-        var index = 0;
         var newTag = '', subTitle = '';
 
-        $.each(themes, function (i, val) {
+        var themesArr = [];
+        $.each(themes, function () {
+            themesArr.push(this);
+        });
+
+        themesArr.sort(sortThemes);
+
+        themesArr.forEach(function (val, i) {
 
             if (val.hasOwnProperty('isNew') && val['isNew']) {
                 newTag = "<div class='new-tag' style='float:left;margin:8px 5px 0 0'>NEW</div>";
@@ -520,22 +606,26 @@ function initOptions() {
             }
 
             if (val['hidden'] == false) {
-                var themeItem = $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + index + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + index + '" title="' + val['name'] + '\nCreated by ' + val['author'] + '"><p>' + val['name'] + subTitle + newTag + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>');
-                if (newTag == '') {
-                    themeItem.appendTo(list);
-                } else {
-                    themeItem.prependTo(list);
-                }
+                var themeItem = $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + i + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + i + '" title="' + val['name'] + '\nCreated by ' + val['author'] + '"><p>' + val['name'] + subTitle + newTag + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>');
+                // if (newTag == '') {
+                themeItem.appendTo(list);
+                // } else {
+                //     themeItem.prependTo(list);
+                // }
             }
 
-            index++;
         });
+
     }
 
     $(window).on('load', function (e) {
 
         $('*[data-href]').each(function (idx, elem) {
-            $(elem).attr('href', getLink($(elem).attr('data-href')));
+            var self = $(elem);
+            var link = getLink(self.attr('data-href'));
+            if (elem.hasAttribute('data-href-suffix'))
+                link += getLink(self.attr('data-href-suffix'));
+            self.attr('href', link);
         });
 
         loadThemes();

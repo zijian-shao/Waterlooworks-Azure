@@ -1,0 +1,146 @@
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli:200,400,800">
+<style>
+    a:focus, button:focus, input:focus, textarea:focus, select:focus, .btn:focus {
+        outline: none !important;
+    }
+
+    body, strong, p, a, h1, h2, h3, h4, h5, h6, input, button, select {
+        font-family: 'Muli', "Microsoft YaHei", sans-serif !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #2d2d2d;
+        text-align: center;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    div {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        position: absolute;
+        width: 100%;
+        max-width: 550px;
+        height: 390px;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: -220px auto 0;
+        padding: 10px;
+        background: #f1f1f1;
+        box-shadow: 0 10px 30px #111;
+        border-radius: 4px;
+    }
+
+    .title {
+        margin: 35px auto 0;
+        padding: 0;
+        font-size: 45px;
+        font-weight: normal;
+        color: #333;
+    }
+
+    .subtitle {
+        margin: 5px auto 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: normal;
+        color: #999;
+    }
+
+    .btns {
+        width: 100%;
+        heigth: auto;
+        margin: 35px auto 0;
+        text-align: center;
+    }
+
+    .btns > a {
+        display: inline-block;
+        width: 40%;
+        height: auto;
+        margin: 0 2px;
+        padding: 30px 0;
+        background: #005baa;
+        font-size: 16px;
+        text-decoration: none;
+        color: #fff !important;
+        font-weight: normal;
+        transition: all 0.1s linear;
+        border-radius: 4px;
+    }
+
+    .btns > a:hover {
+        background: #00447F;
+    }
+
+    .btns > a > i {
+        display: block;
+        font-size: 65px;
+        margin: 0 auto 6px;
+    }
+
+    .copyright {
+        color: #999;
+        font-size: 14px;
+        margin: 35px auto 0;
+        padding: 0;
+    }
+
+    @media (max-width: 767px) {
+        .container {
+            max-width: none;
+            padding: 30px;
+        }
+
+        .title {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        .btns {
+            margin-top: 30px;
+        }
+
+        .btns > a {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 14px;
+            padding: 25px 0;
+        }
+
+        .btns > a > i {
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 0.5em 0 0;
+        }
+
+    }
+
+</style>
+<div class="container">
+    <h1 class="title">WaterlooWorks</h1>
+    <h4 class="subtitle">Hire Waterloo Students and Alumni</h4>
+    <div class="btns">
+        <a href="https://cas.uwaterloo.ca/cas/login?service=https://waterlooworks.uwaterloo.ca/waterloo.htm"
+           class="btn-student"><i class="icon-user"></i>Students / Alumni</a>
+        <a href="/employer/overview.htm" class="btn-employer"><i class="icon-comments"></i>Employers</a>
+    </div>
+    <p class="copyright">Copyright &copy; University of Waterloo. All Rights Reserved.</p>
+</div>

@@ -1,0 +1,287 @@
+a {
+    color: #005baa;
+}
+
+.btn {
+    background: #fafafa;
+    transition: none;
+    text-shadow: none;
+    border-color: #ddd;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: #005baa;
+    border-color: #005baa;
+}
+
+.btn-info {
+    background: #49afcd;
+    border-color: #49afcd;
+}
+
+.btn-success {
+    background: #5bb75b;
+    border-color: #5bb75b;
+}
+
+.btn-warning {
+    background: #faa732;
+    border-color: #faa732;
+}
+
+.btn-danger {
+    background: #da4f49;
+    border-color: #da4f49;
+}
+
+.btn-inverse {
+    background: #444;
+    border-color: #444;
+}
+
+.azure-hide-sidebar {
+    display: none;
+}
+
+#mainContentDiv {
+    display: block;
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0;
+}
+
+.orbisFooter {
+    background: #1b1b1b;
+    padding: 0;
+    height: 50px;
+}
+
+.sidebar-nav .nav-list > li > a > small {
+    opacity: 0.5;
+    margin-left: 5px;
+}
+
+@media (min-width: 980px) {
+
+    body {
+        padding-bottom: 60px;
+    }
+
+    .navbar {
+        /*box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);*/
+    }
+
+    .navbar-inner {
+        border: none;
+    }
+
+    .img--branding-right {
+        display: block;
+    }
+
+    .navbar .brand {
+        margin-left: -15px;
+    }
+
+    #mainContentDiv {
+        width: auto;
+        padding: 1em 0 1em 1em;
+        margin-left: 14.893617021276595%;
+    }
+
+    .bs--hide__column {
+        position: fixed;
+        background: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        top: 60px;
+        left: 0;
+    }
+
+    .span2.bs--hide__column {
+        width: 14.52991452991453%;
+    }
+
+    .span2.bs--hide__column:before {
+        border-right: none;
+        width: 14.52991452991453%;
+        background: #1B1B1B;
+    }
+
+    .sidebar-nav {
+        font-size: 12px;
+    }
+
+    .sidebar-nav ul.nav-list > li {
+        margin: 0;
+    }
+
+    .sidebar-nav ul.nav-list > li > a {
+        display: block;
+        margin: 0;
+        padding: 1em 1.5em !important;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.6);
+        border-radius: 0 !important;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .sidebar-nav ul.nav-list > li.active > a,
+    .sidebar-nav ul.nav-list > li > a:hover,
+    .sidebar-nav ul.nav-list > li > a:focus {
+        color: #fff !important;
+        font-weight: normal !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        text-shadow: none !important;
+        position: relative;
+    }
+
+    .sidebar-nav ul.nav-list > li.active a {
+        border-left: 2px solid #aaa;
+    }
+
+    .sidebar-nav ul.nav-list > li.active > a:after {
+        content: '';
+        background: #f1f1f1;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        right: -8px;
+        top: calc(50% - 8px);
+        transform: rotate(45deg);
+    }
+
+    .sidebar-nav ul.nav-list > li > a:hover,
+    .sidebar-nav ul.nav-list > li > a:focus {
+        padding-left: 2em !important;
+        /*background: rgba(255, 255, 255, 0.1) !important;*/
+    }
+
+    .sidebar-nav ul.nav-list > li > a > small {
+        display: block;
+        margin: -4px auto 0;
+    }
+
+    .sidebar-nav ul.nav-list > li.active > div {
+        margin-left: 0 !important;
+    }
+
+    .sidebar-nav ul.childMenu1 {
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .sidebar-nav ul.childMenu2 > li > a {
+        padding-left: 2.5em !important;
+    }
+
+    .sidebar-nav ul.childMenu2 > li > a:hover,
+    .sidebar-nav ul.childMenu2 > li > a:focus {
+        padding-left: 3em !important;
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li.active > a,
+    .sidebar-nav ul[class^='childMenu'] > li > a:hover,
+    .sidebar-nav ul[class^='childMenu'] > li > a:focus {
+        color: #fff !important;
+        font-weight: normal !important;
+        background: none !important;
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li.active > a:after {
+        display: none;
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li > a:hover,
+    .sidebar-nav ul[class^='childMenu'] > li > a:focus {
+        /*background: rgba(255, 255, 255, 0.05) !important;*/
+    }
+
+    .sidebar-nav ul[class^='childMenu'] > li > a:before {
+        content: '';
+        font-family: FontAwesome;
+        font-size: 14px;
+        padding-right: 0.6em;
+    }
+
+    .sidebar-nav ul.childMenu1 > li > a:before {
+        content: '\F105';
+    }
+
+    .sidebar-nav ul.childMenu2 > li > a:before {
+        content: '\F101';
+    }
+
+    .orbisFooter {
+        left: 14.52991452991453%;
+        right: 0;
+        width: auto;
+    }
+
+    .orbisFooter .row-fluid [class*="span"] {
+        min-height: 0;
+        line-height: 50px;
+    }
+
+    .orbis-posting-actions-float:last-child {
+        margin-left: 14.52991452991453%;
+    }
+
+    .orbis-posting-actions-btn-float {
+        margin-left: 14.52991452991453%;
+    }
+
+    .azure-full-width .orbis-posting-actions-float:last-child,
+    .azure-full-width .orbis-posting-actions-btn-float,
+    .azure-full-width #mainContentDiv {
+        margin-left: 0;
+    }
+
+    .azure-full-width .orbisFooter {
+        left: 0;
+    }
+
+    .azure-full-width .bs--hide__column {
+        display: none;
+    }
+
+    #userImageDiv img {
+        width: 100%;
+        height: auto;
+    }
+
+    .azure-hide-sidebar {
+        position: fixed;
+        left: 0;
+        bottom: 8px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        line-height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        z-index: 1200;
+    }
+
+    .azure-hide-sidebar:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.azure-contextmenu > ul > li > a:hover, .azure-contextmenu > ul > li > a:active, .azure-contextmenu > ul > li > a:visited {
+    color: #000;
+}
+
+/* campus connect */
+.btn--filter-results.btn-primary {
+    color: #fff !important;
+}
