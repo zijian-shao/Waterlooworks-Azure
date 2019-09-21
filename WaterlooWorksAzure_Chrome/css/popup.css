@@ -1,87 +1,537 @@
-a,body,button,h1,h2,h3,h4,h5,h6,input,p,select,strong{font-family:Muli,"Microsoft YaHei",sans-serif!important}
-body{margin:0!important;padding:0;width:auto;min-width:250px;height:auto;font-size:12px;overflow:hidden;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-div{box-sizing:border-box;margin:0;padding:0}
-.header{height:50px;border-bottom:1px solid #ddd}
-.header .logo{position:absolute;top:15px;left:15px;width:144px;height:20px;background:url(../img/popup-logo.png) center/contain no-repeat}
-.checkbox-slide{float:right;width:45px;height:20px;margin:16px 15px 0 0;position:relative;border:1px solid #ddd;border-radius:50px}
-.checkbox-slide:after{content:"";display:block;float:right;position:absolute;background:#ddd;top:0;right:0;bottom:0;left:50%;z-index:0;border-radius:0 50px 50px 0}
-.checkbox-slide:before{content:"";float:right;position:absolute;background:#5bb75b;top:0;right:50%;bottom:0;left:0;z-index:0;border-radius:50px 0 0 50px}
-.checkbox-slide label{display:block;width:30px;height:18px;cursor:pointer;position:absolute;top:0;left:0;z-index:1;background:#fff;background:linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(220,220,220,1) 100%);border-radius:50px;transition:all .2s ease;box-shadow:0 2px 4px 0 rgba(0,0,0,.1)}
-.checkbox-slide input[type=checkbox]{visibility:hidden}
-.checkbox-slide input[type=checkbox]:checked+label{left:13px}
-.content{padding:15px 15px 5px;background:#f7f7f7;border-bottom:1px solid #ddd}
-.btn{margin-bottom:10px;padding:15px 20px;border:1px solid #ddd;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.1);cursor:pointer;transition:all .2s ease}
-.btn:after{content:"";display:table;clear:both}
-.btn-icon{float:left;width:16px;height:16px}
-.btn-icon img{width:100%}
-.btn-text{float:left;margin-left:8px;line-height:16px}
-.btn-azure:hover{box-shadow:0 0 0 2px #45b6f7}
-.btn-green:hover{box-shadow:0 0 0 2px #5bb75b}
-.btn:hover{border-color:#fff}
-.btn:active{background:#eee;border-color:#eee}
-.footer{padding:15px;text-align:center}
-.footer .report{color:#666}
-.footer .report .link{color:#1c76d3;text-decoration:underline;cursor:pointer}
-.azure-toast{position:absolute;top:0;width:100%;height:auto;padding:17px 10px;text-align:center;line-height:16px;color:#fff;background:#5bb75b;z-index:100;transition:top .2s linear}
-.azure-toast-hidden{top:-70px}
-@media (prefers-color-scheme:dark){body{background:#000}
-    .header{background:#2d2d2d;border-bottom-color:#2d2d2d}
-    .header .logo{filter:invert(1) hue-rotate(165deg) saturate(1.5) brightness(1.3)}
-    .checkbox-slide{border-color:#555}
-    .checkbox-slide:after{background:#555}
-    .checkbox-slide:before{background:#57aa57}
-    .checkbox-slide label{background:#ddd}
-    .content{background:#000;border-bottom-color:#000}
-    .btn{color:#ddd;border-color:#2d2d2d;background:#2d2d2d}
-    .btn-icon img{filter:invert(0.8)}
-    .btn-azure:hover{box-shadow:0 0 0 2px #42a8e3}
-    .btn-green:hover{box-shadow:0 0 0 2px #57aa57}
-    .btn:hover{border-color:#2d2d2d}
-    .btn:active{background:#333;border-color:#333}
-    .footer{background:#2d2d2d}
-    .footer .report{color:#999}
-    .footer .report .link{color:#3283d2}
-    .azure-toast{background:#3d7d3d}}a,body,button,h1,h2,h3,h4,h5,h6,input,p,select,strong{font-family:Muli,"Microsoft YaHei",sans-serif!important}
-body{margin:0!important;padding:0;width:auto;min-width:250px;height:auto;font-size:12px;overflow:hidden;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-div{box-sizing:border-box;margin:0;padding:0}
-.header{height:50px;border-bottom:1px solid #ddd}
-.header .logo{position:absolute;top:15px;left:15px;width:144px;height:20px;background:url(../img/popup-logo.png) center/contain no-repeat}
-.checkbox-slide{float:right;width:45px;height:20px;margin:16px 15px 0 0;position:relative;border:1px solid #ddd;border-radius:50px}
-.checkbox-slide:after{content:"";display:block;float:right;position:absolute;background:#ddd;top:0;right:0;bottom:0;left:50%;z-index:0;border-radius:0 50px 50px 0}
-.checkbox-slide:before{content:"";float:right;position:absolute;background:#5bb75b;top:0;right:50%;bottom:0;left:0;z-index:0;border-radius:50px 0 0 50px}
-.checkbox-slide label{display:block;width:30px;height:18px;cursor:pointer;position:absolute;top:0;left:0;z-index:1;background:#fff;background:linear-gradient(to bottom,rgba(255,255,255,1) 0,rgba(220,220,220,1) 100%);border-radius:50px;transition:all .2s ease;box-shadow:0 2px 4px 0 rgba(0,0,0,.1)}
-.checkbox-slide input[type=checkbox]{visibility:hidden}
-.checkbox-slide input[type=checkbox]:checked+label{left:13px}
-.content{padding:15px 15px 5px;background:#f7f7f7;border-bottom:1px solid #ddd}
-.btn{margin-bottom:10px;padding:15px 20px;border:1px solid #ddd;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.1);cursor:pointer;transition:all .2s ease}
-.btn:after{content:"";display:table;clear:both}
-.btn-icon{float:left;width:16px;height:16px}
-.btn-icon img{width:100%}
-.btn-text{float:left;margin-left:8px;line-height:16px}
-.btn-azure:hover{box-shadow:0 0 0 2px #45b6f7}
-.btn-green:hover{box-shadow:0 0 0 2px #5bb75b}
-.btn:hover{border-color:#fff}
-.btn:active{background:#eee;border-color:#eee}
-.footer{padding:15px;text-align:center}
-.footer .report{color:#666}
-.footer .report .link{color:#1c76d3;text-decoration:underline;cursor:pointer}
-.azure-toast{position:absolute;top:0;width:100%;height:auto;padding:17px 10px;text-align:center;line-height:16px;color:#fff;background:#5bb75b;z-index:100;transition:top .2s linear}
-.azure-toast-hidden{top:-70px}
-@media (prefers-color-scheme:dark){body{background:#000}
-    .header{background:#2d2d2d;border-bottom-color:#2d2d2d}
-    .header .logo{filter:invert(1) hue-rotate(165deg) saturate(1.5) brightness(1.3)}
-    .checkbox-slide{border-color:#555}
-    .checkbox-slide:after{background:#555}
-    .checkbox-slide:before{background:#519354}
-    .checkbox-slide label{background:#ddd}
-    .content{background:#000;border-bottom-color:#000}
-    .btn{color:#ddd;border-color:#2d2d2d;background:#2d2d2d}
-    .btn-icon img{filter:invert(0.8)}
-    .btn-azure:hover{box-shadow:0 0 0 2px #3a86c3}
-    .btn-green:hover{box-shadow:0 0 0 2px #519354}
-    .btn:hover{border-color:#2d2d2d}
-    .btn:active{background:#333;border-color:#333}
-    .footer{background:#2d2d2d}
-    .footer .report{color:#999}
-    .footer .report .link{color:#3283d2}
-    .azure-toast{background:#3d7d3d}}
+a, body, button, h1, h2, h3, h4, h5, h6, input, p, select, strong {
+    font-family: Muli, "Microsoft YaHei", sans-serif !important
+}
+
+body {
+    margin: 0 !important;
+    padding: 0;
+    width: auto;
+    min-width: 250px;
+    height: auto;
+    font-size: 12px;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+div {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.header {
+    height: 50px;
+    border-bottom: 1px solid #ddd
+}
+
+.header .logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 144px;
+    height: 20px;
+    background: url(../img/popup-logo.png) center/contain no-repeat
+}
+
+.checkbox-slide {
+    float: right;
+    width: 45px;
+    height: 20px;
+    margin: 16px 15px 0 0;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 50px
+}
+
+.checkbox-slide:after {
+    content: "";
+    display: block;
+    float: right;
+    position: absolute;
+    background: #ddd;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    border-radius: 0 50px 50px 0
+}
+
+.checkbox-slide:before {
+    content: "";
+    float: right;
+    position: absolute;
+    background: #5bb75b;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 50px 0 0 50px
+}
+
+.checkbox-slide label {
+    display: block;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0, rgba(220, 220, 220, 1) 100%);
+    border-radius: 50px;
+    transition: all .2s ease;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1)
+}
+
+.checkbox-slide input[type=checkbox] {
+    visibility: hidden
+}
+
+.checkbox-slide input[type=checkbox]:checked + label {
+    left: 13px
+}
+
+.content {
+    padding: 15px 15px 5px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd
+}
+
+.btn {
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: all .2s ease
+}
+
+.btn:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.btn-icon {
+    float: left;
+    width: 16px;
+    height: 16px
+}
+
+.btn-icon img {
+    width: 100%
+}
+
+.btn-text {
+    float: left;
+    margin-left: 8px;
+    line-height: 16px
+}
+
+.btn-azure:hover {
+    box-shadow: 0 0 0 2px #45b6f7
+}
+
+.btn-green:hover {
+    box-shadow: 0 0 0 2px #5bb75b
+}
+
+.btn:hover {
+    border-color: #fff
+}
+
+.btn:active {
+    background: #eee;
+    border-color: #eee
+}
+
+.footer {
+    padding: 15px;
+    text-align: center
+}
+
+.footer .report {
+    color: #666
+}
+
+.footer .report .link {
+    color: #1c76d3;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.azure-toast {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 17px 10px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    background: #5bb75b;
+    z-index: 100;
+    transition: top .2s linear
+}
+
+.azure-toast-hidden {
+    top: -70px
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #000
+    }
+
+    .header {
+        background: #2d2d2d;
+        border-bottom-color: #2d2d2d
+    }
+
+    .header .logo {
+        filter: invert(1) hue-rotate(165deg) saturate(1.5) brightness(1.3)
+    }
+
+    .checkbox-slide {
+        border-color: #555
+    }
+
+    .checkbox-slide:after {
+        background: #555
+    }
+
+    .checkbox-slide:before {
+        background: #57aa57
+    }
+
+    .checkbox-slide label {
+        background: #ddd
+    }
+
+    .content {
+        background: #000;
+        border-bottom-color: #000
+    }
+
+    .btn {
+        color: #ddd;
+        border-color: #2d2d2d;
+        background: #2d2d2d
+    }
+
+    .btn-icon img {
+        filter: invert(0.8)
+    }
+
+    .btn-azure:hover {
+        box-shadow: 0 0 0 2px #42a8e3
+    }
+
+    .btn-green:hover {
+        box-shadow: 0 0 0 2px #57aa57
+    }
+
+    .btn:hover {
+        border-color: #2d2d2d
+    }
+
+    .btn:active {
+        background: #333;
+        border-color: #333
+    }
+
+    .footer {
+        background: #2d2d2d
+    }
+
+    .footer .report {
+        color: #999
+    }
+
+    .footer .report .link {
+        color: #3283d2
+    }
+
+    .azure-toast {
+        background: #3d7d3d
+    }
+}
+
+a, body, button, h1, h2, h3, h4, h5, h6, input, p, select, strong {
+    font-family: Muli, "Microsoft YaHei", sans-serif !important
+}
+
+body {
+    margin: 0 !important;
+    padding: 0;
+    width: auto;
+    min-width: 250px;
+    height: auto;
+    font-size: 12px;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+div {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.header {
+    height: 50px;
+    border-bottom: 1px solid #ddd
+}
+
+.header .logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 144px;
+    height: 20px;
+    background: url(../img/popup-logo.png) center/contain no-repeat
+}
+
+.checkbox-slide {
+    float: right;
+    width: 45px;
+    height: 20px;
+    margin: 16px 15px 0 0;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 50px
+}
+
+.checkbox-slide:after {
+    content: "";
+    display: block;
+    float: right;
+    position: absolute;
+    background: #ddd;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 0;
+    border-radius: 0 50px 50px 0
+}
+
+.checkbox-slide:before {
+    content: "";
+    float: right;
+    position: absolute;
+    background: #5bb75b;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 50px 0 0 50px
+}
+
+.checkbox-slide label {
+    display: block;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0, rgba(220, 220, 220, 1) 100%);
+    border-radius: 50px;
+    transition: all .2s ease;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1)
+}
+
+.checkbox-slide input[type=checkbox] {
+    visibility: hidden
+}
+
+.checkbox-slide input[type=checkbox]:checked + label {
+    left: 13px
+}
+
+.content {
+    padding: 15px 15px 5px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd
+}
+
+.btn {
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: all .2s ease
+}
+
+.btn:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.btn-icon {
+    float: left;
+    width: 16px;
+    height: 16px
+}
+
+.btn-icon img {
+    width: 100%
+}
+
+.btn-text {
+    float: left;
+    margin-left: 8px;
+    line-height: 16px
+}
+
+.btn-azure:hover {
+    box-shadow: 0 0 0 2px #45b6f7
+}
+
+.btn-green:hover {
+    box-shadow: 0 0 0 2px #5bb75b
+}
+
+.btn:hover {
+    border-color: #fff
+}
+
+.btn:active {
+    background: #eee;
+    border-color: #eee
+}
+
+.footer {
+    padding: 15px;
+    text-align: center
+}
+
+.footer .report {
+    color: #666
+}
+
+.footer .report .link {
+    color: #1c76d3;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.azure-toast {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 17px 10px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    background: #5bb75b;
+    z-index: 100;
+    transition: top .2s linear
+}
+
+.azure-toast-hidden {
+    top: -70px
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #000
+    }
+
+    .header {
+        background: #2d2d2d;
+        border-bottom-color: #2d2d2d
+    }
+
+    .header .logo {
+        filter: invert(1) hue-rotate(165deg) saturate(1.5) brightness(1.3)
+    }
+
+    .checkbox-slide {
+        border-color: #555
+    }
+
+    .checkbox-slide:after {
+        background: #555
+    }
+
+    .checkbox-slide:before {
+        background: #519354
+    }
+
+    .checkbox-slide label {
+        background: #ddd
+    }
+
+    .content {
+        background: #000;
+        border-bottom-color: #000
+    }
+
+    .btn {
+        color: #ddd;
+        border-color: #2d2d2d;
+        background: #2d2d2d
+    }
+
+    .btn-icon img {
+        filter: invert(0.8)
+    }
+
+    .btn-azure:hover {
+        box-shadow: 0 0 0 2px #3a86c3
+    }
+
+    .btn-green:hover {
+        box-shadow: 0 0 0 2px #519354
+    }
+
+    .btn:hover {
+        border-color: #2d2d2d
+    }
+
+    .btn:active {
+        background: #333;
+        border-color: #333
+    }
+
+    .footer {
+        background: #2d2d2d
+    }
+
+    .footer .report {
+        color: #999
+    }
+
+    .footer .report .link {
+        color: #3283d2
+    }
+
+    .azure-toast {
+        background: #3d7d3d
+    }
+}

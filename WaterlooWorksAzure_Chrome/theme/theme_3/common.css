@@ -1,10 +1,27 @@
+html {
+    --color-violet: #8599de;
+    --color-violet-o-75: #8599debf;
+    --color-orange: #faa732;
+    --color-red: #da4f49;
+    --color-green: #5bb75b;
+    --color-blue: #2f96b4;
+    --color-mine: #363636;
+    --brand-bg-color: #373c47;
+    --nav-bg-color: #2d323e;
+    --banner-bg-color: var(--color-violet);
+    --banner-bar-color-1: #899cdf;
+    --banner-bar-color-2: #768acd;
+    --footer-bg-color: #1f2229;
+    --box-title-bg-color: #3c4252;
+}
+
 ::selection {
-    background: rgba(133, 153, 222, 1);
+    background: var(--color-violet);
     color: #fff;
 }
 
 ::-moz-selection {
-    background: rgba(133, 153, 222, 0.75);
+    background: var(--color-violet-o-75);
     color: #fff;
 }
 
@@ -20,7 +37,7 @@ body {
 }
 
 a, a:hover, a:active, a:focus, a:visited, ins {
-    color: #8599de;
+    color: var(--color-violet);
 }
 
 /* Input */
@@ -65,11 +82,11 @@ select[multiple]:focus {
 /* Dropdown menu */
 
 .btn-group.open .btn-primary.dropdown-toggle {
-    background-color: #8599de;
+    background-color: var(--color-violet);
 }
 
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
-    background: #8599de !important;
+    background: var(--color-violet) !important;
 }
 
 .dropdown-menu {
@@ -77,7 +94,7 @@ select[multiple]:focus {
 }
 
 .dropdown-menu .active > a {
-    background: #8599de !important;
+    background: var(--color-violet) !important;
 }
 
 /* Buttons */
@@ -85,7 +102,7 @@ select[multiple]:focus {
     padding: 10px 20px;
     border: none;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-    background: #8599de !important;
+    background: var(--color-violet) !important;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -95,7 +112,7 @@ select[multiple]:focus {
 
 .button:hover, .button:focus, .button:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12) !important;
-    background: #8599de;
+    background: var(--color-violet);
     color: #fff;
     filter: brightness(1.1);
 }
@@ -132,38 +149,38 @@ select[multiple]:focus {
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: #8599de;
-    border-color: #8599de;
+    background-color: var(--color-violet);
+    border-color: var(--color-violet);
     color: #fff;
 }
 
 .btn-warning, .btn-warning:hover, .btn-warning:focus, .btn-warning:active {
-    background-color: #faa732;
-    border-color: #faa732;
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
     color: #fff;
 }
 
 .btn-danger, .btn-danger:hover, .btn-danger:focus, .btn-danger:active {
-    background-color: #da4f49;
-    border-color: #da4f49;
+    background-color: var(--color-red);
+    border-color: var(--color-red);
     color: #fff;
 }
 
 .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active {
-    background-color: #5bb75b;
-    border-color: #5bb75b;
+    background-color: var(--color-green);
+    border-color: var(--color-green);
     color: #fff;
 }
 
 .btn-info, .btn-info:hover, .btn-info:focus, .btn-info:active {
-    background-color: #2f96b4;
-    border-color: #2f96b4;
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
     color: #fff;
 }
 
 .btn-inverse, .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active {
-    background-color: #363636;
-    border-color: #363636;
+    background-color: var(--color-mine);
+    border-color: var(--color-mine);
     color: #fff;
 }
 
@@ -181,7 +198,7 @@ select[multiple]:focus {
 
 .bootstrap-datetimepicker-widget td span.active,
 .bootstrap-datetimepicker-widget td.active:hover, .bootstrap-datetimepicker-widget td.active:hover:hover, .bootstrap-datetimepicker-widget td.active:active, .bootstrap-datetimepicker-widget td.active:hover:active, .bootstrap-datetimepicker-widget td.active.active, .bootstrap-datetimepicker-widget td.active:hover.active {
-    background: #8599de !important;
+    background: var(--color-violet) !important;
 }
 
 /* Alert */
@@ -191,7 +208,7 @@ select[multiple]:focus {
 }
 
 .alert a > span {
-    color: #8599de !important;
+    color: var(--color-violet) !important;
 }
 
 /* Header */
@@ -204,7 +221,7 @@ select[multiple]:focus {
     bottom: 0;
     left: 0;
     overflow-x: hidden;
-    background: #2d323e;
+    background: var(--nav-bg-color);
     border: none;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1010;
@@ -232,7 +249,7 @@ select[multiple]:focus {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #373c47;
+    background: var(--brand-bg-color);
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -291,7 +308,7 @@ select[multiple]:focus {
 }
 
 .sidebar-nav .nav-list > .active > a, .sidebar-nav .nav-list > .active > a:hover {
-    background: #8599de;
+    background: var(--color-violet);
     color: rgba(255, 255, 255, 0);
 }
 
@@ -397,7 +414,7 @@ select[multiple]:focus {
     #brandingNav .sidebar-nav .nav-list > li a:hover {
         color: rgba(255, 255, 255, 1) !important;
         width: 170px;
-        background: #8599de !important;
+        background: var(--color-violet) !important;
         border-radius: 0 4px 4px 0;
         padding-left: 80px !important;
         box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
@@ -531,7 +548,7 @@ body.is--hidden {
 }
 
 .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
-    background-color: #8599de;
+    background-color: var(--color-violet);
     border-radius: 2px;
 }
 
@@ -541,7 +558,7 @@ body.is--hidden {
     top: 0;
     right: 0;
     height: 200px;
-    background: #8599de;
+    background: var(--banner-bg-color);
     overflow: hidden;
     z-index: -1;
 }
@@ -553,8 +570,8 @@ body.is--hidden {
     width: 80px;
     height: 600px;
     transform: rotate(-60deg);
-    background: #899cdf;
-    box-shadow: 0 8px 80px #768acd;
+    background: var(--banner-bar-color-1);
+    box-shadow: 0 8px 80px var(--banner-bar-color-2);
 }
 
 .violet-banner .violet-banner-line:last-child {
@@ -564,8 +581,8 @@ body.is--hidden {
     width: 80px;
     height: 600px;
     transform: rotate(60deg);
-    background: #899cdf;
-    box-shadow: 0 8px 80px #768acd;
+    background: var(--banner-bar-color-1);
+    box-shadow: 0 8px 80px var(--banner-bar-color-2);
 }
 
 .azure-dashboard-action-btn {
@@ -585,7 +602,7 @@ body.is--hidden {
 }
 
 .azure-dashboard-action-btn .btn:hover {
-    background-color: #8599de;
+    background-color: var(--color-violet);
     border: none;
 }
 
@@ -710,7 +727,7 @@ body.is--hidden {
         /*background: #f6f6f7;*/
         color: #212121;
         border: none;
-        box-shadow: inset 0 -2px 0 #373940;
+        box-shadow: inset 0 -2px 0 var(--brand-bg-color);
     }
 
 }
@@ -734,7 +751,7 @@ body.is--hidden {
         /*background: #f6f6f7;*/
         color: #212121;
         border: none;
-        box-shadow: inset 0 -2px 0 #373940;
+        box-shadow: inset 0 -2px 0 var(--brand-bg-color);
     }
 
 }
@@ -789,7 +806,7 @@ body.is--hidden {
 
 /* Pagination */
 .pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
-    background-color: #8599de;
+    background-color: var(--color-violet);
     color: #fff;
 }
 
@@ -815,7 +832,7 @@ body.is--hidden {
     width: auto;
     height: 60px;
     border-top: none;
-    background: #1f2229;
+    background: var(--footer-bg-color);
     color: #ccc;
     overflow: hidden;
 }
@@ -837,19 +854,19 @@ table.table-header-fixed {
 }
 
 .azure-contextmenu > ul > li > a:hover, .azure-contextmenu > ul > li > a:active, .azure-contextmenu > ul > li > a:visited {
-    color: #8599de;
+    color: var(--color-violet);
 }
 
 .label-info, .badge-info {
-    background-color: #8599de;
+    background-color: var(--color-violet);
 }
 
 /* Box title */
 .boxTitle {
     height: 64px;
     line-height: 64px;
-    background: #3c4252;
-    border-color: #3c4252;
+    background: var(--box-title-bg-color);
+    border-color: var(--box-title-bg-color);
 }
 
 /* Checkbox group */
@@ -905,7 +922,7 @@ table.formTable span.inputContainer {
 }
 
 .postingsTable > tbody > tr > td:nth-child(4) strong a {
-    color: #8599de !important;
+    color: var(--color-violet) !important;
 }
 
 @media (max-width: 767px ) {

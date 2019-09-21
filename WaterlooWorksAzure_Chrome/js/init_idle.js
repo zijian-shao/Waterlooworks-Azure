@@ -964,7 +964,12 @@ function initAzureIdle() {
 
     if (currURL.match(/\/myAccount\//i)) {
         // student
-        injectCSS(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/common.css', 'head');
+        if (themeParentConfigs === null) {
+            injectCSS(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/common.css', 'head');
+        } else {
+            injectCSS(baseURL + 'theme/theme_' + themeParentConfigs.id + '/common.css', 'head');
+            injectCSS(baseURL + 'theme/theme_' + themeConfigs.id + '/common.css', 'head');
+        }
     } else if (currURL.match(/\/home\.htm/)) {
         // homepage page
         if (options.GLB_ReplaceLoginPage) {
@@ -977,6 +982,7 @@ function initAzureIdle() {
     jsText += 'var baseURL = "' + baseURL + '";';
     jsText += 'var options = ' + JSON.stringify(options) + ';';
     jsText += 'var themeConfigs = ' + JSON.stringify(themeConfigs) + ';';
+    jsText += 'var themeParentConfigs = ' + JSON.stringify(themeParentConfigs) + ';';
     jsText += 'var currURL = "' + currURL + '";';
     injectJS(jsText, 'head', 'text');
 
@@ -994,13 +1000,26 @@ function initAzureIdle() {
 
     // theme func
     if (currURL.match(/\/myAccount\//)) {
-        chrome.runtime.sendMessage({
-            action: 'executeScript',
-            data: {
-                type: 'file',
-                content: 'theme/theme_' + options.GLB_ThemeID + '/functions.js'
-            }
-        });
+        if (themeParentConfigs === null) {
+            chrome.runtime.sendMessage({
+                action: 'executeScript',
+                data: {
+                    type: 'file',
+                    content: 'theme/theme_' + options.GLB_ThemeID + '/functions.js'
+                }
+            });
+        } else {
+            chrome.runtime.sendMessage({
+                action: 'executeScript',
+                data: [{
+                    type: 'file',
+                    content: 'theme/theme_' + themeConfigs.id + '/functions.js'
+                }, {
+                    type: 'file',
+                    content: 'theme/theme_' + themeParentConfigs.id + '/functions.js'
+                }]
+            });
+        }
     }
 
     extensionUpdate();

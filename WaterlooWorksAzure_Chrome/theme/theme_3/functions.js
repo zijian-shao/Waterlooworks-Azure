@@ -66,6 +66,11 @@ function startTheme() {
         }
     }
 
+    // child theme
+    if (typeof startChildTheme === 'function') {
+        setTimeout(startChildTheme, 1);
+    }
+
 }
 
 setTimeout(startTheme, 5);

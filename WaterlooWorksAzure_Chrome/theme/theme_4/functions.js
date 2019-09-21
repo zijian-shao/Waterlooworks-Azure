@@ -47,6 +47,11 @@ function startTheme() {
         $('#mainContentDiv .orbisModuleHeader h1').css('margin-bottom', '10px');
     }
 
+    // child theme
+    if (typeof startChildTheme === 'function') {
+        setTimeout(startChildTheme, 1);
+    }
+
 }
 
 setTimeout(startTheme, 5);

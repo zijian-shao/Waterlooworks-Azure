@@ -43,12 +43,20 @@
     margin-bottom: 10px !important;
 }
 
+.margin-left-0 {
+    margin-left: 0 !important;
+}
+
 .margin-left-5 {
     margin-left: 5px !important;
 }
 
 .margin-left-10 {
     margin-left: 10px !important;
+}
+
+.margin-right-0 {
+    margin-right: 0 !important;
 }
 
 .margin-right-5 {
