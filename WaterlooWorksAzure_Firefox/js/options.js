@@ -606,7 +606,7 @@ function initOptions() {
             }
 
             if (val['hidden'] == false) {
-                var themeItem = $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + i + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + i + '" title="' + val['name'] + '\nCreated by ' + val['author'] + '"><p>' + val['name'] + subTitle + newTag + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>');
+                var themeItem = $('<div class="width-50 pull-left"><input type="radio" id="opt-global-2-' + i + '" name="GLB_ThemeID" value="' + val['id'] + '" data-option-name="GLB_ThemeID" data-option-type="enum"><label for="opt-global-2-' + i + '" title="' + val['name'] + '\nCreated by ' + val['author'] + '"><p class="margin-right-0">' + val['name'] + subTitle + newTag + '</p><img src="../theme/theme_' + val['id'] + '/preview.png" alt="' + val['name'] + '" class="theme-sample"></label></div>');
                 // if (newTag == '') {
                 themeItem.appendTo(list);
                 // } else {

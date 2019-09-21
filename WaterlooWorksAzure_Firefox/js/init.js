@@ -1,4 +1,4 @@
-var baseURL, currURL, options, configs, themeConfigs;
+var baseURL, currURL, options, configs, themeConfigs, themeParentConfigs;
 
 var initReady = false;
 
@@ -154,6 +154,10 @@ function initAzure() {
         // overlay
         themeConfigs = getThemeConfigs(options.GLB_ThemeID);
         addCover(themeConfigs.overlayColor);
+        if (themeConfigs.hasOwnProperty('parent_id'))
+            themeParentConfigs = getThemeConfigs(themeConfigs.parent_id);
+        else
+            themeParentConfigs = null;
 
         if (hideBody !== null) hideBody.remove();
 

@@ -464,6 +464,10 @@ hr {
     color: #ddd;
 }
 
+.gridTable > thead, .gridTable > thead th,.gridTable > thead td, .gridTable .gridChecks {
+    background-color: #373e48 !important;
+}
+
 .orbisTableHeader {
     background-color: #424a56;
     border: none;
@@ -865,43 +869,46 @@ div.checkboxGroup div.checkboxGroupHeader {
     border-bottom-color: #323841;
 }
 
-/* my documents */
-#doc_commonTableTableID > thead, #doc_commonTableTableID > thead th, #doc_commonTableTableID > thead td,
-#doc_commonTableTableID .gridChecks {
-    background-color: transparent !important;
-}
-
 /* scroll bar */
 *::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 10px;
 }
 
+.topScrollBox {
+    height: 12px !important;
+}
+
 *::-webkit-scrollbar:vertical,
-.grid_topScrollBox::-webkit-scrollbar:vertical, .gridBox::-webkit-scrollbar:vertical {
-    width: 12px;
+.grid_topScrollBox::-webkit-scrollbar:vertical, .gridBox::-webkit-scrollbar:vertical,
+.topScrollBox::-webkit-scrollbar:vertical {
+    width: 12px !important;
 }
 
 *::-webkit-scrollbar:horizontal,
-.grid_topScrollBox::-webkit-scrollbar:horizontal, .gridBox::-webkit-scrollbar:horizontal {
-    height: 12px;
+.grid_topScrollBox::-webkit-scrollbar:horizontal, .gridBox::-webkit-scrollbar:horizontal,
+.topScrollBox::-webkit-scrollbar:horizontal {
+    height: 12px !important;
 }
 
 *::-webkit-scrollbar-track,
-.grid_topScrollBox::-webkit-scrollbar-track, .gridBox::-webkit-scrollbar-track {
-    background: #1f242b;
+.grid_topScrollBox::-webkit-scrollbar-track, .gridBox::-webkit-scrollbar-track,
+.topScrollBox::-webkit-scrollbar-track {
+    background: #1f242b !important;
 }
 
 *::-webkit-scrollbar-thumb,
-.grid_topScrollBox::-webkit-scrollbar-thumb, .gridBox::-webkit-scrollbar-thumb {
-    background: #323841;
-    border: 2px solid #1f242b;
-    border-radius: 12px;
+.grid_topScrollBox::-webkit-scrollbar-thumb, .gridBox::-webkit-scrollbar-thumb,
+.topScrollBox::-webkit-scrollbar-thumb {
+    background: #323841 !important;
+    border: 2px solid #1f242b !important;
+    border-radius: 12px !important;
 }
 
 *::-webkit-scrollbar-thumb:hover,
-.grid_topScrollBox::-webkit-scrollbar-thumb:hover, .gridBox::-webkit-scrollbar-thumb:hover {
-    background: #424a56;
+.grid_topScrollBox::-webkit-scrollbar-thumb:hover, .gridBox::-webkit-scrollbar-thumb:hover,
+.topScrollBox::-webkit-scrollbar-thumb:hover {
+    background: #424a56 !important;
 }
 
 * {
