@@ -6,13 +6,6 @@ html {
     --color-green: #5bb75b;
     --color-blue: #2f96b4;
     --color-mine: #363636;
-    --brand-bg-color: #373c47;
-    --nav-bg-color: #2d323e;
-    --banner-bg-color: var(--color-violet);
-    --banner-bar-color-1: #899cdf;
-    --banner-bar-color-2: #768acd;
-    --footer-bg-color: #1f2229;
-    --box-title-bg-color: #3c4252;
 }
 
 ::selection {
@@ -212,7 +205,6 @@ select[multiple]:focus {
 }
 
 /* Header */
-
 #brandingNav {
     position: fixed;
     width: 64px;
@@ -221,7 +213,7 @@ select[multiple]:focus {
     bottom: 0;
     left: 0;
     overflow-x: hidden;
-    background: var(--nav-bg-color);
+    background: #2d323e;
     border: none;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1010;
@@ -249,7 +241,7 @@ select[multiple]:focus {
     right: 0;
     bottom: 0;
     left: 0;
-    background: var(--brand-bg-color);
+    background: #373c47;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -558,7 +550,7 @@ body.is--hidden {
     top: 0;
     right: 0;
     height: 200px;
-    background: var(--banner-bg-color);
+    background: var(--color-violet);
     overflow: hidden;
     z-index: -1;
 }
@@ -570,8 +562,8 @@ body.is--hidden {
     width: 80px;
     height: 600px;
     transform: rotate(-60deg);
-    background: var(--banner-bar-color-1);
-    box-shadow: 0 8px 80px var(--banner-bar-color-2);
+    background: #899cdf;
+    box-shadow: 0 8px 80px #768acd;
 }
 
 .violet-banner .violet-banner-line:last-child {
@@ -581,8 +573,8 @@ body.is--hidden {
     width: 80px;
     height: 600px;
     transform: rotate(60deg);
-    background: var(--banner-bar-color-1);
-    box-shadow: 0 8px 80px var(--banner-bar-color-2);
+    background: #899cdf;
+    box-shadow: 0 8px 80px #768acd;
 }
 
 .azure-dashboard-action-btn {
@@ -717,6 +709,7 @@ body.is--hidden {
         line-height: 64px;
         background: #fff;
         color: #7a7a7a;
+        border-radius: 0;
     }
 
     .orbisModuleTabs .nav-tabs > li > a:hover {
@@ -727,7 +720,7 @@ body.is--hidden {
         /*background: #f6f6f7;*/
         color: #212121;
         border: none;
-        box-shadow: inset 0 -2px 0 var(--brand-bg-color);
+        box-shadow: inset 0 -2px 0 #373940;
     }
 
 }
@@ -745,13 +738,14 @@ body.is--hidden {
         padding-bottom: 10px;
         border: none;
         background: none;
+        border-radius: 0;
     }
 
     .orbisModuleTabs .nav-tabs > .active > a, .orbisModuleTabs .nav-tabs > .active > a:hover {
         /*background: #f6f6f7;*/
         color: #212121;
         border: none;
-        box-shadow: inset 0 -2px 0 var(--brand-bg-color);
+        box-shadow: inset 0 -2px 0 #373940;
     }
 
 }
@@ -832,7 +826,7 @@ body.is--hidden {
     width: auto;
     height: 60px;
     border-top: none;
-    background: var(--footer-bg-color);
+    background: #1f2229;
     color: #ccc;
     overflow: hidden;
 }
@@ -865,8 +859,8 @@ table.table-header-fixed {
 .boxTitle {
     height: 64px;
     line-height: 64px;
-    background: var(--box-title-bg-color);
-    border-color: var(--box-title-bg-color);
+    background: #3c4252;
+    border-color: #3c4252;
 }
 
 /* Checkbox group */

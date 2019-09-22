@@ -1,6 +1,6 @@
 body {
     background: #000;
-    color: #fff;
+    color: #ddd;
 }
 
 a {
@@ -27,7 +27,7 @@ a:hover, a:focus {
 }
 
 .orbisModuleHeader h1, .orbisModuleHeader h2, .orbisModuleHeader h3, .orbisModuleHeader h4, .orbisModuleHeader h5, .orbisModuleHeader h6 {
-    color: #fff;
+    color: #ddd;
 }
 
 .orbisModuleHeader hr {
@@ -89,7 +89,7 @@ a:hover, a:focus {
 
 /* nav pills */
 .nav > li > a:hover, .nav > li > a:focus {
-    color: #fff;
+    color: #ddd;
     background-color: #3e3e3e;
 }
 
@@ -101,7 +101,7 @@ a:hover, a:focus {
 .box,
 .orbisTabContainer .tab-content {
     background: #1f1f1f;
-    color: #fff;
+    color: #ddd;
 }
 
 /* panel */
@@ -114,7 +114,7 @@ a:hover, a:focus {
 }
 
 .panel-default > .panel-heading {
-    color: #fff;
+    color: #ddd;
     background: #363636;
     border-color: #363636;
 }
@@ -124,7 +124,7 @@ a:hover, a:focus {
 }
 
 .panel-success > .panel-heading {
-    color: #fff;
+    color: #ddd;
     background-color: #425648;
     border-color: rgba(0, 0, 0, 0);
 }
@@ -134,7 +134,7 @@ a:hover, a:focus {
 }
 
 .panel-primary > .panel-heading {
-    color: #fff;
+    color: #ddd;
     background-color: #426b8f;
     border-color: rgba(0, 0, 0, 0);
 }
@@ -144,7 +144,7 @@ a:hover, a:focus {
 }
 
 .panel-info > .panel-heading {
-    color: #fff;
+    color: #ddd;
     background-color: #51697a;
     border-color: rgba(0, 0, 0, 0);
 }
@@ -154,7 +154,7 @@ a:hover, a:focus {
 }
 
 .panel-warning > .panel-heading {
-    color: #fff;
+    color: #ddd;
     background-color: #6d674a;
     border-color: rgba(0, 0, 0, 0);
 }
@@ -164,7 +164,7 @@ a:hover, a:focus {
 }
 
 .panel-danger > .panel-heading {
-    color: #fff;
+    color: #ddd;
     background-color: #623c3c;
     border-color: rgba(0, 0, 0, 0);
 }
@@ -177,14 +177,14 @@ hr {
 
 /* btn */
 .btn, .btn:visited {
-    color: #fff !important;
+    color: #ddd !important;
     background: #444;
     border-color: #444;
     box-shadow: none !important;
 }
 
 .btn:hover, .btn:focus {
-    color: #fff;
+    color: #ddd;
     background: #555;
     border-color: #555;
     box-shadow: none !important;
@@ -304,11 +304,15 @@ hr {
 }
 
 .stat-table .full {
-    color: #fff;
+    color: #ddd;
 }
 
 .gridTable > thead, .gridTable > thead th, .gridTable > thead td, .gridTable .gridChecks {
     background-color: #363636 !important;
+}
+
+.orbisTableSorter_desc, .orbisTableSorter_asc {
+    border-bottom-color: #1967a5 !important;
 }
 
 /* form */
@@ -349,7 +353,7 @@ hr {
 
 /* label & badge */
 .label, .badge {
-    color: #fff;
+    color: #ddd;
     text-shadow: none;
     background-color: #3e3e3e
 }
@@ -386,14 +390,14 @@ hr {
 }
 
 .dropdown-menu li a {
-    color: #fff;
+    color: #ddd;
     background: #282828;
     border: none;
 }
 
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
     background: #3e3e3e !important;
-    color: #fff;
+    color: #ddd;
 }
 
 .dropdown-menu .active > a {
@@ -401,21 +405,21 @@ hr {
 }
 
 .dropdown-toggle:hover .caret {
-    border-top-color: #fff;
-    border-bottom-color: #fff;
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
 }
 
 /* select & input & scrollbar*/
 select {
     background: #121212;
     border: 1px solid #3e3e3e;
-    color: #fff;
+    color: #ddd;
 }
 
 input[type="text"], input[type="password"] {
     background: #121212 !important;
     border: 1px solid #3e3e3e !important;
-    color: #fff !important;
+    color: #ddd !important;
 }
 
 select[multiple], select[size] {
@@ -441,7 +445,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 
 .boxTitle {
     border-color: rgba(0, 0, 0, 0);
-    color: #fff;
+    color: #ddd;
     background: #363636;
 }
 
@@ -473,7 +477,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 
 .close {
     opacity: 0.5;
-    color: #fff;
+    color: #ddd;
     text-shadow: none;
 }
 
@@ -485,7 +489,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 /* pagination */
 .pagination ul > li > a, .pagination ul > li > span {
     background-color: #3e3e3e;
-    color: #fff;
+    color: #ddd;
     border: none;
 }
 
@@ -495,7 +499,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 
 .pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
     background: #17477d;
-    color: #fff;
+    color: #ddd;
 }
 
 .orbis-posting-actions-float:last-child {
@@ -517,12 +521,12 @@ div.checkboxGroup div.checkboxGroupHeader {
 }
 
 .azure-contextmenu > ul > li > a, .azure-contextmenu > ul > li > a:visited {
-    color: #fff;
+    color: #ddd;
 }
 
 .azure-contextmenu > ul > li > a:hover, .azure-contextmenu > ul > li > a:active {
     background: #3e3e3e;
-    color: #fff;
+    color: #ddd;
 }
 
 .azure-contextmenu > ul > li > hr {
@@ -532,7 +536,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 /* date picker */
 .bootstrap-datetimepicker-widget td.day:hover, .bootstrap-datetimepicker-widget td.hour:hover, .bootstrap-datetimepicker-widget td.minute:hover, .bootstrap-datetimepicker-widget td.second:hover {
     background: #555;
-    color: #fff;
+    color: #ddd;
 }
 
 .bootstrap-datetimepicker-widget thead tr:first-child th:hover,
@@ -589,7 +593,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: #1f1f1f #3e3e3e;
+    scrollbar-color: #3e3e3e #1f1f1f;
 }
 
 /* block quote */
@@ -643,7 +647,7 @@ img {
 
 /* combined */
 .postingsTable > tbody > tr > td:nth-child(4) a {
-    color: #fff !important;
+    color: #ddd !important;
     font-weight: bold;
 }
 
@@ -677,7 +681,7 @@ img {
 .azure-keyword-highlight {
     border: 1px solid #3382c1;
     background: #3382c1;
-    color: #fff;
+    color: #ddd;
 }
 
 /* batch */
@@ -708,12 +712,12 @@ img {
 
 .postingsTable-tile > tbody > tr > td:nth-child(1) {
     background: #363636 !important;
-    border-top-color: #fff !important;
+    border-top-color: #ddd !important;
 }
 
 .postingsTable-tile > tbody > tr > span.label.new-tag {
     background: #3593d5 !important;
-    color: #fff !important;
+    color: #ddd !important;
     border: none !important;
 }
 
@@ -778,7 +782,7 @@ img {
 }
 
 .sidebar--fixed--right__title {
-    color: #fff;
+    color: #ddd;
 }
 
 .sidebar--btn--close {
