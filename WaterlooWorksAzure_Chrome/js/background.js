@@ -129,13 +129,14 @@ function initBackground() {
 
             if (Array.isArray(request.data)) {
                 for (var i = 0; i < request.data.length; i++) {
+                    obj = {};
                     obj[request.data[i].type] = request.data[i].content;
+                    chrome.tabs.executeScript(sender.tab.id, obj);
                 }
             } else {
                 obj[request.data.type] = request.data.content;
+                chrome.tabs.executeScript(sender.tab.id, obj);
             }
-
-            chrome.tabs.executeScript(sender.tab.id, obj);
 
             if (typeof sendResponse === 'function') sendResponse(obj);
 

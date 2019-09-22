@@ -1,5 +1,5 @@
 body {
-    background: #000;
+    background: #161616;
     color: #ddd;
 }
 
@@ -42,7 +42,7 @@ a:hover, a:focus {
 
 @media (min-width: 980px) {
     .sidebar-nav ul.nav-list > li.active > a:after {
-        background: #000;
+        background: #161616;
     }
 }
 
@@ -64,7 +64,7 @@ a:hover, a:focus {
 }
 
 .orbisModuleTabs {
-    background: #000;
+    background: #161616;
 }
 
 .orbisModuleTabs .nav-tabs > li > a {
@@ -411,13 +411,13 @@ hr {
 
 /* select & input & scrollbar*/
 select {
-    background: #121212;
+    background: #161616;
     border: 1px solid #3e3e3e;
     color: #ddd;
 }
 
 input[type="text"], input[type="password"] {
-    background: #121212 !important;
+    background: #161616 !important;
     border: 1px solid #3e3e3e !important;
     color: #ddd !important;
 }
@@ -562,7 +562,7 @@ div.checkboxGroup div.checkboxGroupHeader {
 *::-webkit-scrollbar:vertical,
 .grid_topScrollBox::-webkit-scrollbar:vertical, .gridBox::-webkit-scrollbar:vertical,
 .topScrollBox::-webkit-scrollbar:vertical {
-    width: 12px;
+    width: 12px !important;
 }
 
 *::-webkit-scrollbar:horizontal,
@@ -639,10 +639,6 @@ img {
 /* border */
 .postingsTable, .postingsTable tr, .postingsTable td, .postingsTable th {
     border: none !important;
-}
-
-.postingsTable > tbody > tr > td > a.btn.favourite {
-    opacity: 0.9 !important;
 }
 
 /* combined */
