@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 999999;
+    z-index: 2147483647;
     opacity: 1;
     transition: opacity 0.5s;
 }

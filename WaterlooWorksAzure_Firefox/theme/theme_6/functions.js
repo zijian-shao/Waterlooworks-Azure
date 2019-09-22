@@ -1,3 +1,3 @@
 function startChildTheme() {
-    // console.log('Child theme started!');
+    // $('body').append('<div class="azure-screen-shader"></div><div class="azure-screen-background"></div>');
 }

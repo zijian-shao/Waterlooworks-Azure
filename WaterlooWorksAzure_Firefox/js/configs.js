@@ -231,7 +231,7 @@ function getThemeConfigs(id) {
             "author": "Zijian Shao",
             "brightness": "dark",
             "overlayColor": "#1f1f1f",
-            "previewColor": "#465072",
+            "previewColor": "#6377af",
             "navbarPosition": "left",
             "navbarHeight": 0
         },
@@ -241,12 +241,12 @@ function getThemeConfigs(id) {
             "parent_id": 4,
             "isNew": true,
             "hidden": false,
-            "name": "Chathams Blue",
+            "name": "Cello Blue",
             "name2": "(Dark Mode)",
             "author": "Zijian Shao & Tencent TIM",
             "brightness": "light",
             "overlayColor": "#1f1f1f",
-            "previewColor": "#2C5971",
+            "previewColor": "#1967a5",
             "navbarPosition": "top",
             "navbarHeight": 50
         },

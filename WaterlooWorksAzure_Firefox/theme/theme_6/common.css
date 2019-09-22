@@ -1,0 +1,784 @@
+html {
+    --color-dodger: #118dee;
+    --color-dodger-minus: #1562af;
+    --color-dodger-o-75: #118deebf;
+    --color-orange: #965604;
+    --color-orange-minus: #b5720c;
+    --color-red: #9b3c35;
+    --color-red-minus: #b33d21;
+    --color-green: #3c783c;
+    --color-green-minus: #528c3c;
+    --color-blue: #347187;
+    --color-blue-minus: #38859b;
+    --color-mine: #444;
+    --color-mine-minus: #5f5f5f;
+    --banner-color-1: #233f5c;
+    --banner-color-2: #21456f;
+}
+
+body {
+    background: #121212;
+    color: #ddd;
+}
+
+/* navbar */
+@media (min-width: 980px) {
+    .navbar-inverse {
+        opacity: 1;
+    }
+
+    .navbar-inverse .navbar-inner {
+        background: #1f1f1f;
+        box-shadow: none;
+    }
+
+    .navbar-inverse .brand, .navbar-inverse .brand:visited {
+        color: #ddd;
+    }
+
+    .navbar-inverse .brand:hover, .navbar-inverse .brand:focus {
+        box-shadow: inset 0 3px 0 var(--color-dodger-minus);
+    }
+}
+
+.orbisModuleHeader h1, .orbisModuleHeader h2, .orbisModuleHeader h3, .orbisModuleHeader h4, .orbisModuleHeader h5, .orbisModuleHeader h6 {
+    color: #ddd;
+}
+
+.orbisModuleHeader hr {
+    border-color: #3e3e3e;
+    border-bottom: none;
+    background: transparent;
+}
+
+/* nav tabs */
+.nav-tabs.nav-stacked {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-tabs.nav-stacked > li > a {
+    border: none;
+}
+
+.nav-tabs.nav-stacked {
+    border: none;
+}
+
+.nav-tabs.nav-stacked > li > a:hover {
+    border: none;
+}
+
+.orbisModuleTabs {
+    background: #1f1f1f;
+    border-bottom-color: #3e3e3e;
+}
+
+.orbisModuleTabs .nav-tabs > li > a {
+    background: transparent;
+    color: #ddd;
+}
+
+.orbisModuleTabs .nav-tabs > li > a:hover {
+    background: #3e3e3e;
+}
+
+.orbisModuleTabs .nav-tabs > .active > a, .orbisModuleTabs .nav-tabs > .active > a:hover {
+    background: transparent;
+    color: #ddd;
+}
+
+.orbisModuleTabs .nav-tabs > .active > a, .orbisModuleTabs .nav-tabs > .active > a:hover {
+    box-shadow: inset 0 -2px 0 var(--color-dodger);
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: #ddd;
+}
+
+/* nav pills */
+.nav-pills > li > a {
+    color: #ddd;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    color: #ddd;
+    background-color: #3e3e3e;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+    background-color: var(--color-dodger-minus);
+}
+
+/* sidebar */
+@media (min-width: 980px) {
+    .sidebar-nav .nav-list li > a:hover, .sidebar-nav .nav-list li > a:focus {
+        color: #aaa;
+        box-shadow: inset 0 3px 0 var(--color-dodger-minus);
+    }
+
+    .sidebar-nav > .nav-list > .active > a {
+        color: #ddd;
+    }
+
+    /* Child menu */
+    .sidebar-nav > .nav-list > li .childMenu1.nav.nav-list {
+        background: #1f1f1f;
+    }
+
+    .sidebar-nav ul[class^="childMenu"] > li > a {
+        color: #aaa !important;
+    }
+
+    .sidebar-nav ul[class^="childMenu"] > li > a:hover {
+        color: #ddd !important;
+        box-shadow: inset 3px 0 0 var(--color-dodger-minus);
+    }
+}
+
+/* box */
+.box,
+.orbisTabContainer .tab-content {
+    background: #1f1f1f;
+    color: #ddd;
+}
+
+/* panel */
+.panel {
+    background: #282828
+}
+
+.panel .panel-heading {
+    background: #363636;
+    color: #ddd;
+}
+
+.panel .panel-heading:after {
+    filter: brightness(0.5) saturate(0);
+}
+
+.panel .panel-heading a {
+    color: #ddd;
+}
+
+.dashboard-home .panel .panel {
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.dashboard-home .panel .panel .panel-heading {
+    background: #363636;
+    color: #ddd;
+}
+
+/* hr */
+hr {
+    border-top-color: #3e3e3e;
+    border-bottom-color: transparent;
+}
+
+/* input */
+input:not(.btn), select, textarea {
+    border-color: #3e3e3e !important;
+    color: #ddd !important;
+    background: #1f1f1f !important;
+}
+
+input:not(.btn):hover, input:not(.btn):focus, select:hover, select:focus, textarea:hover, textarea:focus {
+    border-color: var(--color-dodger-minus) !important;
+}
+
+div.checkboxGroup {
+    border: 1px solid #3e3e3e;
+}
+
+div.checkboxGroup div.checkboxGroupHeader {
+    background-color: #363636;
+}
+
+.boxTitle {
+    border-color: rgba(0, 0, 0, 0);
+    color: #ddd;
+    background: #363636;
+}
+
+.input-append .add-on, .input-prepend .add-on, .input-append .add-on, .input-prepend .add-on:hover, .input-append .add-on, .input-prepend .add-on:active, .input-append .add-on, .input-prepend .add-on:focus {
+    border-color: #3e3e3e !important;
+    background: none;
+}
+
+/* btn */
+.btn, .btn:hover, .btn:focus, .btn:active, .btn:visited {
+    background: #444;
+    color: #ddd !important;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background: #555;
+}
+
+.btn-primary, .btn-primary:visited {
+    background: var(--color-dodger-minus);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background: var(--color-dodger);
+}
+
+.btn-warning, .btn-warning:visited {
+    background: var(--color-orange);
+}
+
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active {
+    background: var(--color-orange-minus);
+}
+
+.btn-danger, .btn-danger:visited {
+    background: var(--color-red);
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active {
+    background: var(--color-red-minus);
+}
+
+.btn-success, .btn-success:visited {
+    background: var(--color-green);
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active {
+    background: var(--color-green-minus);
+}
+
+.btn-info, .btn-info:visited {
+    background: var(--color-blue);
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active {
+    background: var(--color-blue-minus);
+}
+
+.btn-inverse, .btn-inverse:visited {
+    background: var(--color-mine);
+}
+
+.btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active {
+    background: var(--color-mine-minus);
+}
+
+.azure-dashboard-action-btn .btn {
+    transition: background 0.2s ease !important;
+}
+
+.azure-dashboard-action-btn .btn:hover,
+.azure-dashboard-action-btn .btn:focus,
+.azure-dashboard-action-btn .btn:active {
+    filter: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* table */
+.table {
+    background-color: transparent;
+}
+
+.table-bordered,
+.table-bordered th, .table-bordered td,
+.stat-table td {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.table-striped tbody > tr:nth-child(odd) > td, .table-striped tbody > tr:nth-child(odd) > th {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-hover tbody tr:hover > td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat-table .full {
+    color: #ddd;
+}
+
+.gridTable > thead, .gridTable > thead th, .gridTable > thead td, .gridTable .gridChecks {
+    background-color: #363636 !important;
+}
+
+.orbisTableSorter_desc, .orbisTableSorter_asc {
+    border-bottom-color: var(--color-dodger) !important;
+}
+
+/* form */
+.form-actions {
+    background: #393939;
+    border-top: none;
+}
+
+/* alert */
+.alert, .alert-block, .alert-error, .alert-success, .alert-info, .alert h4, .alert-block h4, .alert-error h4, .alert-success h4, .alert-info h4 {
+    color: #ddd;
+    text-shadow: none;
+}
+
+.alert {
+    background-color: #325465;
+    border-color: #325465;
+}
+
+.alert-info {
+    background-color: #325465;
+    border-color: #325465;
+}
+
+.alert-success {
+    background-color: #3c624f;
+    border-color: #3c624f
+}
+
+.alert-danger, .alert-error {
+    background-color: #623c3c;
+    border-color: #623c3c
+}
+
+.alert a > span {
+    color: var(--color-dodger) !important;
+}
+
+/* label & badge */
+.label, .badge {
+    color: #ddd;
+    text-shadow: none;
+    background-color: #3e3e3e
+}
+
+.label-important, .badge-important,
+.label-important[href], .badge-important[href] {
+    background-color: #87322c
+}
+
+.label-warning, .badge-warning,
+.label-warning[href], .badge-warning[href] {
+    background-color: #874f04
+}
+
+.label-success, .badge-success,
+.label-success[href], .badge-success[href] {
+    background-color: #397339
+}
+
+.label-info, .badge-info,
+.label-info[href], .badge-info[href] {
+    background-color: #2f6a7d
+}
+
+.label-inverse, .badge-inverse,
+.label-inverse[href], .badge-inverse[href] {
+    background-color: #555;
+}
+
+/* drop down */
+.dropdown-menu {
+    background: #282828;
+    border: none;
+}
+
+.dropdown-menu li a {
+    color: #ddd;
+    background: #282828;
+    border: none;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+    background: #3e3e3e !important;
+    color: #ddd;
+}
+
+.dropdown-menu .active > a {
+    background: #3e3e3e !important;
+}
+
+.dropdown-toggle:hover .caret {
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+}
+
+/* pager */
+.pager li > a, .pager li > span {
+    background: #3e3e3e;
+    border-color: #3e3e3e;
+    color: #ddd;
+    transition: background 0.2s ease, border 0.2s ease !important;
+}
+
+.pager li > a:hover, .pager li > span:hover,
+.pager li > a:focus, .pager li > span:focus,
+.pager li > a:active, .pager li > span:active {
+    background: #515151;
+    border-color: #515151;
+    color: #ddd;
+    filter: none;
+}
+
+/* modal */
+.modal {
+    background: #282828;
+}
+
+.modal .modal-header {
+    background: #363636;
+    border: none;
+}
+
+.modal .modal-body {
+    border: none;
+}
+
+.modal .modal-footer {
+    background: #363636;
+    border: none;
+    box-shadow: none;
+}
+
+.close {
+    opacity: 0.5;
+    color: #ddd;
+    text-shadow: none;
+}
+
+/* popup modal */
+.modal-posting-actions {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* pagination */
+.pagination ul > li > a, .pagination ul > li > span {
+    background-color: #3e3e3e;
+    color: #ddd;
+    border: none;
+}
+
+.pagination ul > .disabled > span, .pagination ul > .disabled > a, .pagination ul > .disabled > a:hover, .pagination ul > .disabled > a:focus {
+    background-color: #1f1f1f;
+}
+
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
+    background: var(--color-dodger-minus);
+    color: #ddd;
+}
+
+.orbis-posting-actions-float:last-child {
+    border: none;
+    background: #1f1f1f;
+}
+
+/* action btn floating */
+.orbis-posting-actions-btn-float {
+    border: none;
+    background: #1f1f1f;
+}
+
+/* Contextmenu */
+.azure-contextmenu > ul {
+    background: #282828;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.azure-contextmenu > ul > li > a, .azure-contextmenu > ul > li > a:visited {
+    color: #ddd;
+}
+
+.azure-contextmenu > ul > li > a:hover, .azure-contextmenu > ul > li > a:active {
+    background: #3e3e3e;
+    color: #ddd;
+}
+
+.azure-contextmenu > ul > li > hr {
+    border-top: 1px solid #3e3e3e;
+}
+
+/* date picker */
+.bootstrap-datetimepicker-widget td.day:hover, .bootstrap-datetimepicker-widget td.hour:hover, .bootstrap-datetimepicker-widget td.minute:hover, .bootstrap-datetimepicker-widget td.second:hover {
+    background: #555;
+    color: #ddd;
+}
+
+.bootstrap-datetimepicker-widget thead tr:first-child th:hover,
+.bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover,
+.bootstrap-datetimepicker-widget td span:hover {
+    background: #555;
+}
+
+.bootstrap-datetimepicker-widget:after {
+    border-bottom-color: #555;
+}
+
+/* scroll bar */
+*::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+.topScrollBox {
+    height: 12px !important;
+}
+
+*::-webkit-scrollbar:vertical,
+.grid_topScrollBox::-webkit-scrollbar:vertical, .gridBox::-webkit-scrollbar:vertical,
+.topScrollBox::-webkit-scrollbar:vertical {
+    width: 12px !important;
+}
+
+*::-webkit-scrollbar:horizontal,
+.grid_topScrollBox::-webkit-scrollbar:horizontal, .gridBox::-webkit-scrollbar:horizontal,
+.topScrollBox::-webkit-scrollbar:horizontal {
+    height: 12px !important;
+}
+
+*::-webkit-scrollbar-track,
+.grid_topScrollBox::-webkit-scrollbar-track, .gridBox::-webkit-scrollbar-track,
+.topScrollBox::-webkit-scrollbar-track {
+    background: #1f1f1f !important;
+}
+
+*::-webkit-scrollbar-thumb,
+.grid_topScrollBox::-webkit-scrollbar-thumb, .gridBox::-webkit-scrollbar-thumb,
+.topScrollBox::-webkit-scrollbar-thumb {
+    background: #3e3e3e !important;
+    border: 2px solid #1f1f1f !important;
+    border-radius: 12px !important;
+}
+
+*::-webkit-scrollbar-thumb:hover,
+.grid_topScrollBox::-webkit-scrollbar-thumb:hover, .gridBox::-webkit-scrollbar-thumb:hover,
+.topScrollBox::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3e3e3e #1f1f1f;
+}
+
+/* block quote */
+blockquote {
+    border-color: #555;
+}
+
+/* thumbnail */
+.thumbnail {
+    border-color: #555;
+}
+
+/* images */
+img {
+    filter: brightness(0.8);
+}
+
+/* back to top */
+.azure-back-to-top {
+    background: rgba(100, 100, 100, 0.3);
+}
+
+.azure-back-to-top:hover {
+    background: rgba(100, 100, 100, 0.6);
+}
+
+/* upcoming events */
+.azure-upcoming-events .stat-table > thead {
+    background: #2f2f2f;
+}
+
+.azure-upcoming-events .stat-table tbody + tbody {
+    border-top: 1px solid #3e3e3e;
+}
+
+/* =============== postings =============== */
+/* thead bg */
+.postingsTable > thead,
+.orbisTableHeader {
+    background-color: #363636 !important;
+}
+
+/* border */
+.postingsTable, .postingsTable tr, .postingsTable td, .postingsTable th {
+    border: none !important;
+}
+
+/* combined */
+.postingsTable > tbody > tr > td:nth-child(4) a {
+    color: #ddd !important;
+    font-weight: bold;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) strong a {
+    color: var(--color-dodger) !important;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) .combined-info > .organization {
+    color: #aaa !important;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) .combined-info > .division {
+    color: #666 !important;
+}
+
+.postingsTable > tbody > tr > td:nth-child(4) .combined-info > i {
+    color: #666 !important;
+}
+
+/* =============== Message =============== */
+#dashboard_userCommonMyMessages_processing img {
+    opacity: 0.8 !important;
+}
+
+.myMessageTable,
+.myMessageTable th, .myMessageTable td {
+    border: none !important;
+}
+
+/*posting details*/
+.azure-keyword-highlight {
+    border: 1px solid var(--color-dodger-minus);
+    background: var(--color-dodger-minus);
+}
+
+/* batch */
+.azure-batch-container li:hover {
+    background: rgba(17, 141, 238, 0.3);
+}
+
+.azure-batch-container li.active {
+    background: rgba(17, 141, 238, 0.3);
+}
+
+.azure-batch-container li:active {
+    background: rgba(17, 141, 238, 0.5);
+}
+
+
+/* posting table tile */
+.postingsTable-tile {
+    background: none !important;
+}
+
+.postingsTable-tile > tbody > tr {
+    background: #282828;
+}
+
+.postingsTable-tile > tbody > tr:hover {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(1) {
+    background: #363636 !important;
+    border-top-color: #ddd !important;
+}
+
+.postingsTable-tile > tbody > tr > span.label.new-tag {
+    background: var(--color-dodger) !important;
+    color: #000 !important;
+    border: none !important;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(5) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.postingsTable-tile > tbody > tr > td:nth-child(5) > span.division {
+    color: #777 !important;
+}
+
+.postingsTable-tile.table-header-fixed {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* appointment intro */
+.azure-appt-intro-expand-btn {
+    background: #3e3e3e;
+    color: #ccc;
+    border-top: 1px solid #3e3e3e;
+}
+
+.azure-appt-intro-expand-btn:hover {
+    background: #555;
+}
+
+.azure-appt-intro-collapse-btn {
+    background: #1f1f1f;
+    color: #ccc;
+    border-top: 1px solid #3e3e3e;
+}
+
+.azure-appt-intro-collapse-btn:hover {
+    background: #3e3e3e;
+}
+
+.azure-appt-type-auto-hide div:last-child:before {
+    background: linear-gradient(to bottom, rgba(31, 31, 31, 0) 0%, rgb(31, 31, 31) 100%);
+}
+
+.azure-appt-home-navigation > tbody > tr {
+    background: #282828;
+    border: none;
+}
+
+.azure-appt-home-navigation > tbody > tr img {
+    filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
+}
+
+.azure-appt-home-navigation > tbody > tr:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.azure-appt-home-navigation > tbody > tr > td:last-child span {
+    color: #aaa;
+}
+
+/* cca events */
+.sidebar--fixed--right {
+    background: #282828;
+}
+
+.sidebar--fixed--right__title {
+    color: #ddd;
+}
+
+.sidebar--btn--close {
+    background: none;
+    border: 1px solid #aaa;
+    color: #aaa !important;
+}
+
+div#eventTooltip {
+    border-color: #3e3e3e;
+    background-color: #282828;
+}
+
+.fc-widget-header, .fc-widget-content {
+    border-color: #3e3e3e;
+}
+
+.fc-state-highlight {
+    background: #363636;
+}
+
+/* banner */
+.blue-banner .pattern {
+    filter: brightness(0.6) saturate(0.6) hue-rotate(-15deg);
+}
+
+.blue-banner:before {
+    background: rgba(55, 75, 92, 0.4);
+}
+
+.blue-banner:after {
+    background: linear-gradient(to bottom, #1b232f 0%, #19233200 100%);
+}
+
+/* color adjustment */
+.azure-screen-shader {
+    background: #36445a;
+}
+
+.azure-screen-background {
+    background: #121212;
+}

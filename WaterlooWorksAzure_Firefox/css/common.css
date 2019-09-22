@@ -1422,3 +1422,28 @@ li.azure-font-size-control a {
     padding: 15px;
     display: block;
 }
+
+/* color adjustment */
+.azure-screen-shader {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+    mix-blend-mode: soft-light;
+    z-index: 2147483646;
+    pointer-events: none;
+}
+
+.azure-screen-background {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    pointer-events: none;
+}
