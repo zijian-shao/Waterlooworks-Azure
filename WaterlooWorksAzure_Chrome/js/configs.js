@@ -292,6 +292,7 @@ function getThemeConfigs(id) {
             'id': 99,
             'sortID': 8,
             'hidden': false,
+            'name': 'Classic Carbon',
             'author': 'Zijian Shao & Orbis Communications',
             'appearance': 0,
             'siblingID': 98,

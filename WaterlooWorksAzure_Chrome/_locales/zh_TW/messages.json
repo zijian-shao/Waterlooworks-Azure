@@ -129,7 +129,7 @@
     "message": "免責聲明"
   },
   "disclaimers_intro": {
-    "message": "<p>▷ 此擴展並非由 WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作</p><p>▷ 由於使用此擴展所造成的一切後果由您自行承擔</p> "
+    "message": "<p>▷ 此擴展並非由 WaterlooWorks 及其開發人員，亦或滑鐵盧大學官方製作。</p><p>▷ 由於使用此擴展所造成的一切後果由您自行承擔。</p> "
   },
   "displayHideShowNewTabButton": {
     "message": "啟用“隱藏/顯示NEW標籤”按鈕"
