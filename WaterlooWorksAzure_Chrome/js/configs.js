@@ -9,6 +9,7 @@ function getOptionListDefault() {
 
     var obj = {
         'EXT_Version': '0.0.0',
+        'EXT_OptionsDonatePopup': true,
         'OPT_Version': 0,
         'JOB_Enabled': true,
         'JOB_ContextMenu': true,
@@ -144,6 +145,8 @@ function getOptionListDefault() {
         'GLB_BackToTopButton': true,
         'GLB_ReverseTitleOrder': true,
         'GLB_ThemeID': 0,
+        'GLB_ThemeScheduled': false,
+        'GLB_ThemeScheduleTime': {'light': [7, 0], 'dark': [22, 0]},
         'GLB_FontName': 'Muli||400,600,800||12',
         'GLB_LargerFont': false,
         'GLB_KeepLoggedIn': true,
@@ -159,130 +162,150 @@ function getOptionListDefault() {
 function getThemeConfigs(id) {
 
     var configs = {
-        "theme_0": {
-            "id": 0,
-            "sort_id": 0,
-            "hidden": false,
-            "name": "Bright Azure",
-            "author": "Zijian Shao",
-            "brightness": "light",
-            "overlayColor": "#ffffff",
-            "previewColor": "#45b6f7",
-            "navbarPosition": "top",
-            "navbarHeight": 60
+        'theme_0': {
+            'id': 0,
+            'sortID': 0,
+            'hidden': false,
+            'name': 'Bright Azure',
+            'author': 'Zijian Shao',
+            'appearance': 0,
+            'siblingID': 1,
+            'overlayColor': '#ffffff',
+            'previewColor': '#45b6f7',
+            'navbarPosition': 'top',
+            'navbarHeight': 60
         },
-        "theme_1": {
-            "id": 1,
-            "sort_id": 1,
-            "hidden": false,
-            "name": "Dark Turquoise",
-            "name2": "(Dark Mode)",
-            "author": "Zijian Shao",
-            "brightness": "dark",
-            "overlayColor": "#282d34",
-            "previewColor": "#09b1b9",
-            "navbarPosition": "top",
-            "navbarHeight": 60
+        'theme_1': {
+            'id': 1,
+            'sortID': 1,
+            'hidden': false,
+            'name': 'Dark Turquoise',
+            // 'name2': '(Dark Mode)',
+            'author': 'Zijian Shao',
+            'appearance': 1,
+            'siblingID': 0,
+            'overlayColor': '#282d34',
+            'previewColor': '#09b1b9',
+            'navbarPosition': 'top',
+            'navbarHeight': 60
         },
-        "theme_2": {
-            "id": 2,
-            "sort_id": 8,
-            "hidden": false,
-            "name": "Fresh Citrus",
-            "author": "Zijian Shao",
-            "brightness": "light",
-            "overlayColor": "#fafafa",
-            "previewColor": "#f4ad24",
-            "navbarPosition": "left",
-            "navbarHeight": 0
+        'theme_2': {
+            'id': 2,
+            'sortID': 6,
+            'hidden': false,
+            'name': 'Fresh Citrus',
+            'author': 'Zijian Shao',
+            'appearance': 0,
+            'siblingID': 7,
+            'overlayColor': '#fafafa',
+            'previewColor': '#f4ad24',
+            'navbarPosition': 'left',
+            'navbarHeight': 0
         },
-        "theme_3": {
-            "id": 3,
-            "sort_id": 2,
-            "hidden": false,
-            "name": "Elegant Violet",
-            "author": "Zijian Shao",
-            "brightness": "light",
-            "overlayColor": "#fafafa",
-            "previewColor": "#8599de",
-            "navbarPosition": "left",
-            "navbarHeight": 0
+        'theme_3': {
+            'id': 3,
+            'sortID': 2,
+            'hidden': false,
+            'name': 'Elegant Violet',
+            'author': 'Zijian Shao',
+            'appearance': 0,
+            'siblingID': 5,
+            'overlayColor': '#fafafa',
+            'previewColor': '#8599de',
+            'navbarPosition': 'left',
+            'navbarHeight': 0
         },
-        "theme_4": {
-            "id": 4,
-            "sort_id": 4,
-            "hidden": false,
-            "name": "Dodger Blue",
-            "author": "Zijian Shao & Tencent TIM",
-            "brightness": "light",
-            "overlayColor": "#fafafa",
-            "previewColor": "#118dee",
-            "navbarPosition": "top",
-            "navbarHeight": 50
+        'theme_4': {
+            'id': 4,
+            'sortID': 4,
+            'hidden': false,
+            'name': 'Dodger Blue',
+            'author': 'Zijian Shao & Tencent TIM',
+            'appearance': 0,
+            'siblingID': 6,
+            'overlayColor': '#fafafa',
+            'previewColor': '#118dee',
+            'navbarPosition': 'top',
+            'navbarHeight': 50
         },
-        "theme_5": {
-            "id": 5,
-            "sort_id": 3,
-            "parent_id": 3,
-            "isNew": true,
-            "hidden": false,
-            "name": "Ebony Clay",
-            "name2": "(Dark Mode)",
-            "author": "Zijian Shao",
-            "brightness": "dark",
-            "overlayColor": "#1f1f1f",
-            "previewColor": "#6377af",
-            "navbarPosition": "left",
-            "navbarHeight": 0
+        'theme_5': {
+            'id': 5,
+            'sortID': 3,
+            'parentID': 3,
+            'isNew': true,
+            'hidden': false,
+            'name': 'Ebony Clay',
+            'author': 'Zijian Shao',
+            'appearance': 1,
+            'siblingID': 3,
+            'overlayColor': '#1f1f1f',
+            'previewColor': '#6377af',
+            'navbarPosition': 'left',
+            'navbarHeight': 0
         },
-        "theme_6": {
-            "id": 6,
-            "sort_id": 5,
-            "parent_id": 4,
-            "isNew": true,
-            "hidden": false,
-            "name": "Cello Blue",
-            "name2": "(Dark Mode)",
-            "author": "Zijian Shao & Tencent TIM",
-            "brightness": "light",
-            "overlayColor": "#1f1f1f",
-            "previewColor": "#1967a5",
-            "navbarPosition": "top",
-            "navbarHeight": 50
+        'theme_6': {
+            'id': 6,
+            'sortID': 5,
+            'parentID': 4,
+            'isNew': true,
+            'hidden': false,
+            'name': 'Cello Blue',
+            'author': 'Zijian Shao & Tencent TIM',
+            'appearance': 1,
+            'siblingID': 4,
+            'overlayColor': '#1f1f1f',
+            'previewColor': '#1967a5',
+            'navbarPosition': 'top',
+            'navbarHeight': 50
         },
-        "theme_98": {
-            "id": 98,
-            "sort_id": 7,
-            "parent_id": 99,
-            "isNew": true,
-            "hidden": false,
-            "name": "Minimalist Gray",
-            "name2": "(Dark Mode)",
-            "author": "Zijian Shao & Orbis Communications",
-            "brightness": "dark",
-            "overlayColor": "#1f1f1f",
-            "previewColor": "#1b1b1b",
-            "navbarPosition": "top",
-            "navbarHeight": 60
+        'theme_7': {
+            'id': 7,
+            'sortID': 7,
+            'parentID': 2,
+            'isNew': true,
+            'hidden': false,
+            'name': 'Black Gold',
+            'author': 'Zijian Shao',
+            'appearance': 1,
+            'siblingID': 2,
+            'overlayColor': '#1f1f1f',
+            'previewColor': '#d2a66f',
+            'navbarPosition': 'left',
+            'navbarHeight': 0
         },
-        "theme_99": {
-            "id": 99,
-            "sort_id": 6,
-            "hidden": false,
-            "name": "Classic Carbon",
-            "author": "Zijian Shao & Orbis Communications",
-            "brightness": "dark",
-            "overlayColor": "#f1f1f1",
-            "previewColor": "#1b1b1b",
-            "navbarPosition": "top",
-            "navbarHeight": 60
+        'theme_98': {
+            'id': 98,
+            'sortID': 9,
+            'parentID': 99,
+            'isNew': true,
+            'hidden': false,
+            'name': 'Minimalist Gray',
+            'author': 'Zijian Shao & Orbis Communications',
+            'appearance': 1,
+            'siblingID': 99,
+            'overlayColor': '#1f1f1f',
+            'previewColor': '#1b1b1b',
+            'navbarPosition': 'top',
+            'navbarHeight': 60
+        },
+        'theme_99': {
+            'id': 99,
+            'sortID': 8,
+            'hidden': false,
+            'author': 'Zijian Shao & Orbis Communications',
+            'appearance': 0,
+            'siblingID': 98,
+            'overlayColor': '#f1f1f1',
+            'previewColor': '#1b1b1b',
+            'navbarPosition': 'top',
+            'navbarHeight': 60
         }
     };
 
     if (id === undefined)
         return configs;
     else
-        return configs["theme_" + id];
+        return configs['theme_' + id];
 
 }
 

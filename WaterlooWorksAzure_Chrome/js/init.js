@@ -151,14 +151,52 @@ function initAzure() {
             return;
         }
 
-        // overlay
+        // init themeConfigs
         themeConfigs = getThemeConfigs(options.GLB_ThemeID);
+
+        if (options.GLB_ThemeScheduled) {
+            // theme schedule
+            var currentT = new Date();
+            var lightT = new Date();
+            var darkT = new Date();
+            lightT.setHours(options.GLB_ThemeScheduleTime.light[0], options.GLB_ThemeScheduleTime.light[1], 0);
+            darkT.setHours(options.GLB_ThemeScheduleTime.dark[0], options.GLB_ThemeScheduleTime.dark[1], 0);
+
+            var themeAppr;
+            if (darkT > lightT) {
+                if (currentT > lightT && currentT < darkT) {
+                    // light
+                    themeAppr = 0;
+                } else {
+                    // dark
+                    themeAppr = 1;
+                }
+            } else {
+                if (currentT > darkT && currentT < lightT) {
+                    // dark
+                    themeAppr = 1;
+                } else {
+                    // light
+                    themeAppr = 0;
+                }
+            }
+
+            if (themeConfigs.appearance !== themeAppr) {
+                options.GLB_ThemeID = themeConfigs.siblingID;
+                themeConfigs = getThemeConfigs(themeConfigs.siblingID);
+            }
+        }
+
+        // overlay
         addCover(themeConfigs.overlayColor);
-        if (themeConfigs.hasOwnProperty('parent_id'))
-            themeParentConfigs = getThemeConfigs(themeConfigs.parent_id);
+
+        // parent theme
+        if (themeConfigs.hasOwnProperty('parentID'))
+            themeParentConfigs = getThemeConfigs(themeConfigs.parentID);
         else
             themeParentConfigs = null;
 
+        // hide body
         if (hideBody !== null) hideBody.remove();
 
         initReady = true;

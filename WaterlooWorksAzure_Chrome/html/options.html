@@ -50,19 +50,25 @@
                     i18n-text="globalOptimizations"></li>
                 <li data-option-tab-index="1" data-option-tab-name="posting-list" id="nav-tab-1" class="nav-tab"
                     i18n-text="jobPostings_title"></li>
+                <li data-option-tab-index="4" data-option-tab-name="posting-detail" id="nav-tab-4" class="nav-tab"
+                    i18n-text="postingDetail_title"></li>
                 <li data-option-tab-index="5" data-option-tab-name="posting-modal" id="nav-tab-5" class="nav-tab"
                     i18n-text="postingModal_title">
                     <!--<div class="new-tag">NEW</div>-->
                 </li>
-                <li data-option-tab-index="4" data-option-tab-name="posting-detail" id="nav-tab-4" class="nav-tab"
-                    i18n-text="postingDetail_title"></li>
                 <li data-option-tab-index="2" data-option-tab-name="my-messages" id="nav-tab-2" class="nav-tab"
                     i18n-text="otherPages"></li>
                 <li data-option-tab-index="6" data-option-tab-name="import-export" id="nav-tab-6" class="nav-tab"
                     i18n-text="importExport"></li>
                 <li data-option-tab-index="3" data-option-tab-name="about" id="nav-tab-3" class="nav-tab"
                     i18n-text="about"></li>
-                <a class="nav-donate" data-href="donate" target="_blank">
+
+                <a class="nav-link nav-rate" data-href="azureStore" data-href-suffix="azureStoreReviewSuffix"
+                   target="_blank">
+                    <span i18n-text="rate"></span>
+                    <span i18n-text="thankYou"></span>
+                </a>
+                <a class="nav-link nav-donate" data-href="donate" target="_blank">
                     <span i18n-text="contribute"></span>
                     <span i18n-text="thankYou"></span>
                 </a>
@@ -136,12 +142,34 @@
                     <div class="clear-fix"></div>
                 </div>
 
+                <!-- Theme Schedule -->
+                <div class="option-group checkbox-group margin-bottom-5">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-global-5-0" data-option-name="GLB_ThemeScheduled"
+                               data-option-type="switch">
+                        <label for="opt-global-5-0"></label>
+                    </div>
+                    <label for="opt-global-5-0" class="checkbox-label" i18n-text="switchThemeModeOnSchedule"></label>
+                </div>
+                <div class="theme-schedule margin-bottom-10" id="theme-schedule">
+                    <span i18n-text="lightModeStartsAt"></span><input type="text" name="light-time" minlength="5"
+                                                                      data-option-type="theme-schedule"
+                                                                      data-option-name="GLB_ThemeScheduleTime"
+                                                                      maxlength="5" class="input-box inline-block"
+                                                                      required><span
+                        i18n-text="andDarkModeStartsAt"></span><input type="text" name="dark-time" minlength="5"
+                                                                      data-option-type="theme-schedule"
+                                                                      data-option-name="GLB_ThemeScheduleTime"
+                                                                      maxlength="5" class="input-box inline-block"
+                                                                      required>
+                </div>
+
                 <!-- Select Font -->
                 <div class="category-title">
                     <h5 i18n-text="selectFont"></h5>
                 </div>
                 <div class="option-group radio-group radio-group-inline">
-                    <div class="width-100 font-list hide-long">
+                    <div class="width-100 font-list">
                         <div class="width-50 pull-left">
                             <input type="radio" id="opt-global-4-0" name="GLB_FontName" value="Muli"
                                    data-option-name="GLB_FontName" data-option-type="enum2"
@@ -240,38 +268,8 @@
                             </label>
                         </div>
                     </div>
-                    <div class="hide-long-btn" i18n-text="showMorePlus"></div>
+                    <div class="hide-long-btn hidden" i18n-text="showMorePlus"></div>
                     <div class="clear-fix"></div>
-                </div>
-
-                <!-- Welcome Page -->
-                <div class="category-title">
-                    <h5 i18n-text="homepage"></h5>
-                </div>
-                <div class="option-group checkbox-group">
-                    <div class="checkbox-slide">
-                        <input type="checkbox" id="opt-global-1-0" data-option-name="GLB_ReplaceLoginPage"
-                               data-option-type="switch">
-                        <label for="opt-global-1-0"></label>
-                    </div>
-                    <label for="opt-global-1-0" class="checkbox-label" i18n-text="useNewAzureHomepage"></label>
-                    <a class="option-tip-toggle">?</a>
-                    <div class="option-tip hidden">
-                        <p i18n-text="useNewAzureHomepage_tip"></p>
-                    </div>
-                </div>
-                <div class="option-group checkbox-group">
-                    <div class="checkbox-slide">
-                        <input type="checkbox" id="opt-global-1-1" data-option-name="GLB_AutoRedirectToLogin"
-                               data-option-type="switch">
-                        <label for="opt-global-1-1"></label>
-                    </div>
-                    <label for="opt-global-1-1" class="checkbox-label"
-                           i18n-text="redirectToWelcomePageWhenNotLoggedIn"></label>
-                    <a class="option-tip-toggle">?</a>
-                    <div class="option-tip hidden">
-                        <p i18n-text="redirectToWelcomePageWhenNotLoggedIn_tip"></p>
-                    </div>
                 </div>
 
                 <!-- Other -->
@@ -995,6 +993,37 @@
                     </div>
                 </div>
 
+
+                <!-- Welcome Page -->
+                <div class="category-title">
+                    <h5 i18n-text="homepage"></h5>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-welcome-0-0" data-option-name="GLB_ReplaceLoginPage"
+                               data-option-type="switch">
+                        <label for="opt-welcome-0-0"></label>
+                    </div>
+                    <label for="opt-welcome-0-0" class="checkbox-label" i18n-text="useNewAzureHomepage"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="useNewAzureHomepage_tip"></p>
+                    </div>
+                </div>
+                <div class="option-group checkbox-group">
+                    <div class="checkbox-slide">
+                        <input type="checkbox" id="opt-welcome-0-1" data-option-name="GLB_AutoRedirectToLogin"
+                               data-option-type="switch">
+                        <label for="opt-welcome-0-1"></label>
+                    </div>
+                    <label for="opt-welcome-0-1" class="checkbox-label"
+                           i18n-text="redirectToWelcomePageWhenNotLoggedIn"></label>
+                    <a class="option-tip-toggle">?</a>
+                    <div class="option-tip hidden">
+                        <p i18n-text="redirectToWelcomePageWhenNotLoggedIn_tip"></p>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- Other End -->
@@ -1107,7 +1136,36 @@
 </div>
 <!-- Welcome End -->
 
+<!-- Update Start -->
+<div class="update hidden" id="update-content">
+    <div>
+        <h3>Dark Mode is Here!</h3>
+        <p><img src="../img/update/update.jpg" alt="Update" class="width-100"></p>
+        <p>▶ Each theme now has its corresponding dark mode. Try it out!</p>
+        <p>▶ Turn on theme schedule to switch between light / dark mode automatically.</p>
+        <p>▶ If you like this extension, please <a data-href="azureStore" data-href-suffix="azureStoreReviewSuffix"
+                                                   target="_blank">rate and leave a comment</a> in the store or <a
+                data-href="donate" target="_blank">donate with PayPal</a>.</p>
+        <p>▶ Enjoy~ (づ￣ ³￣)づ</p>
+    </div>
+    <div class="popup-btn-group">
+        <a href="#" class="popup-btn popup-btn-black" i18n-text="welcomePopupButton"></a>
+    </div>
+</div>
+<!-- Update End -->
+
+<!-- Donate Start -->
+<div class="donate-container donate-container-hidden hidden" id="donate-container">
+    <div class="donate-overlay"></div>
+    <div class="donate-content">
+        <a data-href="donate" target="_blank" class="donate-btn-1"></a>
+        <a href="#" class="donate-btn-2"></a>
+    </div>
+</div>
+<!-- Donate End -->
+
 <script type="text/javascript" src="/js/libs/jquery.js"></script>
+<script type="text/javascript" src="/js/libs/timepicker.js"></script>
 <script type="text/javascript" src="/js/libs/localization.js"></script>
 <script type="text/javascript" src="/js/configs.js"></script>
 <script type="text/javascript" src="/js/options.js"></script>

@@ -779,10 +779,10 @@ div#eventTooltip {
 
 /* banner */
 .violet-banner {
-    background: #262d42;
+    background: #2a3147;
 }
 
 .violet-banner .violet-banner-line {
-    background: #2a3148 !important;
-    box-shadow: 0 8px 80px #1f2639 !important;
+    background: #2e354e !important;
+    box-shadow: none !important;
 }

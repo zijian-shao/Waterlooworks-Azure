@@ -44,6 +44,9 @@
   "addPostingTitlesToRightSide_tip": {
     "message": "Add a panel containing job title, company, and other information to the right side of the page."
   },
+  "andDarkModeStartsAt": {
+    "message": "and Dark Mode starts at"
+  },
   "appDeadline": {
     "message": "App Deadline"
   },
@@ -162,7 +165,7 @@
     "message": "Click anywhere on a row to preview job in pop-up in current tab without reloading page."
   },
   "enableKeywordsHighlight": {
-    "message": "Enable keywords highlight"
+    "message": "Enable keywords highlighting"
   },
   "enableKeywordsHighlight_tip": {
     "message": "This feature highlights specific keywords when you are on the posting details page. You can turn on / off it using the switch here."
@@ -315,7 +318,7 @@
     "message": "Prevent WaterlooWorks from logging you out by automatically calling the keepMeLoggedInClicked function every 1700 seconds."
   },
   "keywordsHighlight": {
-    "message": "Keywords Highlight"
+    "message": "Keywords Highlighting"
   },
   "keywordsToBeHighlighted": {
     "message": "▷ Keywords to be highlighted"
@@ -331,6 +334,9 @@
   },
   "level": {
     "message": "Level"
+  },
+  "lightModeStartsAt": {
+    "message": "Light Mode starts at"
   },
   "lightThemeDarkTheme": {
     "message": "Light theme / Dark theme"
@@ -396,7 +402,7 @@
     "message": "Organization"
   },
   "other": {
-    "message": "Other"
+    "message": "Others"
   },
   "otherPages": {
     "message": "Other Pages"
@@ -408,16 +414,16 @@
     "message": "Posting Details Control"
   },
   "postingDetail_title": {
-    "message": "Posting Detail"
+    "message": "Posting Details"
   },
   "postingID": {
     "message": "ID"
   },
   "postingListDisplay": {
-    "message": "Postings List Display"
+    "message": "Posting List Display"
   },
   "postingListFeatures": {
-    "message": "Postings List Control"
+    "message": "Posting List Control"
   },
   "postingModalControl": {
     "message": "Posting Preview Control"
@@ -430,6 +436,9 @@
   },
   "postingModal_title": {
     "message": "Posting Preview"
+  },
+  "rate": {
+    "message": "Rate"
   },
   "recommended": {
     "message": "Recommended"
@@ -502,6 +511,9 @@
   },
   "switchBookingOptionsToTop_tip": {
     "message": "Switch the position of \"terms of consultation\" and \"booking options\" for easier access."
+  },
+  "switchThemeModeOnSchedule": {
+    "message": "Switch theme mode on schedule"
   },
   "thankYou": {
     "message": "Thank You!"

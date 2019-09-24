@@ -44,6 +44,9 @@
   "addPostingTitlesToRightSide_tip": {
     "message": "在职位详情页右侧添加面板，展示职位名称、公司及其他相关信息。"
   },
+  "andDarkModeStartsAt": {
+    "message": "，深色模式启用于"
+  },
   "appDeadline": {
     "message": "截止日期"
   },
@@ -332,6 +335,9 @@
   "level": {
     "message": "级别"
   },
+  "lightModeStartsAt": {
+    "message": "浅色模式启用于"
+  },
   "lightThemeDarkTheme": {
     "message": "白色主题 / 黑色主题"
   },
@@ -431,6 +437,9 @@
   "postingModal_title": {
     "message": "职位预览"
   },
+  "rate": {
+    "message": "给予好评"
+  },
   "recommended": {
     "message": "推荐扩展"
   },
@@ -502,6 +511,9 @@
   },
   "switchBookingOptionsToTop_tip": {
     "message": "启用该选项后，将“使用条款”和“预约选项”交换位置以方便进行相关操作。"
+  },
+  "switchThemeModeOnSchedule": {
+    "message": "自动切换主题模式"
   },
   "thankYou": {
     "message": "感谢您的支持！"

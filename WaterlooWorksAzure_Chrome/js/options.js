@@ -1,5 +1,7 @@
 function initOptions() {
 
+    var options;
+
     function getFeedbackLink() {
         function _getOS() {
             var OSName = "Unknown";
@@ -230,6 +232,22 @@ function initOptions() {
 
                         break;
 
+                    case 'GLB_ThemeScheduleTime':
+                        var str = '';
+                        if (items[key]['light'][0] < 10) str += '0';
+                        str += items[key]['light'][0] + ':';
+                        if (items[key]['light'][1] < 10) str += '0';
+                        str += items[key]['light'][1];
+                        $('#theme-schedule input[name="light-time"]').val(str);
+
+                        str = '';
+                        if (items[key]['dark'][0] < 10) str += '0';
+                        str += items[key]['dark'][0] + ':';
+                        if (items[key]['dark'][1] < 10) str += '0';
+                        str += items[key]['dark'][1];
+                        $('#theme-schedule input[name="dark-time"]').val(str);
+                        break;
+
                     default:
                         optionElem.prop('checked', items[key]);
                 }
@@ -240,6 +258,8 @@ function initOptions() {
                 $('#columnsList').show();
             else
                 $('#columnsList').hide();
+
+            options = items;
 
             bindEvents();
         });
@@ -361,6 +381,65 @@ function initOptions() {
                     }
                     saveOption(obj);
                     break;
+            }
+        } else if (inputType == 'text') {
+            switch (optType) {
+                case 'theme-schedule':
+                    var obj = {};
+                    obj[optName] = {};
+                    var lightObj = $('#theme-schedule input[name="light-time"]');
+                    var darkObj = $('#theme-schedule input[name="dark-time"]');
+                    var lightT = lightObj.val();
+                    var darkT = darkObj.val();
+                    var foundErr = false;
+                    if (lightT === null || !lightT.match(/^(2[0-3]|[01][0-9]):([0-5][0-9])$/)) {
+                        lightObj.addClass('error');
+                        foundErr = true;
+                    }
+                    if (darkT === null || !darkT.match(/^(2[0-3]|[01][0-9]):([0-5][0-9])$/)) {
+                        darkObj.addClass('error');
+                        foundErr = true;
+                    }
+                    if (lightT === darkT) {
+                        lightObj.addClass('error');
+                        darkObj.addClass('error');
+                        foundErr = true;
+                    }
+                    if (foundErr === true) return;
+                    lightObj.removeClass('error');
+                    darkObj.removeClass('error');
+
+                    var lightTs = lightT.split(':');
+                    var darkTs = darkT.split(':');
+                    obj[optName]['light'] = [
+                        parseInt(lightTs[0]), parseInt(lightTs[1])
+                    ];
+                    obj[optName]['dark'] = [
+                        parseInt(darkTs[0]), parseInt(darkTs[1])
+                    ];
+                    saveOption(obj);
+                    break;
+            }
+        }
+
+        if (optName === 'GLB_ThemeID') {
+            var tconf = getThemeConfigs(elem.attr('value'));
+
+            if (tconf.appearance === 1 && options.EXT_OptionsDonatePopup) {
+                var donateContainer = $('#donate-container');
+                donateContainer.find('.donate-btn-2').on('click', function (e) {
+                    e.preventDefault();
+                    donateContainer.addClass('hidden').addClass('donate-container-hidden');
+                });
+
+                donateContainer.removeClass('hidden');
+                setTimeout(function () {
+                    donateContainer.removeClass('donate-container-hidden');
+                }, 10);
+
+                options.EXT_OptionsDonatePopup = false;
+                chrome.storage.sync.set({'EXT_OptionsDonatePopup': false}, function () {
+                });
             }
         }
     }
@@ -528,6 +607,8 @@ function initOptions() {
             try {
                 exportContainer.addClass('wait');
                 chrome.storage.sync.get(getOptionListDefault(), function (items) {
+                    if (items.hasOwnProperty('EXT_OptionsDonatePopup'))
+                        delete items.EXT_OptionsDonatePopup;
                     exportTextarea.val(
                         '----------- WATERLOOWORKS AZURE OPTIONS BEGIN -----------\n' +
                         window.btoa(JSON.stringify(items)) +
@@ -554,6 +635,23 @@ function initOptions() {
             }
         });
 
+        // theme schedule
+        $('#theme-schedule input[name="light-time"], #theme-schedule input[name="dark-time"]').each(function () {
+            var self = $(this);
+            self.timepicker({
+                timeFormat: 'HH:mm',
+                minTime: new Date(0, 0, 0, 0, 0, 0),
+                maxTime: new Date(0, 0, 0, 23, 59, 0),
+                startTime: new Date(0, 0, 0, 0, 0, 0),
+                interval: 30,
+                scrollbar: true,
+                change: function (time) {
+                    // $(this).trigger('change');
+                    onOptionChange($(this));
+                }
+            });
+        });
+
         // welcome
         if (params.hasOwnProperty('welcome')) {
             setTimeout(function () {
@@ -567,13 +665,26 @@ function initOptions() {
             }, 500);
         }
 
+        // update
+        if (params.hasOwnProperty('update')) {
+            setTimeout(function () {
+                var update = $('#update-content').clone();
+                update.removeAttr('id').removeClass('hidden');
+                var popupCls = initPopup('WaterlooWorks Azure', update, '', 1);
+                $('.' + popupCls).find('.popup-btn').on('click', function (e) {
+                    e.preventDefault();
+                    window.location.href = removeSearchParameters('update');
+                });
+            }, 500);
+        }
+
     }
 
     function sortThemes(a, b) {
-        if (a.sort_id < b.sort_id) {
+        if (a.sortID < b.sortID) {
             return -1;
         }
-        if (a.sort_id > b.sort_id) {
+        if (a.sortID > b.sortID) {
             return 1;
         }
         return 0;
@@ -599,10 +710,16 @@ function initOptions() {
                 newTag = '';
             }
 
-            if (val.hasOwnProperty('name2')) {
-                subTitle = '<span class="theme-subtitle">' + val['name2'] + '</span>';
+            // if (val.hasOwnProperty('name2')) {
+            //     subTitle = '<span class="theme-subtitle">' + val['name2'] + '</span>';
+            // } else {
+            //     subTitle = '';
+            // }
+
+            if (val.appearance === 0) {
+                subTitle = '<span class="theme-subtitle">Light Mode</span>';
             } else {
-                subTitle = '';
+                subTitle = '<span class="theme-subtitle">Dark Mode</span>';
             }
 
             if (val['hidden'] == false) {
