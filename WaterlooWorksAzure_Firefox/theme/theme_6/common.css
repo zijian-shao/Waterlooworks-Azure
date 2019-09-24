@@ -29,7 +29,6 @@ body {
 
     .navbar-inverse .navbar-inner {
         background: #1f1f1f;
-        box-shadow: none;
     }
 
     .navbar-inverse .brand, .navbar-inverse .brand:visited {
@@ -405,6 +404,7 @@ div.checkboxGroup div.checkboxGroupHeader {
     border-color: #3e3e3e;
     color: #ddd;
     transition: background 0.2s ease, border 0.2s ease !important;
+    filter: none;
 }
 
 .pager li > a:hover, .pager li > span:hover,
@@ -413,7 +413,7 @@ div.checkboxGroup div.checkboxGroupHeader {
     background: #515151;
     border-color: #515151;
     color: #ddd;
-    filter: none;
+    opacity: 1;
 }
 
 /* modal */

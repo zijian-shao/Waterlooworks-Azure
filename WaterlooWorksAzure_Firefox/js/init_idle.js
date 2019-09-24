@@ -22,11 +22,11 @@ function extensionUpdate() {
 
         console.log('New version updated (V' + newVer + ')');
 
-        if (!oldVer.match(/2\.0\./) && newVer.match(/2\.0\./)) {
-            // browser.runtime.sendMessage({
-            //     action: 'createTab',
-            //     data: {url: 'https://www.zijianshao.com/wwazure/whatsnew/?version=2.0.0&platform=firefox'}
-            // });
+        if (!oldVer.match(/3\.0\./) && newVer.match(/3\.0\./)) {
+            browser.runtime.sendMessage({
+                action: 'createTab',
+                data: {url: browser.runtime.getURL('html/options.html?update=' + newVer)}
+            });
         }
 
         console.log('Extension update script executed!');
@@ -129,7 +129,7 @@ function blockPage(color, msg, time) {
         time = 300;
 
     var elem = $('<div class="azure-block-page" id="azure-block-page">');
-    if (themeConfigs.brightness == 'dark')
+    if (themeConfigs.appearance === 1)
         elem.addClass('azure-block-page-dark');
 
     if (color !== undefined)

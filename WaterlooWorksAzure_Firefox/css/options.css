@@ -1,7 +1,9 @@
 /*! scrollbar */
 html {
     --color-azure: #45b6f7;
-    --color-fern: #5bb75b
+    --color-fern: #5bb75b;
+    --color-carrot: #f49524;
+    --color-pink: #ff7da1;
 }
 
 @media (min-width: 992px) {
@@ -249,46 +251,68 @@ hr {
     box-shadow: inset 5px 0 0 var(--color-azure)
 }
 
-.nav-donate {
+.nav-link {
     display: block;
     width: 100%;
     height: 60px;
     margin: 1px 0 0;
-    color: #fff !important;
-    background: var(--color-fern);
+    color: #999;
+    background: none;
+    box-shadow: inset 5px 0 0 #eee;
     cursor: pointer;
-    transition: box-shadow .2s ease;
+    transition: background .2s ease;
     font-weight: 400;
     text-decoration: none;
     position: relative
 }
 
-.nav-donate span {
-    transition: opacity .2s ease, transform .2s ease;
+.nav-link span {
+    transition: opacity .2s ease, transform .2s ease, color .2s ease;
     display: block;
     position: absolute;
     top: 0;
     left: 30px;
-    line-height: 60px
+    line-height: 60px;
+    color: inherit !important;
 }
 
-.nav-donate span:last-child {
+.nav-link span:last-child {
     opacity: 0;
-    transform: translateY(10px)
+    transform: translateY(10px);
 }
 
-.nav-donate:hover {
+.nav-link:hover {
     text-decoration: none
 }
 
-.nav-donate:hover span:first-child {
+.nav-link:hover span:first-child {
     opacity: 0;
     transform: translateY(-10px)
 }
 
-.nav-donate:hover span:last-child {
+.nav-link:hover span:last-child {
     opacity: 1;
     transform: translateY(0px)
+}
+
+.nav-donate {
+    color: var(--color-fern);
+    box-shadow: inset 5px 0 0 var(--color-fern);
+}
+
+.nav-donate:hover {
+    color: #fff;
+    background: var(--color-fern);
+}
+
+.nav-rate {
+    color: var(--color-carrot);
+    box-shadow: inset 5px 0 0 var(--color-carrot);
+}
+
+.nav-rate:hover {
+    color: #fff;
+    background: var(--color-carrot);
 }
 
 .content-container {
@@ -360,7 +384,7 @@ hr {
 .option-group {
     width: 100%;
     height: auto;
-    margin: 10px 0
+    margin: 15px 0
 }
 
 .option-group:hover .option-tip-toggle {
@@ -400,8 +424,9 @@ hr {
 
 .option-tip {
     background: #f6f6f6;
-    padding: 20px 20px 10px;
-    margin-top: 10px
+    padding: 25px 25px 15px;
+    margin-top: 15px;
+    border-radius: 4px;
 }
 
 .option-tip p {
@@ -419,7 +444,7 @@ hr {
     height: auto;
     font-size: 10px;
     line-height: 1.5em;
-    background: var(--color-azure);
+    background: var(--color-pink);
     color: #fff;
     text-align: center;
     border-radius: 2px;
@@ -439,6 +464,11 @@ hr {
 
 .input-box:focus {
     border-color: var(--color-azure)
+}
+
+.input-box.error {
+    color: #e45555;
+    border-color: #e45555;
 }
 
 .input-group-highlight td:first-child {
@@ -611,7 +641,7 @@ label.checkbox-label {
 }
 
 .radio-group p {
-    margin: 0 0 10px;
+    margin: 0 0 15px;
     padding: 0
 }
 
@@ -919,7 +949,7 @@ div.arrow.left {
 }
 
 .theme-subtitle {
-    padding-left: 4px;
+    padding-left: 6px;
     font-size: .8em;
     opacity: .6;
     vertical-align: top
@@ -1196,6 +1226,157 @@ div.arrow.left {
     cursor: wait
 }
 
+.theme-schedule {
+    margin-left: 75px;
+}
+
+.theme-schedule input[type="text"] {
+    width: 70px;
+    text-align: center;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+/*! time picker */
+.ui-timepicker-container {
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-top: 3px;
+}
+
+.ui-timepicker {
+    box-sizing: content-box;
+    display: block;
+    height: 205px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.ui-timepicker-viewport {
+    box-sizing: content-box;
+    display: block;
+    height: 205px;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    overflow-x: hidden; /* IE */
+}
+
+.ui-timepicker-standard {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #ccc;
+}
+
+.ui-timepicker-standard a {
+    color: #000;
+    font-weight: normal;
+    display: block;
+    padding: 10px 0 10px 10px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.ui-timepicker-standard .ui-state-hover {
+    background: #f6f6f6;
+    font-weight: normal;
+    color: var(--color-azure);
+}
+
+.ui-timepicker-hidden {
+    display: none;
+}
+
+.ui-timepicker-no-scrollbar .ui-timepicker {
+    border: none;
+}
+
+/* donate */
+.donate-container, .donate-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.donate-container {
+    pointer-events: initial;
+}
+
+.donate-overlay {
+    background: #000;
+    opacity: 0.5;
+    transition: opacity 0.5s ease !important;
+}
+
+.donate-content {
+    position: fixed;
+    top: calc(48% - 125px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.2);
+    background: url(../img/donate-bg.png) center no-repeat;
+    background-size: cover;
+    width: 520px;
+    height: 250px;
+    z-index: 1001;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.donate-content > a {
+    display: block;
+    height: 48px;
+    background: center no-repeat;
+    background-size: contain;
+    transition: transform 0.2s ease;
+    position: absolute;
+    bottom: 25px;
+}
+
+.donate-content > a:hover {
+    transform: translateY(-2px);
+}
+
+.donate-content > a:active {
+    transform: translateY(0);
+}
+
+.donate-content .donate-btn-1 {
+    background-image: url(../img/donate-btn.png);
+    width: 210px;
+    left: 102px;
+}
+
+.donate-content .donate-btn-2 {
+    background-image: url(../img/donate-close-btn.png);
+    width: 100px;
+    right: 102px;
+}
+
+.donate-container-hidden {
+    pointer-events: none;
+}
+
+.donate-container-hidden .donate-overlay {
+    opacity: 0;
+}
+
+.donate-container-hidden .donate-content {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
 @media (max-width: 991px) {
     .width-50, .width-80, .width-90 {
         width: 100%
@@ -1259,7 +1440,7 @@ div.arrow.left {
         box-shadow: inset 0 -2px 0 var(--color-azure)
     }
 
-    .nav-donate {
+    .nav-link {
         display: none
     }
 
@@ -1341,6 +1522,17 @@ div.arrow.left {
         padding-right: 0;
         margin-bottom: 15px
     }
+
+    .theme-schedule {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 567px) {
+    .donate-container {
+        display: none !important;
+        pointer-events: none !important;
+    }
 }
 
 @keyframes bounceIn {
@@ -1410,7 +1602,9 @@ div.arrow.left {
 @media (prefers-color-scheme: dark) {
     html {
         --color-azure: #3a86c3;
-        --color-fern: #519354
+        --color-fern: #519354;
+        --color-carrot: #b1855f;
+        --color-pink: #bd506e;
     }
 
     @media (min-width: 992px) {
@@ -1483,21 +1677,6 @@ div.arrow.left {
 
     .nav {
         background: #282828
-    }
-
-    .nav-donate {
-        color: var(--color-fern) !important;
-        background: 0 0;
-        box-shadow: inset 5px 0 0 var(--color-fern);
-        transition: background .2s
-    }
-
-    .nav-donate:hover {
-        background: var(--color-fern)
-    }
-
-    .nav-donate span:last-child {
-        color: #fff !important
     }
 
     .content-container, .nav ul li:focus, .nav ul li:hover {
@@ -1621,7 +1800,8 @@ div.arrow.left {
     }
 
     .popup-title {
-        background: #3a86c3
+        box-shadow: inset 0 4px 0 var(--color-azure);
+        background: #3e3e3e;
     }
 
     .popup-content {
@@ -1640,5 +1820,24 @@ div.arrow.left {
         background: rgba(81, 147, 84, 0.95);
         box-shadow: 0 0 5px rgba(81, 147, 84, 0.5);
         color: #ddd;
+    }
+
+    .ui-timepicker-standard {
+        background: #333;
+        border-color: #333;
+        box-shadow: 0 0 4px #111;
+    }
+
+    .ui-timepicker-standard a {
+        color: #ddd;
+    }
+
+    .ui-timepicker-standard .ui-state-hover {
+        background: #555;
+        color: #fff;
+    }
+
+    .donate-content {
+        filter: brightness(0.8);
     }
 }

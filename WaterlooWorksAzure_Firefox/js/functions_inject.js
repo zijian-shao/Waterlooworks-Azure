@@ -96,7 +96,7 @@ function blockPage(color, msg, time) {
         time = 300;
 
     var elem = $('<div class="azure-block-page" id="azure-block-page">');
-    if (themeConfigs.brightness == 'dark')
+    if (themeConfigs.appearance === 1)
         elem.addClass('azure-block-page-dark');
 
     if (color !== undefined)
