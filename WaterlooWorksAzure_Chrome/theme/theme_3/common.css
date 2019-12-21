@@ -315,7 +315,7 @@ select[multiple]:focus {
 .sidebar-nav > ul > li > a > i {
     font-size: 16px;
     position: absolute;
-    top: 18px;
+    top: 20px;
     left: 24px;
     color: #fff;
 }
@@ -370,7 +370,7 @@ select[multiple]:focus {
 }
 
 #brandingNav::-webkit-scrollbar {
-    width: 0;
+    width: 0 !important;
 }
 
 #brandingNav {

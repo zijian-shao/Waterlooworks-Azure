@@ -669,21 +669,21 @@ function apptHideInstr() {
     else if (page === 'detail') {
         // console.log('detail');
         // auto hide type intro
-        if (options.APPT_AutoHideTypeIntro && !headText.match(/Appointment Provider/)) {
-            var introRow = $('#mainContentDiv').children('.row-fluid').find('.span6:first-child .row:nth-child(2) .box .boxContent .row');
-            introRow.each(function (idx, elem) {
-                var self = $(this);
-                var introDiv = self.find('div:last-child');
-                // introDiv.attr('data-org-height', introDiv.height() + 'px');
-                if (introDiv.height() > 45 && introDiv.text().trim().length > 150) {
-                    self.addClass('azure-appt-type-auto-hide');
-                    introDiv.on('click', function (e) {
-                        e.preventDefault();
-                        self.removeClass('azure-appt-type-auto-hide');
-                    });
-                }
-            });
-        }
+        // if (options.APPT_AutoHideTypeIntro && !headText.match(/Appointment Provider/)) {
+        //     var introRow = $('#mainContentDiv').children('.row-fluid').find('.span6:first-child .row:nth-child(2) .box .boxContent .row');
+        //     introRow.each(function (idx, elem) {
+        //         var self = $(this);
+        //         var introDiv = self.find('div:last-child');
+        //         // introDiv.attr('data-org-height', introDiv.height() + 'px');
+        //         if (introDiv.height() > 45 && introDiv.text().trim().length > 150) {
+        //             self.addClass('azure-appt-type-auto-hide');
+        //             introDiv.on('click', function (e) {
+        //                 e.preventDefault();
+        //                 self.removeClass('azure-appt-type-auto-hide');
+        //             });
+        //         }
+        //     });
+        // }
     }
 
 }
