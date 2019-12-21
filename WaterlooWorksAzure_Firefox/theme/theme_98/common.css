@@ -289,6 +289,10 @@ hr {
     background-color: transparent;
 }
 
+.table th, .table td {
+    border-color: rgba(255, 255, 255, 0.15)
+}
+
 .table-bordered,
 .table-bordered th, .table-bordered td,
 .stat-table td {
@@ -464,6 +468,7 @@ div.checkboxGroup div.checkboxGroupHeader {
     border-color: #515151;
     color: #ddd;
 }
+
 /* modal */
 .modal {
     background: #282828;

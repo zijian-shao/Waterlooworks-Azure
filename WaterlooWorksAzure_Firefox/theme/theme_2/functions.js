@@ -34,7 +34,7 @@ function startTheme() {
         } else if (navText.match(/Hire Waterloo(?! Co-op)/)) {
             self.prepend($('<i class="icon-briefcase"></i>'));
         } else if (navText.match(/Career Centre Events/)) {
-            self.prepend($('<i class="icon-bell-alt"></i>'));
+            self.html('<i class="icon-bell-alt"></i>Events');
         } else if (navText.match(/Appointments/)) {
             self.prepend($('<i class="icon-comment"></i>'));
             self.closest('li').find('ul.nav-list.childMenu1 > li > a').each(function (i, e) {
@@ -47,6 +47,8 @@ function startTheme() {
             self.prepend($('<i class="icon-info-sign"></i>'));
         } else if (navText.match(/Logout/)) {
             self.prepend($('<i class="icon-signout"></i>'));
+        } else if (navText.match(/Employer Information Sessions/)) {
+            self.html('<i class="icon-star"></i>Info Sessions');
         } else {
             self.prepend($('<i class="icon-plus"></i>'));
         }

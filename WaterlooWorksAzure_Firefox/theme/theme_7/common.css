@@ -211,12 +211,16 @@ input.btn:hover {
 }
 
 .postingsTable .btn {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /* table */
 .table {
     background-color: transparent;
+}
+
+.table th, .table td {
+    border-color: rgba(255, 255, 255, 0.15)
 }
 
 .table-bordered,

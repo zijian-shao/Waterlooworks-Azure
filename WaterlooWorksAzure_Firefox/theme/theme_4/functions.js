@@ -21,6 +21,10 @@ function startTheme() {
                 self.text(self.text().replace(/ Students/g, ''));
                 self.text(self.text().replace(/ Education/g, ' Edu'));
             });
+        } else if (navText.match(/Employer Information Sessions/)) {
+            self.text('Info Sessions');
+        } else if (navText.match(/Career Centre Events/)) {
+            self.text('Events');
         }
     });
     if (typeof navHelp !== typeof undefined && typeof navLogout !== typeof undefined)
