@@ -249,6 +249,10 @@ input.btn:hover {
     border-bottom-color: var(--color-citrus) !important;
 }
 
+.table tbody tr.subtotal td {
+    background-color: #363636;
+}
+
 /* form */
 .form-actions {
     background: #393939;
@@ -751,4 +755,20 @@ div#eventTooltip {
 
 .fc-state-highlight {
     background: #363636;
+}
+
+/* well */
+.well {
+    background: #282828;
+    border-color: #444;
+    box-shadow: none;
+}
+
+/* work term ratings */
+.highcharts-container {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.highcharts-container .highcharts-background {
+    fill: #E0E0E0 !important;
 }

@@ -958,7 +958,7 @@ div.checkboxGroup div.checkboxGroupHeader label {
 
 .azure-upcoming-events .stat-table tr > td {
     line-height: 18px;
-    vertical-align: unset;
+    vertical-align: top;
 }
 
 /* appointment intro */

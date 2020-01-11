@@ -308,6 +308,10 @@ div.checkboxGroup div.checkboxGroupHeader {
     border-bottom-color: var(--color-dodger) !important;
 }
 
+.table tbody tr.subtotal td {
+    background-color: #363636;
+}
+
 /* form */
 .form-actions {
     background: #393939;
@@ -785,4 +789,20 @@ div#eventTooltip {
 
 .azure-screen-background {
     background: #121212;
+}
+
+/* well */
+.well {
+    background: #282828;
+    border-color: #444;
+    box-shadow: none;
+}
+
+/* work term ratings */
+.highcharts-container {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.highcharts-container .highcharts-background {
+    fill: #E0E0E0 !important;
 }
