@@ -1207,3 +1207,12 @@ div#eventTooltip {
 .azure-upcoming-events .stat-table tbody + tbody {
     border-top: 1px solid #424a55;
 }
+
+/* work term ratings */
+.highcharts-container {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.highcharts-container .highcharts-background {
+    fill: #c2c8d1 !important;
+}

@@ -310,6 +310,18 @@ function showPostingModal(tr) {
             return;
         }
 
+        var workTermRatings = null;
+        html.find('.nav.nav-pills > li > a').each(function () {
+            var self = $(this);
+            if (self.text().match(/Work Term Ratings/i)) {
+                var rate = self.children('span');
+                if (rate.length) {
+                    workTermRatings = '<span class="badge badge-info inline">Work Term Ratings <strong>' + rate.text().trim() + '</strong></span>';
+                }
+                return false;
+            }
+        });
+
         html = html.find('#postingDiv');
 
         // save all tr into a single element
@@ -435,6 +447,12 @@ function showPostingModal(tr) {
 
         // add title
         var upperC = options.JOB_PopupModalCapitalTitle ? ' text-uppercase' : '';
+
+        if (workTermRatings === null) {
+            popupModalBody.prepend($('<p class="modal-work-term-ratings modal-work-term-ratings-empty' + upperC + '">&nbsp;</p>'));
+        } else {
+            popupModalBody.prepend($('<p class="modal-work-term-ratings' + upperC + '">' + workTermRatings + '</p>'));
+        }
         popupModalBody.prepend($('<p class="modal-organization' + upperC + '">' + jobCompany + '</p>'));
         popupModalBody.prepend($('<h1 class="modal-job-title' + upperC + '">' + jobTitle + '</h1>'));
 

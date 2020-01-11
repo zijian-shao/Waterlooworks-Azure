@@ -935,3 +935,9 @@ table.formTable span.inputContainer {
 .azure-appt-home-navigation > tbody > tr {
     border-radius: 10px;
 }
+
+/* upcoming events */
+.azure-upcoming-events .stat-table tr > td {
+    line-height: 18px;
+    vertical-align: top;
+}

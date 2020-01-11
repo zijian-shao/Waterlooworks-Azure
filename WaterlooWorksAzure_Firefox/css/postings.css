@@ -139,11 +139,33 @@
 }
 
 .modal-organization {
-    margin-bottom: 20px;
     text-align: center;
     font-size: 14px;
     font-weight: 200;
     opacity: 0.6;
+}
+
+.modal-work-term-ratings {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 200;
+}
+
+.modal-work-term-ratings .badge {
+    font-weight: 400;
+    font-size: 12px;
+    padding: 4px 15px;
+    border-radius: 10px;
+}
+
+.modal-work-term-ratings .badge strong {
+    padding-left: 4px;
+}
+
+.modal-work-term-ratings-empty {
+    margin-bottom: 10px;
+    height: 0;
+    overflow: hidden;
 }
 
 .modal-posting-actions {

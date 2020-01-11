@@ -871,11 +871,16 @@ function startAzure() {
                     $('body').addClass('dashboard-home');
                     // announcement css
                     $('#mainContentDiv > div.orbisTabContainer > div.tab-content > div:nth-child(2) > div:nth-child(1) > div.row-fluid > div span').removeAttr('style');
+                    // upcoming events
+                    $('.orbisTabContainer > .tab-content > .row-fluid > .span6 > .panel > .panel-heading').each(function () {
+                        var self = $(this);
+                        if (self.text().match(/Upcoming Events/i)) {
+                            self.closest('.panel').addClass('azure-upcoming-events');
+                            return false;
+                        }
+                    });
                 }
             });
-
-            // upcoming events
-            $('#upcomingEvents').addClass('azure-upcoming-events');
 
             // campus connect
             if (options.DASH_HideCampusConnectBadge)

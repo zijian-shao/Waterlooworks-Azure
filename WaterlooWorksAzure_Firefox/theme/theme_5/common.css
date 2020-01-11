@@ -286,6 +286,10 @@ hr {
     border-bottom-color: var(--color-violet) !important;
 }
 
+.table tbody tr.subtotal td {
+    background-color: #363636;
+}
+
 /* form */
 .form-actions {
     background: #393939;
@@ -789,4 +793,20 @@ div#eventTooltip {
 .violet-banner .violet-banner-line {
     background: #2e354e !important;
     box-shadow: none !important;
+}
+
+/* well */
+.well {
+    background: #282828;
+    border-color: #444;
+    box-shadow: none;
+}
+
+/* work term ratings */
+.highcharts-container {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.highcharts-container .highcharts-background {
+    fill: #E0E0E0 !important;
 }
