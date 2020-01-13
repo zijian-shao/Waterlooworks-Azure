@@ -1025,9 +1025,9 @@ function postingListAjax(table, placeholder) {
     });
 
     if (options.JOB_ColumnDisplayType == 0) {
-        jobTitleLink.removeAttr('style');
-        organizationLink.removeAttr('style');
-        divisionLink.removeAttr('style');
+        jobTitleLink.attr('style', '');
+        organizationLink.attr('style', '');
+        divisionLink.attr('style', '');
         jobTitleLink.after(divisionLink.clone());
         jobTitleLink.after('<i class="icon-angle-right" style="opacity:0.4"></i>');
         jobTitleLink.after(organizationLink.clone());
