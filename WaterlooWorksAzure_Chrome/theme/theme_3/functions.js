@@ -26,6 +26,8 @@ function startTheme() {
             self.prepend($('<i class="icon-signout"></i>'));
         } else if (navText.match(/Employer Information Sessions/)) {
             self.html('<i class="icon-star"></i>Info Sessions');
+        } else if (navText.match(/External Job Boards/)) {
+            self.html('<i class="icon-plane"></i>External Jobs');
         } else {
             self.prepend($('<i class="icon-plus"></i>'));
         }

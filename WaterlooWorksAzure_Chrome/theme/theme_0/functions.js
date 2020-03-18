@@ -20,6 +20,8 @@ function startTheme() {
             self.text('Info Sessions');
         } else if (navText.match(/Career Centre Events/)) {
             self.text('Events');
+        } else if (navText.match(/External Job Boards/)) {
+            self.text('External Jobs');
         }
     });
     if (typeof navHelp !== typeof undefined && typeof navLogout !== typeof undefined)

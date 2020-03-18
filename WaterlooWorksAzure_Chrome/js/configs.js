@@ -311,12 +311,13 @@ function getThemeConfigs(id) {
 }
 
 function getLink(key) {
+    var ua = navigator.userAgent;
     var list = {
-        darklightStore: 'https://chrome.google.com/webstore/detail/learn-darklight/lhodieepeghcemhpbloffmljoklaklho',
-        azureStore: 'https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm',
-        azureStoreReviewSuffix: '/reviews',
-        autologStore: 'https://chrome.google.com/webstore/detail/waterloo-autolog/ncpmlgiinkikhgijoplpnjggobinhkpl',
-        raspberryStore: 'https://chrome.google.com/webstore/detail/quest-raspberry/ifhnmgllkaeebiklhakndljclagikoak',
+        darklightStore: '',
+        azureStore: '',
+        azureStoreReviewSuffix: '',
+        autologStore: '',
+        raspberryStore: '',
         feedback: 'https://docs.google.com/forms/d/e/1FAIpQLSfXzHmscryMryP_LyaRKdNDVUKBz_9NTdVGOSnlEQEBZDPUoQ/viewform?usp=pp_url&entry.775641191=@@extVersion@@&entry.424865672=@@browser@@&entry.1807838560=@@os@@',
         officialWebsite: 'https://www.zijianshao.com/wwazure/',
         github: 'https://github.com/SssWind/Waterlooworks-Azure',
@@ -329,7 +330,24 @@ function getLink(key) {
         linkedInShare: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dchrome',
         mailTo: 'mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension',
         waterlooWorksLink: 'https://waterlooworks.uwaterloo.ca',
-        uninstall: 'https://www.zijianshao.com/wwazure/uninstall/?platform=@@platform@@&version=@@extVersion@@&browser=@@browser@@&os=@@os@@'
+        uninstall: 'https://www.zijianshao.com/wwazure/uninstall/?platform=@@platform@@&version=@@extVersion@@&browser=@@browser@@&os=@@os@@',
+        privacy: 'https://www.zijianshao.com/wwazure/privacy/'
     };
+
+    if (ua.indexOf('Edge') !== -1 || ua.indexOf('Edg') !== -1) {
+        // edge
+        list['azureStoreReviewSuffix'] = '';
+        list['darklightStore'] = 'https://microsoftedge.microsoft.com/addons/detail/gniehfhhoajdjieojgojjgbcochajole';
+        list['azureStore'] = 'https://microsoftedge.microsoft.com/addons/detail/bjkcklpgffonojilhdfbjbifgpacajmm';
+        list['autologStore'] = 'https://microsoftedge.microsoft.com/addons/detail/eifpbkdegnmkokbngeifkmmkjmimaogb';
+        list['raspberryStore'] = 'https://microsoftedge.microsoft.com/addons/detail/bbhlapokfenllaokgocokaemclmncafk';
+    } else {
+        // chrome
+        list['azureStoreReviewSuffix'] = '/reviews';
+        list['darklightStore'] = 'https://chrome.google.com/webstore/detail/learn-darklight/lhodieepeghcemhpbloffmljoklaklho';
+        list['azureStore'] = 'https://chrome.google.com/webstore/detail/waterlooworks-azure/peeaakkcmdoeljddgdkcailflcballmm';
+        list['autologStore'] = 'https://chrome.google.com/webstore/detail/waterloo-autolog/ncpmlgiinkikhgijoplpnjggobinhkpl';
+        list['raspberryStore'] = 'https://chrome.google.com/webstore/detail/quest-raspberry/ifhnmgllkaeebiklhakndljclagikoak';
+    }
     return list[key];
 }
