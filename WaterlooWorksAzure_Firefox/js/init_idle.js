@@ -920,6 +920,8 @@ function startAzure() {
 
         } else if (currURL.match(/\/appts\/.*\.htm/)) {
             apptHideInstr();
+        } else if (currURL.match(/\/EJobs\.htm/)) {
+            $('#mainContentDiv > .box > .customContentContainer a').css('color', '');
         }
 
     }

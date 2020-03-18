@@ -329,7 +329,8 @@ function getLink(key) {
         linkedInShare: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.zijianshao.com%2Fwwazure%2Fsharelink%2F%3Fplatform%3Dfirefox',
         mailTo: 'mailto:sam.zj.shao@gmail.com?Subject=WaterlooWorks Azure Extension',
         waterlooWorksLink: 'https://waterlooworks.uwaterloo.ca',
-        uninstall: 'https://www.zijianshao.com/wwazure/uninstall/?platform=@@platform@@&version=@@extVersion@@&browser=@@browser@@&os=@@os@@'
+        uninstall: 'https://www.zijianshao.com/wwazure/uninstall/?platform=@@platform@@&version=@@extVersion@@&browser=@@browser@@&os=@@os@@',
+        privacy: 'https://www.zijianshao.com/wwazure/privacy/'
     };
     return list[key];
 }
