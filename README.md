@@ -4,6 +4,8 @@ WaterlooWorks Azure is a browser extension designed to enhance the user experien
 ## Install
 Chrome: [View in Chrome Web Store](https://chrome.google.com/webstore/detail/peeaakkcmdoeljddgdkcailflcballmm "WaterlooWorks Azure (Chrome Version)")
 
+Edge: [View in Edge Addons](https://microsoftedge.microsoft.com/addons/detail/bjkcklpgffonojilhdfbjbifgpacajmm "WaterlooWorks Azure (Edge Version)")
+
 Firefox: [View in Firefox Addons](https://addons.mozilla.org/addon/waterlooworks-azure/ "WaterlooWorks Azure (Firefox Version)")
 
 ## Features
