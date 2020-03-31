@@ -60,7 +60,7 @@
     "*://waterlooworks.uwaterloo.ca/*"
   ],
   "short_name": "WWAzure",
-  "version": "3.0.4",
+  "version": "3.0.6",
   "web_accessible_resources": [
     "js/*",
     "css/*",
