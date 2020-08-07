@@ -1300,8 +1300,8 @@ li.azure-font-size-control a {
     line-height: 1.5;
 }
 
-.azure-appt-home-navigation > tbody > tr > td:last-child strong a:first-child,
-.azure-appt-home-navigation > tbody > tr > td:last-child a:first-child strong {
+.azure-appt-home-navigation > tbody > tr > td:last-child span:first-child strong a:first-child,
+.azure-appt-home-navigation > tbody > tr > td:last-child span:first-child a:first-child strong {
     display: block;
     width: 100%;
     font-size: 20px;
