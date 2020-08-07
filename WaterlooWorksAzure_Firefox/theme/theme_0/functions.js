@@ -19,9 +19,11 @@ function startTheme() {
         } else if (navText.match(/Employer Information Sessions/)) {
             self.text('Info Sessions');
         } else if (navText.match(/Career Centre Events/)) {
-            self.text('Events');
+            self.text('CC Events');
         } else if (navText.match(/External Job Boards/)) {
             self.text('External Jobs');
+        } else if (navText.match(/Additional Networking & Professional Events/)) {
+            self.text('NP Events');
         }
     });
     if (typeof navHelp !== typeof undefined && typeof navLogout !== typeof undefined)

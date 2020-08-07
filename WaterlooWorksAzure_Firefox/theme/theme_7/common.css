@@ -72,17 +72,24 @@ html {
 }
 
 .orbisModuleTabs {
-    background: #1f1f1f;
+    background: #161616;
     border: none;
 }
 
 .orbisModuleTabs .nav-tabs > li > a {
     background: transparent;
     color: #aaa;
+    border-color: transparent;
 }
 
 .orbisModuleTabs .nav-tabs > li > a:hover {
     background: #3e3e3e;
+}
+
+.orbisModuleTabs .nav-tabs > .active > a, .orbisModuleTabs .nav-tabs > .active > a:hover {
+    background-color: #1f1f1f;
+    border-color: #1f1f1f;
+    border-top-color: var(--color-citrus);
 }
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
