@@ -61,14 +61,14 @@
 		402A7E40264B5BC30013583F /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		402A7E42264B5BC30013583F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		402A7E43264B5BC30013583F /* WaterlooWorks_Azure_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterlooWorks_Azure_Extension.entitlements; sourceTree = "<group>"; };
-		402A7E4E264B5BC40013583F /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; name = css; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/css"; sourceTree = "<group>"; };
-		402A7E4F264B5BC40013583F /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/js"; sourceTree = "<group>"; };
-		402A7E50264B5BC40013583F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; name = html; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/html"; sourceTree = "<group>"; };
-		402A7E51264B5BC40013583F /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/img"; sourceTree = "<group>"; };
-		402A7E52264B5BC40013583F /* theme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = theme; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/theme"; sourceTree = "<group>"; };
-		402A7E53264B5BC40013583F /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/manifest.json"; sourceTree = "<group>"; };
-		402A7E54264B5BC40013583F /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/_locales"; sourceTree = "<group>"; };
-		402A7E55264B5BC40013583F /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon; path = "../../Downloads/Waterlooworks-Azure-master/WaterlooWorksAzure_Chrome/icon"; sourceTree = "<group>"; };
+		402A7E4E264B5BC40013583F /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; name = css; path = ../WaterlooWorksAzure_Chrome/css; sourceTree = SOURCE_ROOT; };
+		402A7E4F264B5BC40013583F /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = ../WaterlooWorksAzure_Chrome/js; sourceTree = SOURCE_ROOT; };
+		402A7E50264B5BC40013583F /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; name = html; path = ../WaterlooWorksAzure_Chrome/html; sourceTree = SOURCE_ROOT; };
+		402A7E51264B5BC40013583F /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../WaterlooWorksAzure_Chrome/img; sourceTree = SOURCE_ROOT; };
+		402A7E52264B5BC40013583F /* theme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = theme; path = ../WaterlooWorksAzure_Chrome/theme; sourceTree = SOURCE_ROOT; };
+		402A7E53264B5BC40013583F /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../WaterlooWorksAzure_Chrome/manifest.json; sourceTree = "<group>"; };
+		402A7E54264B5BC40013583F /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = ../../WaterlooWorksAzure_Chrome/_locales; sourceTree = "<group>"; };
+		402A7E55264B5BC40013583F /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon; path = ../../WaterlooWorksAzure_Chrome/icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
