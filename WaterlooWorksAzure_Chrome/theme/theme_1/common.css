@@ -106,13 +106,13 @@ a, a:hover, a:active, a:focus, a:visited, ins {
         padding: 20px 14px;
         background: none !important;
         color: #666;
-        box-shadow: inset 0 0 0 #45b6f7;
+        box-shadow: inset 0 0 0 #09B1B9;
         transition: box-shadow 0.2s ease, color 0.2s ease;
     }
 
     .sidebar-nav .nav-list > li > a:hover, .sidebar-nav .nav-list > li > a:focus {
         background: none !important;
-        box-shadow: inset 0 -70px 0 #45B6F7;
+        box-shadow: inset 0 -70px 0 #09B1B9;
         color: #fff;
     }
 
@@ -125,7 +125,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > .active > a {
         background: none;
         color: #666;
-        box-shadow: inset 0 -3px 0 #45B6F7;
+        box-shadow: inset 0 -3px 0 #09B1B9;
     }
 
     .sidebar-nav > .nav-list > .active > a:hover, .sidebar-nav > .nav-list > .active > a:active {
@@ -170,12 +170,12 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     .sidebar-nav > .nav-list > li .childMenu1.nav-list li a:hover, .sidebar-nav > .nav-list > li .childMenu1.nav-list li a:focus {
         background: #f6f6f6 !important;
         box-shadow: none;
-        color: #45B6F7;
+        color: #09B1B9;
         text-shadow: none;
     }
 
     .sidebar-nav > .nav-list > li .childMenu1.nav-list > .active > a, .sidebar-nav > .nav-list > li .childMenu2.nav-list > .active > a {
-        color: #45B6F7;
+        color: #09B1B9;
         box-shadow: none;
     }
 
@@ -464,7 +464,7 @@ hr {
     color: #ddd;
 }
 
-.gridTable > thead, .gridTable > thead th,.gridTable > thead td, .gridTable .gridChecks {
+.gridTable > thead, .gridTable > thead th, .gridTable > thead td, .gridTable .gridChecks {
     background-color: #373e48 !important;
 }
 
@@ -544,8 +544,22 @@ hr {
     box-shadow: none;
     background: none;
     color: #aaa !important;
-    border: 1px solid #aaa;
+    border: 1px solid #aaa !important;
     text-decoration: none !important;
+}
+
+.btn.btn-mini, .btn.btn-small, .btn.btn-large {
+    border-radius: 100px !important;
+}
+
+.btn.btn-mini {
+    font-size: 12px !important;
+    padding: 0 6px !important;
+}
+
+.btn.btn-small {
+    font-size: 12px !important;
+    padding: 2px 10px !important;
 }
 
 .btn:hover, .btn:focus, .btn:active {
@@ -553,31 +567,31 @@ hr {
 }
 
 .btn-primary {
-    border: 1px solid #09b1b9;
+    border: 1px solid #09b1b9 !important;
     color: #09b1b9 !important;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background-color: #09b1b9;
-    border-color: #09b1b9;
+    border-color: #09b1b9 !important;
     color: #fff !important;
 }
 
 .btn-danger {
-    border: 1px solid #FF5E52;
+    border: 1px solid #FF5E52 !important;
     color: #FF5E52 !important;
 }
 
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active {
     background-color: #FF5E52;
-    border-color: #FF5E52;
+    border-color: #FF5E52 !important;
     color: #fff !important;
 }
 
 .btn-success {
     /*border: 1px solid #5bb75b;*/
     /*color: #5bb75b !important;*/
-    border: 1px solid #09b1b9;
+    border: 1px solid #09b1b9 !important;
     color: #09b1b9 !important;
 }
 
@@ -586,30 +600,30 @@ hr {
     /*border-color: #5bb75b;*/
     /*color: #fff !important;*/
     background-color: #09b1b9;
-    border-color: #09b1b9;
+    border-color: #09b1b9 !important;
     color: #fff !important;
 }
 
 .btn-info {
-    border: 1px solid #49afcd;
+    border: 1px solid #49afcd !important;
     color: #49afcd !important;
 }
 
 .btn-info:hover, .btn-info:focus, .btn-info:active {
     background-color: #49afcd;
-    border-color: #49afcd;
+    border-color: #49afcd !important;
     color: #fff !important;
 }
 
 .btn-inverse {
     color: #fff;
     background-color: #333;
-    border: 1px solid #333;
+    border: 1px solid #333 !important;
 }
 
 .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active {
     background-color: #000;
-    border-color: #000
+    border-color: #000 !important
 }
 
 .btn-group.open .btn-primary.dropdown-toggle {
@@ -776,23 +790,17 @@ div.checkboxGroup div.checkboxGroupHeader {
 }
 
 /* footer */
-.orbisFooter {
-    background: #323841;
-    border: none;
-    color: #aaa;
-    height: auto;
+footer.footer--bottom {
+    background: #323841 !important;
+    border: none !important;
+    color: #aaa !important;
 }
 
-.orbisFooter .row-fluid [class*="span"] {
-    min-height: 0;
-    padding: 20px 0;
-}
-
-.orbisFooter .footerlink a {
+footer.footer--bottom a {
     color: #aaa;
 }
 
-.orbisFooter .footerlink a:hover {
+footer.footer--bottom a:hover {
     color: #09b1b9;
 }
 
@@ -1215,4 +1223,115 @@ div#eventTooltip {
 
 .highcharts-container .highcharts-background {
     fill: #c2c8d1 !important;
+}
+
+/* new header v2021 */
+header.header__container .settings-menu .btn--info {
+    color: #ddd;
+    background-color: #424A56;
+}
+
+@media screen and (min-width: 769px) {
+    header.header__container .navigation--mobile:not(.is--visible) + .settings-menu .btn--info {
+        border-radius: 0 0 10px 0 !important;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+header.header__container .settings-menu .btn--info:hover,
+header.header__container .settings-menu .btn--info:active {
+    background-color: #09B1B9;
+    color: #fff;
+    border-color: #09B1B9 !important;
+}
+
+header.header__container .navigation--mobile {
+    background: #323841;
+}
+
+/* new sidebar v2021 */
+.header--side-nav > .user-box {
+    background: #373E48;
+}
+
+@media screen and (max-width: 768px) {
+    .header--side-nav > .user-box {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.header--side-nav > .user-box a {
+    color: #ddd;
+}
+
+.header--side-nav > .user-box a:hover,
+.header--side-nav > .user-box a:active {
+    color: #09B1B9;
+}
+
+.eat--bootstrap.is--spiral--robot .header--side-nav .nav__list li a {
+    color: #ddd !important;
+    position: relative;
+}
+
+.eat--bootstrap.is--spiral--robot .header--side-nav .nav__list li a:hover {
+    background-color: #424A56 !important;
+    color: #09B1B9;
+}
+
+.eat--bootstrap.is--spiral--robot .header--side-nav .nav__list li a.is--active {
+    background-color: #424A56 !important;
+    color: #fff !important;
+    font-weight: normal !important;
+}
+
+.eat--bootstrap.is--spiral--robot .header--side-nav .nav__list li a.is--active:before {
+    content: '';
+    background: #09B1B9;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    bottom: 12px;
+    width: 3px;
+    border-radius: 4px;
+}
+
+.header--side-nav .nav__list li.nav__list-item.is--parent > button {
+    color: #ddd;
+}
+
+.header--side-nav .nav__list li.nav__list-item.is--parent > button:hover,
+.header--side-nav .nav__list li.nav__list-item.is--parent > button:focus {
+    background: #424A56;
+    color: #09B1B9;
+}
+
+.header--side-nav .nav__list li.nav__list-item.is--parent.is--expanded > button {
+    background-color: #424A56;
+    color: #09B1B9;
+}
+
+.header--side-nav .nav--interaction .nav--interaction__list {
+}
+
+.header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item {
+    margin: 8px 0 0 0;
+}
+
+.header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item button {
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: 1px solid #09B1B9;
+    color: #09B1B9;
+    background: none;
+    text-transform: initial;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item button:hover,
+.header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item button:active {
+    background-color: #09B1B9;
+    color: #fff;
 }

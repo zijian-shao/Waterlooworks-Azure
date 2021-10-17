@@ -351,6 +351,10 @@ label.gridDropdownButton.is--focused {
     outline: none !important;
 }
 
+.is--spiral--robot a:focus, .is--spiral--robot button:focus {
+    outline: none !important;
+}
+
 /* Header */
 
 #brandingNav {
@@ -463,6 +467,11 @@ label.gridDropdownButton.is--focused {
 /* Buttons */
 .btn-right-4 {
     margin-right: 4px;
+}
+
+.btn-mx-2 {
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .btn {
@@ -893,7 +902,7 @@ table.table-header-fixed {
 }
 
 /* Footer */
-.orbisFooter {
+footer.footer--bottom {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -901,21 +910,13 @@ table.table-header-fixed {
     -ms-user-select: none;
     user-select: none;
     white-space: nowrap;
+    transition: margin-left 0.3s ease;
 }
 
 @media (max-width: 979px) {
-    .orbisFooter .span6 {
-        display: none;
-    }
-
-    .orbisFooter .span4.pull-right {
-        float: none;
-        padding: 10px 0 !important;
-        text-align: center;;
-    }
-
-    .orbisFooter .span4.pull-right .pull-right {
-        float: none;
+    footer.footer--bottom {
+        margin-left: -12px !important;
+        margin-right: -12px !important;
     }
 }
 
@@ -928,7 +929,7 @@ table.table-header-fixed {
 }
 
 @media (min-width: 980px) {
-    .azure-auto-collapse-multi-select .aaaa .spaceForSearchFilters {
+    .azure-auto-collapse-multi-select .spaceForSearchFilters {
         padding-bottom: 0;
     }
 
@@ -1012,12 +1013,13 @@ table.table-header-fixed {
     margin-top: 0;
 }
 
-.azure-posting-info-panel h5 {
+.azure-posting-info-panel h2 {
     font-weight: normal;
-    font-size: 1em;
+    font-size: 1em !important;
+    line-height: 1.2;
 }
 
-.azure-posting-info-panel h5 span {
+.azure-posting-info-panel h2 span {
     display: block;
     padding-left: 0;
 }
@@ -1445,4 +1447,198 @@ li.azure-font-size-control a {
     height: 100vh;
     z-index: -10;
     pointer-events: none;
+}
+
+/* new header v2021 */
+body.is--hidden {
+    padding-top: 0;
+}
+
+header.header__container .header--branding {
+    display: none !important;
+    transition: none !important;
+}
+
+header.header__container .header--admin {
+    top: 0;
+    transition: none !important;
+    display: none !important;
+}
+
+header.header__container .header--admin .tab-list-cont {
+    height: 100%;
+}
+
+header.header__container .header--admin .cont-inception {
+    margin-left: 60px !important;
+}
+
+header.header__container .settings-menu {
+    top: 0;
+    display: block !important;
+    z-index: 500 !important;
+}
+
+header.header__container .settings-menu .btn--info {
+    transition: 0.3s ease;
+    transition-property: background, color, border, border-radius, box-shadow;
+}
+
+header.header__container .navigation--mobile {
+    top: 0 !important;
+    transition: left 0.3s ease, width 0.3s ease !important;
+}
+
+header.header__container .navigation--mobile .quick-links-heading,
+header.header__container .navigation--mobile .btn--close-mobile-menu {
+    display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    body.is--hidden {
+        padding-top: 60px;
+    }
+
+    /*header.header__container .header--admin {*/
+    /*    display: block !important;*/
+    /*}*/
+    header.header__container .navigation--mobile {
+        top: 60px !important;;
+    }
+}
+
+main.main--alt {
+    margin-top: 20px !important;
+    transition: margin-left 0.3s ease !important;
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 1199px) {
+    main.main--alt {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main.main--alt {
+        padding: 0 5px;
+    }
+}
+
+/* new sidebar v2021 */
+.header--side-nav {
+    padding-top: 70px !important;
+}
+
+@media screen and (max-width: 768px) {
+    .header--side-nav {
+        padding-top: 0 !important;
+    }
+}
+
+.header--side-nav .nav--interaction.js--interaction-menu {
+    min-height: 0;
+    padding: 0 !important;
+    background: none !important;
+}
+
+.header--side-nav .nav--interaction .nav--interaction__list {
+
+}
+
+.header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item {
+
+}
+
+.header--side-nav > .user-box {
+    height: 60px;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    font-size: 18px;
+    text-align: left;
+    padding: 0 0 0 60px !important;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #ccc;
+}
+
+.header--side-nav > .user-box a {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 15px;
+    text-decoration: none !important;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .header--side-nav > .user-box {
+        position: fixed;
+    }
+
+    .header--side-nav > .user-box a {
+        flex: 0;
+    }
+}
+
+.header--side-nav > .user-box ~ div.margin--b--m {
+    margin-bottom: 0 !important;
+}
+
+.header--side-nav .nav--my-account {
+    margin-top: 5px;
+}
+
+.header--side-nav .nav__list {
+    padding: 0 20px;
+}
+
+.header--side-nav .nav__list li {
+    padding: 2px 8px;
+}
+
+.header--side-nav .nav__list li a.is--active,
+.header--side-nav .nav__list li a {
+    border-radius: 4px !important;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+    transform: none !important;
+    text-transform: none !important;
+}
+
+.header--side-nav .nav__list li a:hover {
+    padding-left: 20px !important;
+}
+
+.header--side-nav .nav__list li.nav__list-item.is--parent > button {
+    padding: 8px 10px;
+    right: 8px;
+    top: 2px;
+    border-radius: 4px;
+}
+
+.header--side-nav .nav__list li.nav__list-item.is--parent.is--expanded {
+    background: none;
+}
+
+.header--side-nav .nav__list li.nav__list-item.is--parent.is--expanded > button {
+    background: #555;
+}
+
+.header--side-nav .nav__list.is--child {
+    /*padding-left: 0 !important;*/
+}
+
+.header--side-nav .nav__list.is--child > .nav__list-item {
+    /*padding-left: 0 !important;*/
+    padding-right: 0 !important;
+}
+
+.header--side-nav .nav__list.is--child > .nav__list-item > button {
+    right: 0 !important;
 }

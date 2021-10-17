@@ -113,11 +113,11 @@ function detailPageLinkNewTab(table) {
  * Add posting title to page title
  */
 function detailPageTitle() {
-    var jobTitle = $('#mainContentDiv > div.orbisModuleHeader > div.row-fluid > div:nth-child(1) > h1').text();
-    jobTitle = jobTitle.trim().replace(/\n/g, '').replace(/\t/g, '').replace(/Job ID:([0-9]+) /g, '');
-    var company = $('#mainContentDiv > div.orbisModuleHeader > div.row-fluid > div:nth-child(1) > h5');
+    var jobTitle = $('.dashboard-header__profile-information > h1').text();
+    jobTitle = jobTitle.trim().replace(/\n/g, ' ').replace(/\t/g, ' ').replace(/Job ID:([0-9]+) /g, '');
+    var company = $('.dashboard-header__profile-information > h2');
     company.find('span').remove();
-    company = company.text().trim().split(' - ');
+    company = company.text().trim().replace(/\n/g, ' ').replace(/\t/g, ' ').split(' - ');
     company.pop();
     company = company.join(' - ');
     var pageTitle = $('head title');
@@ -201,13 +201,15 @@ function highlightKeyword(table, needPanel) {
  */
 function addPostingInfoPanel() {
 
-    var title = $('.orbisModuleHeader .row-fluid:first-child .span6:first-child').first();
     var columnSpan = $('.orbisTabContainer .tabbable .tab-content .row-fluid .span4');
 
     // panel add
     var panel = $('<div class="panel panel-default azure-posting-info-panel"></div>');
     panel.append($('<div class="panel-heading"><strong>POSTING INFO</strong></div>'));
-    panel.append($('<div class="panel-body">' + title.html() + '</div>'));
+    panel.append($('<div class="panel-body"></div>'));
+    var panelBody = panel.find('.panel-body');
+    panelBody.append($('.dashboard-header__profile-information > h1').clone().attr('class', '').attr('style', ''));
+    panelBody.append($('.dashboard-header__profile-information > h2').clone().attr('class', '').attr('style', ''));
     columnSpan.find('.panel:first-child').first().before(panel);
 
 }
@@ -870,7 +872,7 @@ function postingBatch() {
         }
     });
 
-    $('#hideSideNav').after(batchBtn);
+    $('#azure-new-search-btn').after(batchBtn);
 }
 
 /**
@@ -1094,7 +1096,7 @@ function postingListAjax(table, placeholder) {
         // create btn
         var switchBtn = $('<a/>', {
             'href': 'javascript:void(0);',
-            'class': 'btn btn-small btn-right-4',
+            'class': 'btn btn-small btn-mx-2',
             'id': 'azure-toggle-new-tag'
         });
         if (hideNewTagStatus) {
@@ -1118,7 +1120,7 @@ function postingListAjax(table, placeholder) {
         });
 
         // add btn
-        $('#hideSideNav').after(switchBtn);
+        $('#azure-new-search-btn').after(switchBtn);
 
     }
 
@@ -1134,7 +1136,7 @@ function postingListAjax(table, placeholder) {
             // create btn
             var emptyBtn = $('<a/>', {
                 'href': 'javascript:void(0);',
-                'class': 'btn btn-small btn-right-4',
+                'class': 'btn btn-small btn-mx-2',
                 'id': 'azure-empty-shortlist'
             });
             emptyBtn.text('Empty Shortlist');
@@ -1176,7 +1178,7 @@ function postingListAjax(table, placeholder) {
             });
 
             // add btn
-            $('#hideSideNav').after(emptyBtn);
+            $('#azure-new-search-btn').after(emptyBtn);
         }
     }
 
@@ -1192,7 +1194,7 @@ function postingListAjax(table, placeholder) {
             // create btn
             var exportBtn = $('<a/>', {
                 'href': 'javascript:void(0);',
-                'class': 'btn btn-success btn-small btn-right-4',
+                'class': 'btn btn-success btn-small btn-mx-2',
                 'id': 'azure-export-shortlist'
             });
             exportBtn.text('Export Shortlist');
@@ -1224,7 +1226,7 @@ function postingListAjax(table, placeholder) {
             }
 
             // add btn
-            $('#hideSideNav').after(exportBtn);
+            $('#azure-new-search-btn').after(exportBtn);
         }
     }
 
@@ -1248,7 +1250,7 @@ function postingListAjax(table, placeholder) {
             // create btn
             var hideBtn = $('<a/>', {
                 'href': 'javascript:void(0);',
-                'class': 'btn btn-small btn-right-4',
+                'class': 'btn btn-small btn-mx-2',
                 'id': 'azure-hide-shortlisted'
             });
             if (hideShortlistedStatus) {
@@ -1279,7 +1281,7 @@ function postingListAjax(table, placeholder) {
             });
 
             // add btn
-            $('#hideSideNav').after(hideBtn);
+            $('#azure-new-search-btn').after(hideBtn);
         }
     }
 
@@ -1560,19 +1562,22 @@ function postingList() {
     table.find('thead tr th').css('background-color', '');
     table.find('thead tr td').css('background-color', '');
 
+    let newSearchBtn = $('#filterForm a.btn:contains("New Search")');
+    newSearchBtn.attr('id', 'azure-new-search-btn');
+    
     if (!options.JOB_Enabled)
         return;
 
     // force show sidebar
-    setTimeout(function () {
-        if ($('#hideSideNav').text().match(/Show Side Nav/)) {
-            $('#hideSideNav').trigger('click');
-            $('#mainContentDiv').css('margin-left', '');
-            // fixTableHeader(table);
-            $('#azure-hide-sidebar').trigger('click');
-            $('#azure-hide-sidebar').trigger('click');
-        }
-    }, 300);
+    // setTimeout(function () {
+    //     if ($('#hideSideNav').text().match(/Show Side Nav/)) {
+    //         $('#hideSideNav').trigger('click');
+    //         $('#mainContentDiv').css('margin-left', '');
+    //         // fixTableHeader(table);
+    //         $('#azure-hide-sidebar').trigger('click');
+    //         $('#azure-hide-sidebar').trigger('click');
+    //     }
+    // }, 300);
 
     injectCSS(baseURL + 'css/postings.css', 'head');
     // injectCSS(baseURL + 'theme/theme_' + options.GLB_ThemeID + '/postings.css', 'head');
@@ -1838,7 +1843,7 @@ function postingDetail() {
 
     if (options.JOB_GlassdoorRanking) {
 
-        var company = $('.orbisModuleHeader').find('h5').first();
+        var company = $('.dashboard-header__profile-information > h2');
         var companyName = company.text().split('-')[0].trim().replace(/\t/g, '').replace(/\n/g, '');
         injectJS('https://www.zijianshao.com/wwazure/glassdoor/?callback=showCompanyRank&q=' + companyName, 'head');
 

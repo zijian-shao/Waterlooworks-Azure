@@ -173,7 +173,7 @@ function getThemeConfigs(id) {
             'overlayColor': '#ffffff',
             'previewColor': '#45b6f7',
             'navbarPosition': 'top',
-            'navbarHeight': 60
+            'navbarHeight': 0
         },
         'theme_1': {
             'id': 1,
@@ -187,7 +187,7 @@ function getThemeConfigs(id) {
             'overlayColor': '#282d34',
             'previewColor': '#09b1b9',
             'navbarPosition': 'top',
-            'navbarHeight': 60
+            'navbarHeight': 0
         },
         'theme_2': {
             'id': 2,

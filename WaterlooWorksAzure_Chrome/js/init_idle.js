@@ -856,6 +856,15 @@ function startAzure() {
     // student
     if (currURL.match(/\/myAccount\//i)) {
 
+        let burgerBtn = $('header.header__container .settings-menu .btn--info');
+        burgerBtn.on('click', function ()
+        {
+            setTimeout(function ()
+            {
+                window.dispatchEvent(new Event('resize'));
+            }, 600);
+        });
+
         // grad & alumni guide page
         if (currURL.match(/\/myAccount\/hire-waterloo\/overview\.htm/i)) {
             $('#mainContentDiv').find('.boxContent a').addClass('btn btn-primary azure-grad-guide-link');
@@ -924,6 +933,8 @@ function startAzure() {
             $('#mainContentDiv > .box > .customContentContainer a').css('color', '');
         }
 
+        $('#myAccountNav > .user-box')
+            .html('<a href="https://waterlooworks.uwaterloo.ca/myAccount/dashboard.htm">WaterlooWorks</a>');
     }
 
     // back to top button
