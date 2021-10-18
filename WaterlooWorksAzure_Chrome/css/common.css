@@ -1642,3 +1642,37 @@ main.main--alt {
 .header--side-nav .nav__list.is--child > .nav__list-item > button {
     right: 0 !important;
 }
+
+/* new posting details page v2021 */
+.is--spiral--robot .dashboard-header .dashboard-header__container--primary button[class^="btn--"],
+.is--spiral--robot .dashboard-header .dashboard-header__container--primary button[class*=" btn--"] {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 769px) {
+    .is--spiral--robot .dashboard-header {
+        width: 100% !important;
+        transform: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        background: none;
+    }
+
+    .is--spiral--robot .dashboard-header > div:first-child {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .is--spiral--robot .dashboard-header {
+        width: 100% !important;
+        transform: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 20px !important;
+        background: none;
+    }
+}

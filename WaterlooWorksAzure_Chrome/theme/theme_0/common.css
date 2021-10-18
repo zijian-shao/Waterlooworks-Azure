@@ -108,7 +108,7 @@ a, a:hover, a:active, a:focus, a:visited, ins {
     border-color: #60c0f7 !important;
 }
 
-.btn {
+.btn, .btn--default {
     border-radius: 100px !important;
     text-shadow: none;
     box-shadow: none;
@@ -530,4 +530,40 @@ header.header__container .navigation--mobile {
 .header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item button:hover,
 .header--side-nav .nav--interaction .nav--interaction__list > .nav--interaction__item button:active {
     background-color: #60c0f7;
+}
+
+/* new posting details page v2021 */
+.is--spiral--robot .dashboard-header .color--font--white {
+    color: #333 !important;
+}
+
+.is--spiral--robot .dashboard-header .dashboard-header__profile-widget-image {
+    border-color: #333;
+}
+
+.is--spiral--robot .dashboard-header #breadcrumbs .btn--white.outline {
+    border-radius: 50px;
+    border-color: #45b6f7;
+    color: #45b6f7;
+    padding: 5px 20px;
+}
+
+.is--spiral--robot .dashboard-header #breadcrumbs .btn--white.outline:hover,
+.is--spiral--robot .dashboard-header #breadcrumbs .btn--white.outline:focus,
+.is--spiral--robot .dashboard-header #breadcrumbs .btn--white.outline:active {
+    background-color: #45B6F7;
+    color: #fff;
+}
+
+.is--spiral--robot .dashboard-header .dashboard-header__container--primary button[class^="btn--"],
+.is--spiral--robot .dashboard-header .dashboard-header__container--primary button[class*=" btn--"] {
+    background-color: #45B6F7 !important;
+    border-color: #45B6F7 !important;
+    color: #fff !important;
+}
+
+.is--spiral--robot .dashboard-header .dashboard-header__container--primary button[class^="btn--"]:hover,
+.is--spiral--robot .dashboard-header .dashboard-header__container--primary button[class*=" btn--"]:hover {
+    background-color: #60C0F7 !important;
+    border-color: #60C0F7 !important;
 }
