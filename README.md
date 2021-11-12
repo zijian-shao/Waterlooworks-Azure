@@ -8,6 +8,8 @@ Edge: [View in Edge Addons](https://microsoftedge.microsoft.com/addons/detail/bj
 
 Firefox: [View in Firefox Addons](https://addons.mozilla.org/addon/waterlooworks-azure/ "WaterlooWorks Azure (Firefox Version)")
 
+Safari: Build & Run the .xcproj file in Xcode. Make sure "Allow Unsigned Extensions" if you're not in the Apple Developer Program.
+
 ## Features
 - Multiple themes
 - Dark mode
